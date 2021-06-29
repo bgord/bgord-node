@@ -8,7 +8,6 @@ export enum NodeEnvironmentEnum {
 }
 export const NodeEnvironment = z.nativeEnum(NodeEnvironmentEnum);
 
-// @ts-ignore
 export const Port = z
   .string()
   .refine(value => !isNaN((value as unknown) as number) && value, {
