@@ -11,16 +11,16 @@ const defaultLogsFormat: LogsFormatType =
 
 const defaultLogsFilename: LogsFilenameType = 'access.log';
 
-export type LoggerConfig = {
+export type LoggerConfigType = Partial<{
   format: LogsFormatType;
   filename: LogsFilenameType;
-};
+}>;
 
 export class Logger {
   logsFormat: LogsFormatType;
   logsFilename: LogsFilenameType;
 
-  constructor(config?: LoggerConfig) {
+  constructor(config?: LoggerConfigType) {
     this.logsFormat = config?.format ?? defaultLogsFormat;
     this.logsFilename = config?.filename ?? defaultLogsFilename;
   }

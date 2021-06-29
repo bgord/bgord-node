@@ -3,11 +3,14 @@ import bodyparser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
 
+import { Logger, LoggerConfigType } from './logger';
+
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
   json: bodyparser.OptionsJson;
   urlencoded: bodyparser.OptionsUrlencoded;
   cors: cors.CorsOptions;
+  logger: LoggerConfigType;
 }>;
 
 export function addExpressEssentials(
@@ -25,4 +28,8 @@ export function addExpressEssentials(
 
   const corsConfig = config?.cors ?? { origin: '*' };
   app.use(cors(corsConfig));
+
+  const loggerConfig = config?.logger ?? {};
+  const logger = new Logger(loggerConfig);
+  logger.applyTo(app);
 }
