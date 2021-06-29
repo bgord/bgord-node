@@ -1,9 +1,9 @@
 import * as z from 'zod';
 import * as dotenv from 'dotenv';
 
-import { Schema } from './index';
+import { NodeEnvironment, NodeEnvironmentEnum } from './schema';
 
-type NodeEnvironmentEnumType = z.infer<typeof Schema.NodeEnvironment>;
+type NodeEnvironmentEnumType = z.infer<typeof NodeEnvironment>;
 
 type EnvironmentFilename = string;
 
@@ -12,7 +12,7 @@ type QuietType = boolean;
 type QuitType = boolean;
 
 type EnvironmentTypeToFilenameType = Record<
-  Schema.NodeEnvironmentEnum,
+  NodeEnvironmentEnum,
   EnvironmentFilename
 >;
 
@@ -45,7 +45,7 @@ export class EnvironmentValidator<SchemaType> {
     this.environmentTypeToFilename =
       config?.environmentTypeToFilename ?? EnvironmentTypeToFilename;
 
-    const result = Schema.NodeEnvironment.safeParse(config.type);
+    const result = NodeEnvironment.safeParse(config.type);
 
     if (result.success) {
       this.type = result.data;
