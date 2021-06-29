@@ -48,6 +48,7 @@
     "@size-limit/preset-small-lib": "^5.0.1",
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.12",
+    "@types/morgan": "^1.9.2",
     "husky": "^6.0.0",
     "size-limit": "^5.0.1",
     "tsdx": "^0.14.1",
@@ -59,6 +60,7 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
     "zod": "3.1.0"
   }
 }
