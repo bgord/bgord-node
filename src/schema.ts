@@ -8,3 +8,4 @@ export enum NodeEnvironmentEnum {
 }
 
 export const NodeEnvironment = z.nativeEnum(NodeEnvironmentEnum);
+export type NodeEnvironmentType = z.infer<typeof NodeEnvironment>;
