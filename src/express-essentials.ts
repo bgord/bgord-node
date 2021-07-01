@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 
 import { Logger, LoggerConfigType } from './logger';
+import { StaticFiles, StaticFilesConfigType } from './static-files';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -11,6 +12,7 @@ export type ExpressEssentialsConfig = Partial<{
   urlencoded: bodyparser.OptionsUrlencoded;
   cors: cors.CorsOptions;
   logger: LoggerConfigType;
+  staticFiles: StaticFilesConfigType;
 }>;
 
 export function addExpressEssentials(
@@ -32,4 +34,8 @@ export function addExpressEssentials(
   const loggerConfig = config?.logger ?? {};
   const logger = new Logger(loggerConfig);
   logger.applyTo(app);
+
+  const staticFilesConfig = config?.staticFiles ?? {};
+  const staticFiles = new StaticFiles(staticFilesConfig);
+  staticFiles.applyTo(app);
 }
