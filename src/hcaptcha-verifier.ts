@@ -4,6 +4,7 @@ import { z } from 'zod';
 
 import { HCaptchaSecretKey } from './schema';
 import { AccessDeniedError } from './errors';
+import { ExpressEssentialsConfig } from './express-essentials';
 
 type HCaptchaSecretKeyType = z.infer<typeof HCaptchaSecretKey>;
 
@@ -38,4 +39,16 @@ export class HCaptchaVerifier {
       }
     };
   }
+
+  static helmetCspConfig: ExpressEssentialsConfig['helmet'] = {
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        'script-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
+        'frame-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
+        'style-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
+        'connect-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
+      },
+    },
+  };
 }
