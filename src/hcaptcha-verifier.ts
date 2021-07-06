@@ -28,10 +28,14 @@ export class HCaptchaVerifier {
       next: Parameters<express.RequestHandler>[2]
     ) {
       try {
-        await hcaptchaVerify(
+        const result = await hcaptchaVerify(
           that.secretKey,
-          request.body.hCaptchaResponseToken
+          request.body['h-captcha-response']
         );
+
+        if (!result?.success) {
+          throw new AccessDeniedError();
+        }
 
         return next();
       } catch (error) {
