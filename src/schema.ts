@@ -20,3 +20,5 @@ export const Port = z
 export const HCaptchaSecretKey = z.string().length(42);
 
 export const HCaptchaSiteKey = z.string().length(36);
+
+export const HCaptchaResponseToken = z.string();
