@@ -4299,6 +4299,11 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
+hcaptcha@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/hcaptcha/-/hcaptcha-0.0.2.tgz#18f4c055a2315db9f732ac77f9d0e30026bb2eb7"
+  integrity sha512-wWOncj/sY+q8s7tV12tjn3cFNoQhSu3l/7nTJi4QkFKALQi9XnduoXrV/KFzLg5lnB+5560zSAoi9YdYPDw6Eg==
+
 helmet@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/helmet/-/helmet-4.6.0.tgz#579971196ba93c5978eb019e4e8ec0e50076b4df"
