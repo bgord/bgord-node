@@ -2,6 +2,7 @@ import express from 'express';
 import bodyparser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
+import _ from 'lodash';
 
 import { Logger, LoggerConfigType } from './logger';
 import { StaticFiles, StaticFilesConfigType } from './static-files';
@@ -25,7 +26,10 @@ export function addExpressEssentials(
   const bodyParserJsonConfig = config?.json ?? undefined;
   app.use(express.json(bodyParserJsonConfig));
 
-  const bodyParserUrlencodedConfig = config?.urlencoded ?? { extended: true };
+  const bodyParserUrlencodedConfig = _.merge(config?.urlencoded ?? {}, {
+    extended: true,
+  });
+
   app.use(express.urlencoded(bodyParserUrlencodedConfig));
 
   const corsConfig = config?.cors ?? { origin: '*' };
