@@ -12,7 +12,7 @@ export class Handlebars {
   }
 
   applyTo(app: express.Application): void {
-    app.engine('handlebars', handlebars.create(this.config).engine);
-    app.set('view engine', 'handlebars');
+    app.engine('hbs', handlebars.create(this.config).engine);
+    app.set('view engine', 'hbs');
   }
 }
