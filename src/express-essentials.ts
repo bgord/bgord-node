@@ -43,3 +43,11 @@ export function addExpressEssentials(
   const staticFiles = new StaticFiles(staticFilesConfig);
   staticFiles.applyTo(app);
 }
+
+export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {
+  contentSecurityPolicy: {
+    directives: {
+      'script-src': ["'self'"],
+    },
+  },
+};
