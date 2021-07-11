@@ -51,3 +51,11 @@ export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {
     },
   },
 };
+
+export const helmetStylesCspConfig: Parameters<typeof helmet>[0] = {
+  contentSecurityPolicy: {
+    directives: {
+      'style-src': ["'self'"],
+    },
+  },
+};
