@@ -46,7 +46,6 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.1",
-    "@types/better-sqlite3": "^5.4.3",
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.12",
     "@types/express-handlebars": "^5.3.1",
@@ -59,7 +58,6 @@
     "typescript": "4.1.5"
   },
   "dependencies": {
-    "better-sqlite3": "^7.4.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
