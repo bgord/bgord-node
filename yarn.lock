@@ -1309,6 +1309,16 @@
     "@types/qs" "*"
     "@types/range-parser" "*"
 
+"@types/express@*":
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.13.tgz#a76e2995728999bab51a33fabce1d705a3709034"
+  integrity sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "^4.17.18"
+    "@types/qs" "*"
+    "@types/serve-static" "*"
+
 "@types/express@^4.17.12":
   version "4.17.12"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.12.tgz#4bc1bf3cd0cfe6d3f6f2853648b40db7d54de350"
@@ -1368,6 +1378,13 @@
   version "4.14.171"
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.171.tgz#f01b3a5fe3499e34b622c362a46a609fdb23573b"
   integrity sha512-7eQ2xYLLI/LsicL2nejW9Wyko3lcpN6O/z0ZLHrEQsg280zIdCv1t/0m6UtBjUHokCGBQ3gYTbHzDkZ1xOBwwg==
+
+"@types/method-override@^0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/method-override/-/method-override-0.0.32.tgz#9593e3d101f9d46f6222e5a83c59d203b1dcf172"
+  integrity sha512-Vf9AohOlANmhNswCbkdRG3p+tYcq1+63O+ex1UoNIVYWW3tO8Mx6Z+5G1R8DENeC6/t1SiDJS+ph6ACKpryokg==
+  dependencies:
+    "@types/express" "*"
 
 "@types/mime@^1":
   version "1.3.2"
@@ -3037,6 +3054,13 @@ debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz"
   integrity sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  dependencies:
+    ms "2.0.0"
+
+debug@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+  integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   dependencies:
     ms "2.0.0"
 
@@ -5744,6 +5768,16 @@ merge2@^1.3.0:
   resolved "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
+method-override@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/method-override/-/method-override-3.0.0.tgz#6ab0d5d574e3208f15b0c9cf45ab52000468d7a2"
+  integrity sha512-IJ2NNN/mSl9w3kzWB92rcdHpz+HjkxhDJWNDBqSlas+zQdP8wBiJzITPg08M/k2uVvMow7Sk41atndNtt/PHSA==
+  dependencies:
+    debug "3.1.0"
+    methods "~1.1.2"
+    parseurl "~1.3.2"
+    vary "~1.1.2"
+
 methods@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
@@ -6376,7 +6410,7 @@ parse5@5.1.0:
   resolved "https://registry.npmjs.org/parse5/-/parse5-5.1.0.tgz"
   integrity sha512-fxNG2sQjHvlVAYmzBZS9YlDp6PTSSDwa98vkD4QgVDDCAo84z5X1t5XyJQ62ImdLXx5NdIIfihey6xpum9/gRQ==
 
-parseurl@~1.3.3:
+parseurl@~1.3.2, parseurl@~1.3.3:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
   integrity sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==

@@ -50,6 +50,7 @@
     "@types/express": "^4.17.12",
     "@types/express-handlebars": "^5.3.1",
     "@types/lodash": "^4.14.171",
+    "@types/method-override": "^0.0.32",
     "@types/morgan": "^1.9.2",
     "@types/uuid": "^8.3.1",
     "husky": "^6.0.0",
@@ -67,6 +68,7 @@
     "hcaptcha": "^0.0.2",
     "helmet": "^4.6.0",
     "lodash": "^4.17.21",
+    "method-override": "^3.0.0",
     "morgan": "^1.10.0",
     "uuid": "^8.3.2",
     "zod": "3.1.0"
