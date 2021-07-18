@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { v4 as uuid } from 'uuid';
 
 export enum NodeEnvironmentEnum {
   local = 'local',
@@ -22,3 +23,8 @@ export const HCaptchaSecretKey = z.string().length(42);
 export const HCaptchaSiteKey = z.string().length(36);
 
 export const HCaptchaResponseToken = z.string();
+
+export const UUID = z
+  .string()
+  .uuid()
+  .default(uuid());
