@@ -4,8 +4,6 @@ import * as dotenv from 'dotenv';
 import { NodeEnvironment, NodeEnvironmentEnum } from './schema';
 import { Reporter } from './reporter';
 
-const reporter = new Reporter();
-
 type NodeEnvironmentEnumType = z.infer<typeof NodeEnvironment>;
 
 type EnvironmentFilename = string;
@@ -54,7 +52,7 @@ export class EnvironmentValidator<SchemaType> {
       this.type = result.data;
     } else {
       if (this.quit) {
-        reporter.error(`Invalid EnvironmentType: ${config.type}`);
+        Reporter.error(`Invalid EnvironmentType: ${config.type}`);
         process.exit(1);
       } else {
         throw new NodeEnvironmentError();
