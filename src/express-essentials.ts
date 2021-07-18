@@ -6,6 +6,7 @@ import _ from 'lodash';
 
 import { Logger, LoggerConfigType } from './logger';
 import { StaticFiles, StaticFilesConfigType } from './static-files';
+import { MethodOverride } from './method-override';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -42,6 +43,8 @@ export function addExpressEssentials(
   const staticFilesConfig = config?.staticFiles ?? {};
   const staticFiles = new StaticFiles(staticFilesConfig);
   staticFiles.applyTo(app);
+
+  new MethodOverride().applyTo(app);
 }
 
 export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {
