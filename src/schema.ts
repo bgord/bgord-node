@@ -27,4 +27,4 @@ export const HCaptchaResponseToken = z.string();
 export const UUID = z
   .string()
   .uuid()
-  .default(uuid());
+  .default(() => uuid());
