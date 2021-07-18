@@ -1,14 +1,14 @@
 export class Reporter {
-  info(...args: string[]) {
-    console.log("[ info ] ", ...args);
+  static info(...args: string[]) {
+    console.log('[ info ] ', ...args);
   }
 
-  success(...args: string[]) {
-    console.log("[ success ]", ...args);
+  static success(...args: string[]) {
+    console.log('[ success ]', ...args);
   }
 
-  error(message: string, options?: { quit: boolean }) {
-    console.log("  [error]", message);
+  static error(message: string, options?: { quit: boolean }) {
+    console.log('  [error]', message);
 
     if (options?.quit) {
       process.exit(1);
