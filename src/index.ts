@@ -8,3 +8,4 @@ export * from './logger';
 export * from './reporter';
 export * from './sqlite'
 export * from './static-files';
+export * from "./mailer"
