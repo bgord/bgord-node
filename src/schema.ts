@@ -28,3 +28,15 @@ export const UUID = z
   .string()
   .uuid()
   .default(() => uuid());
+
+export const SmtpHost = z.string().nonempty();
+export type SmtpHostType = z.infer<typeof SmtpHost>;
+
+export const SmtpPort = Port;
+export type SmtpPortType = z.infer<typeof SmtpPort>;
+
+export const SmtpUser = z.string().nonempty();
+export type SmtpUserType = z.infer<typeof SmtpUser>;
+
+export const SmtpPass = z.string().nonempty();
+export type SmtpPassType = z.infer<typeof SmtpPass>;
