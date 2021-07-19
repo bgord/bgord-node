@@ -14,6 +14,8 @@ type MailerConfigType = {
   SMTP_PASS: SmtpPassType;
 };
 
+type MailerSendOptionsType = SendMailOptions;
+
 export class Mailer {
   private transport: nodemailer.Transporter;
 
@@ -28,7 +30,7 @@ export class Mailer {
     });
   }
 
-  send(options: SendMailOptions): Promise<unknown> {
+  async send(options: MailerSendOptionsType): Promise<unknown> {
     return this.transport.sendMail(options);
   }
 }
