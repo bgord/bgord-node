@@ -49,6 +49,7 @@ export function addExpressEssentials(
 
 export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {
   contentSecurityPolicy: {
+    useDefaults: true,
     directives: {
       'script-src': ["'self'"],
     },
@@ -57,6 +58,7 @@ export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {
 
 export const helmetStylesCspConfig: Parameters<typeof helmet>[0] = {
   contentSecurityPolicy: {
+    useDefaults: true,
     directives: {
       'style-src': ["'self'"],
     },
