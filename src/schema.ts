@@ -40,3 +40,9 @@ export type SmtpUserType = z.infer<typeof SmtpUser>;
 
 export const SmtpPass = z.string().nonempty();
 export type SmtpPassType = z.infer<typeof SmtpPass>;
+
+export const Email = z
+  .string()
+  .email()
+  .nonempty();
+export type EmailType = z.infer<typeof Email>;
