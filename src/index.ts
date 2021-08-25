@@ -10,3 +10,4 @@ export * from './sqlite';
 export * from './static-files';
 export * from './mailer';
 export * from './graceful-shutdown';
+export * from './event';
