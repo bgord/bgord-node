@@ -1,11 +1,18 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
 
+import { Dates } from './dates';
+
 export type HandlebarsConfigType = handlebars.ExphbsOptions;
 
 export class Handlebars {
   config: HandlebarsConfigType;
-  handlebarsDefaultConfig: HandlebarsConfigType = { extname: '.hbs' };
+  handlebarsDefaultConfig: HandlebarsConfigType = {
+    extname: '.hbs',
+    helpers: {
+      datetime: (value: Date) => Dates.datetime(value),
+    },
+  };
 
   constructor(config?: HandlebarsConfigType) {
     this.config = config ?? this.handlebarsDefaultConfig;
