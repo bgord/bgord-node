@@ -1,5 +1,6 @@
 import express from 'express';
 import handlebars from 'express-handlebars';
+import pluralize from 'pluralize';
 
 import { Dates } from './dates';
 
@@ -11,6 +12,10 @@ export class Handlebars {
     extname: '.hbs',
     helpers: {
       datetime: (value: Date) => Dates.datetime(value),
+      pluralize: (
+        word: Parameters<typeof pluralize>[0],
+        count: Parameters<typeof pluralize>[1]
+      ) => pluralize(word, count),
     },
   };
 
