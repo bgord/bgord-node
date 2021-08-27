@@ -60,12 +60,12 @@ export class EnvironmentValidator<SchemaType> {
     }
   }
 
-  load(): SchemaType {
+  load(): SchemaType & { type: NodeEnvironmentEnumType } {
     const environment = dotenv.config({
       path: this.environmentTypeToFilename[this.type],
     }).parsed;
 
-    return this.schema.parse(environment);
+    return { ...this.schema.parse(environment), type: this.type };
   }
 }
 

@@ -8,14 +8,19 @@ import { ExpressEssentialsConfig } from './express-essentials';
 
 type HCaptchaSecretKeyType = z.infer<typeof HCaptchaSecretKey>;
 
+type HCaptchaVerifierModeType = 'local' | 'production';
+
 export type HCaptchaVerifierConfigType = {
   secretKey: HCaptchaSecretKeyType;
+  mode: HCaptchaVerifierModeType;
 };
 
 export class HCaptchaVerifier {
   secretKey: HCaptchaSecretKeyType;
+  mode: HCaptchaVerifierModeType;
 
   constructor(config: HCaptchaVerifierConfigType) {
+    this.mode = config.mode;
     this.secretKey = config.secretKey;
   }
 
@@ -30,7 +35,9 @@ export class HCaptchaVerifier {
       try {
         const result = await hcaptchaVerify(
           that.secretKey,
-          request.body['h-captcha-response']
+          that.mode === 'production'
+            ? request.body['h-captcha-response']
+            : '10000000-aaaa-bbbb-cccc-000000000001'
         );
 
         if (!result?.success) {
