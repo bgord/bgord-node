@@ -1,4 +1,5 @@
 export * as Schema from './schema';
+export * as Errors from './errors';
 export * from './dates';
 export * from './environment-validator';
 export * from './express-essentials';
