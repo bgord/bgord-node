@@ -1,7 +1,3 @@
-import { sum } from '../src';
+import tester from 'japa';
 
-describe('blah', () => {
-  it('works', () => {
-    expect(sum(1, 1)).toEqual(2);
-  });
-});
+tester('sum', assert => assert.equal(2 + 2, 4));
