@@ -46,3 +46,6 @@ export const Email = z
   .email()
   .nonempty();
 export type EmailType = z.infer<typeof Email>;
+
+export const CookieSecret = z.string().length(32);
+export type CookieSecretType = z.infer<typeof CookieSecret>;
