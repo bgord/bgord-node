@@ -24,7 +24,7 @@ export class HCaptchaVerifier {
     this.secretKey = config.secretKey;
   }
 
-  verify() {
+  build() {
     const that = this;
 
     return async function(
