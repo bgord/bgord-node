@@ -41,7 +41,7 @@ export class EnvironmentValidator<SchemaType> {
 
   constructor(config: EnvironmentValidatorConfig) {
     this.schema = config.schema;
-    this.quiet = config?.quit ?? false;
+    this.quiet = config?.quiet ?? false;
     this.quit = config?.quit ?? true;
     this.environmentTypeToFilename =
       config?.environmentTypeToFilename ?? EnvironmentTypeToFilename;
