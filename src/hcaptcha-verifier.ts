@@ -41,12 +41,16 @@ export class HCaptchaVerifier {
         );
 
         if (!result?.success) {
-          throw new AccessDeniedError();
+          throw new AccessDeniedError({
+            reason: 'hcaptcha',
+          });
         }
 
         return next();
       } catch (error) {
-        throw new AccessDeniedError();
+        throw new AccessDeniedError({
+          reason: 'hcaptcha',
+        });
       }
     };
   }

@@ -2,7 +2,7 @@ import * as express from 'express';
 import { v4 as uuid } from 'uuid';
 
 import { UUID } from './schema';
-import { CsrfShieldError } from './errors';
+import { AccessDeniedError } from './errors';
 
 declare module 'express-session' {
   interface SessionData {
@@ -40,9 +40,13 @@ export class CsrfShield {
       if (field === match) {
         return next();
       }
-      throw new CsrfShieldError();
+      throw new AccessDeniedError({
+        reason: 'csrf',
+      });
     } catch (error) {
-      throw new CsrfShieldError();
+      throw new AccessDeniedError({
+        reason: 'csrf',
+      });
     }
   }
 
