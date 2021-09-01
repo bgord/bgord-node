@@ -49,3 +49,9 @@ export type EmailType = z.infer<typeof Email>;
 
 export const CookieSecret = z.string().length(32);
 export type CookieSecretType = z.infer<typeof CookieSecret>;
+
+export const ContentfulSpaceId = z.string().length(12);
+export type ContentfulSpaceIdType = z.infer<typeof ContentfulSpaceId>;
+
+export const ContentfulAccessToken = z.string().length(43);
+export type ContentfulAccessTokenType = z.infer<typeof ContentfulAccessToken>;
