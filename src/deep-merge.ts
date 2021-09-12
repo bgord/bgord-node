@@ -1,9 +1,12 @@
 import _ from 'lodash';
 
-export function deepMerge(a: Object, b: Object): Object {
+export function deepMerge(
+  a: Object | undefined,
+  b: Object | undefined
+): Object {
   return _.mergeWith(
-    a,
-    b,
+    a ?? {},
+    b ?? {},
 
     // If `a` is an array, concatenate `b` to it,
     // as _.mergeWith doesn't do it.
