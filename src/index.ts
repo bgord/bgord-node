@@ -14,3 +14,4 @@ export * from './graceful-shutdown';
 export * from './event';
 export * from './session';
 export * from './csrf-shield';
+export * from './sleep';
