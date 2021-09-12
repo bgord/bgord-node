@@ -15,3 +15,4 @@ export * from './event';
 export * from './session';
 export * from './csrf-shield';
 export * from './sleep';
+export * from './deep-merge';
