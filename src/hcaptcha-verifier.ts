@@ -28,9 +28,9 @@ export class HCaptchaVerifier {
     const that = this;
 
     return async function(
-      request: Parameters<express.RequestHandler>[0],
-      _response: Parameters<express.RequestHandler>[1],
-      next: Parameters<express.RequestHandler>[2]
+      request: express.Request,
+      _response: express.Response,
+      next: express.NextFunction
     ) {
       try {
         const result = await hcaptchaVerify(
