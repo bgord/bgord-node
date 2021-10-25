@@ -57,3 +57,14 @@ export type ContentfulSpaceIdType = z.infer<typeof ContentfulSpaceId>;
 
 export const ContentfulAccessToken = z.string().length(43);
 export type ContentfulAccessTokenType = z.infer<typeof ContentfulAccessToken>;
+
+export const UrlWithoutTrailingSlash = z
+  .string()
+  .url()
+  .nonempty()
+  .refine(value => !value.endsWith('/'), {
+    message: 'url_cannot_end_with_trailing_slash',
+  });
+export type UrlWithoutTrailingSlashType = z.infer<
+  typeof UrlWithoutTrailingSlash
+>;
