@@ -68,3 +68,6 @@ export const UrlWithoutTrailingSlash = z
 export type UrlWithoutTrailingSlashType = z.infer<
   typeof UrlWithoutTrailingSlash
 >;
+
+export const TwitterApiBearerToken = z.string().length(112);
+export type TwitterApiBearerTokenType = z.infer<typeof TwitterApiBearerToken>;
