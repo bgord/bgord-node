@@ -61,9 +61,15 @@ export class EnvironmentValidator<SchemaType> {
   }
 
   load(): SchemaType & { type: NodeEnvironmentEnumType } {
-    const environment = dotenv.config({
-      path: this.environmentTypeToFilename[this.type],
-    }).parsed;
+    const path = this.environmentTypeToFilename[this.type];
+
+    const environment = dotenv.config({ path }).parsed;
+
+    if (!environment) {
+      Reporter.error(`Missing or empty environment file: ${path}`, {
+        quit: this.quit,
+      });
+    }
 
     return { ...this.schema.parse(environment), type: this.type };
   }
