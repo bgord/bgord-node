@@ -14,7 +14,7 @@ export class ApiKeyShield {
         return next();
       }
 
-      throw new AccessDeniedError({ reason: 'general' });
+      throw new AccessDeniedError({ reason: 'api-key' });
     };
   }
 }
