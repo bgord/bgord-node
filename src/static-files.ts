@@ -1,5 +1,7 @@
 import express from 'express';
 
+import expressStaticGzip from 'express-static-gzip';
+
 type StaticFilesPathType = string;
 const defaultStaticFilesPathType = 'static';
 
@@ -18,5 +20,13 @@ export class StaticFiles {
 
   applyTo(app: express.Application): void {
     app.use(express.static(this.path));
+    app.use(
+      '/',
+      expressStaticGzip(this.path, {
+        index: false,
+        enableBrotli: true,
+        orderPreference: ['br'],
+      })
+    );
   }
 }
