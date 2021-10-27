@@ -2,10 +2,13 @@ export type AccessDeniedErrorReasonType =
   | 'hcaptcha'
   | 'csrf'
   | 'general'
-  | 'api-key';
+  | 'api-key'
+  | string;
+
 export type AccessDeniedErrorConfigType = {
   reason: AccessDeniedErrorReasonType;
 };
+
 export class AccessDeniedError extends Error {
   reason: AccessDeniedErrorConfigType['reason'];
   constructor(config: AccessDeniedErrorConfigType) {
