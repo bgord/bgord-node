@@ -1,4 +1,8 @@
-export type AccessDeniedErrorReasonType = 'hcaptcha' | 'csrf' | 'general';
+export type AccessDeniedErrorReasonType =
+  | 'hcaptcha'
+  | 'csrf'
+  | 'general'
+  | 'api-key';
 export type AccessDeniedErrorConfigType = {
   reason: AccessDeniedErrorReasonType;
 };
