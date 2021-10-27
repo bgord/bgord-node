@@ -19,7 +19,6 @@ export class StaticFiles {
   }
 
   applyTo(app: express.Application): void {
-    app.use(express.static(this.path));
     app.use(
       '/',
       expressStaticGzip(this.path, {
