@@ -1,4 +1,6 @@
 import * as express from 'express';
+import { Middleware } from './middleware';
+
 import { AccessDeniedError } from './errors';
 
 import { ApiKeyType } from './schema';
@@ -10,11 +12,13 @@ export class ApiKeyShield {
       _response: express.Response,
       next: express.NextFunction
     ) {
-      if (request.body.apiKey === apiKey) {
-        return next();
-      }
+      return Middleware(() => {
+        if (request.body.apiKey === apiKey) {
+          return next();
+        }
 
-      throw new AccessDeniedError({ reason: 'api-key' });
+        throw new AccessDeniedError({ reason: 'api-key' });
+      });
     };
   }
 }
