@@ -7,7 +7,7 @@ import { ApiKeyType } from './schema';
 
 export class ApiKeyShield {
   static build(apiKey: ApiKeyType) {
-    return function verify(
+    return Middleware(function verify(
       request: express.Request,
       _response: express.Response,
       next: express.NextFunction
@@ -19,6 +19,6 @@ export class ApiKeyShield {
 
         throw new AccessDeniedError({ reason: 'api-key' });
       });
-    };
+    });
   }
 }
