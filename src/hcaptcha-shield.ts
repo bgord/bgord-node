@@ -17,7 +17,7 @@ export type HCaptchaVerifierConfigType = {
   mode: HCaptchaVerifierModeType;
 };
 
-export class HCaptchaVerifier {
+export class HCaptchaShield {
   secretKey: HCaptchaSecretKeyType;
   mode: HCaptchaVerifierModeType;
 
