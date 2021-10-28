@@ -17,3 +17,4 @@ export * from './csrf-shield';
 export * from './sleep';
 export * from './deep-merge';
 export * from './api-key-shield';
+export * from './route';
