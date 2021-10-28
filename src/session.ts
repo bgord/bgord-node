@@ -1,5 +1,6 @@
 import express from 'express';
 import session from 'express-session';
+import { flash } from 'express-flash-message';
 
 type SessionConfigType = session.SessionOptions;
 
@@ -22,5 +23,7 @@ export class Session {
         ...overrides,
       })
     );
+
+    app.use(flash({ sessionKeyName: 'flash' }));
   }
 }
