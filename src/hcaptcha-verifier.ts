@@ -6,6 +6,8 @@ import { HCaptchaSecretKey } from './schema';
 import { AccessDeniedError } from './errors';
 import { ExpressEssentialsConfig } from './express-essentials';
 
+import { Middleware } from './middleware';
+
 type HCaptchaSecretKeyType = z.infer<typeof HCaptchaSecretKey>;
 
 type HCaptchaVerifierModeType = 'local' | 'production';
@@ -27,7 +29,7 @@ export class HCaptchaVerifier {
   build() {
     const that = this;
 
-    return async function(
+    async function handler(
       request: express.Request,
       _response: express.Response,
       next: express.NextFunction
@@ -52,7 +54,9 @@ export class HCaptchaVerifier {
           reason: 'hcaptcha',
         });
       }
-    };
+    }
+
+    return Middleware(handler);
   }
 
   static helmetCspConfig: ExpressEssentialsConfig['helmet'] = {

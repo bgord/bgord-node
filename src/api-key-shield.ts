@@ -3,9 +3,11 @@ import * as express from 'express';
 import { AccessDeniedError } from './errors';
 import { ApiKeyType } from './schema';
 
+import { Middleware } from './middleware';
+
 export class ApiKeyShield {
   static build(apiKey: ApiKeyType) {
-    return function verify(
+    function verify(
       request: express.Request,
       _response: express.Response,
       next: express.NextFunction
@@ -15,6 +17,8 @@ export class ApiKeyShield {
       }
 
       throw new AccessDeniedError({ reason: 'api-key' });
-    };
+    }
+
+    return Middleware(verify);
   }
 }

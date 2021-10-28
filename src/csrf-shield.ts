@@ -4,6 +4,8 @@ import { v4 as uuid } from 'uuid';
 import { UUID } from './schema';
 import { AccessDeniedError } from './errors';
 
+import { Middleware } from './middleware';
+
 declare module 'express-session' {
   interface SessionData {
     _csrf: CsrfShieldFieldValueType;
@@ -28,7 +30,9 @@ export class CsrfShield {
     return next();
   }
 
-  static async verify(
+  static verify = Middleware(CsrfShield._verify);
+
+  static async _verify(
     request: express.Request,
     _response: express.Response,
     next: express.NextFunction
