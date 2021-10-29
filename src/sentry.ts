@@ -6,14 +6,25 @@ import { SentryDsnType } from './schema';
 
 type Constructor<T> = new (...args: any[]) => T;
 
-export class Sentry {
-  private dsn: SentryDsnType;
+type SentryConfig = {
+  dsn: SentryDsnType;
+  enabled: boolean;
+};
 
-  constructor(dsn: SentryDsnType) {
-    this.dsn = dsn;
+export class Sentry {
+  private dsn: SentryConfig['dsn'];
+  enabled: SentryConfig['enabled'];
+
+  constructor(config: SentryConfig) {
+    this.dsn = config.dsn;
+    this.enabled = config.enabled;
   }
 
   applyTo(app: express.Application): void {
+    if (!this.enabled) {
+      return;
+    }
+
     _Sentry.init({
       dsn: this.dsn,
       integrations: [
@@ -31,6 +42,10 @@ export class Sentry {
     app: express.Application,
     exclude: T[]
   ): void {
+    if (!this.enabled) {
+      return;
+    }
+
     app.use(
       _Sentry.Handlers.errorHandler({
         shouldHandleError(error) {
