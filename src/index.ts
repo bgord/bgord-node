@@ -19,3 +19,4 @@ export * from './deep-merge';
 export * from './api-key-shield';
 export * from './route';
 export * from './middleware';
+export * from "./sentry";

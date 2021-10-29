@@ -74,3 +74,6 @@ export type TwitterApiBearerTokenType = z.infer<typeof TwitterApiBearerToken>;
 
 export const ApiKey = z.string().length(64);
 export type ApiKeyType = z.infer<typeof ApiKey>;
+
+export const SentryDsn = z.string().email();
+export type SentryDsnType = z.infer<typeof SentryDsn>;

@@ -65,6 +65,8 @@
     "typescript": "4.1.5"
   },
   "dependencies": {
+    "@sentry/node": "^6.13.3",
+    "@sentry/tracing": "^6.13.3",
     "cors": "^2.8.5",
     "date-fns": "^2.22.1",
     "dotenv": "^10.0.0",
