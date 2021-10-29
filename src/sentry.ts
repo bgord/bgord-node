@@ -7,7 +7,7 @@ import { SentryDsnType } from './schema';
 type Constructor<T> = new (...args: any[]) => T;
 
 export class Sentry {
-  dsn: SentryDsnType;
+  private dsn: SentryDsnType;
 
   constructor(dsn: SentryDsnType) {
     this.dsn = dsn;
