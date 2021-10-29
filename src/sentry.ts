@@ -4,8 +4,6 @@ import * as Tracing from '@sentry/tracing';
 
 import { SentryDsnType } from './schema';
 
-type Constructor<T> = new (...args: any[]) => T;
-
 type SentryConfig = {
   dsn: SentryDsnType;
   enabled: boolean;
@@ -38,20 +36,14 @@ export class Sentry {
     app.use(_Sentry.Handlers.tracingHandler());
   }
 
-  report<T extends Constructor<Error>>(
+  report(
     app: express.Application,
-    exclude: T[]
+    handler: Parameters<typeof _Sentry.Handlers.errorHandler>[0]
   ): void {
     if (!this.enabled) {
       return;
     }
 
-    app.use(
-      _Sentry.Handlers.errorHandler({
-        shouldHandleError(error) {
-          return exclude.some(excluded => error instanceof excluded);
-        },
-      })
-    );
+    app.use(_Sentry.Handlers.errorHandler(handler));
   }
 }
