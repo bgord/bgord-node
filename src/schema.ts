@@ -77,3 +77,15 @@ export type ApiKeyType = z.infer<typeof ApiKey>;
 
 export const SentryDsn = z.string().url();
 export type SentryDsnType = z.infer<typeof SentryDsn>;
+
+export const TwitterAppKey = z.string().nonempty();
+export type TwitterAppKeyType = z.infer<typeof TwitterAppKey>;
+
+export const TwitterAppSecret = z.string().nonempty();
+export type TwitterAppSecretType = z.infer<typeof TwitterAppSecret>;
+
+export const TwitterAccessToken = z.string().nonempty();
+export type TwitterAccessTokenType = z.infer<typeof TwitterAccessToken>;
+
+export const TwitterAccessSecret = z.string().nonempty();
+export type TwitterAccessSecretType = z.infer<typeof TwitterAccessSecret>;
