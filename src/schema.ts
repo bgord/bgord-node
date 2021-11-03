@@ -95,3 +95,6 @@ export type RecaptchaSiteKeyType = z.infer<typeof RecaptchaSiteKey>;
 
 export const RecaptchaSecretKey = z.string().length(40);
 export type RecaptchaSecretKeyType = z.infer<typeof RecaptchaSecretKey>;
+
+export const FeatureFlag = z.literal('yes').or(z.literal('no'));
+export type FeatureFlagType = z.infer<typeof FeatureFlag>;
