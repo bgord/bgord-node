@@ -89,3 +89,9 @@ export type TwitterAccessTokenType = z.infer<typeof TwitterAccessToken>;
 
 export const TwitterAccessSecret = z.string().nonempty();
 export type TwitterAccessSecretType = z.infer<typeof TwitterAccessSecret>;
+
+export const RecaptchaSiteKey = z.string().length(40);
+export type RecaptchaSiteKeyType = z.infer<typeof RecaptchaSiteKey>;
+
+export const RecaptchaSecretKey = z.string().length(40);
+export type RecaptchaSecretKeyType = z.infer<typeof RecaptchaSecretKey>;

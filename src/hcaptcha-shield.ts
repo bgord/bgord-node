@@ -43,16 +43,11 @@ export class HCaptchaShield {
         );
 
         if (!result?.success) {
-          throw new AccessDeniedError({
-            reason: 'hcaptcha',
-          });
+          throw new AccessDeniedError({ reason: 'hcaptcha' });
         }
-
         return next();
       } catch (error) {
-        throw new AccessDeniedError({
-          reason: 'hcaptcha',
-        });
+        throw new AccessDeniedError({ reason: 'hcaptcha' });
       }
     }
 

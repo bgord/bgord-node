@@ -3,6 +3,7 @@ export type AccessDeniedErrorReasonType =
   | 'csrf'
   | 'general'
   | 'api-key'
+  | 'recaptcha'
   | string;
 
 export type AccessDeniedErrorConfigType = {
