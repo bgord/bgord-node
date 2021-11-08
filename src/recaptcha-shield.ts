@@ -30,13 +30,17 @@ export class RecaptchaShield {
       next: express.NextFunction
     ) {
       try {
-        return recaptcha.verify(request, () => {
-          if (!request?.recaptcha?.error) {
-            return next();
-          } else {
-            throw new AccessDeniedError({ reason: 'recaptcha' });
-          }
+        await new Promise((resolve, reject) => {
+          recaptcha.verify(request, error => {
+            if (error) {
+              return reject();
+            } else {
+              return resolve(null);
+            }
+          });
         });
+
+        return next();
       } catch (error) {
         throw new AccessDeniedError({ reason: 'recaptcha' });
       }
