@@ -98,3 +98,6 @@ export type RecaptchaSecretKeyType = z.infer<typeof RecaptchaSecretKey>;
 
 export const FeatureFlag = z.literal('yes').or(z.literal('no'));
 export type FeatureFlagType = z.infer<typeof FeatureFlag>;
+
+export const Localhost = z.literal('127.0.0.1');
+export type LocalhostType = z.infer<typeof Localhost>;
