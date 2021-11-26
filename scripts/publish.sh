@@ -23,11 +23,23 @@ success "All changes are pushed to the remote master branch"
 info "Run yarn version --{major,minor,patch}"
 press_enter_to_continue
 
-info "Push to the master branch with --follow-tags"
-press_enter_to_continue
+git push --follow-tags
+success "Pushed the version commit and new tag to origin/master"
 
-info "Run npm publish --dry-run"
-press_enter_to_continue
+if test ! $(npm whoami)
+then
+  error "You're not logged in to npm"
+  info "Run [npm login], you can find the credentials on Keeper"
+  exit 1
+fi
+success "You're logged in to npm"
+
+npm publish --dry-run
+success "Ran npm publish --dry-run"
 
 info "Run npm publish"
 press_enter_to_continue
+
+npm publish
+
+success "The package has been published!"
