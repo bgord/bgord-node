@@ -24,5 +24,16 @@ export class GracefulShutdown {
         Reporter.info('HTTP server closed');
       });
     });
+
+    process.on('unhandledRejection', async () => {
+      Reporter.info(
+        'UnhandledPromiseRejectionWarning received: closing HTTP server'
+      );
+
+      server.close(async () => {
+        await callback?.();
+        Reporter.info('HTTP server closed');
+      });
+    });
   }
 }
