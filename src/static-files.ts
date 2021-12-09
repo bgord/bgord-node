@@ -5,17 +5,21 @@ import expressStaticGzip from 'express-static-gzip';
 type StaticFilesPathType = string;
 const defaultStaticFilesPathType = 'static';
 
-export type StaticFilesConfigType = Partial<{
-  path: StaticFilesPathType;
-}>;
+type StaticGzipOptionsType = expressStaticGzip.ExpressStaticGzipOptions;
+
+export type StaticFilesConfigType = Partial<
+  { path: StaticFilesPathType } & StaticGzipOptionsType
+>;
 
 export class StaticFiles {
   path: StaticFilesPathType = defaultStaticFilesPathType;
+  staticGzipOptions: StaticGzipOptionsType = {};
 
   constructor(config?: StaticFilesConfigType) {
-    if (config?.path) {
-      this.path = config?.path;
-    }
+    const { path, ...expressStaticGzipOptions } = config ?? {};
+
+    this.path = path ?? defaultStaticFilesPathType;
+    this.staticGzipOptions = expressStaticGzipOptions;
   }
 
   applyTo(app: express.Application): void {
@@ -25,6 +29,7 @@ export class StaticFiles {
         index: false,
         enableBrotli: true,
         orderPreference: ['br'],
+        ...this.staticGzipOptions,
       })
     );
   }
