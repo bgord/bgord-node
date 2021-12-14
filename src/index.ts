@@ -21,3 +21,4 @@ export * from './route';
 export * from './middleware';
 export * from "./sentry";
 export * from "./recaptcha-shield";
+export * from "./mailerlite";
