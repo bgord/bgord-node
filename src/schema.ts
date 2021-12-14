@@ -101,3 +101,6 @@ export type FeatureFlagType = z.infer<typeof FeatureFlag>;
 
 export const Localhost = z.literal('127.0.0.1');
 export type LocalhostType = z.infer<typeof Localhost>;
+
+export const MailerliteApiKey = z.string().length(32);
+export type MailerliteApiKeyType = z.infer<typeof MailerliteApiKey>;
