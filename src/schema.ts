@@ -104,3 +104,12 @@ export type LocalhostType = z.infer<typeof Localhost>;
 
 export const MailerliteApiKey = z.string().length(32);
 export type MailerliteApiKeyType = z.infer<typeof MailerliteApiKey>;
+
+export const MailerliteGroupId = z
+  .string()
+  .refine(value => !isNaN((value as unknown) as number) && value, {
+    message: 'invalid_mailerlite_group_id',
+  })
+  .transform(value => Number(value))
+  .refine(value => value > 0, { message: 'invalid_mailerlite_group_id' });
+export type MailerliteGroupIdType = z.infer<typeof MailerliteGroupId>;
