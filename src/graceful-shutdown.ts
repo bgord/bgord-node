@@ -25,10 +25,13 @@ export class GracefulShutdown {
       });
     });
 
-    process.on('unhandledRejection', async () => {
+    process.on('unhandledRejection', async event => {
       Reporter.info(
         'UnhandledPromiseRejectionWarning received: closing HTTP server'
       );
+
+      /* eslint-disable no-console */
+      console.log(event);
 
       server.close(async () => {
         await callback?.();
