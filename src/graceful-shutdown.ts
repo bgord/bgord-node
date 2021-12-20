@@ -31,7 +31,7 @@ export class GracefulShutdown {
       );
 
       /* eslint-disable no-console */
-      console.log(event);
+      console.log(JSON.stringify(event));
 
       server.close(async () => {
         await callback?.();
