@@ -4,6 +4,7 @@ export type AccessDeniedErrorReasonType =
   | 'general'
   | 'api-key'
   | 'recaptcha'
+  | 'auth'
   | string;
 
 export type AccessDeniedErrorConfigType = {
