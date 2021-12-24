@@ -17,3 +17,10 @@ export class AccessDeniedError extends Error {
     this.reason = config.reason;
   }
 }
+
+export class InvalidCredentialsError extends Error {
+  constructor() {
+    super();
+    Object.setPrototypeOf(this, InvalidCredentialsError.prototype);
+  }
+}
