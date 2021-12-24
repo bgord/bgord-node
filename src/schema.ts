@@ -113,3 +113,15 @@ export const MailerliteGroupId = z
   .transform(value => Number(value))
   .refine(value => value > 0, { message: 'invalid_mailerlite_group_id' });
 export type MailerliteGroupIdType = z.infer<typeof MailerliteGroupId>;
+
+export const AdminUsername = z
+  .string()
+  .min(5)
+  .max(20);
+export type AdminUsernameType = z.infer<typeof AdminUsername>;
+
+export const AdminPassword = z
+  .string()
+  .min(5)
+  .max(48);
+export type AdminPasswordType = z.infer<typeof AdminPassword>;
