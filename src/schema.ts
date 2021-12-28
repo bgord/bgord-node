@@ -125,3 +125,9 @@ export const AdminPassword = z
   .min(5)
   .max(48);
 export type AdminPasswordType = z.infer<typeof AdminPassword>;
+
+export const Timestamp = z
+  .number()
+  .positive()
+  .default(() => Date.now());
+export type TimestampType = z.infer<typeof Timestamp>;
