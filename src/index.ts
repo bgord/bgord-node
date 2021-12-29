@@ -23,3 +23,4 @@ export * from "./sentry";
 export * from "./recaptcha-shield";
 export * from "./mailerlite";
 export * from "./env-user-auth-shield";
+export * from "./uuid";
