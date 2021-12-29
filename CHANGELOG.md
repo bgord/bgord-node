@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.3](https://github.com/bgord/bgord-node/compare/v0.58.2...v0.58.3) (2021-12-29)
+
+
+### Features
+
+* add uuid generator ([f603f0f](https://github.com/bgord/bgord-node/commit/f603f0f378c4587d43447149051760e277a5c239))
+
 ### [0.58.2](https://github.com/bgord/bgord-node/compare/v0.58.1...v0.58.2) (2021-12-28)
 
 
