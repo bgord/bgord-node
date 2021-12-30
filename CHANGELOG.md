@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.4](https://github.com/bgord/bgord-node/compare/v0.58.3...v0.58.4) (2021-12-30)
+
+
+### Features
+
+* add timestapm to reporter method logs ([8921d73](https://github.com/bgord/bgord-node/commit/8921d730bfbd9a85c87bc1dad4250e543223aa10))
+
 ### [0.58.3](https://github.com/bgord/bgord-node/compare/v0.58.2...v0.58.3) (2021-12-29)
 
 
