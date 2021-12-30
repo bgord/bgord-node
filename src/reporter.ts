@@ -1,14 +1,23 @@
+import { formatISO } from 'date-fns';
+
 export class Reporter {
+  private static getTimestamp() {
+    return formatISO(new Date());
+  }
+
   static info(...args: string[]) {
-    console.log('[ info ] ', ...args);
+    const ts = Reporter.getTimestamp();
+    console.log(`[ info ][${ts}]`, ...args);
   }
 
   static success(...args: string[]) {
-    console.log('[ success ]', ...args);
+    const ts = Reporter.getTimestamp();
+    console.log(`[ success ][${ts}]`, ...args);
   }
 
   static error(message: string, options?: { quit: boolean }) {
-    console.log('  [error]', message);
+    const ts = Reporter.getTimestamp();
+    console.log(`  [error][${ts}]`, message);
 
     if (options?.quit) {
       process.exit(1);
