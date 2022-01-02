@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.8](https://github.com/bgord/bgord-node/compare/v0.58.7...v0.58.8) (2022-01-02)
+
+
+### Bug Fixes
+
+* async Policy#perform method ([c694793](https://github.com/bgord/bgord-node/commit/c694793488b016b6044632b5ef832894607a80e6))
+
 ### [0.58.7](https://github.com/bgord/bgord-node/compare/v0.58.6...v0.58.7) (2022-01-02)
 
 
