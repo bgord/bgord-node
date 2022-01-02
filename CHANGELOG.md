@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.6](https://github.com/bgord/bgord-node/compare/v0.58.5...v0.58.6) (2022-01-02)
+
+
+### Features
+
+* add throw method to the abstract policy class ([e3a8132](https://github.com/bgord/bgord-node/commit/e3a813229f488317cf28ce7934331b500097a46d))
+
 ### [0.58.5](https://github.com/bgord/bgord-node/compare/v0.58.4...v0.58.5) (2022-01-02)
 
 
