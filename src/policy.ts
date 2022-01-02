@@ -11,8 +11,8 @@ export abstract class Policy<T extends BasePolicyConfig> {
     throw new this.error();
   }
 
-  perform(config: T) {
-    if (this.fails(config)) {
+  async perform(config: T) {
+    if (await this.fails(config)) {
       this.throw();
     }
   }
