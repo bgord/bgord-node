@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.5](https://github.com/bgord/bgord-node/compare/v0.58.4...v0.58.5) (2022-01-02)
+
+
+### Features
+
+* add abstract Policy class ([aff71d9](https://github.com/bgord/bgord-node/commit/aff71d9767d5d2ee60e417be810cce30d8803c20))
+* add ts-utils ([d3764ef](https://github.com/bgord/bgord-node/commit/d3764ef1df8c59c684a7e0498f15bbf29f47b9f0))
+
 ### [0.58.4](https://github.com/bgord/bgord-node/compare/v0.58.3...v0.58.4) (2021-12-30)
 
 
