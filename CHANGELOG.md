@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.7](https://github.com/bgord/bgord-node/compare/v0.58.6...v0.58.7) (2022-01-02)
+
+
+### Features
+
+* add policy#perform ([75d676b](https://github.com/bgord/bgord-node/commit/75d676b36fa23c79ed188e42dfc65db1deb9e136))
+
 ### [0.58.6](https://github.com/bgord/bgord-node/compare/v0.58.5...v0.58.6) (2022-01-02)
 
 
