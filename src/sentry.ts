@@ -4,7 +4,7 @@ import * as Tracing from '@sentry/tracing';
 
 import { SentryDsnType } from './schema';
 
-type Constructor<T> = new (...args: any[]) => T;
+import * as ts from './ts-utils';
 
 type SentryConfig = {
   dsn: SentryDsnType;
@@ -38,7 +38,7 @@ export class Sentry {
     app.use(_Sentry.Handlers.tracingHandler());
   }
 
-  report<T extends Constructor<Error>>(
+  report<T extends ts.Constructor<Error>>(
     app: express.Application,
     exclude: T[]
   ): void {
