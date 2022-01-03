@@ -17,10 +17,15 @@ export class Reporter {
 
   static error(message: string, options?: { quit: boolean }) {
     const ts = Reporter.getTimestamp();
-    console.log(`  [error][${ts}]`, message);
+    console.log(`[ error ][${ts}]`, message);
 
     if (options?.quit) {
       process.exit(1);
     }
+  }
+
+  static raw(label: string, arg: any) {
+    const ts = Reporter.getTimestamp();
+    console.log(`[ raw ][${ts}]`, `\n${label}\n`, JSON.stringify(arg));
   }
 }
