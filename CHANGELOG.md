@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.9](https://github.com/bgord/bgord-node/compare/v0.58.8...v0.58.9) (2022-01-03)
+
+
+### Features
+
+* add reporter#raw message ([6105c6c](https://github.com/bgord/bgord-node/commit/6105c6cff16b0ecabdb85a983b93920a28c27d12))
+
 ### [0.58.8](https://github.com/bgord/bgord-node/compare/v0.58.7...v0.58.8) (2022-01-02)
 
 
