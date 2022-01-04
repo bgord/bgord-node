@@ -5,7 +5,6 @@ export const Event = z.object({
   id: Schema.UUID,
   createdAt: z.date(),
 
-  stream: z.string().nonempty(),
   name: z.string().nonempty(),
   version: z
     .number()
