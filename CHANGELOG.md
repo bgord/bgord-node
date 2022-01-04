@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.11](https://github.com/bgord/bgord-node/compare/v0.58.10...v0.58.11) (2022-01-04)
+
+
+### Features
+
+* add stream to event draft ([67ea4b1](https://github.com/bgord/bgord-node/commit/67ea4b15fc240a44c12906d6e2382a5de199ceb1))
+
 ### [0.58.10](https://github.com/bgord/bgord-node/compare/v0.58.9...v0.58.10) (2022-01-04)
 
 
