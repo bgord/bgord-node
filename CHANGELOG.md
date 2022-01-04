@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.10](https://github.com/bgord/bgord-node/compare/v0.58.9...v0.58.10) (2022-01-04)
+
+
+### Features
+
+* add brand types ([b40ae54](https://github.com/bgord/bgord-node/commit/b40ae5427946e92353aba6df509ba871cc41f459))
+
 ### [0.58.9](https://github.com/bgord/bgord-node/compare/v0.58.8...v0.58.9) (2022-01-03)
 
 
