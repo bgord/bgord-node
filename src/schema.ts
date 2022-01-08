@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { v4 as uuid } from 'uuid';
+import { Brand, toBrand } from './brand';
 
 export const StringToNumber = z
   .string()
@@ -131,3 +132,19 @@ export const Timestamp = z
   .positive()
   .default(() => Date.now());
 export type TimestampType = z.infer<typeof Timestamp>;
+
+const UploadedFileSchema = z.object({
+  fieldName: z.string().nonempty(),
+  originalFilename: z.string().nonempty(),
+  path: z.string().nonempty(),
+  headers: z.record(z.string()),
+  size: z
+    .number()
+    .int()
+    .positive(),
+});
+export type UploadedFileType = Brand<
+  'uploaded-file',
+  z.infer<typeof UploadedFileSchema>
+>;
+export const UploadedFile = toBrand<UploadedFileType>(UploadedFileSchema);
