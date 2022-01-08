@@ -3,7 +3,7 @@ import express from 'express';
 import files from 'express-form-data';
 import os from 'os';
 
-import { Middleware } from "./middleware";
+import { Middleware } from './middleware';
 
 type FileUploaderConfigType = files.FormDataOptions;
 
@@ -31,4 +31,5 @@ export class FileUploader {
       files.format(),
       files.union(),
     ].map(handler => Middleware(handler));
+  }
 }
