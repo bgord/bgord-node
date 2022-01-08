@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.14](https://github.com/bgord/bgord-node/compare/v0.58.12...v0.58.14) (2022-01-08)
+
+
+### Features
+
+* add file-uploader ([6592263](https://github.com/bgord/bgord-node/commit/65922637b6f583b27b849c71c9408280dc54fdcb))
+
 ### [0.58.13](https://github.com/bgord/bgord-node/compare/v0.58.12...v0.58.13) (2022-01-08)
 
 
