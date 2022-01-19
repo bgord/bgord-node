@@ -1,5 +1,6 @@
 import express from 'express';
 import session from 'express-session';
+import FileStore from 'session-file-store';
 
 type SessionConfigType = session.SessionOptions;
 
@@ -24,5 +25,12 @@ export class Session {
         ...overrides,
       })
     );
+  }
+}
+
+export class SessionFileStore {
+  static build(options: FileStore.Options = {}) {
+    const Store = FileStore(Session.session);
+    return new Store(options);
   }
 }
