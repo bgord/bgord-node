@@ -6,6 +6,8 @@ type SessionConfigType = session.SessionOptions;
 export class Session {
   config: SessionConfigType;
 
+  static session = session;
+
   constructor(config: SessionConfigType) {
     this.config = config;
   }
