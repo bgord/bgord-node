@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.16](https://github.com/bgord/bgord-node/compare/v0.58.15...v0.58.16) (2022-01-19)
+
+
+### Features
+
+* add ootb support for session file store ([0efb053](https://github.com/bgord/bgord-node/commit/0efb0532c27b0242f02da315d604d068b710884e))
+* expose express-session on the session class ([91cadbf](https://github.com/bgord/bgord-node/commit/91cadbfc25e515c0b4fd9a2ce6e5d09d3fdee7f5))
+
 ### [0.58.15](https://github.com/bgord/bgord-node/compare/v0.58.14...v0.58.15) (2022-01-08)
 
 
