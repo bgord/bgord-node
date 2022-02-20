@@ -5,7 +5,7 @@ import * as Schema from './schema';
 declare global {
   namespace Express {
     export interface Request {
-      timeZoneOffset: number;
+      timeZoneOffset: Schema.TimeZoneOffsetType;
     }
   }
 }

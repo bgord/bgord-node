@@ -45,7 +45,7 @@ export function addExpressEssentials(
   const staticFiles = new StaticFiles(staticFilesConfig);
   staticFiles.applyTo(app);
 
-  new MethodOverride().applyTo(app);
+  MethodOverride.applyTo(app);
   TimeZoneOffset.applyTo(app);
 }
 
