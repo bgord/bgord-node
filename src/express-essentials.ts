@@ -7,6 +7,7 @@ import _ from 'lodash';
 import { Logger, LoggerConfigType } from './logger';
 import { StaticFiles, StaticFilesConfigType } from './static-files';
 import { MethodOverride } from './method-override';
+import { TimeZoneOffset } from './time-zone-offset';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -45,6 +46,7 @@ export function addExpressEssentials(
   staticFiles.applyTo(app);
 
   new MethodOverride().applyTo(app);
+  TimeZoneOffset.applyTo(app);
 }
 
 export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {

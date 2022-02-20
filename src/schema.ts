@@ -148,3 +148,11 @@ export type UploadedFileType = Brand<
   z.infer<typeof UploadedFileSchema>
 >;
 export const UploadedFile = toBrand<UploadedFileType>(UploadedFileSchema);
+
+export const TimeZoneOffset = z
+  .string()
+  .or(z.undefined())
+  .transform(value => Number(value))
+  .transform(value => (isNaN(value) ? 0 : value));
+
+export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffset>;
