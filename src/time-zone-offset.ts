@@ -5,7 +5,11 @@ import * as Schema from './schema';
 declare global {
   namespace Express {
     export interface Request {
-      timeZoneOffset: Schema.TimeZoneOffsetType;
+      timeZoneOffset: {
+        minutes: Schema.TimeZoneOffsetType;
+        seconds: Schema.TimeZoneOffsetType;
+        miliseconds: Schema.TimeZoneOffsetType;
+      };
     }
   }
 }
@@ -17,7 +21,11 @@ export class TimeZoneOffset {
         request.header('time-zone-offset')
       );
 
-      request.timeZoneOffset = timeZoneOffset;
+      request.timeZoneOffset = {
+        minutes: timeZoneOffset,
+        seconds: timeZoneOffset * 60,
+        miliseconds: timeZoneOffset * 60 * 1000,
+      };
 
       return next();
     });
