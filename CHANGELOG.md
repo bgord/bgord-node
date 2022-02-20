@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.17](https://github.com/bgord/bgord-node/compare/v0.58.16...v0.58.17) (2022-02-20)
+
+
+### Features
+
+* add time zone offset middleware ([5f370db](https://github.com/bgord/bgord-node/commit/5f370db872ce92176414fd6dd665bdc23b8e6ef6))
+
 ### [0.58.16](https://github.com/bgord/bgord-node/compare/v0.58.15...v0.58.16) (2022-01-19)
 
 
