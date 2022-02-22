@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.19](https://github.com/bgord/bgord-node/compare/v0.58.18...v0.58.19) (2022-02-22)
+
+
+### Features
+
+* add async return type ([f62fd47](https://github.com/bgord/bgord-node/commit/f62fd47a276f87ec059895d3660cceb2658c1b96))
+
 ### [0.58.18](https://github.com/bgord/bgord-node/compare/v0.58.17...v0.58.18) (2022-02-20)
 
 
