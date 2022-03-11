@@ -157,6 +157,6 @@ export const TimeZoneOffset = z
 
 export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffset>;
 
-export const Locale = z.string().default('en');
+export const LanguageName = z.string().default('en');
 
-export type LocaleType = z.infer<typeof Locale>;
+export type LanguageNameType = z.infer<typeof LanguageName>;

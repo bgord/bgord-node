@@ -13,7 +13,7 @@ export * from './file-uploader';
 export * from './graceful-shutdown';
 export * from './handlebars';
 export * from './hcaptcha-shield';
-export * from './locale';
+export * from './language';
 export * from './logger';
 export * from './mailer';
 export * from './mailerlite';
