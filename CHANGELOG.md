@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.25](https://github.com/bgord/bgord-node/compare/v0.58.24...v0.58.25) (2022-03-11)
+
+
+### Features
+
+* add i18n service ([5f67e05](https://github.com/bgord/bgord-node/commit/5f67e05896305cbbc8d142afa5bdc91095f097f3))
+
 ### [0.58.24](https://github.com/bgord/bgord-node/compare/v0.58.23...v0.58.24) (2022-03-11)
 
 
