@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.22](https://github.com/bgord/bgord-node/compare/v0.58.21...v0.58.22) (2022-03-11)
+
+
+### Features
+
+* improve language header extractor ([f6450c0](https://github.com/bgord/bgord-node/commit/f6450c02fcb018fe38eb94482be945c0bdbdbedd))
+
 ### [0.58.21](https://github.com/bgord/bgord-node/compare/v0.58.20...v0.58.21) (2022-03-11)
 
 ### [0.58.20](https://github.com/bgord/bgord-node/compare/v0.58.19...v0.58.20) (2022-03-11)
