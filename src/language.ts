@@ -11,6 +11,7 @@ declare global {
     export interface Request {
       language: Schema.LanguageNameType;
       supportedLanguages: Schema.LanguageNameType[];
+      translationsPath: PathLike;
     }
   }
 }
@@ -18,11 +19,13 @@ declare global {
 export class Language {
   static applyTo(
     app: express.Application,
-    path: PathLike,
+    translationsPath: PathLike,
     defaultLanguageName: Schema.LanguageNameType = 'en'
   ): void {
     app.use(async (request, _response, next) => {
-      const supportedLanguages = await Language.getSupportedLanguages(path);
+      const supportedLanguages = await Language.getSupportedLanguages(
+        translationsPath
+      );
 
       const acceptedLanguages = parser.parse(
         request.headers['accept-language']
@@ -32,6 +35,7 @@ export class Language {
 
       request.supportedLanguages = supportedLanguages;
       request.language = languageName ?? defaultLanguageName;
+      request.translationsPath = translationsPath;
 
       return next();
     });
