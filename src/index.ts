@@ -31,3 +31,4 @@ export * from './time-zone-offset';
 export * from './ts-utils';
 export * from './types';
 export * from './uuid';
+export * from './i18n';
