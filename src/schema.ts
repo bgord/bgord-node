@@ -156,3 +156,7 @@ export const TimeZoneOffset = z
   .transform(value => (isNaN(value) ? 0 : value));
 
 export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffset>;
+
+export const Locale = z.string().default('en');
+
+export type LocaleType = z.infer<typeof Locale>;
