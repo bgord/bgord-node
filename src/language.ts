@@ -6,6 +6,8 @@ import parser from 'accept-language-parser';
 import * as Schema from './schema';
 import { Reporter } from './reporter';
 
+export type TranslationsType = Record<string, string>;
+
 declare global {
   namespace Express {
     export interface Request {
@@ -41,6 +43,23 @@ export class Language {
     });
   }
 
+  static async getTranslations(
+    language: Schema.LanguageNameType,
+    translationsPath: string
+  ): Promise<TranslationsType> {
+    try {
+      const file = await fs.readFile(
+        Path.resolve(translationsPath, `${language}.json`)
+      );
+
+      return JSON.parse(file.toString());
+    } catch (error) {
+      Reporter.raw('I18n#getTranslations', error);
+
+      return {};
+    }
+  }
+
   private static async getSupportedLanguages(
     path: PathLike
   ): Promise<Schema.LanguageNameType[]> {
@@ -49,7 +68,7 @@ export class Language {
 
       return supportedLanguageFiles.map(filename => Path.parse(filename).name);
     } catch (error) {
-      Reporter.raw('I18n#build', error);
+      Reporter.raw('I18n#getSupportedLanguages', error);
 
       return [];
     }
