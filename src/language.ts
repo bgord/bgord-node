@@ -11,8 +11,8 @@ export type TranslationsType = Record<string, string>;
 declare global {
   namespace Express {
     export interface Request {
-      language: Schema.LanguageNameType;
-      supportedLanguages: Schema.LanguageNameType[];
+      language: Schema.LanguageType;
+      supportedLanguages: Schema.LanguageType[];
       translationsPath: PathLike;
     }
   }
@@ -22,7 +22,7 @@ export class Language {
   static applyTo(
     app: express.Application,
     translationsPath: PathLike,
-    defaultLanguageName: Schema.LanguageNameType = 'en'
+    defaultLanguageName: Schema.LanguageType = 'en'
   ): void {
     app.use(async (request, _response, next) => {
       const supportedLanguages = await Language.getSupportedLanguages(
@@ -44,12 +44,12 @@ export class Language {
   }
 
   static async getTranslations(
-    language: Schema.LanguageNameType,
-    translationsPath: string
+    language: Schema.LanguageType,
+    translationsPath: PathLike
   ): Promise<TranslationsType> {
     try {
       const file = await fs.readFile(
-        Path.resolve(translationsPath, `${language}.json`)
+        Path.resolve(translationsPath as string, `${language}.json`)
       );
 
       return JSON.parse(file.toString());
@@ -61,11 +61,10 @@ export class Language {
   }
 
   private static async getSupportedLanguages(
-    path: PathLike
-  ): Promise<Schema.LanguageNameType[]> {
+    traslationsPath: PathLike
+  ): Promise<Schema.LanguageType[]> {
     try {
-      const supportedLanguageFiles = await fs.readdir(path);
-
+      const supportedLanguageFiles = await fs.readdir(traslationsPath);
       return supportedLanguageFiles.map(filename => Path.parse(filename).name);
     } catch (error) {
       Reporter.raw('I18n#getSupportedLanguages', error);
