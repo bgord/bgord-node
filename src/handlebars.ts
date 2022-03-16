@@ -7,8 +7,7 @@ import { Dates } from './dates';
 export type HandlebarsConfigType = handlebars.ExphbsOptions;
 
 export class Handlebars {
-  config: HandlebarsConfigType;
-  handlebarsDefaultConfig: HandlebarsConfigType = {
+  static handlebarsDefaultConfig: HandlebarsConfigType = {
     extname: '.hbs',
     helpers: {
       datetime: (value: Date) => Dates.datetime(value),
@@ -19,12 +18,13 @@ export class Handlebars {
     },
   };
 
-  constructor(config?: HandlebarsConfigType) {
-    this.config = config ?? this.handlebarsDefaultConfig;
-  }
+  static applyTo(
+    app: express.Application,
+    _config?: HandlebarsConfigType
+  ): void {
+    const config = _config ?? Handlebars.handlebarsDefaultConfig;
 
-  applyTo(app: express.Application): void {
-    app.engine('hbs', handlebars.create(this.config).engine);
+    app.engine('hbs', handlebars.create(config).engine);
     app.set('view engine', 'hbs');
   }
 }
