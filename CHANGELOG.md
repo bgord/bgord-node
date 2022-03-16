@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.26](https://github.com/bgord/bgord-node/compare/v0.58.25...v0.58.26) (2022-03-16)
+
+
+### Features
+
+* add get translations method ([73e2494](https://github.com/bgord/bgord-node/commit/73e2494084274505107609075a8e013707987083))
+
 ### [0.58.25](https://github.com/bgord/bgord-node/compare/v0.58.24...v0.58.25) (2022-03-11)
 
 
