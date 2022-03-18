@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.28](https://github.com/bgord/bgord-node/compare/v0.58.27...v0.58.28) (2022-03-18)
+
+
+### Features
+
+* add filter ([68d44bf](https://github.com/bgord/bgord-node/commit/68d44bf9976fc12ebc7397182219f3199acec1c5))
+
 ### [0.58.27](https://github.com/bgord/bgord-node/compare/v0.58.26...v0.58.27) (2022-03-16)
 
 
