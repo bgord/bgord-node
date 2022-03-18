@@ -10,6 +10,7 @@ export * from './environment-validator';
 export * from './event';
 export * from './express-essentials';
 export * from './file-uploader';
+export * from './filter';
 export * from './graceful-shutdown';
 export * from './handlebars';
 export * from './hcaptcha-shield';
