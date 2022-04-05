@@ -133,15 +133,18 @@ export const Timestamp = z
   .default(() => Date.now());
 export type TimestampType = z.infer<typeof Timestamp>;
 
+export const FileSizeInBytes = z
+  .number()
+  .int()
+  .positive();
+export type FileSizeInBytesType = z.infer<typeof FileSizeInBytes>;
+
 const UploadedFileSchema = z.object({
   fieldName: z.string().nonempty(),
   originalFilename: z.string().nonempty(),
   path: z.string().nonempty(),
   headers: z.record(z.string()),
-  size: z
-    .number()
-    .int()
-    .positive(),
+  size: FileSizeInBytes,
 });
 export type UploadedFileType = Brand<
   'uploaded-file',

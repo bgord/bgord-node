@@ -1,5 +1,6 @@
 export * as Schema from './schema';
 export * as Errors from './errors';
+export * as VO from './value-objects';
 export * from './api-key-shield';
 export * from './brand';
 export * from './csrf-shield';
