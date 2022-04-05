@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.30](https://github.com/bgord/bgord-node/compare/v0.58.28...v0.58.30) (2022-04-05)
+
+
+### Features
+
+* add file-size vo ([6883e96](https://github.com/bgord/bgord-node/commit/6883e968bd9166f0c3a27edcda16122f443700c0))
+
 ### [0.58.29](https://github.com/bgord/bgord-node/compare/v0.58.28...v0.58.29) (2022-04-05)
 
 
