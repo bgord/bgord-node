@@ -20,6 +20,7 @@ export * from './logger';
 export * from './mailer';
 export * from './mailerlite';
 export * from './middleware';
+export * from './pagination';
 export * from './policy';
 export * from './recaptcha-shield';
 export * from './reporter';
