@@ -17,6 +17,7 @@ const Page = z
   .number()
   .int()
   .positive()
+  .optional()
   .default(1);
 export type PageType = z.infer<typeof Page>;
 
@@ -25,7 +26,9 @@ export type PaginationValuesType = Record<string, unknown>;
 
 export class Pagination {
   static parse(values: PaginationValuesType, _take?: TakeType): PaginationType {
-    const page = Page.parse(Number(values.page));
+    const value = Number(values.page);
+    const page = Number.isNaN(value) ? 1 : Page.parse(value);
+
     const take = Take.parse(_take);
 
     const skip = (page - 1) * take;
