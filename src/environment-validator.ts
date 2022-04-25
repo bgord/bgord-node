@@ -52,7 +52,9 @@ export class EnvironmentValidator<SchemaType> {
       this.type = result.data;
     } else {
       if (this.quit) {
-        Reporter.error(`Invalid EnvironmentType: ${config.type}`);
+        Reporter.error(`Invalid EnvironmentType: ${config.type}`, {
+          quit: true,
+        });
         process.exit(1);
       } else {
         throw new NodeEnvironmentError();
