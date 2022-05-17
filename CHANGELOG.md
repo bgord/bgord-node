@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.34](https://github.com/bgord/bgord-node/compare/v0.58.33...v0.58.34) (2022-05-17)
+
+
+### Features
+
+* add server-timing api ([4263492](https://github.com/bgord/bgord-node/commit/4263492fe4086c9fe5dc5619d1228435fbcbc9b2))
+
 ### [0.58.33](https://github.com/bgord/bgord-node/compare/v0.58.32...v0.58.33) (2022-04-25)
 
 ### [0.58.32](https://github.com/bgord/bgord-node/compare/v0.58.31...v0.58.32) (2022-04-14)
