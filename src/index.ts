@@ -1,5 +1,5 @@
-export * as Schema from './schema';
 export * as Errors from './errors';
+export * as Schema from './schema';
 export * as VO from './value-objects';
 export * from './api-key-shield';
 export * from './brand';
@@ -26,6 +26,7 @@ export * from './recaptcha-shield';
 export * from './reporter';
 export * from './route';
 export * from './sentry';
+export * from './server-timing';
 export * from './session';
 export * from './sleep';
 export * from './sqlite';
