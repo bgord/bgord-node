@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.36](https://github.com/bgord/bgord-node/compare/v0.58.35...v0.58.36) (2022-06-30)
+
+
+### Bug Fixes
+
+* add missing next() call in EnvUserAuthShield ([8ec3300](https://github.com/bgord/bgord-node/commit/8ec33007a81c8f3a12bbe352dd8387c8910ac026))
+
 ### [0.58.35](https://github.com/bgord/bgord-node/compare/v0.58.34...v0.58.35) (2022-06-30)
 
 
