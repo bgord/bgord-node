@@ -42,9 +42,7 @@ export class EnvUserAuthShield {
 
   attach = Middleware(passport.authenticate('local'));
 
-  detach = Middleware(request =>
-    request.logout({ keepSessionInfo: false }, noop)
-  );
+  detach = Middleware(this._detach);
 
   verify = Middleware(this._verify);
 
@@ -60,5 +58,14 @@ export class EnvUserAuthShield {
     throw new Errors.AccessDeniedError({
       reason: 'auth',
     });
+  }
+
+  private async _detach(
+    request: express.Request,
+    _response: express.Response,
+    next: express.NextFunction
+  ) {
+    request.logout({ keepSessionInfo: false }, noop);
+    return next();
   }
 }
