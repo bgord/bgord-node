@@ -2,6 +2,7 @@ import express from 'express';
 import passport from 'passport';
 import { Strategy as PassportLocalStrategy } from 'passport-local';
 
+import { noop } from './noop';
 import { Middleware } from './middleware';
 import * as Errors from './errors';
 
@@ -40,6 +41,10 @@ export class EnvUserAuthShield {
   }
 
   attach = Middleware(passport.authenticate('local'));
+
+  detach = Middleware(request =>
+    request.logout({ keepSessionInfo: false }, noop)
+  );
 
   verify = Middleware(this._verify);
 
