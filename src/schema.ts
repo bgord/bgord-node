@@ -2,6 +2,8 @@ import { z } from 'zod';
 import { v4 as uuid } from 'uuid';
 import { Brand, toBrand } from './brand';
 
+export const NonEmptyString = z.string().min(1);
+
 export const StringToNumber = z
   .string()
   .refine(value => !isNaN((value as unknown) as number) && value, {
@@ -32,22 +34,19 @@ export const UUID = z
   .uuid()
   .default(() => uuid());
 
-export const SmtpHost = z.string().nonempty();
+export const SmtpHost = NonEmptyString;
 export type SmtpHostType = z.infer<typeof SmtpHost>;
 
 export const SmtpPort = Port;
 export type SmtpPortType = z.infer<typeof SmtpPort>;
 
-export const SmtpUser = z.string().nonempty();
+export const SmtpUser = NonEmptyString;
 export type SmtpUserType = z.infer<typeof SmtpUser>;
 
-export const SmtpPass = z.string().nonempty();
+export const SmtpPass = NonEmptyString;
 export type SmtpPassType = z.infer<typeof SmtpPass>;
 
-export const Email = z
-  .string()
-  .email()
-  .nonempty();
+export const Email = NonEmptyString.email();
 export type EmailType = z.infer<typeof Email>;
 
 export const CookieSecret = z.string().length(32);
@@ -59,13 +58,10 @@ export type ContentfulSpaceIdType = z.infer<typeof ContentfulSpaceId>;
 export const ContentfulAccessToken = z.string().length(43);
 export type ContentfulAccessTokenType = z.infer<typeof ContentfulAccessToken>;
 
-export const UrlWithoutTrailingSlash = z
-  .string()
-  .url()
-  .nonempty()
-  .refine(value => !value.endsWith('/'), {
-    message: 'url_cannot_end_with_trailing_slash',
-  });
+export const UrlWithoutTrailingSlash = NonEmptyString.url().refine(
+  value => !value.endsWith('/'),
+  { message: 'url_cannot_end_with_trailing_slash' }
+);
 export type UrlWithoutTrailingSlashType = z.infer<
   typeof UrlWithoutTrailingSlash
 >;
@@ -79,16 +75,16 @@ export type ApiKeyType = z.infer<typeof ApiKey>;
 export const SentryDsn = z.string().url();
 export type SentryDsnType = z.infer<typeof SentryDsn>;
 
-export const TwitterAppKey = z.string().nonempty();
+export const TwitterAppKey = NonEmptyString;
 export type TwitterAppKeyType = z.infer<typeof TwitterAppKey>;
 
-export const TwitterAppSecret = z.string().nonempty();
+export const TwitterAppSecret = NonEmptyString;
 export type TwitterAppSecretType = z.infer<typeof TwitterAppSecret>;
 
-export const TwitterAccessToken = z.string().nonempty();
+export const TwitterAccessToken = NonEmptyString;
 export type TwitterAccessTokenType = z.infer<typeof TwitterAccessToken>;
 
-export const TwitterAccessSecret = z.string().nonempty();
+export const TwitterAccessSecret = NonEmptyString;
 export type TwitterAccessSecretType = z.infer<typeof TwitterAccessSecret>;
 
 export const RecaptchaSiteKey = z.string().length(40);
@@ -140,9 +136,9 @@ export const FileSizeInBytes = z
 export type FileSizeInBytesType = z.infer<typeof FileSizeInBytes>;
 
 const UploadedFileSchema = z.object({
-  fieldName: z.string().nonempty(),
-  originalFilename: z.string().nonempty(),
-  path: z.string().nonempty(),
+  fieldName: NonEmptyString,
+  originalFilename: NonEmptyString,
+  path: NonEmptyString,
   headers: z.record(z.string()),
   size: FileSizeInBytes,
 });
