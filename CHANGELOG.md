@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.35](https://github.com/bgord/bgord-node/compare/v0.58.34...v0.58.35) (2022-06-30)
+
+
+### Features
+
+* add noop ([29590a0](https://github.com/bgord/bgord-node/commit/29590a02b71dd58e86ba58c73dbff7369ca28a5c))
+
 ### [0.58.34](https://github.com/bgord/bgord-node/compare/v0.58.33...v0.58.34) (2022-05-17)
 
 
