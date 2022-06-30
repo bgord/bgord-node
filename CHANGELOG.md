@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.37](https://github.com/bgord/bgord-node/compare/v0.58.36...v0.58.37) (2022-06-30)
+
+
+### Features
+
+* bump zod and ts ([a506a0e](https://github.com/bgord/bgord-node/commit/a506a0e3cf5d6cab25292426e437ed0d4214fb4c))
+
 ### [0.58.36](https://github.com/bgord/bgord-node/compare/v0.58.35...v0.58.36) (2022-06-30)
 
 
