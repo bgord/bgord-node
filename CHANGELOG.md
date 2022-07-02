@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.38](https://github.com/bgord/bgord-node/compare/v0.58.37...v0.58.38) (2022-07-02)
+
+
+### Features
+
+* add cache ([461125d](https://github.com/bgord/bgord-node/commit/461125d725743fe5200300d9542bb4bc7f9e2f5c))
+
 ### [0.58.37](https://github.com/bgord/bgord-node/compare/v0.58.36...v0.58.37) (2022-06-30)
 
 
