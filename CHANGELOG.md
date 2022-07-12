@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.41](https://github.com/bgord/bgord-node/compare/v0.58.40...v0.58.41) (2022-07-12)
+
+
+### Features
+
+* add complex date ([75d7efe](https://github.com/bgord/bgord-node/commit/75d7efe535af4e4ed06c24e62b6c20601f124a27))
+
 ### [0.58.40](https://github.com/bgord/bgord-node/compare/v0.58.39...v0.58.40) (2022-07-12)
 
 
