@@ -2,7 +2,7 @@ import express from 'express';
 import handlebars from 'express-handlebars';
 import pluralize from 'pluralize';
 
-import { Dates } from './dates';
+import { DateFormatters } from './dates';
 
 export type HandlebarsConfigType = handlebars.ExphbsOptions;
 
@@ -10,7 +10,7 @@ export class Handlebars {
   static handlebarsDefaultConfig: HandlebarsConfigType = {
     extname: '.hbs',
     helpers: {
-      datetime: (value: Date) => Dates.datetime(value),
+      datetime: (value: Date) => DateFormatters.datetime(value),
       pluralize: (
         word: Parameters<typeof pluralize>[0],
         count: Parameters<typeof pluralize>[1]
