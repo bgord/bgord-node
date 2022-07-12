@@ -2,14 +2,16 @@ import express from 'express';
 
 import * as Schema from './schema';
 
+export type TimeZoneOffsetsType = {
+  minutes: Schema.TimeZoneOffsetType;
+  seconds: Schema.TimeZoneOffsetType;
+  miliseconds: Schema.TimeZoneOffsetType;
+};
+
 declare global {
   namespace Express {
     export interface Request {
-      timeZoneOffset: {
-        minutes: Schema.TimeZoneOffsetType;
-        seconds: Schema.TimeZoneOffsetType;
-        miliseconds: Schema.TimeZoneOffsetType;
-      };
+      timeZoneOffset: TimeZoneOffsetsType;
     }
   }
 }
