@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.40](https://github.com/bgord/bgord-node/compare/v0.58.39...v0.58.40) (2022-07-12)
+
+
+### Features
+
+* add relative date formatter ([1ec8681](https://github.com/bgord/bgord-node/commit/1ec8681459ca6a65406b375b02ec90778a491213))
+
 ### [0.58.39](https://github.com/bgord/bgord-node/compare/v0.58.38...v0.58.39) (2022-07-07)
 
 ### [0.58.38](https://github.com/bgord/bgord-node/compare/v0.58.37...v0.58.38) (2022-07-02)
