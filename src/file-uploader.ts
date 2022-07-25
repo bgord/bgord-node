@@ -7,27 +7,24 @@ import { Middleware } from './middleware';
 
 type FileUploaderConfigType = files.FormDataOptions;
 
-const defaultConfig: FileUploaderConfigType = {
-  uploadDir: os.tmpdir(),
-  autoClean: true,
-};
-
 export class FileUploader {
-  config: FileUploaderConfigType = defaultConfig;
+  static defaultConfig: FileUploaderConfigType = {
+    uploadDir: os.tmpdir(),
+    autoClean: true,
+  };
 
-  constructor(config: FileUploaderConfigType = {}) {
-    this.config = _.merge(this.config, config);
-  }
-
-  applyTo(app: express.Application): void {
-    app.use(files.parse(this.config));
+  static applyTo(
+    app: express.Application,
+    config: FileUploaderConfigType
+  ): void {
+    app.use(files.parse(_.merge(FileUploader.defaultConfig, config)));
     app.use(files.format()); // filter our empty files
     app.use(files.union()); // copy files from req.files to req.body
   }
 
-  handle(config: FileUploaderConfigType = {}) {
+  static handle(config: FileUploaderConfigType = {}) {
     return [
-      files.parse(_.merge(this.config, config)),
+      files.parse(_.merge(FileUploader.defaultConfig, config)),
       files.format(),
       files.union(),
     ].map(handler => Middleware(handler));
