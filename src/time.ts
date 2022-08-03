@@ -58,4 +58,16 @@ export class Minutes {
   }
 }
 
-export const Time = { Days, Hours, Minutes };
+export class Seconds {
+  value: number;
+
+  constructor(value: number) {
+    this.value = value;
+  }
+
+  toMs() {
+    return this.value * 1000;
+  }
+}
+
+export const Time = { Days, Hours, Minutes, Seconds };
