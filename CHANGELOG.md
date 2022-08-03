@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.45](https://github.com/bgord/bgord-node/compare/v0.58.44...v0.58.45) (2022-08-03)
+
+
+### Features
+
+* add seconds to time converter ([bb0e225](https://github.com/bgord/bgord-node/commit/bb0e2253dd19e6e31bf999b600ab7f2762fbd191))
+
 ### [0.58.44](https://github.com/bgord/bgord-node/compare/v0.58.43...v0.58.44) (2022-08-03)
 
 
