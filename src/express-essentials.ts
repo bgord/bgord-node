@@ -23,7 +23,15 @@ export function addExpressEssentials(
   app: express.Express,
   config?: ExpressEssentialsConfig
 ) {
-  const helmetConfig = config?.helmet ?? undefined;
+  const helmetConfig = _.merge(config?.helmet ?? {}, {
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        'script-src': ["'self'", "'unsafe-inline'"],
+        'script-src-attr': null,
+      },
+    },
+  });
   app.use(helmet(helmetConfig));
 
   const bodyParserJsonConfig = config?.json ?? undefined;
@@ -50,21 +58,3 @@ export function addExpressEssentials(
   TimeZoneOffset.applyTo(app);
   ServerTiming.applyTo(app);
 }
-
-export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {
-  contentSecurityPolicy: {
-    useDefaults: true,
-    directives: {
-      'script-src': ["'self'"],
-    },
-  },
-};
-
-export const helmetStylesCspConfig: Parameters<typeof helmet>[0] = {
-  contentSecurityPolicy: {
-    useDefaults: true,
-    directives: {
-      'style-src': ["'self'"],
-    },
-  },
-};
