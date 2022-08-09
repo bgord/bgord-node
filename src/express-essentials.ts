@@ -8,6 +8,7 @@ import { Logger, LoggerConfigType } from './logger';
 import { StaticFiles, StaticFilesConfigType } from './static-files';
 import { MethodOverride } from './method-override';
 import { TimeZoneOffset } from './time-zone-offset';
+import { ServerTiming } from './server-timing';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -47,6 +48,7 @@ export function addExpressEssentials(
 
   MethodOverride.applyTo(app);
   TimeZoneOffset.applyTo(app);
+  ServerTiming.applyTo(app);
 }
 
 export const helmetScriptsCspConfig: Parameters<typeof helmet>[0] = {
