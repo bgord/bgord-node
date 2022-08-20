@@ -32,22 +32,22 @@ export const UUID = z
   .uuid()
   .default(() => uuid());
 
-export const SmtpHost = z.string().nonempty();
+export const SmtpHost = z.string().min(1);
 export type SmtpHostType = z.infer<typeof SmtpHost>;
 
 export const SmtpPort = Port;
 export type SmtpPortType = z.infer<typeof SmtpPort>;
 
-export const SmtpUser = z.string().nonempty();
+export const SmtpUser = z.string().min(1);
 export type SmtpUserType = z.infer<typeof SmtpUser>;
 
-export const SmtpPass = z.string().nonempty();
+export const SmtpPass = z.string().min(1);
 export type SmtpPassType = z.infer<typeof SmtpPass>;
 
 export const Email = z
   .string()
   .email()
-  .nonempty();
+  .min(1);
 export type EmailType = z.infer<typeof Email>;
 
 export const CookieSecret = z.string().length(32);
@@ -62,7 +62,7 @@ export type ContentfulAccessTokenType = z.infer<typeof ContentfulAccessToken>;
 export const UrlWithoutTrailingSlash = z
   .string()
   .url()
-  .nonempty()
+  .min(1)
   .refine(value => !value.endsWith('/'), {
     message: 'url_cannot_end_with_trailing_slash',
   });
@@ -79,16 +79,16 @@ export type ApiKeyType = z.infer<typeof ApiKey>;
 export const SentryDsn = z.string().url();
 export type SentryDsnType = z.infer<typeof SentryDsn>;
 
-export const TwitterAppKey = z.string().nonempty();
+export const TwitterAppKey = z.string().min(1);
 export type TwitterAppKeyType = z.infer<typeof TwitterAppKey>;
 
-export const TwitterAppSecret = z.string().nonempty();
+export const TwitterAppSecret = z.string().min(1);
 export type TwitterAppSecretType = z.infer<typeof TwitterAppSecret>;
 
-export const TwitterAccessToken = z.string().nonempty();
+export const TwitterAccessToken = z.string().min(1);
 export type TwitterAccessTokenType = z.infer<typeof TwitterAccessToken>;
 
-export const TwitterAccessSecret = z.string().nonempty();
+export const TwitterAccessSecret = z.string().min(1);
 export type TwitterAccessSecretType = z.infer<typeof TwitterAccessSecret>;
 
 export const RecaptchaSiteKey = z.string().length(40);
@@ -140,9 +140,9 @@ export const FileSizeInBytes = z
 export type FileSizeInBytesType = z.infer<typeof FileSizeInBytes>;
 
 const UploadedFileSchema = z.object({
-  fieldName: z.string().nonempty(),
-  originalFilename: z.string().nonempty(),
-  path: z.string().nonempty(),
+  fieldName: z.string().min(1),
+  originalFilename: z.string().min(1),
+  path: z.string().min(1),
   headers: z.record(z.string()),
   size: FileSizeInBytes,
 });
