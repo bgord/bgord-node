@@ -31,6 +31,7 @@ export const UUID = z
   .string()
   .uuid()
   .default(() => uuid());
+export type UUIDType = z.infer<typeof UUID>;
 
 export const SmtpHost = z.string().min(1);
 export type SmtpHostType = z.infer<typeof SmtpHost>;
