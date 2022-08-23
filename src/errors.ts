@@ -25,3 +25,10 @@ export class InvalidCredentialsError extends Error {
     Object.setPrototypeOf(this, InvalidCredentialsError.prototype);
   }
 }
+
+export class FileNotFoundError extends Error {
+  constructor() {
+    super();
+    Object.setPrototypeOf(this, FileNotFoundError.prototype);
+  }
+}
