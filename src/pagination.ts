@@ -1,4 +1,5 @@
 import * as z from 'zod';
+import { StringToNumber } from './schema';
 
 const Take = z
   .number()
@@ -13,26 +14,36 @@ const Skip = z
   .positive();
 type SkipType = z.infer<typeof Skip>;
 
-const Page = z
-  .number()
-  .int()
-  .positive()
-  .optional()
-  .default(1);
-export type PageType = z.infer<typeof Page>;
+const Page = z.union([StringToNumber, z.undefined()]).default('1');
+type PageType = z.infer<typeof Page>;
 
-export type PaginationType = { take: TakeType; skip: SkipType };
+export type PaginationType = {
+  values: { take: TakeType; skip: SkipType };
+  page: PageType;
+};
 export type PaginationValuesType = Record<string, unknown>;
+
+export type PaginationExhaustedConfig = {
+  total: number;
+  pagination?: PaginationType;
+};
 
 export class Pagination {
   static parse(values: PaginationValuesType, _take?: TakeType): PaginationType {
-    const value = Number(values.page);
-    const page = Number.isNaN(value) ? 1 : Page.parse(value);
-
+    const page = Page.parse(values.page);
     const take = Take.parse(_take);
 
     const skip = (page - 1) * take;
 
-    return { take, skip };
+    return { values: { take, skip }, page };
+  }
+
+  static isExhausted(config: PaginationExhaustedConfig): boolean {
+    if (!config.pagination) return true;
+
+    const lastPage = Math.ceil(config.total / config.pagination.values.take);
+    const currentPage = config.pagination.page;
+
+    return lastPage <= currentPage;
   }
 }
