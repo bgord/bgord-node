@@ -15,7 +15,7 @@ const Skip = z
 type SkipType = z.infer<typeof Skip>;
 
 const Page = z.union([StringToNumber, z.undefined()]).default('1');
-type PageType = z.infer<typeof Page>;
+export type PageType = z.infer<typeof Page>;
 
 export type PaginationType = {
   values: { take: TakeType; skip: SkipType };
