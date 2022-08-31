@@ -23,8 +23,12 @@ export type PaginationType = {
 };
 export type PaginationValuesType = Record<string, unknown>;
 
+export type TotalType = number;
+
+export type ExhaustedType = boolean;
+
 export type PaginationExhaustedConfig = {
-  total: number;
+  total: TotalType;
   pagination?: PaginationType;
 };
 
@@ -38,7 +42,7 @@ export class Pagination {
     return { values: { take, skip }, page };
   }
 
-  static isExhausted(config: PaginationExhaustedConfig): boolean {
+  static isExhausted(config: PaginationExhaustedConfig): ExhaustedType {
     if (!config.pagination) return true;
 
     const lastPage = Math.ceil(config.total / config.pagination.values.take);
