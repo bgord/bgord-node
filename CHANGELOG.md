@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.56](https://github.com/bgord/bgord-node/compare/v0.58.55...v0.58.56) (2022-08-31)
+
+
+### Features
+
+* improve pagination meta ([d9a3660](https://github.com/bgord/bgord-node/commit/d9a3660a592ac6621d2e540f1817a84764a9ebfe))
+
 ### [0.58.55](https://github.com/bgord/bgord-node/compare/v0.58.54...v0.58.55) (2022-08-31)
 
 
