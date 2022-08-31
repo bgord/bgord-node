@@ -72,7 +72,10 @@ export class Pagination {
     return Math.ceil(config.total / config.pagination.values.take);
   }
 
-  static empty = { result: [], meta: { exhausted: true } };
+  static empty = {
+    result: [],
+    meta: { exhausted: true, currentPage: 1, nextPage: undefined, lastPage: 1 },
+  };
 
   static getFirstPage({ take }: { take: TakeType }): PaginationType {
     return { values: { take, skip: 0 }, page: 1 };
