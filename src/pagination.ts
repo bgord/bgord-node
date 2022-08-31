@@ -47,3 +47,5 @@ export class Pagination {
     return lastPage <= currentPage;
   }
 }
+
+export type Paged<T> = { result: T[]; meta: { exhausted: boolean } };
