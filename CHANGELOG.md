@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.55](https://github.com/bgord/bgord-node/compare/v0.58.54...v0.58.55) (2022-08-31)
+
+
+### Features
+
+* add pagination.prepare method ([436afe3](https://github.com/bgord/bgord-node/commit/436afe35add9295b53bf7724e8bb96d804ac4d6c))
+
 ### [0.58.54](https://github.com/bgord/bgord-node/compare/v0.58.53...v0.58.54) (2022-08-31)
 
 ### [0.58.53](https://github.com/bgord/bgord-node/compare/v0.58.52...v0.58.53) (2022-08-31)
