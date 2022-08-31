@@ -32,6 +32,12 @@ export type PaginationExhaustedConfig = {
   pagination?: PaginationType;
 };
 
+export type PaginationPrepareConfigType<T> = {
+  total: TotalType;
+  pagination?: PaginationType;
+  result: T[];
+};
+
 export class Pagination {
   static parse(values: PaginationValuesType, _take?: TakeType): PaginationType {
     const page = Page.parse(values.page);
@@ -40,6 +46,12 @@ export class Pagination {
     const skip = (page - 1) * take;
 
     return { values: { take, skip }, page };
+  }
+
+  static prepare<T>(config: PaginationPrepareConfigType<T>) {
+    const exhausted = Pagination.isExhausted(config);
+
+    return { result: config.result, meta: { exhausted } };
   }
 
   static isExhausted(config: PaginationExhaustedConfig): ExhaustedType {
