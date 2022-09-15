@@ -110,9 +110,6 @@ export const ApiKey = z
   .length(64);
 export type ApiKeyType = z.infer<typeof ApiKey>;
 
-export const SentryDsn = z.string().url();
-export type SentryDsnType = z.infer<typeof SentryDsn>;
-
 export const TwitterAppKey = z
   .string()
   .trim()

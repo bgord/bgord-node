@@ -27,7 +27,6 @@ export * from './policy';
 export * from './recaptcha-shield';
 export * from './reporter';
 export * from './route';
-export * from './sentry';
 export * from './server-timing';
 export * from './session';
 export * from './sleep';
