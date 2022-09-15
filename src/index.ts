@@ -35,5 +35,4 @@ export * from './static-files';
 export * from './time';
 export * from './time-zone-offset';
 export * from './ts-utils';
-export * from './types';
 export * from './uuid';

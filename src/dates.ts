@@ -1,5 +1,5 @@
 import { format, formatDistanceToNow } from 'date-fns';
-import type {Falsy} from "./types";
+import type {Falsy} from "./ts-utils";
 
 export type FormattedDateType = string;
 
