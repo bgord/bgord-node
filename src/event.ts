@@ -25,15 +25,10 @@ export const Event = z.object({
     .transform(value => JSON.stringify(value)),
 });
 
-export const EventDraft = Event.omit({
-  id: true,
-  createdAt: true,
-});
+export const EventDraft = Event.omit({ id: true, createdAt: true });
 
 export const ParsedEvent = Event.merge(
-  z.object({
-    payload: z.record(z.any()),
-  })
+  z.object({ payload: z.record(z.any()) })
 );
 
 export type EventType = z.infer<typeof Event>;
