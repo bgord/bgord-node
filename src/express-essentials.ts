@@ -27,6 +27,7 @@ export function addExpressEssentials(
     contentSecurityPolicy: {
       useDefaults: true,
       directives: {
+        'img-src': ["'self'", 'blob:'],
         'script-src': ["'self'", "'unsafe-inline'"],
         'script-src-attr': null,
       },
