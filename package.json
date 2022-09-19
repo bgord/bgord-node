@@ -1,5 +1,5 @@
 {
-  "version": "0.58.60",
+  "version": "0.58.61",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -96,7 +96,7 @@
     "pluralize": "^8.0.0",
     "session-file-store": "^1.5.0",
     "uuid": "^8.3.2",
-    "zod": "^3.17.3"
+    "zod": "^3.19.1"
   },
   "resolutions": {
     "typescript": "^4.7.4"

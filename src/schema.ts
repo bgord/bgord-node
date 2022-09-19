@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { v4 as uuid } from 'uuid';
-import { Brand, toBrand } from './brand';
 
 export const StringToNumber = z
   .string()
@@ -193,18 +192,14 @@ export const FileSizeInBytes = z
   .positive();
 export type FileSizeInBytesType = z.infer<typeof FileSizeInBytes>;
 
-export const UploadedFileSchema = z.object({
+export const UploadedFile = z.object({
   fieldName: z.string().min(1),
   originalFilename: z.string().min(1),
   path: z.string().min(1),
   headers: z.record(z.string()),
   size: FileSizeInBytes,
 });
-export type UploadedFileType = Brand<
-  'uploaded-file',
-  z.infer<typeof UploadedFileSchema>
->;
-export const UploadedFile = toBrand<UploadedFileType>(UploadedFileSchema);
+export type UploadedFileType = z.infer<typeof UploadedFile>;
 
 export const TimeZoneOffset = z
   .string()
@@ -212,12 +207,10 @@ export const TimeZoneOffset = z
   .or(z.undefined())
   .transform(value => Number(value))
   .transform(value => (isNaN(value) ? 0 : value));
-
 export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffset>;
 
 export const Language = z
   .string()
   .trim()
   .default('en');
-
 export type LanguageType = z.infer<typeof Language>;
