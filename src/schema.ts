@@ -193,7 +193,7 @@ export const FileSizeInBytes = z
   .positive();
 export type FileSizeInBytesType = z.infer<typeof FileSizeInBytes>;
 
-const UploadedFileSchema = z.object({
+export const UploadedFileSchema = z.object({
   fieldName: z.string().min(1),
   originalFilename: z.string().min(1),
   path: z.string().min(1),
