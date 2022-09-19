@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.60](https://github.com/bgord/bgord-node/compare/v0.58.59...v0.58.60) (2022-09-19)
+
+
+### Features
+
+* add blog: img-src csp directive ([79ddd92](https://github.com/bgord/bgord-node/commit/79ddd9217945be8cd516260484ac9864c7153d4d))
+
 ### [0.58.59](https://github.com/bgord/bgord-node/compare/v0.58.58...v0.58.59) (2022-09-15)
 
 
