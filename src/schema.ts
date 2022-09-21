@@ -214,3 +214,17 @@ export const Language = z
   .trim()
   .default('en');
 export type LanguageType = z.infer<typeof Language>;
+
+export const Width = z
+  .number()
+  .int()
+  .positive()
+  .brand<'width'>();
+export type WidthType = z.infer<typeof Width>;
+
+export const Height = z
+  .number()
+  .int()
+  .positive()
+  .brand<'height'>();
+export type HeightType = z.infer<typeof Height>;
