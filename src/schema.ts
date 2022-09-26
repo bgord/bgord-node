@@ -228,3 +228,9 @@ export const Height = z
   .positive()
   .brand<'height'>();
 export type HeightType = z.infer<typeof Height>;
+
+export const Path = z
+  .string()
+  .min(1)
+  .brand<'path'>();
+export type PathType = z.infer<typeof Path>;
