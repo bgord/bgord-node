@@ -1,24 +1,23 @@
 import express from 'express';
-
 import expressStaticGzip from 'express-static-gzip';
+import * as Schema from './schema';
 
-type StaticFilesPathType = string;
 const defaultStaticFilesPathType = 'static';
 
 type StaticGzipOptionsType = expressStaticGzip.ExpressStaticGzipOptions;
 
 export type StaticFilesConfigType = Partial<
-  { path: StaticFilesPathType } & StaticGzipOptionsType
+  { path: Schema.PathType } & StaticGzipOptionsType
 >;
 
 export class StaticFiles {
-  path: StaticFilesPathType = defaultStaticFilesPathType;
+  path: Schema.PathType = Schema.Path.parse(defaultStaticFilesPathType);
   staticGzipOptions: StaticGzipOptionsType = {};
 
   constructor(config?: StaticFilesConfigType) {
     const { path, ...expressStaticGzipOptions } = config ?? {};
 
-    this.path = path ?? defaultStaticFilesPathType;
+    this.path = Schema.Path.parse(path ?? defaultStaticFilesPathType);
     this.staticGzipOptions = expressStaticGzipOptions;
   }
 
