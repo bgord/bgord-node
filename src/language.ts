@@ -1,6 +1,6 @@
 import express from 'express';
 import Path from 'path';
-import { promises as fs, PathLike } from 'fs';
+import fs from 'fs/promises';
 import parser from 'accept-language-parser';
 
 import * as Schema from './schema';
@@ -13,7 +13,7 @@ declare global {
     export interface Request {
       language: Schema.LanguageType;
       supportedLanguages: Schema.LanguageType[];
-      translationsPath: PathLike;
+      translationsPath: Schema.PathType;
     }
   }
 }
@@ -21,7 +21,7 @@ declare global {
 export class Language {
   static applyTo(
     app: express.Application,
-    translationsPath: PathLike,
+    translationsPath: Schema.PathType,
     defaultLanguageName: Schema.LanguageType = 'en'
   ): void {
     app.use(async (request, _response, next) => {
@@ -45,7 +45,7 @@ export class Language {
 
   static async getTranslations(
     language: Schema.LanguageType,
-    translationsPath: PathLike
+    translationsPath: Schema.PathType
   ): Promise<TranslationsType> {
     try {
       const file = await fs.readFile(
@@ -61,7 +61,7 @@ export class Language {
   }
 
   private static async getSupportedLanguages(
-    traslationsPath: PathLike
+    traslationsPath: Schema.PathType
   ): Promise<Schema.LanguageType[]> {
     try {
       const supportedLanguageFiles = await fs.readdir(traslationsPath);
