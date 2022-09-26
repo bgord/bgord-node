@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { FileSizeInBytesType } from './schema';
+import * as Schema from './schema';
 
 export enum FileSizeUnit {
   'byte' = 'byte',
@@ -21,7 +21,7 @@ export class FileSize {
 
   private value: FileSizeValueType;
 
-  private bytes: FileSizeInBytesType;
+  private bytes: Schema.SizeInBytesType;
 
   constructor(config: FileSizeConfigType) {
     this.unit = config.unit;
@@ -33,25 +33,25 @@ export class FileSize {
     return `${this.value} ${this.unit}`;
   }
 
-  public toBytes(): FileSizeInBytesType {
+  public toBytes(): Schema.SizeInBytesType {
     return this.bytes;
   }
 
-  static toBytes(config: FileSizeConfigType): FileSizeInBytesType {
+  static toBytes(config: FileSizeConfigType): Schema.SizeInBytesType {
     return new FileSize(config).toBytes();
   }
 
   static unit = FileSizeUnit;
 
-  private calculateBytes(config: FileSizeConfigType): FileSizeInBytesType {
+  private calculateBytes(config: FileSizeConfigType): Schema.SizeInBytesType {
     switch (config.unit) {
       case FileSizeUnit.KB:
-        return config.value * 1_000;
+        return Schema.SizeInBytes.parse(config.value * 1_000);
       case FileSizeUnit.MB:
-        return config.value * 1_000_000;
+        return Schema.SizeInBytes.parse(config.value * 1_000_000);
       default:
         // FileSizeUnit.bytes
-        return config.value;
+        return Schema.SizeInBytes.parse(config.value);
     }
   }
 }

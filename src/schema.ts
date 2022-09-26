@@ -180,24 +180,31 @@ export const AdminPassword = z
   .max(48);
 export type AdminPasswordType = z.infer<typeof AdminPassword>;
 
+export const Path = z
+  .string()
+  .min(1)
+  .brand<'path'>();
+export type PathType = z.infer<typeof Path>;
+
 export const Timestamp = z
   .number()
   .positive()
   .default(() => Date.now());
 export type TimestampType = z.infer<typeof Timestamp>;
 
-export const FileSizeInBytes = z
+export const SizeInBytes = z
   .number()
   .int()
-  .positive();
-export type FileSizeInBytesType = z.infer<typeof FileSizeInBytes>;
+  .positive()
+  .brand<'size-in-bytes'>();
+export type SizeInBytesType = z.infer<typeof SizeInBytes>;
 
 export const UploadedFile = z.object({
   fieldName: z.string().min(1),
   originalFilename: z.string().min(1),
-  path: z.string().min(1),
+  path: Path,
   headers: z.record(z.string()),
-  size: FileSizeInBytes,
+  size: SizeInBytes,
 });
 export type UploadedFileType = z.infer<typeof UploadedFile>;
 
@@ -228,9 +235,3 @@ export const Height = z
   .positive()
   .brand<'height'>();
 export type HeightType = z.infer<typeof Height>;
-
-export const Path = z
-  .string()
-  .min(1)
-  .brand<'path'>();
-export type PathType = z.infer<typeof Path>;
