@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.63](https://github.com/bgord/bgord-node/compare/v0.58.62...v0.58.63) (2022-09-26)
+
+
+### Features
+
+* add path to schema ([39e84fb](https://github.com/bgord/bgord-node/commit/39e84fb14c5f56f0e69fe4391455d9fc6490c9b6))
+
 ### [0.58.62](https://github.com/bgord/bgord-node/compare/v0.58.60...v0.58.62) (2022-09-21)
 
 
