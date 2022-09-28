@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.66](https://github.com/bgord/bgord-node/compare/v0.58.65...v0.58.66) (2022-09-28)
+
+
+### Features
+
+* add slower middleware ([b59e5de](https://github.com/bgord/bgord-node/commit/b59e5dec7c4d397f44c9206d7d0e238ef455f217))
+
 ### [0.58.65](https://github.com/bgord/bgord-node/compare/v0.58.64...v0.58.65) (2022-09-26)
 
 ### [0.58.64](https://github.com/bgord/bgord-node/compare/v0.58.63...v0.58.64) (2022-09-26)
