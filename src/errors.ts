@@ -1,3 +1,5 @@
+import { MimeRawType } from './mime';
+
 export type AccessDeniedErrorReasonType =
   | 'hcaptcha'
   | 'csrf'
@@ -37,5 +39,15 @@ export class InvalidMimeError extends Error {
   constructor() {
     super();
     Object.setPrototypeOf(this, InvalidMimeError.prototype);
+  }
+}
+
+export class NotAcceptedMimeError extends Error {
+  mime: MimeRawType;
+
+  constructor(mime: MimeRawType) {
+    super();
+    Object.setPrototypeOf(this, NotAcceptedMimeError.prototype);
+    this.mime = mime;
   }
 }
