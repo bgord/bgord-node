@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.67](https://github.com/bgord/bgord-node/compare/v0.58.66...v0.58.67) (2022-09-29)
+
+
+### Features
+
+* adad mime vo ([6e9295f](https://github.com/bgord/bgord-node/commit/6e9295f3c2a55ba307daa66c949ea9492b9062bd))
+
 ### [0.58.66](https://github.com/bgord/bgord-node/compare/v0.58.65...v0.58.66) (2022-09-28)
 
 
