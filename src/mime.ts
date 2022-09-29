@@ -35,4 +35,8 @@ export class Mime {
   }
 
   static wildcard: MimeRawType = '*/*';
+
+  static jpeg: MimeRawType = 'image/jpeg';
+
+  static png: MimeRawType = 'image/png';
 }
