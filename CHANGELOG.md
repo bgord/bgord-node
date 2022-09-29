@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.68](https://github.com/bgord/bgord-node/compare/v0.58.67...v0.58.68) (2022-09-29)
+
+
+### Features
+
+* add file uploader mime validation ([dbd0a58](https://github.com/bgord/bgord-node/commit/dbd0a5836d53b86a4a9f6f0523799b999c0b20e2))
+
 ### [0.58.67](https://github.com/bgord/bgord-node/compare/v0.58.66...v0.58.67) (2022-09-29)
 
 
