@@ -18,7 +18,7 @@ export class FileUploader {
     config: FileUploaderConfigType
   ): void {
     app.use(files.parse(_.merge(FileUploader.defaultConfig, config)));
-    app.use(files.format()); // filter our empty files
+    app.use(files.format()); // filter out empty files
     app.use(files.union()); // copy files from req.files to req.body
   }
 

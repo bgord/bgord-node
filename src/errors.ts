@@ -32,3 +32,10 @@ export class FileNotFoundError extends Error {
     Object.setPrototypeOf(this, FileNotFoundError.prototype);
   }
 }
+
+export class InvalidMimeError extends Error {
+  constructor() {
+    super();
+    Object.setPrototypeOf(this, InvalidMimeError.prototype);
+  }
+}
