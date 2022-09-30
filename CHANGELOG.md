@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.69](https://github.com/bgord/bgord-node/compare/v0.58.68...v0.58.69) (2022-09-30)
+
+
+### Features
+
+* add image compressorl ([b5c11ed](https://github.com/bgord/bgord-node/commit/b5c11ed1f4c90f66acdfab250ef41c0cc171dae4))
+* add image resizer ([c5e5442](https://github.com/bgord/bgord-node/commit/c5e5442a2a567f6eddf203a81141af33dda3ef7e))
+
 ### [0.58.68](https://github.com/bgord/bgord-node/compare/v0.58.67...v0.58.68) (2022-09-29)
 
 
