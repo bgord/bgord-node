@@ -16,6 +16,7 @@ export * from './filter';
 export * from './graceful-shutdown';
 export * from './handlebars';
 export * from './hcaptcha-shield';
+export * from './image-resizer'
 export * from './language';
 export * from './logger';
 export * from './mailer';
