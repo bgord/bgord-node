@@ -1,4 +1,4 @@
-import { execa } from 'execa';
+import execa from 'execa';
 import { gzip } from 'gzip-cli';
 
 import { PathType, ImageCompressionQualityType } from './schema';
