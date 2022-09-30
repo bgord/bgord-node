@@ -235,3 +235,14 @@ export const Height = z
   .positive()
   .brand<'height'>();
 export type HeightType = z.infer<typeof Height>;
+
+export const ImageCompressionQuality = z
+  .number()
+  .int()
+  .min(1)
+  .max(100)
+  .default(85)
+  .brand<'image-compression-quality'>();
+export type ImageCompressionQualityType = z.infer<
+  typeof ImageCompressionQuality
+>;
