@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.70](https://github.com/bgord/bgord-node/compare/v0.58.69...v0.58.70) (2022-09-30)
+
+
+### Bug Fixes
+
+* execa version ([8089b88](https://github.com/bgord/bgord-node/commit/8089b88568b267701d2bc40c61194ba865096ecf))
+
 ### [0.58.69](https://github.com/bgord/bgord-node/compare/v0.58.68...v0.58.69) (2022-09-30)
 
 
