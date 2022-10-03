@@ -32,6 +32,7 @@ export * from './reporter';
 export * from './route';
 export * from './server-timing';
 export * from './session';
+export * from './sitemap'
 export * from './sleep';
 export * from './slower';
 export * from './sqlite';
