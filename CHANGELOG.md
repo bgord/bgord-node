@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.71](https://github.com/bgord/bgord-node/compare/v0.58.70...v0.58.71) (2022-10-03)
+
+
+### Features
+
+* add sitemap generator ([5f8f077](https://github.com/bgord/bgord-node/commit/5f8f0773a9e2e43b7ffc82ac65c5fd89372be477))
+
 ### [0.58.70](https://github.com/bgord/bgord-node/compare/v0.58.69...v0.58.70) (2022-09-30)
 
 
