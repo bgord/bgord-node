@@ -45,7 +45,6 @@ export const SitemapPriotity = z
   .min(0)
   .max(1)
   .default(0.5)
-  .optional()
   .brand<'sitemap-priority'>();
 export type SitemapPriotityType = z.infer<typeof SitemapPriotity>;
 
