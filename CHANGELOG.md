@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.72](https://github.com/bgord/bgord-node/compare/v0.58.71...v0.58.72) (2022-10-03)
+
+
+### Bug Fixes
+
+* remove .optional() from sitemap priority ([5adb807](https://github.com/bgord/bgord-node/commit/5adb807491fb3e738f40b8093cf08523ea9f4d8d))
+
 ### [0.58.71](https://github.com/bgord/bgord-node/compare/v0.58.70...v0.58.71) (2022-10-03)
 
 
