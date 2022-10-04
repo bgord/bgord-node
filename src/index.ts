@@ -25,6 +25,7 @@ export * from './mailerlite';
 export * from './middleware';
 export * from './mime';
 export * from './noop';
+export * from './open-graph';
 export * from './pagination';
 export * from './policy';
 export * from './recaptcha-shield';

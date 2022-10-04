@@ -246,3 +246,20 @@ export const ImageCompressionQuality = z
 export type ImageCompressionQualityType = z.infer<
   typeof ImageCompressionQuality
 >;
+
+export const OpenGraphTitleValue = z.string().min(1);
+export type OpenGraphTitleValueType = z.infer<typeof OpenGraphTitleValue>;
+
+export const OpenGraphDescriptionValue = z.string().min(1);
+export type OpenGraphDescriptionValueType = z.infer<
+  typeof OpenGraphDescriptionValue
+>;
+
+export const OpenGraphUrlValue = z.string().min(1);
+export type OpenGraphUrlValueType = z.infer<typeof OpenGraphUrlValue>;
+
+export const OpenGraphTypeValue = z.union([
+  z.literal('website'),
+  z.literal('article'),
+]);
+export type OpenGraphTypeValueType = z.infer<typeof OpenGraphTypeValue>;
