@@ -60,6 +60,12 @@ export class Language {
     }
   }
 
+  static useTranslations(translations: TranslationsType) {
+    return function t(key: string): string {
+      return translations[key] ?? key;
+    };
+  }
+
   private static async getSupportedLanguages(
     traslationsPath: Schema.PathType
   ): Promise<Schema.LanguageType[]> {
