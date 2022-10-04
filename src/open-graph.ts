@@ -64,7 +64,7 @@ class OpenGraphType {
   }
 }
 
-export class OpenGraphImageUrl {
+class OpenGraphImageUrl {
   value: Schema.OpenGraphImageUrlValueType;
 
   constructor(path: Schema.PathType) {
@@ -80,7 +80,7 @@ export class OpenGraphImageUrl {
   }
 }
 
-export class OpenGraphImageType {
+class OpenGraphImageType {
   value: Schema.OpenGraphImageTypeValueType;
 
   constructor(value: Schema.OpenGraphImageTypeValueType) {
@@ -96,7 +96,7 @@ export class OpenGraphImageType {
   }
 }
 
-export class OpenGraphImageWidth {
+class OpenGraphImageWidth {
   value: Schema.OpenGraphImageWidthValueType;
 
   constructor(value: Schema.OpenGraphImageWidthValueType) {
@@ -112,7 +112,7 @@ export class OpenGraphImageWidth {
   }
 }
 
-export class OpenGraphImageHeight {
+class OpenGraphImageHeight {
   value: Schema.OpenGraphImageHeightValueType;
 
   constructor(value: Schema.OpenGraphImageHeightValueType) {
@@ -128,11 +128,38 @@ export class OpenGraphImageHeight {
   }
 }
 
-export type OpenGraphConfigType = {
+export type OpenGraphImageConfigType = {
+  url: OpenGraphImageUrl;
+  width: OpenGraphImageWidth;
+  height: OpenGraphImageHeight;
+  type: OpenGraphImageType;
+};
+
+class OpenGraphImage {
+  value: OpenGraphImageConfigType;
+
+  constructor(value: OpenGraphImageConfigType) {
+    this.value = value;
+  }
+
+  toString() {
+    let output = '';
+
+    output += this.value.url.toMeta();
+    output += this.value.width.toMeta();
+    output += this.value.height.toMeta();
+    output += this.value.type.toMeta();
+
+    return output;
+  }
+}
+
+type OpenGraphConfigType = {
   title: OpenGraphTitle;
   description: OpenGraphDescription;
   url: OpenGraphUrl;
   type: OpenGraphType;
+  image?: OpenGraphImage;
 };
 
 class OpenGraphGenerator {
@@ -144,6 +171,10 @@ class OpenGraphGenerator {
     output += config.url.toMeta();
     output += config.type.toMeta();
 
+    if (config.image) {
+      output += config.image.toString();
+    }
+
     return output;
   }
 }
@@ -154,4 +185,11 @@ export const OpenGraph = {
   description: OpenGraphDescription,
   url: OpenGraphUrl,
   type: OpenGraphType,
+  image: {
+    compound: OpenGraphImage,
+    url: OpenGraphImageUrl,
+    width: OpenGraphImageWidth,
+    height: OpenGraphImageHeight,
+    type: OpenGraphImageType,
+  },
 };
