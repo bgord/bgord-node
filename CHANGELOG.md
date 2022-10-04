@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.74](https://github.com/bgord/bgord-node/compare/v0.58.73...v0.58.74) (2022-10-04)
+
+
+### Features
+
+* add open graph image ([bb26e29](https://github.com/bgord/bgord-node/commit/bb26e2910c228f691dd7909c95cf90211b7306aa))
+
 ### [0.58.73](https://github.com/bgord/bgord-node/compare/v0.58.72...v0.58.73) (2022-10-04)
 
 
