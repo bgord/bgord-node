@@ -64,6 +64,70 @@ class OpenGraphType {
   }
 }
 
+export class OpenGraphImageUrl {
+  value: Schema.OpenGraphImageUrlValueType;
+
+  constructor(path: Schema.PathType) {
+    this.value = Schema.OpenGraphImageUrlValue.parse(path);
+  }
+
+  toMetatag(): string {
+    return `<meta property="og:image" content="${this.value}" />`;
+  }
+
+  toMeta(): string {
+    return `${this.toMetatag()}\n\t`;
+  }
+}
+
+export class OpenGraphImageType {
+  value: Schema.OpenGraphImageTypeValueType;
+
+  constructor(value: Schema.OpenGraphImageTypeValueType) {
+    this.value = Schema.OpenGraphImageTypeValue.parse(value);
+  }
+
+  toMetatag(): string {
+    return `<meta property="og:image:type" content="${this.value}" />`;
+  }
+
+  toMeta(): string {
+    return `${this.toMetatag()}\n\t`;
+  }
+}
+
+export class OpenGraphImageWidth {
+  value: Schema.OpenGraphImageWidthValueType;
+
+  constructor(value: Schema.OpenGraphImageWidthValueType) {
+    this.value = Schema.OpenGraphImageWidthValue.parse(value);
+  }
+
+  toMetatag(): string {
+    return `<meta property="og:image:width" content="${this.value}" />`;
+  }
+
+  toMeta(): string {
+    return `${this.toMetatag()}\n\t`;
+  }
+}
+
+export class OpenGraphImageHeight {
+  value: Schema.OpenGraphImageHeightValueType;
+
+  constructor(value: Schema.OpenGraphImageHeightValueType) {
+    this.value = Schema.OpenGraphImageHeightValue.parse(value);
+  }
+
+  toMetatag(): string {
+    return `<meta property="og:image:height" content="${this.value}" />`;
+  }
+
+  toMeta(): string {
+    return `${this.toMetatag()}\n\t`;
+  }
+}
+
 export type OpenGraphConfigType = {
   title: OpenGraphTitle;
   description: OpenGraphDescription;

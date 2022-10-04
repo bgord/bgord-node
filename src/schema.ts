@@ -263,3 +263,25 @@ export const OpenGraphTypeValue = z.union([
   z.literal('article'),
 ]);
 export type OpenGraphTypeValueType = z.infer<typeof OpenGraphTypeValue>;
+
+export const OpenGraphImageUrlValue = z.string().url();
+export type OpenGraphImageUrlValueType = z.infer<typeof OpenGraphImageUrlValue>;
+
+export const OpenGraphImageTypeValue = z.string().min(1);
+export type OpenGraphImageTypeValueType = z.infer<
+  typeof OpenGraphImageTypeValue
+>;
+
+export const OpenGraphImageWidthValue = Width.refine(value => value === 1200, {
+  message: 'open.graph.image.width.invalid',
+});
+export type OpenGraphImageWidthValueType = z.infer<
+  typeof OpenGraphImageWidthValue
+>;
+
+export const OpenGraphImageHeightValue = Height.refine(value => value === 630, {
+  message: 'open.graph.image.height.invalid',
+});
+export type OpenGraphImageHeightValueType = z.infer<
+  typeof OpenGraphImageHeightValue
+>;
