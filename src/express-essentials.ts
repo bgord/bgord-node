@@ -23,7 +23,7 @@ export function addExpressEssentials(
   app: express.Express,
   config?: ExpressEssentialsConfig
 ) {
-  const helmetConfig = _.merge(config?.helmet ?? {}, {
+  const helmetConfig = _.merge({}, config?.helmet ?? {}, {
     contentSecurityPolicy: {
       useDefaults: true,
       directives: {
@@ -38,7 +38,7 @@ export function addExpressEssentials(
   const bodyParserJsonConfig = config?.json ?? undefined;
   app.use(express.json(bodyParserJsonConfig));
 
-  const bodyParserUrlencodedConfig = _.merge(config?.urlencoded ?? {}, {
+  const bodyParserUrlencodedConfig = _.merge({}, config?.urlencoded ?? {}, {
     extended: true,
   });
 

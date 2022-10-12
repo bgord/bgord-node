@@ -5,6 +5,7 @@ export function deepMerge(
   b: Object | undefined
 ): Object {
   return _.mergeWith(
+    {},
     a ?? {},
     b ?? {},
 

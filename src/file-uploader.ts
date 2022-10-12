@@ -21,7 +21,7 @@ export class FileUploader {
     app: express.Application,
     _config: FileUploaderConfigType
   ): void {
-    const config = _.merge(FileUploader.defaultConfig, _config);
+    const config = _.merge({}, FileUploader.defaultConfig, _config);
 
     app.use(files.parse(config));
     app.use(files.format()); // filter out empty files
@@ -30,7 +30,7 @@ export class FileUploader {
   }
 
   static handle(_config: FileUploaderConfigType = FileUploader.defaultConfig) {
-    const config = _.merge(FileUploader.defaultConfig, _config);
+    const config = _.merge({}, FileUploader.defaultConfig, _config);
 
     return [
       files.parse(config),
