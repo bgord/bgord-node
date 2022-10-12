@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.77](https://github.com/bgord/bgord-node/compare/v0.58.76...v0.58.77) (2022-10-12)
+
+
+### Bug Fixes
+
+* _.merge mutating objects ([9db3d68](https://github.com/bgord/bgord-node/commit/9db3d682e104703792f122e060d9ea54d377193e))
+
 ### [0.58.76](https://github.com/bgord/bgord-node/compare/v0.58.75...v0.58.76) (2022-10-04)
 
 
