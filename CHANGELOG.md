@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.78](https://github.com/bgord/bgord-node/compare/v0.58.77...v0.58.78) (2022-11-04)
+
+
+### Bug Fixes
+
+* magick comatibilty ([b9685a5](https://github.com/bgord/bgord-node/commit/b9685a522b5de9d09857588b09b69b594e8ea9b1))
+
 ### [0.58.77](https://github.com/bgord/bgord-node/compare/v0.58.76...v0.58.77) (2022-10-12)
 
 
