@@ -13,6 +13,12 @@ export class ImageResizer {
     const input = config.input;
     const output = config.output ?? input;
 
-    return execa('convert', [input, '-resize', `${config.width}x`, output]);
+    return execa('magick', [
+      'convert',
+      input,
+      '-resize',
+      `${config.width}x`,
+      output,
+    ]);
   }
 }

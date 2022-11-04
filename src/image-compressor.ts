@@ -12,7 +12,8 @@ export class ImageCompressor {
   static async compress(config: ImageCompressorConfigType) {
     const quality = config.quality ?? 85;
 
-    return execa('convert', [
+    return execa('magick', [
+      'convert',
       '-strip',
       '-interlace',
       'Plane',
