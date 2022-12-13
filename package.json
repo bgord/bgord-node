@@ -99,7 +99,7 @@
     "pluralize": "^8.0.0",
     "session-file-store": "^1.5.0",
     "uuid": "^8.3.2",
-    "zod": "^3.19.1"
+    "zod": "^3.20.2"
   },
   "resolutions": {
     "typescript": "^4.7.4"
