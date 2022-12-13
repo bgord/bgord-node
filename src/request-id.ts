@@ -2,10 +2,18 @@ import express from 'express';
 import * as Schema from './schema';
 import { UUID } from './uuid';
 
+declare global {
+  namespace Express {
+    export interface Request {
+      requestId: Schema.RequestIdType;
+    }
+  }
+}
+
 export class RequestId {
   static applyTo(app: express.Application): void {
-    app.use(async (_request, response, next) => {
-      response.locals.requestId = Schema.RequestId.parse(UUID.generate());
+    app.use(async (request, _response, next) => {
+      request.requestId = Schema.RequestId.parse(UUID.generate());
 
       next();
     });

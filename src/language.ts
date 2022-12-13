@@ -15,10 +15,6 @@ declare global {
       supportedLanguages: Schema.LanguageType[];
       translationsPath: Schema.PathType;
     }
-
-    export interface Response {
-      locals: { requestId: Schema.RequestIdType };
-    }
   }
 }
 
