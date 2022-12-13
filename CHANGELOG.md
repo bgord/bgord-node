@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.82](https://github.com/bgord/bgord-node/compare/v0.58.81...v0.58.82) (2022-12-13)
+
+
+### Features
+
+* add request id to express essentials ([f1603a6](https://github.com/bgord/bgord-node/commit/f1603a69692c13d1a5f5b9bb69230be3a84c0420))
+
 ### [0.58.81](https://github.com/bgord/bgord-node/compare/v0.58.80...v0.58.81) (2022-12-13)
 
 
