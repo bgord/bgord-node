@@ -285,3 +285,6 @@ export const OpenGraphImageHeightValue = Height.refine(value => value === 630, {
 export type OpenGraphImageHeightValueType = z.infer<
   typeof OpenGraphImageHeightValue
 >;
+
+export const RequestId = UUID.brand<'request-id'>();
+export type RequestIdType = z.infer<typeof RequestId>;

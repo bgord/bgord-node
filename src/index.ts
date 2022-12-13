@@ -31,6 +31,7 @@ export * from './pagination';
 export * from './policy';
 export * from './recaptcha-shield';
 export * from './reporter';
+export * from './request-id';
 export * from './route';
 export * from './server-timing';
 export * from './session';
