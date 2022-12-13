@@ -1,5 +1,4 @@
 import * as z from 'zod';
-import { StringToNumber } from './schema';
 
 const Take = z
   .number()
@@ -13,7 +12,10 @@ const Skip = z
   .positive();
 type SkipType = z.infer<typeof Skip>;
 
-const Page = z.union([StringToNumber, z.undefined()]).default('1');
+const Page = z.coerce
+  .number()
+  .int()
+  .default(1);
 export type PageType = z.infer<typeof Page>;
 
 export type PaginationType = {

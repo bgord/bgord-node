@@ -1,14 +1,6 @@
 import { z } from 'zod';
 import { v4 as uuid } from 'uuid';
 
-export const StringToNumber = z
-  .string()
-  .trim()
-  .refine(value => !isNaN((value as unknown) as number) && value, {
-    message: 'invalid_number',
-  })
-  .transform(value => Number(value));
-
 export enum NodeEnvironmentEnum {
   local = 'local',
   test = 'test',
@@ -17,9 +9,10 @@ export enum NodeEnvironmentEnum {
 }
 export const NodeEnvironment = z.nativeEnum(NodeEnvironmentEnum);
 
-export const Port = StringToNumber.refine(value => value > 0, {
-  message: 'too_small_port_number',
-}).refine(value => value < 99999, { message: 'too_big_port_number' });
+export const Port = z.coerce
+  .number()
+  .min(0)
+  .max(99999);
 
 export const HCaptchaSecretKey = z
   .string()
