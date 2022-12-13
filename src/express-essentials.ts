@@ -9,6 +9,7 @@ import { StaticFiles, StaticFilesConfigType } from './static-files';
 import { MethodOverride } from './method-override';
 import { TimeZoneOffset } from './time-zone-offset';
 import { ServerTiming } from './server-timing';
+import { RequestId } from './request-id';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -58,4 +59,5 @@ export function addExpressEssentials(
   MethodOverride.applyTo(app);
   TimeZoneOffset.applyTo(app);
   ServerTiming.applyTo(app);
+  RequestId.applyTo(app);
 }
