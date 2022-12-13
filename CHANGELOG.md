@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.79](https://github.com/bgord/bgord-node/compare/v0.58.78...v0.58.79) (2022-12-13)
+
+
+### Features
+
+* add request id middleware ([571cae4](https://github.com/bgord/bgord-node/commit/571cae4f8678707f322ab6f5589476b0ca36ec83))
+
 ### [0.58.78](https://github.com/bgord/bgord-node/compare/v0.58.77...v0.58.78) (2022-11-04)
 
 
