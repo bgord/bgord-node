@@ -4,7 +4,7 @@ import { Reporter } from './reporter';
 type PrerequisiteLabelType = string;
 type PrerequisiteBinaryType = string;
 
-export enum PrerequisitetrategyEnum {
+export enum PrerequisiteStrategyEnum {
   exists = 'exists',
 }
 
@@ -16,7 +16,7 @@ enum PrerequisiteStatusEnum {
 
 type PrerequisiteExistsStrategyConfigType = {
   label: PrerequisiteLabelType;
-  strategy: PrerequisitetrategyEnum.exists;
+  strategy: PrerequisiteStrategyEnum.exists;
   binary: PrerequisiteBinaryType;
 };
 
