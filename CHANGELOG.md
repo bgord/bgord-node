@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.85](https://github.com/bgord/bgord-node/compare/v0.58.84...v0.58.85) (2022-12-14)
+
+
+### Features
+
+* add prerequisites ([56ff2c0](https://github.com/bgord/bgord-node/commit/56ff2c03ae55356425f0f62996d135766b9ce048))
+
 ### [0.58.84](https://github.com/bgord/bgord-node/compare/v0.58.83...v0.58.84) (2022-12-13)
 
 ### [0.58.83](https://github.com/bgord/bgord-node/compare/v0.58.82...v0.58.83) (2022-12-13)
