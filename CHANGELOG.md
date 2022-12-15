@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.87](https://github.com/bgord/bgord-node/compare/v0.58.86...v0.58.87) (2022-12-15)
+
+
+### Features
+
+* add HealthcheckPrerequisite ([da1830b](https://github.com/bgord/bgord-node/commit/da1830b16503938fa7170ebb2f00bb73353378fa))
+
 ### [0.58.86](https://github.com/bgord/bgord-node/compare/v0.58.85...v0.58.86) (2022-12-15)
 
 

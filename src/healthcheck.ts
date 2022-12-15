@@ -1,11 +1,7 @@
 import * as express from 'express';
 
 import { Middleware } from './middleware';
-import {
-  Prerequisite,
-  PrerequisiteStatusEnum,
-  PrerequisiteStrategyEnum,
-} from './prerequisites';
+import { Prerequisite, PrerequisiteStatusEnum } from './prerequisites';
 
 type HealthcheckComponentLabelType = string;
 
