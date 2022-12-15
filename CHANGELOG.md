@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.86](https://github.com/bgord/bgord-node/compare/v0.58.85...v0.58.86) (2022-12-15)
+
+
+### Features
+
+* add healthcheck ([895f234](https://github.com/bgord/bgord-node/commit/895f234ca599b1e0383080515109d63be3a79b12))
+
+
+### Bug Fixes
+
+* PrerequisiteStrategyEnum typo ([ecf7626](https://github.com/bgord/bgord-node/commit/ecf7626b5eefb1d55cb34531c839c542acd90c3e))
+
 ### [0.58.85](https://github.com/bgord/bgord-node/compare/v0.58.84...v0.58.85) (2022-12-14)
 
 
