@@ -8,7 +8,7 @@ export enum PrerequisiteStrategyEnum {
   exists = 'exists',
 }
 
-enum PrerequisiteStatusEnum {
+export enum PrerequisiteStatusEnum {
   success = 'success',
   failure = 'failure',
   undetermined = 'undetermined',

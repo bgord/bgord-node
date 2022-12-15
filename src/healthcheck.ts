@@ -1,5 +1,11 @@
 import * as express from 'express';
+
 import { Middleware } from './middleware';
+import {
+  Prerequisite,
+  PrerequisiteStatusEnum,
+  PrerequisiteStrategyEnum,
+} from './prerequisites';
 
 type HealthcheckComponentLabelType = string;
 
@@ -22,6 +28,30 @@ export class HealthcheckAutoresponder implements HealthcheckComponent {
     return {
       label: 'autoresponder',
       status: HealthcheckComponentStatus.working,
+    };
+  }
+}
+
+export class HealthcheckPrerequisite implements HealthcheckComponent {
+  prerequisite: Prerequisite;
+
+  constructor(prerequisite: Prerequisite) {
+    this.prerequisite = prerequisite;
+  }
+
+  async verify() {
+    const result = await this.prerequisite.verify();
+
+    if (result.status === PrerequisiteStatusEnum.success) {
+      return {
+        label: result.config.label,
+        status: HealthcheckComponentStatus.working,
+      };
+    }
+
+    return {
+      label: result.config.label,
+      status: HealthcheckComponentStatus.failed,
     };
   }
 }
