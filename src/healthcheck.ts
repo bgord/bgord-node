@@ -1,4 +1,5 @@
 import * as express from 'express';
+import { PrismaClient } from '@prisma/client';
 
 import { Middleware } from './middleware';
 import { Prerequisite, PrerequisiteStatusEnum } from './prerequisites';
@@ -49,6 +50,37 @@ export class HealthcheckPrerequisite implements HealthcheckComponent {
       label: result.config.label,
       status: HealthcheckComponentStatus.failed,
     };
+  }
+}
+
+export class HealthcheckPrisma implements HealthcheckComponent {
+  db: PrismaClient;
+
+  constructor(db: PrismaClient) {
+    this.db = db;
+  }
+
+  async verify() {
+    try {
+      const result = await this.db.$queryRawUnsafe(`SELECT 1`);
+
+      if (JSON.stringify(result) === '[{"1":1}]') {
+        return {
+          label: 'prisma',
+          status: HealthcheckComponentStatus.working,
+        };
+      }
+
+      return {
+        label: 'prisma',
+        status: HealthcheckComponentStatus.failed,
+      };
+    } catch (error) {
+      return {
+        label: 'prisma',
+        status: HealthcheckComponentStatus.failed,
+      };
+    }
   }
 }
 

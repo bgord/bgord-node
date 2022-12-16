@@ -45,6 +45,7 @@
     }
   ],
   "devDependencies": {
+    "@prisma/client": "3.7.0",
     "@size-limit/preset-small-lib": "^5.0.1",
     "@types/accept-language-parser": "^1.5.3",
     "@types/cors": "^2.8.10",
@@ -64,6 +65,7 @@
     "@types/uuid": "^8.3.1",
     "husky": "^6.0.0",
     "japa": "^3.1.1",
+    "prisma": "3.7.0",
     "size-limit": "^5.0.1",
     "standard-version": "^9.3.2",
     "ts-node": "^10.2.1",
