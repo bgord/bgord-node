@@ -62,18 +62,13 @@ export class HealthcheckPrisma implements HealthcheckComponent {
 
   async verify() {
     try {
-      const result = await this.db.$queryRawUnsafe(`SELECT 1`);
-
-      if (JSON.stringify(result) === '[{"1":1}]') {
-        return {
-          label: 'prisma',
-          status: HealthcheckComponentStatus.working,
-        };
-      }
+      await this.db.$queryRawUnsafe(
+        `SELECT * FROM healthcheck ORDER BY ROWID ASC LIMIT 1`
+      );
 
       return {
         label: 'prisma',
-        status: HealthcheckComponentStatus.failed,
+        status: HealthcheckComponentStatus.working,
       };
     } catch (error) {
       return {
