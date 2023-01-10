@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.90](https://github.com/bgord/bgord-node/compare/v0.58.89...v0.58.90) (2023-01-10)
+
+
+### Features
+
+* healthcheck prisma ([7dbc551](https://github.com/bgord/bgord-node/commit/7dbc551f3e0ad075f4a037bdafc714ce20a20601))
+
 ### [0.58.89](https://github.com/bgord/bgord-node/compare/v0.58.88...v0.58.89) (2022-12-16)
 
 
