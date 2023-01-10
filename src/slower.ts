@@ -6,7 +6,7 @@ type SlowerConfigType = { delayMs?: number };
 
 export class Slower {
   static build(config: SlowerConfigType) {
-    async function verify(
+    async function handle(
       _request: express.Request,
       _response: express.Response,
       next: express.NextFunction
@@ -17,6 +17,6 @@ export class Slower {
       next();
     }
 
-    return Middleware(verify);
+    return Middleware(handle);
   }
 }
