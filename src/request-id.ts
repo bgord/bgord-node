@@ -1,6 +1,6 @@
 import express from 'express';
 import * as Schema from './schema';
-import { UUID } from './uuid';
+import { NewUUID } from './uuid';
 
 declare global {
   namespace Express {
@@ -13,7 +13,7 @@ declare global {
 export class RequestId {
   static applyTo(app: express.Application): void {
     app.use(async (request, _response, next) => {
-      request.requestId = Schema.RequestId.parse(UUID.generate());
+      request.requestId = Schema.RequestId.parse(NewUUID.generate());
 
       next();
     });

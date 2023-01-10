@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { v4 as uuid } from 'uuid';
+import { NewUUID } from './uuid';
 
 import { UUID } from './schema';
 import { AccessDeniedError } from './errors';
@@ -26,7 +26,7 @@ export class CsrfShield {
     _response: express.Response,
     next: express.NextFunction
   ) {
-    request.session._csrf = uuid();
+    request.session._csrf = NewUUID.generate();
     return next();
   }
 

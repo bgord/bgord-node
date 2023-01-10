@@ -62,7 +62,6 @@
     "@types/passport-local": "^1.0.34",
     "@types/pluralize": "^0.0.29",
     "@types/session-file-store": "^1.2.2",
-    "@types/uuid": "^8.3.1",
     "husky": "^6.0.0",
     "japa": "^3.1.1",
     "prisma": "3.7.0",
@@ -100,7 +99,6 @@
     "passport-local": "^1.0.0",
     "pluralize": "^8.0.0",
     "session-file-store": "^1.5.0",
-    "uuid": "^8.3.2",
     "zod": "^3.20.2"
   },
   "resolutions": {

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { v4 as uuid } from 'uuid';
+import { NewUUID } from './uuid';
 
 export enum NodeEnvironmentEnum {
   local = 'local',
@@ -29,7 +29,7 @@ export const HCaptchaResponseToken = z.string().trim();
 export const UUID = z
   .string()
   .uuid()
-  .default(() => uuid());
+  .default(() => NewUUID.generate());
 export type UUIDType = z.infer<typeof UUID>;
 
 export const SmtpHost = z
