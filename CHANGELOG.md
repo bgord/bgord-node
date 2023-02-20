@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.92](https://github.com/bgord/bgord-node/compare/v0.58.91...v0.58.92) (2023-02-20)
+
+
+### Features
+
+* add mailer#verify ([74b2730](https://github.com/bgord/bgord-node/commit/74b27300d3174bd47bf735305d1283547cf22926))
+
 ### [0.58.91](https://github.com/bgord/bgord-node/compare/v0.58.89...v0.58.91) (2023-01-10)
 
 
