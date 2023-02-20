@@ -33,4 +33,8 @@ export class Mailer {
   async send(options: MailerSendOptionsType): Promise<unknown> {
     return this.transport.sendMail(options);
   }
+
+  async verify() {
+    return this.transport.verify();
+  }
 }
