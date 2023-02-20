@@ -17,9 +17,9 @@
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "preinstall": "npx only-allow npm"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -64,6 +64,7 @@
     "@types/session-file-store": "^1.2.2",
     "husky": "^6.0.0",
     "japa": "^3.1.1",
+    "only-allow": "^1.1.1",
     "prisma": "3.7.0",
     "size-limit": "^5.0.1",
     "standard-version": "^9.3.2",
