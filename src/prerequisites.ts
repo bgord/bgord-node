@@ -45,10 +45,12 @@ export class Prerequisite {
   async verify() {
     if (this.config.strategy === PrerequisiteStrategyEnum.exists) {
       this.status = await PrerequisiteExistsVerificator.verify(this.config);
+      return;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.mailer) {
       this.status = await PrerequisiteMailerVerificator.verify(this.config);
+      return;
     }
 
     throw new Error(`Unknown PrerequisiteStatusEnum value`);
@@ -101,26 +103,30 @@ class PrerequisiteExistsVerificator {
 
 export class Prerequisites {
   static async check(prerequisites: Prerequisite[]) {
-    const failedPrerequisiteLabels: PrerequisiteLabelType[] = [];
+    try {
+      const failedPrerequisiteLabels: PrerequisiteLabelType[] = [];
 
-    for (const prerequisite of prerequisites) {
-      await prerequisite.verify();
-      prerequisite.report();
+      for (const prerequisite of prerequisites) {
+        await prerequisite.verify();
+        prerequisite.report();
 
-      if (prerequisite.status === PrerequisiteStatusEnum.failure) {
-        failedPrerequisiteLabels.push(prerequisite.config.label);
+        if (prerequisite.status === PrerequisiteStatusEnum.failure) {
+          failedPrerequisiteLabels.push(prerequisite.config.label);
+        }
       }
-    }
 
-    if (failedPrerequisiteLabels.length > 0) {
-      const failedPrerequisiteLabelsFormatted = failedPrerequisiteLabels.join(
-        ', '
-      );
+      if (failedPrerequisiteLabels.length > 0) {
+        const failedPrerequisiteLabelsFormatted = failedPrerequisiteLabels.join(
+          ', '
+        );
 
-      Reporter.error(
-        `Prerequisites failed: ${failedPrerequisiteLabelsFormatted}, quitting...`,
-        { quit: true }
-      );
+        Reporter.error(
+          `Prerequisites failed: ${failedPrerequisiteLabelsFormatted}, quitting...`,
+          { quit: true }
+        );
+      }
+    } catch (error) {
+      Reporter.raw('Prerequisites error', String(error));
     }
   }
 }
