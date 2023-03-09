@@ -46,9 +46,9 @@ export class FileSize {
   private calculateBytes(config: FileSizeConfigType): Schema.SizeInBytesType {
     switch (config.unit) {
       case FileSizeUnit.KB:
-        return Schema.SizeInBytes.parse(config.value * 1_000);
+        return Schema.SizeInBytes.parse(config.value * 1024);
       case FileSizeUnit.MB:
-        return Schema.SizeInBytes.parse(config.value * 1_000_000);
+        return Schema.SizeInBytes.parse(config.value * 1024 * 1024);
       default:
         // FileSizeUnit.bytes
         return Schema.SizeInBytes.parse(config.value);
