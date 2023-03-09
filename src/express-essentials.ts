@@ -5,11 +5,12 @@ import cors from 'cors';
 import _ from 'lodash';
 
 import { Logger, LoggerConfigType } from './logger';
-import { StaticFiles, StaticFilesConfigType } from './static-files';
 import { MethodOverride } from './method-override';
-import { TimeZoneOffset } from './time-zone-offset';
-import { ServerTiming } from './server-timing';
 import { RequestId } from './request-id';
+import { ResponseBodyInLocals } from './response-body-in-locals';
+import { ServerTiming } from './server-timing';
+import { StaticFiles, StaticFilesConfigType } from './static-files';
+import { TimeZoneOffset } from './time-zone-offset';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -60,4 +61,5 @@ export function addExpressEssentials(
   TimeZoneOffset.applyTo(app);
   ServerTiming.applyTo(app);
   RequestId.applyTo(app);
+  ResponseBodyInLocals.applyTo(app);
 }

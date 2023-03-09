@@ -33,6 +33,7 @@ export * from './prerequisites';
 export * from './recaptcha-shield';
 export * from './reporter';
 export * from './request-id';
+export * from './response-body-in-locals';
 export * from './route';
 export * from './server-timing';
 export * from './session';
