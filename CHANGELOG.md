@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.96](https://github.com/bgord/bgord-node/compare/v0.58.95...v0.58.96) (2023-03-09)
+
+
+### Features
+
+* add ResponseBodyInLocals ([efab437](https://github.com/bgord/bgord-node/commit/efab4374382fd0c9e23f0ab22a98edc2a58371f9))
+
 ### [0.58.95](https://github.com/bgord/bgord-node/compare/v0.58.94...v0.58.95) (2023-02-20)
 
 
