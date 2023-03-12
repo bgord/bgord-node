@@ -59,7 +59,7 @@ export class Pagination {
 
     return {
       result: config.result,
-      meta: { exhausted, currentPage, nextPage, lastPage },
+      meta: { exhausted, currentPage, nextPage, lastPage, total: config.total },
     };
   }
 
@@ -76,7 +76,13 @@ export class Pagination {
 
   static empty = {
     result: [],
-    meta: { exhausted: true, currentPage: 1, nextPage: undefined, lastPage: 1 },
+    meta: {
+      exhausted: true,
+      currentPage: 1,
+      nextPage: undefined,
+      lastPage: 1,
+      total: 0,
+    },
   };
 
   static getFirstPage({ take }: { take: TakeType }): PaginationType {
@@ -91,5 +97,6 @@ export type Paged<T> = {
     currentPage: PageType;
     nextPage: PageType | undefined;
     lastPage: PageType;
+    total: TotalType;
   };
 };
