@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.97](https://github.com/bgord/bgord-node/compare/v0.58.96...v0.58.97) (2023-03-12)
+
+
+### Features
+
+* expose total in paged results ([d4e44c3](https://github.com/bgord/bgord-node/commit/d4e44c31004fd4a2c2f25799ef08e1c63be82260))
+
+
+### Bug Fixes
+
+* calculate bytes ([59c6cee](https://github.com/bgord/bgord-node/commit/59c6cee13e89fa3a6996c1de19df2eb15a8e91bf))
+
 ### [0.58.96](https://github.com/bgord/bgord-node/compare/v0.58.95...v0.58.96) (2023-03-09)
 
 
