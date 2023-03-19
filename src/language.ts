@@ -6,7 +6,12 @@ import parser from 'accept-language-parser';
 import * as Schema from './schema';
 import { Reporter } from './reporter';
 
-export type TranslationsType = Record<string, string>;
+export type TranslationsKeyType = string;
+export type TranslationsValueType = string;
+export type TranslationsType = Record<
+  TranslationsKeyType,
+  TranslationsValueType
+>;
 
 declare global {
   namespace Express {
@@ -61,7 +66,7 @@ export class Language {
   }
 
   static useTranslations(translations: TranslationsType) {
-    return function t(key: string): string {
+    return function t(key: TranslationsKeyType): TranslationsValueType {
       return translations[key] ?? key;
     };
   }
