@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.99](https://github.com/bgord/bgord-node/compare/v0.58.98...v0.58.99) (2023-03-21)
+
+
+### Features
+
+* add logger ([1ea70fe](https://github.com/bgord/bgord-node/commit/1ea70fe08c11ef0b336ca176285db6e0700df787))
+
 ### [0.58.98](https://github.com/bgord/bgord-node/compare/v0.58.97...v0.58.98) (2023-03-19)
 
 
