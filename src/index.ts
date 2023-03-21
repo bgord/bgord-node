@@ -20,6 +20,7 @@ export * from './hcaptcha-shield';
 export * from './image-compressor';
 export * from './image-resizer'
 export * from './language';
+export * from './logger';
 export * from './mailer';
 export * from './mailerlite';
 export * from './middleware';
