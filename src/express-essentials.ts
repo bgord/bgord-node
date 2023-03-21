@@ -4,7 +4,6 @@ import helmet from 'helmet';
 import cors from 'cors';
 import _ from 'lodash';
 
-import { Logger, LoggerConfigType } from './logger';
 import { MethodOverride } from './method-override';
 import { RequestId } from './request-id';
 import { ResponseBodyInLocals } from './response-body-in-locals';
@@ -17,7 +16,6 @@ export type ExpressEssentialsConfig = Partial<{
   json: bodyparser.OptionsJson;
   urlencoded: bodyparser.OptionsUrlencoded;
   cors: cors.CorsOptions;
-  logger: LoggerConfigType;
   staticFiles: StaticFilesConfigType;
 }>;
 
@@ -48,10 +46,6 @@ export function addExpressEssentials(
 
   const corsConfig = config?.cors ?? { origin: '*' };
   app.use(cors(corsConfig));
-
-  const loggerConfig = config?.logger ?? {};
-  const logger = new Logger(loggerConfig);
-  logger.applyTo(app);
 
   const staticFilesConfig = config?.staticFiles ?? {};
   const staticFiles = new StaticFiles(staticFilesConfig);
