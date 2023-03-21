@@ -72,7 +72,7 @@ type LogHttpType = Omit<
   'app' | 'environment' | 'timestamp' | 'level'
 >;
 
-class Logger {
+export class Logger {
   private instance: winston.Logger;
 
   private app: string;
