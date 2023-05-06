@@ -4,6 +4,7 @@ import * as Schema from './schema';
 import * as VO from './value-objects';
 
 enum LogLevelTypeEnum {
+  silent = 'silent',
   error = 'error',
   warn = 'warn',
   info = 'info',
@@ -13,13 +14,14 @@ enum LogLevelTypeEnum {
 
 type LogTimestampType = number;
 type LogAppType = string;
-type LogEnvironmentType = string;
+type LogEnvironmentType = Schema.NodeEnvironmentEnum;
 type LogMessageType = string;
 type LogOperationType = string;
 type LogMetadataType = Record<string, any>;
 type LogRequestIdType = Schema.RequestIdType;
 
 const levels: Record<LogLevelTypeEnum, number> = {
+  silent: 0,
   error: 0,
   warn: 1,
   info: 2,
@@ -72,19 +74,28 @@ type LogHttpType = Omit<
   'app' | 'environment' | 'timestamp' | 'level'
 >;
 
+type LoggerOptionsType = {
+  app: LogAppType;
+  environment: Schema.NodeEnvironmentEnum;
+  level?: LogLevelTypeEnum;
+};
+
 export class Logger {
   private instance: winston.Logger;
 
-  private app: string;
+  private app: LoggerOptionsType['app'];
 
-  private environment: string;
+  private environment: LoggerOptionsType['environment'];
 
-  constructor(base: { app: string; environment: Schema.NodeEnvironmentEnum }) {
-    this.app = base.app;
-    this.environment = base.environment;
+  private level: LoggerOptionsType['level'] = LogLevelTypeEnum.verbose;
+
+  constructor(options: LoggerOptionsType) {
+    this.app = options.app;
+    this.environment = options.environment;
+    this.level = options.level ?? this.level;
 
     this.instance = winston.createLogger({
-      level: LogLevelTypeEnum.verbose,
+      level: this.level,
       levels,
       handleExceptions: true,
       handleRejections: true,
