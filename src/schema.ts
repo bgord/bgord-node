@@ -281,3 +281,13 @@ export type OpenGraphImageHeightValueType = z.infer<
 
 export const RequestId = UUID.brand<'request-id'>();
 export type RequestIdType = z.infer<typeof RequestId>;
+
+export enum LogLevelEnum {
+  silent = 'silent',
+  error = 'error',
+  warn = 'warn',
+  info = 'info',
+  http = 'http',
+  verbose = 'verbose',
+}
+export const LogLevel = z.nativeEnum(LogLevelEnum);

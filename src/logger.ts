@@ -3,15 +3,6 @@ import * as winston from 'winston';
 import * as Schema from './schema';
 import * as VO from './value-objects';
 
-enum LogLevelTypeEnum {
-  silent = 'silent',
-  error = 'error',
-  warn = 'warn',
-  info = 'info',
-  http = 'http',
-  verbose = 'verbose',
-}
-
 type LogTimestampType = number;
 type LogAppType = string;
 type LogEnvironmentType = Schema.NodeEnvironmentEnum;
@@ -20,7 +11,7 @@ type LogOperationType = string;
 type LogMetadataType = Record<string, any>;
 type LogRequestIdType = Schema.RequestIdType;
 
-const levels: Record<LogLevelTypeEnum, number> = {
+const levels: Record<Schema.LogLevelEnum, number> = {
   silent: 0,
   error: 0,
   warn: 1,
@@ -33,7 +24,7 @@ type LogFullType = {
   timestamp: LogTimestampType;
   app: LogAppType;
   environment: LogEnvironmentType;
-  level: LogLevelTypeEnum;
+  level: Schema.LogLevelEnum;
   message: LogMessageType;
   operation: LogOperationType;
   method: string;
@@ -77,7 +68,7 @@ type LogHttpType = Omit<
 type LoggerOptionsType = {
   app: LogAppType;
   environment: Schema.NodeEnvironmentEnum;
-  level?: LogLevelTypeEnum;
+  level?: Schema.LogLevelEnum;
 };
 
 export class Logger {
@@ -87,7 +78,7 @@ export class Logger {
 
   private environment: LoggerOptionsType['environment'];
 
-  private level: LoggerOptionsType['level'] = LogLevelTypeEnum.verbose;
+  private level: LoggerOptionsType['level'] = Schema.LogLevelEnum.verbose;
 
   constructor(options: LoggerOptionsType) {
     this.app = options.app;
@@ -126,7 +117,7 @@ export class Logger {
 
   info(log: LogInfoType) {
     this.instance.info({
-      level: LogLevelTypeEnum.info,
+      level: Schema.LogLevelEnum.info,
       ...this.getBase(),
       ...log,
     });
@@ -134,7 +125,7 @@ export class Logger {
 
   error(log: LogErrorType) {
     this.instance.error({
-      level: LogLevelTypeEnum.error,
+      level: Schema.LogLevelEnum.error,
       ...this.getBase(),
       ...log,
     });
@@ -142,7 +133,7 @@ export class Logger {
 
   http(log: LogHttpType) {
     this.instance.http({
-      level: LogLevelTypeEnum.http,
+      level: Schema.LogLevelEnum.http,
       ...this.getBase(),
       ...log,
     });
