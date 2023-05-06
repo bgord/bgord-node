@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.103](https://github.com/bgord/bgord-node/compare/v0.58.102...v0.58.103) (2023-05-06)
+
+
+### Features
+
+* add an option to pass log level ([c14203b](https://github.com/bgord/bgord-node/commit/c14203b92011586eb270ed65f31a23e6e7133e3a))
+
 ### [0.58.102](https://github.com/bgord/bgord-node/compare/v0.58.101...v0.58.102) (2023-05-06)
 
 
