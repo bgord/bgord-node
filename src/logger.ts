@@ -72,16 +72,25 @@ type LogHttpType = Omit<
   'app' | 'environment' | 'timestamp' | 'level'
 >;
 
+type LoggerOptionsType = {
+  app: string;
+  environment: Schema.NodeEnvironmentEnum;
+  enabled?: boolean;
+};
+
 export class Logger {
   private instance: winston.Logger;
 
-  private app: string;
+  private app: LoggerOptionsType["app"];
 
-  private environment: string;
+  private environment: LoggerOptionsType["environment"];
 
-  constructor(base: { app: string; environment: Schema.NodeEnvironmentEnum }) {
-    this.app = base.app;
-    this.environment = base.environment;
+  private enabled: LoggerOptionsType["enabled"] = true;
+
+  constructor(options: LoggerOptionsType) {
+    this.app = options.app;
+    this.environment = options.environment;
+    this.enabled = options.enabled ?? this.enabled;
 
     this.instance = winston.createLogger({
       level: LogLevelTypeEnum.verbose,
@@ -89,8 +98,12 @@ export class Logger {
       handleExceptions: true,
       handleRejections: true,
       format: winston.format.combine(winston.format.json()),
-      transports: [new winston.transports.Console()],
+      transports: [],
     });
+
+    if (!this.enabled) return;
+
+    this.instance.add(new winston.transports.Console());
 
     if (this.environment !== Schema.NodeEnvironmentEnum.local) {
       this.instance.add(
