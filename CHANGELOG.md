@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.102](https://github.com/bgord/bgord-node/compare/v0.58.101...v0.58.102) (2023-05-06)
+
+
+### Features
+
+* add a way to disable logger ([72936ae](https://github.com/bgord/bgord-node/commit/72936ae9a307a3e400b68bd90e6e507d4f4328ee))
+
 ### [0.58.101](https://github.com/bgord/bgord-node/compare/v0.58.100...v0.58.101) (2023-03-21)
 
 
