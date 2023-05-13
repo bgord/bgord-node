@@ -51,3 +51,13 @@ export class NotAcceptedMimeError extends Error {
     this.mime = mime;
   }
 }
+
+export class TooManyRequestsError extends Error {
+  remainingMs: number;
+
+  constructor(remainingMs: number) {
+    super();
+    this.remainingMs = remainingMs;
+    Object.setPrototypeOf(this, TooManyRequestsError.prototype);
+  }
+}

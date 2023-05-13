@@ -31,6 +31,7 @@ export * from './open-graph';
 export * from './pagination';
 export * from './policy';
 export * from './prerequisites';
+export * from './rate-limit-shield';
 export * from './recaptcha-shield';
 export * from './reporter';
 export * from './request-id';
