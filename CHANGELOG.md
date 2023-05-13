@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.105](https://github.com/bgord/bgord-node/compare/v0.58.104...v0.58.105) (2023-05-13)
+
+
+### Features
+
+* add rate limit shield ([0c407f3](https://github.com/bgord/bgord-node/commit/0c407f32621151b1e8d5317f4c67576045773d36))
+
 ### [0.58.104](https://github.com/bgord/bgord-node/compare/v0.58.103...v0.58.104) (2023-05-13)
 
 
