@@ -47,6 +47,18 @@ type LogErrorType = Omit<
   | 'responseCode'
 >;
 
+type LogWarnType = Omit<
+  LogFullType,
+  | 'timestamp'
+  | 'app'
+  | 'environment'
+  | 'level'
+  | 'method'
+  | 'url'
+  | 'client'
+  | 'responseCode'
+>;
+
 type LogInfoType = Omit<
   LogFullType,
   | 'app'
@@ -126,6 +138,14 @@ export class Logger {
   error(log: LogErrorType) {
     this.instance.error({
       level: Schema.LogLevelEnum.error,
+      ...this.getBase(),
+      ...log,
+    });
+  }
+
+  warn(log: LogWarnType) {
+    this.instance.warn({
+      level: Schema.LogLevelEnum.warn,
       ...this.getBase(),
       ...log,
     });
