@@ -22,7 +22,7 @@ class RateLimiter {
     this.limitMs = options.limitMs;
   }
 
-  verify(currentTimestamp: number): RateLimiterResultType {
+  verify(currentTimestamp: Schema.TimestampType): RateLimiterResultType {
     if (!this.lastInvocationTimestamp) {
       this.lastInvocationTimestamp = currentTimestamp;
 
