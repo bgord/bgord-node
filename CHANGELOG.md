@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.107](https://github.com/bgord/bgord-node/compare/v0.58.106...v0.58.107) (2023-05-14)
+
+
+### Features
+
+* add nullable ts-util ([aa876dc](https://github.com/bgord/bgord-node/commit/aa876dce89b7c475760d0b7a789f4ada20cfef92))
+
+
+### Bug Fixes
+
+* update helmet ([113aaa3](https://github.com/bgord/bgord-node/commit/113aaa3dd51cfc2650b6494ea45598253492c08c))
+
 ### [0.58.106](https://github.com/bgord/bgord-node/compare/v0.58.105...v0.58.106) (2023-05-14)
 
 
