@@ -2,7 +2,6 @@ import * as z from 'zod';
 import * as dotenv from 'dotenv';
 
 import { NodeEnvironment, NodeEnvironmentEnum } from './schema';
-import { Reporter } from './reporter';
 
 type NodeEnvironmentEnumType = z.infer<typeof NodeEnvironment>;
 
@@ -52,9 +51,7 @@ export class EnvironmentValidator<SchemaType> {
       this.type = result.data;
     } else {
       if (this.quit) {
-        Reporter.error(`Invalid EnvironmentType: ${config.type}`, {
-          quit: true,
-        });
+        console.log(`Invalid EnvironmentType: ${config.type}`);
         process.exit(1);
       } else {
         throw new NodeEnvironmentError();
@@ -68,9 +65,8 @@ export class EnvironmentValidator<SchemaType> {
     const environment = dotenv.config({ path }).parsed;
 
     if (!environment) {
-      Reporter.error(`Missing or empty environment file: ${path}`, {
-        quit: this.quit,
-      });
+      console.log(`Missing or empty environment file: ${path}`);
+      process.exit(1);
     }
 
     return { ...this.schema.parse(environment), type: this.type };

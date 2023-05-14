@@ -1,7 +1,6 @@
 import execa from 'execa';
 
 import { Mailer } from './mailer';
-import { Reporter } from './reporter';
 
 type PrerequisiteLabelType = string;
 type PrerequisiteBinaryType = string;
@@ -58,13 +57,13 @@ export class Prerequisite {
 
   report() {
     if (this.status === PrerequisiteStatusEnum.success) {
-      Reporter.success(
+      console.log(
         `${this.config.label} verified correctly with ${this.config.strategy} strategy`
       );
     }
 
     if (this.status === PrerequisiteStatusEnum.failure) {
-      Reporter.error(
+      console.log(
         `${this.config.label} not verified correctly with ${this.config.strategy} strategy`
       );
     }
@@ -120,13 +119,13 @@ export class Prerequisites {
           ', '
         );
 
-        Reporter.error(
+        console.log(
           `Prerequisites failed: ${failedPrerequisiteLabelsFormatted}, quitting...`,
           { quit: true }
         );
       }
     } catch (error) {
-      Reporter.raw('Prerequisites error', String(error));
+      console.log('Prerequisites error', String(error));
     }
   }
 }

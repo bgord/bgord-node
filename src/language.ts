@@ -4,7 +4,6 @@ import fs from 'fs/promises';
 import parser from 'accept-language-parser';
 
 import * as Schema from './schema';
-import { Reporter } from './reporter';
 
 export type TranslationsKeyType = string;
 export type TranslationsValueType = string;
@@ -59,7 +58,7 @@ export class Language {
 
       return JSON.parse(file.toString());
     } catch (error) {
-      Reporter.raw('I18n#getTranslations', error);
+      console.log('I18n#getTranslations', error);
 
       return {};
     }
@@ -78,7 +77,7 @@ export class Language {
       const supportedLanguageFiles = await fs.readdir(traslationsPath);
       return supportedLanguageFiles.map(filename => Path.parse(filename).name);
     } catch (error) {
-      Reporter.raw('I18n#getSupportedLanguages', error);
+      console.log('I18n#getSupportedLanguages', error);
 
       return [];
     }
