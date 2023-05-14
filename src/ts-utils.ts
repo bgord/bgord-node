@@ -9,3 +9,5 @@ export type AsyncReturnType<T extends (...args: any) => any> = T extends (
   : any;
 
 export type Falsy<T> = T | null | undefined;
+
+export type Nullable<T> = T | null;
