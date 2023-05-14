@@ -9,7 +9,7 @@ type LogEnvironmentType = Schema.NodeEnvironmentEnum;
 type LogMessageType = string;
 type LogOperationType = string;
 type LogMetadataType = Record<string, any>;
-type LogRequestIdType = Schema.RequestIdType;
+type LogCorrelationIdType = Schema.CorrelationIdType;
 
 const levels: Record<Schema.LogLevelEnum, number> = {
   silent: 0,
@@ -30,7 +30,7 @@ type LogFullType = {
   method: string;
   url: string;
   client: { ip: string; userAgent?: string };
-  requestId?: LogRequestIdType;
+  correlationId?: LogCorrelationIdType;
   responseCode?: number;
   metadata?: LogMetadataType;
 };

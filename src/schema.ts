@@ -279,8 +279,8 @@ export type OpenGraphImageHeightValueType = z.infer<
   typeof OpenGraphImageHeightValue
 >;
 
-export const RequestId = UUID.brand<'request-id'>();
-export type RequestIdType = z.infer<typeof RequestId>;
+export const CorrelationId = UUID.brand<'correlation-id'>();
+export type CorrelationIdType = z.infer<typeof CorrelationId>;
 
 export enum LogLevelEnum {
   silent = 'silent',

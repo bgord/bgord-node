@@ -21,7 +21,7 @@ export class HttpLogger {
 
         logger.http({
           operation: 'http_request_before',
-          requestId: request.requestId,
+          correlationId: request.requestId,
           message: 'request',
           method: request.method,
           url: `${request.header('host')}${request.url}`,
@@ -36,7 +36,7 @@ export class HttpLogger {
 
           logger.http({
             operation: 'http_request_after',
-            requestId: request.requestId,
+            correlationId: request.requestId,
             message: 'response',
             method: request.method,
             url: `${request.header('host')}${request.url}`,

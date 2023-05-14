@@ -5,7 +5,7 @@ import { NewUUID } from './uuid';
 declare global {
   namespace Express {
     export interface Request {
-      requestId: Schema.RequestIdType;
+      requestId: Schema.CorrelationIdType;
     }
   }
 }
@@ -13,7 +13,7 @@ declare global {
 export class RequestId {
   static applyTo(app: express.Application): void {
     app.use(async (request, _response, next) => {
-      request.requestId = Schema.RequestId.parse(NewUUID.generate());
+      request.requestId = Schema.CorrelationId.parse(NewUUID.generate());
 
       next();
     });
