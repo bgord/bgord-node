@@ -34,7 +34,6 @@ export * from './prerequisites';
 export * from './rate-limiter';
 export * from './rate-limit-shield';
 export * from './recaptcha-shield';
-export * from './reporter';
 export * from './request-id';
 export * from './response-body-in-locals';
 export * from './route';
