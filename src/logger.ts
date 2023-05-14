@@ -69,7 +69,6 @@ type LogInfoType = Omit<
   | 'url'
   | 'responseCode'
   | 'client'
-  | 'requestId'
 >;
 
 type LogHttpType = Omit<
