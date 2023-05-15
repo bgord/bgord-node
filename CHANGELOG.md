@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.111](https://github.com/bgord/bgord-node/compare/v0.58.110...v0.58.111) (2023-05-15)
+
+
+### Features
+
+* add graceful startup ([51085be](https://github.com/bgord/bgord-node/commit/51085be407db73a248f317ea426d1277c3c54941))
+
 ### [0.58.110](https://github.com/bgord/bgord-node/compare/v0.58.109...v0.58.110) (2023-05-15)
 
 ### [0.58.109](https://github.com/bgord/bgord-node/compare/v0.58.108...v0.58.109) (2023-05-14)
