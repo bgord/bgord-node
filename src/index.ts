@@ -24,7 +24,6 @@ export * from './image-resizer'
 export * from './language';
 export * from './logger';
 export * from './mailer';
-export * from './mailerlite';
 export * from './middleware';
 export * from './mime';
 export * from './noop';
