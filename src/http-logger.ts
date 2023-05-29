@@ -1,9 +1,17 @@
 import express from 'express';
-import { Logger } from './logger';
 
+import { Logger } from './logger';
 import { Middleware } from './middleware';
 
 export class HttpLogger {
+  private static simplify(response: unknown) {
+    const result = JSON.stringify(response, (_key, value) =>
+      Array.isArray(value) ? { type: 'Array', length: value.length } : value
+    );
+
+    return JSON.parse(result);
+  }
+
   static applyTo(app: express.Application, logger: Logger): void {
     app.use(
       Middleware((request, response, next) => {
@@ -42,7 +50,7 @@ export class HttpLogger {
             url: `${request.header('host')}${request.url}`,
             responseCode: response.statusCode,
             client,
-            metadata: httpRequestAfterMetadata,
+            metadata: HttpLogger.simplify(httpRequestAfterMetadata),
           });
         });
 
