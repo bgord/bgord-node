@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.113](https://github.com/bgord/bgord-node/compare/v0.58.112...v0.58.113) (2023-06-01)
+
+
+### Features
+
+* add healthcheck endpooint handler ([f2bd078](https://github.com/bgord/bgord-node/commit/f2bd078872d32c3f55606d83236e2978ec4b0373))
+* add self prerequisite ([85cbd17](https://github.com/bgord/bgord-node/commit/85cbd17c2c16f97914bec74be76a3ec8ddee76f3))
+
 ### [0.58.112](https://github.com/bgord/bgord-node/compare/v0.58.111...v0.58.112) (2023-05-29)
 
 
