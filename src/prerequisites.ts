@@ -8,6 +8,7 @@ type PrerequisiteBinaryType = string;
 export enum PrerequisiteStrategyEnum {
   exists = 'exists',
   mailer = 'mailer',
+  self = 'self',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -28,9 +29,15 @@ type PrerequisiteMailerStrategyConfigType = {
   mailer: Mailer;
 };
 
+type PrerequisiteSelfStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.self;
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteExistsStrategyConfigType
-  | PrerequisiteMailerStrategyConfigType;
+  | PrerequisiteMailerStrategyConfigType
+  | PrerequisiteSelfStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -49,6 +56,11 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.mailer) {
       this.status = await PrerequisiteMailerVerificator.verify(this.config);
+      return;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.self) {
+      this.status = await PrerequisiteSelfVerificator.verify(this.config);
       return;
     }
 
@@ -97,6 +109,14 @@ class PrerequisiteExistsVerificator {
     } catch (error) {
       return PrerequisiteStatusEnum.failure;
     }
+  }
+}
+
+class PrerequisiteSelfVerificator {
+  static async verify(
+    _config: PrerequisiteSelfStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    return PrerequisiteStatusEnum.success;
   }
 }
 
