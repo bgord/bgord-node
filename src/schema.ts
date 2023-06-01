@@ -292,3 +292,52 @@ export enum LogLevelEnum {
   verbose = 'verbose',
 }
 export const LogLevel = z.nativeEnum(LogLevelEnum);
+
+export const AuthorizationHeader = z
+  .string()
+  .min(1)
+  .refine(
+    value => {
+      if (!value) return false;
+
+      const [basic, secret] = value.split(' ');
+
+      if (!basic || basic !== 'Basic') return false;
+      if (!secret) return false;
+
+      return true;
+    },
+    { message: 'authorization_header_error' }
+  )
+  .transform((value, context) => {
+    const encrypted = value.split(' ')[1] as string;
+    const decrypted = Buffer.from(encrypted, 'base64').toString();
+
+    const [username, password] = decrypted.split(':');
+
+    if (!username || !password) {
+      context.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: 'authorization_header_error',
+      });
+
+      return z.NEVER;
+    }
+
+    return { username, password };
+  });
+export type AuthorizationHeaderType = z.infer<typeof AuthorizationHeader>;
+
+export const BasicAuthUsername = z
+  .string()
+  .min(1)
+  .max(128)
+  .brand('basic-auth-username');
+export type BasicAuthUsernameType = z.infer<typeof BasicAuthUsername>;
+
+export const BasicAuthPassword = z
+  .string()
+  .min(1)
+  .max(128)
+  .brand('basic-auth-password');
+export type BasicAuthPasswordType = z.infer<typeof BasicAuthPassword>;
