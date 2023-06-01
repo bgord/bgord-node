@@ -48,20 +48,26 @@ export class Prerequisite {
     this.config = config;
   }
 
-  async verify() {
+  async verify(): Promise<PrerequisiteStatusEnum> {
     if (this.config.strategy === PrerequisiteStrategyEnum.exists) {
-      this.status = await PrerequisiteExistsVerificator.verify(this.config);
-      return;
+      const status = await PrerequisiteExistsVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.mailer) {
-      this.status = await PrerequisiteMailerVerificator.verify(this.config);
-      return;
+      const status = await PrerequisiteMailerVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.self) {
-      this.status = await PrerequisiteSelfVerificator.verify(this.config);
-      return;
+      const status = await PrerequisiteSelfVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
     }
 
     throw new Error(`Unknown PrerequisiteStatusEnum value`);
