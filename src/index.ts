@@ -18,6 +18,7 @@ export * from './graceful-shutdown';
 export * from './graceful-startup';
 export * from './handlebars';
 export * from './hcaptcha-shield';
+export * from './healthcheck';
 export * from './http-logger';
 export * from './image-compressor';
 export * from './image-resizer'
