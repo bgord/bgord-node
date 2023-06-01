@@ -10,14 +10,13 @@ export class Healthcheck {
       response: express.Response,
       _next: express.NextFunction
     ) {
-      for (const prerequisite of prerequisites) {
-        await prerequisite.verify();
-      }
+      const details = [];
 
-      const details = prerequisites.map(prerequisite => ({
-        label: prerequisite.config.label,
-        status: prerequisite.status,
-      }));
+      for (const prerequisite of prerequisites) {
+        const status = await prerequisite.verify();
+
+        details.push({ label: prerequisite.config.label, status });
+      }
 
       const ok = details.every(
         result => result.status === PrerequisiteStatusEnum.success
