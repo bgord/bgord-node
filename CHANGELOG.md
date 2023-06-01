@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.114](https://github.com/bgord/bgord-node/compare/v0.58.113...v0.58.114) (2023-06-01)
+
+
+### Features
+
+* add basic auth shield ([2d6b891](https://github.com/bgord/bgord-node/commit/2d6b891d3636d6b2a786637560abc7e500234c07))
+
+
+### Bug Fixes
+
+* make healthcheck stateless ([7df9bdc](https://github.com/bgord/bgord-node/commit/7df9bdc67e2b72ba9c50166510bd41a2d5b2a0f6))
+
 ### [0.58.113](https://github.com/bgord/bgord-node/compare/v0.58.112...v0.58.113) (2023-06-01)
 
 
