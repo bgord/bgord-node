@@ -15,13 +15,13 @@ export class ServerTiming {
     response: express.Response,
     next: express.NextFunction
   ) {
-    const before = Date.now();
+    const requestStartTimestampMs = Date.now();
 
     onHeaders(response, () => {
-      const after = Date.now();
-      const duration = after - before;
+      const requestEndTimestampMs = Date.now();
+      const requestDurationMs = requestEndTimestampMs - requestStartTimestampMs;
 
-      response.setHeader('Server-Timing', `total;dur=${duration}`);
+      response.setHeader('Server-Timing', `total;dur=${requestDurationMs}`);
     });
 
     next();
