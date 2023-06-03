@@ -1,4 +1,5 @@
 import { MimeRawType } from './mime';
+import { TimestampType } from './schema';
 
 export enum AccessDeniedErrorReasonType {
   hcaptcha = 'hcaptcha',
@@ -59,5 +60,19 @@ export class TooManyRequestsError extends Error {
     super();
     this.remainingMs = remainingMs;
     Object.setPrototypeOf(this, TooManyRequestsError.prototype);
+  }
+}
+
+export type RequestTimerErrorConfigType = {
+  timeoutMs: TimestampType;
+};
+
+export class RequestTimeoutError extends Error {
+  timeoutMs: RequestTimerErrorConfigType['timeoutMs'];
+
+  constructor(config: RequestTimerErrorConfigType) {
+    super();
+    Object.setPrototypeOf(this, RequestTimeoutError.prototype);
+    this.timeoutMs = config.timeoutMs;
   }
 }
