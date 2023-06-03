@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.116](https://github.com/bgord/bgord-node/compare/v0.58.115...v0.58.116) (2023-06-03)
+
+
+### Features
+
+* add duration to http response log ([0fd8473](https://github.com/bgord/bgord-node/commit/0fd847361d63d45ce583a75142894126f83337b4))
+* add timeout middleware ([508df28](https://github.com/bgord/bgord-node/commit/508df2879a8ed641950ba29c4d554c49aa7e56fa))
+* prettify json logs locally ([61045da](https://github.com/bgord/bgord-node/commit/61045da1b2cacf545b1e2372c997af06b0a36de7))
+
+
+### Bug Fixes
+
+* extract LOCAL_HCAPTCHA_RESPONSE_PLACEHOLDER ([521719a](https://github.com/bgord/bgord-node/commit/521719ae5530636a237a37090192f29d85da0fb5))
+
 ### [0.58.115](https://github.com/bgord/bgord-node/compare/v0.58.114...v0.58.115) (2023-06-03)
 
 ### [0.58.114](https://github.com/bgord/bgord-node/compare/v0.58.113...v0.58.114) (2023-06-01)
