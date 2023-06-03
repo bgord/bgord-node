@@ -30,15 +30,9 @@ export class RecaptchaShield {
       next: express.NextFunction
     ) {
       try {
-        await new Promise((resolve, reject) => {
-          recaptcha.verify(request, error => {
-            if (error) {
-              return reject();
-            } else {
-              return resolve(null);
-            }
-          });
-        });
+        await new Promise((resolve, reject) =>
+          recaptcha.verify(request, error => (error ? reject() : resolve(null)))
+        );
 
         return next();
       } catch (error) {
