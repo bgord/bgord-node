@@ -3,7 +3,7 @@ export * as Schema from './schema';
 export * as VO from './value-objects';
 export * from './api-key-shield';
 export * from './basic-auth-shield';
-export * from './cache';
+export * from './cache-static-files';
 export * from './csrf-shield';
 export * from './dates';
 export * from './deep-merge';
