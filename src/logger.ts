@@ -100,12 +100,22 @@ export class Logger {
     this.environment = options.environment;
     this.level = options.level ?? this.level;
 
+    const formats = [
+      winston.format.json(),
+
+      this.environment === Schema.NodeEnvironmentEnum.local
+        ? winston.format.prettyPrint()
+        : undefined,
+    ].filter(Boolean);
+
     this.instance = winston.createLogger({
       level: this.level,
       levels,
       handleExceptions: true,
       handleRejections: true,
-      format: winston.format.combine(winston.format.json()),
+      format: winston.format.combine(
+        ...(formats as NonNullable<winston.LoggerOptions['format']>[])
+      ),
       transports: [new winston.transports.Console()],
     });
 
