@@ -21,6 +21,8 @@ export class HCaptchaShield {
   secretKey: HCaptchaSecretKeyType;
   mode: HCaptchaVerifierModeType;
 
+  LOCAL_HCAPTCHA_RESPONSE_PLACEHOLDER = '10000000-aaaa-bbbb-cccc-000000000001';
+
   constructor(config: HCaptchaVerifierConfigType) {
     this.mode = config.mode;
     this.secretKey = config.secretKey;
@@ -39,7 +41,7 @@ export class HCaptchaShield {
           that.secretKey,
           that.mode === 'production'
             ? request.body['h-captcha-response']
-            : '10000000-aaaa-bbbb-cccc-000000000001'
+            : that.LOCAL_HCAPTCHA_RESPONSE_PLACEHOLDER
         );
 
         if (!result?.success) {
