@@ -32,6 +32,7 @@ type LogFullType = {
   client: { ip: string; userAgent?: string };
   correlationId?: LogCorrelationIdType;
   responseCode?: number;
+  durationMs?: Schema.TimestampType;
   metadata?: LogMetadataType;
 };
 
@@ -40,6 +41,7 @@ type LogErrorType = Omit<
   | 'app'
   | 'client'
   | 'environment'
+  | 'duration'
   | 'level'
   | 'method'
   | 'responseCode'
@@ -52,6 +54,7 @@ type LogWarnType = Omit<
   | 'app'
   | 'client'
   | 'environment'
+  | 'duration'
   | 'level'
   | 'method'
   | 'responseCode'
@@ -64,6 +67,7 @@ type LogInfoType = Omit<
   | 'app'
   | 'client'
   | 'environment'
+  | 'duration'
   | 'level'
   | 'method'
   | 'responseCode'

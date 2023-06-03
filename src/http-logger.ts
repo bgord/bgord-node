@@ -64,6 +64,12 @@ export class HttpLogger {
             response: response.locals.body,
           };
 
+          const serverTimingMs = response.getHeader('Server-Timing-Ms');
+
+          const durationMs = Number.isInteger(serverTimingMs)
+            ? Number(serverTimingMs)
+            : undefined;
+
           logger.http({
             operation: 'http_request_after',
             correlationId: request.requestId,
@@ -71,6 +77,7 @@ export class HttpLogger {
             method: request.method,
             url: `${request.header('host')}${request.url}`,
             responseCode: response.statusCode,
+            durationMs,
             client,
             metadata: HttpLogger.simplify(httpRequestAfterMetadata),
           });
