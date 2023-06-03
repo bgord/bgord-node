@@ -1,6 +1,7 @@
 import express from 'express';
 
 import * as Schema from './schema';
+import { Time } from './time';
 
 export type TimeZoneOffsetsType = {
   minutes: Schema.TimeZoneOffsetType;
@@ -19,14 +20,14 @@ declare global {
 export class TimeZoneOffset {
   static applyTo(app: express.Application): void {
     app.use((request, _response, next) => {
-      const timeZoneOffset = Schema.TimeZoneOffset.parse(
+      const timeZoneOffsetMinutes = Schema.TimeZoneOffset.parse(
         request.header('time-zone-offset')
       );
 
       request.timeZoneOffset = {
-        minutes: timeZoneOffset,
-        seconds: timeZoneOffset * 60,
-        miliseconds: timeZoneOffset * 60 * 1000,
+        minutes: timeZoneOffsetMinutes,
+        seconds: Time.Minutes(timeZoneOffsetMinutes).toSeconds(),
+        miliseconds: Time.Minutes(timeZoneOffsetMinutes).toMs(),
       };
 
       return next();
