@@ -19,8 +19,8 @@ export class RateLimitShield {
       _response: express.Response,
       next: express.NextFunction
     ) {
-      const currentTimestamp = Date.now();
-      const check = rateLimiter.verify(currentTimestamp);
+      const currentTimestampMs = Date.now();
+      const check = rateLimiter.verify(currentTimestampMs);
 
       if (!check.allowed) {
         throw new Errors.TooManyRequestsError(check.remainingMs);

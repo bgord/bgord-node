@@ -23,20 +23,20 @@ export type ComplexDateType = {
 export type ComplexDateInputType = number;
 
 export class ComplexDate {
-  static truthy(timestamp: ComplexDateInputType): ComplexDateType {
-    return ComplexDate._format(timestamp);
+  static truthy(timestampMs: ComplexDateInputType): ComplexDateType {
+    return ComplexDate._format(timestampMs);
   }
 
-  static falsy(timestamp: Falsy<ComplexDateInputType>): ComplexDateType | null {
-    if (!timestamp) return null;
+  static falsy(timestampMs: Falsy<ComplexDateInputType>): ComplexDateType | null {
+    if (!timestampMs) return null;
 
-    return ComplexDate._format(timestamp);
+    return ComplexDate._format(timestampMs);
   }
 
-  private static _format(timestamp: ComplexDateInputType) {
+  private static _format(timestampMs: ComplexDateInputType) {
     return {
-      raw: timestamp,
-      relative: DateFormatters.relative(timestamp),
+      raw: timestampMs,
+      relative: DateFormatters.relative(timestampMs),
     };
   }
 }
