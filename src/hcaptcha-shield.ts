@@ -3,7 +3,7 @@ import { verify as hcaptchaVerify } from 'hcaptcha';
 import { z } from 'zod';
 
 import { HCaptchaSecretKey } from './schema';
-import { AccessDeniedError } from './errors';
+import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
 import { ExpressEssentialsConfig } from './express-essentials';
 
 import { Middleware } from './middleware';
@@ -43,11 +43,15 @@ export class HCaptchaShield {
         );
 
         if (!result?.success) {
-          throw new AccessDeniedError({ reason: 'hcaptcha' });
+          throw new AccessDeniedError({
+            reason: AccessDeniedErrorReasonType.hcaptcha,
+          });
         }
         return next();
       } catch (error) {
-        throw new AccessDeniedError({ reason: 'hcaptcha' });
+        throw new AccessDeniedError({
+          reason: AccessDeniedErrorReasonType.hcaptcha,
+        });
       }
     }
 

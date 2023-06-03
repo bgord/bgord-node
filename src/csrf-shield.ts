@@ -2,7 +2,7 @@ import * as express from 'express';
 import { NewUUID } from './uuid';
 
 import { UUID } from './schema';
-import { AccessDeniedError } from './errors';
+import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
 
 import { Middleware } from './middleware';
 
@@ -45,11 +45,11 @@ export class CsrfShield {
         return next();
       }
       throw new AccessDeniedError({
-        reason: 'csrf',
+        reason: AccessDeniedErrorReasonType.csrf,
       });
     } catch (error) {
       throw new AccessDeniedError({
-        reason: 'csrf',
+        reason: AccessDeniedErrorReasonType.csrf,
       });
     }
   }

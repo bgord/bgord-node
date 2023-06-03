@@ -56,7 +56,7 @@ export class EnvUserAuthShield {
     }
 
     throw new Errors.AccessDeniedError({
-      reason: 'auth',
+      reason: Errors.AccessDeniedErrorReasonType.auth,
     });
   }
 

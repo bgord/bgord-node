@@ -1,6 +1,6 @@
 import * as express from 'express';
 
-import { AccessDeniedError } from './errors';
+import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
 import { ApiKeyType } from './schema';
 
 import { Middleware } from './middleware';
@@ -16,7 +16,9 @@ export class ApiKeyShield {
         return next();
       }
 
-      throw new AccessDeniedError({ reason: 'api-key' });
+      throw new AccessDeniedError({
+        reason: AccessDeniedErrorReasonType['api-key'],
+      });
     }
 
     return Middleware(verify);

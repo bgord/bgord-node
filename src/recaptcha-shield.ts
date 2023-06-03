@@ -2,7 +2,7 @@ import express from 'express';
 import { RecaptchaV3 } from 'express-recaptcha';
 
 import { RecaptchaSiteKeyType, RecaptchaSecretKeyType } from './schema';
-import { AccessDeniedError } from './errors';
+import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
 import { Middleware } from './middleware';
 
 export type RecaptchaVerifierConfigType = {
@@ -42,7 +42,9 @@ export class RecaptchaShield {
 
         return next();
       } catch (error) {
-        throw new AccessDeniedError({ reason: 'recaptcha' });
+        throw new AccessDeniedError({
+          reason: AccessDeniedErrorReasonType.recaptcha,
+        });
       }
     }
 

@@ -1,13 +1,13 @@
 import { MimeRawType } from './mime';
 
-export type AccessDeniedErrorReasonType =
-  | 'hcaptcha'
-  | 'csrf'
-  | 'general'
-  | 'api-key'
-  | 'recaptcha'
-  | 'auth'
-  | string;
+export enum AccessDeniedErrorReasonType {
+  hcaptcha = 'hcaptcha',
+  csrf = 'csrf',
+  'api-key' = 'api-key',
+  recaptcha = 'recaptcha',
+  auth = 'auth',
+  'basic-auth' = 'basic-auth',
+}
 
 export type AccessDeniedErrorConfigType = {
   reason: AccessDeniedErrorReasonType;
