@@ -56,7 +56,10 @@ export class HttpLogger {
           method: request.method,
           url: `${request.header('host')}${request.url}`,
           client,
-          metadata: httpRequestBeforeMetadata,
+          metadata: _.pickBy(
+            httpRequestBeforeMetadata,
+            value => !_.isEmpty(value)
+          ),
         });
 
         response.on('finish', () => {
