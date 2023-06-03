@@ -37,38 +37,38 @@ type LogFullType = {
 
 type LogErrorType = Omit<
   LogFullType,
-  | 'timestamp'
   | 'app'
+  | 'client'
   | 'environment'
   | 'level'
   | 'method'
-  | 'url'
-  | 'client'
   | 'responseCode'
+  | 'timestamp'
+  | 'url'
 >;
 
 type LogWarnType = Omit<
   LogFullType,
-  | 'timestamp'
   | 'app'
+  | 'client'
   | 'environment'
   | 'level'
   | 'method'
-  | 'url'
-  | 'client'
   | 'responseCode'
+  | 'timestamp'
+  | 'url'
 >;
 
 type LogInfoType = Omit<
   LogFullType,
   | 'app'
+  | 'client'
   | 'environment'
-  | 'timestamp'
   | 'level'
   | 'method'
-  | 'url'
   | 'responseCode'
-  | 'client'
+  | 'timestamp'
+  | 'url'
 >;
 
 type LogHttpType = Omit<
