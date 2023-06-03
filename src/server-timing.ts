@@ -22,6 +22,7 @@ export class ServerTiming {
       const requestDurationMs = requestEndTimestampMs - requestStartTimestampMs;
 
       response.setHeader('Server-Timing', `total;dur=${requestDurationMs}`);
+      response.setHeader('Server-Timing-Ms', requestDurationMs);
     });
 
     next();
