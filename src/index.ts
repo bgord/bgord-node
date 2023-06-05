@@ -27,6 +27,7 @@ export * from './logger';
 export * from './mailer';
 export * from './middleware';
 export * from './mime';
+export * from './min-max-scaler';
 export * from './noop';
 export * from './open-graph';
 export * from './pagination';
