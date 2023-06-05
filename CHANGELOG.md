@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.119](https://github.com/bgord/bgord-node/compare/v0.58.118...v0.58.119) (2023-06-05)
+
+
+### Features
+
+* enrich the MinMaxScaler#scale response ([1acfa70](https://github.com/bgord/bgord-node/commit/1acfa70bd8880f35223cadadafa9441c78806d70))
+
 ### [0.58.118](https://github.com/bgord/bgord-node/compare/v0.58.117...v0.58.118) (2023-06-05)
 
 
