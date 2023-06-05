@@ -7,42 +7,72 @@ describe('MinMaxScaler', () => {
       const config = { min: 0, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
       const scaledValue = scaler.scale(50);
-      expect(scaledValue).eq(15);
+      expect(scaledValue).eql({
+        actual: 50,
+        scaled: 15,
+        isMin: false,
+        isMax: false,
+      });
     });
 
     it('should scale a value within the configured range up to 2 decimal places', () => {
       const config = { min: 0, max: 27, bound: { lower: 0, upper: 9 } };
       const scaler = new MinMaxScaler(config);
       const scaledValue = scaler.scale(5);
-      expect(scaledValue).eq(1.67);
+      expect(scaledValue).eql({
+        scaled: 1.67,
+        actual: 5,
+        isMin: false,
+        isMax: false,
+      });
     });
 
     it('should scale a value with default range', () => {
       const config = { min: 0, max: 100 };
       const scaler = new MinMaxScaler(config);
       const scaledValue = scaler.scale(50);
-      expect(scaledValue).eq(0.5);
+      expect(scaledValue).eql({
+        scaled: 0.5,
+        actual: 50,
+        isMin: false,
+        isMax: false,
+      });
     });
 
     it('should handle the minimum value', () => {
       const config = { min: 0, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
       const scaledValue = scaler.scale(0);
-      expect(scaledValue).eq(10);
+      expect(scaledValue).eql({
+        scaled: 10,
+        actual: 0,
+        isMin: true,
+        isMax: false,
+      });
     });
 
     it('should handle the maximum value', () => {
       const config = { min: 0, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
       const scaledValue = scaler.scale(100);
-      expect(scaledValue).eq(20);
+      expect(scaledValue).eql({
+        scaled: 20,
+        actual: 100,
+        isMin: false,
+        isMax: true,
+      });
     });
 
     it('should handle min=max case', () => {
       const config = { min: 100, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
       const scaledValue = scaler.scale(100);
-      expect(scaledValue).eq(15);
+      expect(scaledValue).eql({
+        scaled: 15,
+        actual: 100,
+        isMin: true,
+        isMax: true,
+      });
     });
 
     it('should throw an error for an invalid min/max config', () => {
@@ -97,5 +127,3 @@ describe('MinMaxScaler', () => {
     });
   });
 });
-
-// scale out of min/max

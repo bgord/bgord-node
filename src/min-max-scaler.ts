@@ -40,11 +40,22 @@ export class MinMaxScaler {
       throw new Error('Value out of min/max range');
     }
 
-    if (min === max) return (lower + upper) / 2;
+    if (min === max)
+      return {
+        actual: value,
+        scaled: (lower + upper) / 2,
+        isMin: value === min,
+        isMax: value === max,
+      };
 
     const result = ((value - min) / (max - min)) * (upper - lower) + lower;
 
-    return Number(result.toFixed(2));
+    return {
+      actual: value,
+      scaled: Number(result.toFixed(2)),
+      isMin: value === min,
+      isMax: value === max,
+    };
   }
 
   static getMinMax(values: MinMaxScalerValueType[]) {
