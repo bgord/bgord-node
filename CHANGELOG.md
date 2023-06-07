@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.120](https://github.com/bgord/bgord-node/compare/v0.58.119...v0.58.120) (2023-06-07)
+
+
+### Features
+
+* add cache module ([8233751](https://github.com/bgord/bgord-node/commit/82337518d80475eedac4266da8092f509c8e6f25))
+* Add cache-response middleware ([011578e](https://github.com/bgord/bgord-node/commit/011578ef6018f43033070f0146343e10d2876959))
+
 ### [0.58.119](https://github.com/bgord/bgord-node/compare/v0.58.118...v0.58.119) (2023-06-05)
 
 
