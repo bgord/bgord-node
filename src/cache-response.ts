@@ -11,7 +11,7 @@ export enum CacheHitEnum {
 export class CacheResponse {
   cache: NodeCache;
 
-  CACHE_HIT_HEADER = 'Cache-Hit';
+  static CACHE_HIT_HEADER = 'Cache-Hit';
 
   constructor(cache: NodeCache) {
     this.cache = cache;
@@ -19,12 +19,12 @@ export class CacheResponse {
 
   private _handle(request: Request, response: Response, next: NextFunction) {
     if (this.cache.has(request.url)) {
-      response.setHeader(this.CACHE_HIT_HEADER, CacheHitEnum.hit);
+      response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.hit);
 
       return response.status(200).send(this.cache.get(request.url));
     }
 
-    response.setHeader(this.CACHE_HIT_HEADER, CacheHitEnum.miss);
+    response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.miss);
 
     return next();
   }
