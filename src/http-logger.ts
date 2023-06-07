@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import { Logger } from './logger';
 import { Middleware } from './middleware';
+import { ServerTiming } from './server-timing';
 
 export class HttpLogger {
   private static simplify(response: unknown) {
@@ -67,7 +68,7 @@ export class HttpLogger {
             response: response.locals.body,
           };
 
-          const serverTimingMs = response.getHeader('Server-Timing-Ms');
+          const serverTimingMs = response.getHeader(ServerTiming.MS_HEADER);
 
           const durationMs = Number.isInteger(serverTimingMs)
             ? Number(serverTimingMs)
