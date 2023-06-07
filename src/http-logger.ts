@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import { Logger } from './logger';
 import { Middleware } from './middleware';
+import { CacheHitEnum, CacheResponse } from './cache-response';
 import { ServerTiming } from './server-timing';
 
 export class HttpLogger {
@@ -64,8 +65,16 @@ export class HttpLogger {
         });
 
         response.on('finish', () => {
+          const cacheHitHeader = response.getHeader(
+            CacheResponse.CACHE_HIT_HEADER
+          );
+
+          const cacheHit =
+            cacheHitHeader === CacheHitEnum.hit ? CacheHitEnum.hit : undefined;
+
           const httpRequestAfterMetadata = {
             response: response.locals.body,
+            cacheHit,
           };
 
           const serverTimingMs = response.getHeader(ServerTiming.MS_HEADER);
