@@ -3,7 +3,7 @@ import NodeCache from 'node-cache';
 
 import { Middleware } from './middleware';
 
-enum CacheHitEnum {
+export enum CacheHitEnum {
   hit = 'hit',
   miss = 'miss',
 }
