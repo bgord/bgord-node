@@ -34,6 +34,7 @@ export class HttpLogger {
     'sec-gpc',
     'upgrade-insecure-requests',
     'user-agent',
+    'if-none-match',
   ];
 
   static applyTo(app: express.Application, logger: Logger): void {
