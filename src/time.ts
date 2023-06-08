@@ -1,5 +1,6 @@
 export function Days(value: number) {
   return {
+    value,
     toHours() {
       return value * 24;
     },
@@ -17,6 +18,7 @@ export function Days(value: number) {
 
 export function Hours(value: number) {
   return {
+    value,
     toMinutes() {
       return value * 60;
     },
@@ -31,6 +33,7 @@ export function Hours(value: number) {
 
 export function Minutes(value: number) {
   return {
+    value,
     toSeconds() {
       return value * 60;
     },
@@ -42,6 +45,7 @@ export function Minutes(value: number) {
 
 export function Seconds(value: number) {
   return {
+    value,
     toMs() {
       return value * 1000;
     },
