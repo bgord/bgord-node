@@ -172,7 +172,7 @@ export class Logger {
     });
   }
 
-  static formatError(_error: unknown) {
+  formatError(_error: unknown) {
     const error = _error as Error;
 
     return {
