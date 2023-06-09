@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.124](https://github.com/bgord/bgord-node/compare/v0.58.123...v0.58.124) (2023-06-09)
+
+
+### Features
+
+* add logger.parseError ([9f5f676](https://github.com/bgord/bgord-node/commit/9f5f676ae702199647a70c9b269d453c7706e652))
+
 ### [0.58.123](https://github.com/bgord/bgord-node/compare/v0.58.122...v0.58.123) (2023-06-08)
 
 ### [0.58.122](https://github.com/bgord/bgord-node/compare/v0.58.121...v0.58.122) (2023-06-07)
