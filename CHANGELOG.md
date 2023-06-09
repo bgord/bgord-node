@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.126](https://github.com/bgord/bgord-node/compare/v0.58.125...v0.58.126) (2023-06-09)
+
+
+### Bug Fixes
+
+* remove static from logger#formatError ([a45aad2](https://github.com/bgord/bgord-node/commit/a45aad29e84cb8de6d1ab0677d0c705dee9e9e45))
+
 ### [0.58.125](https://github.com/bgord/bgord-node/compare/v0.58.124...v0.58.125) (2023-06-09)
 
 ### [0.58.124](https://github.com/bgord/bgord-node/compare/v0.58.123...v0.58.124) (2023-06-09)
