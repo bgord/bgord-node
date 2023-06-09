@@ -171,4 +171,14 @@ export class Logger {
       ...log,
     });
   }
+
+  static formatError(_error: unknown) {
+    const error = _error as Error;
+
+    return {
+      message: error?.message,
+      name: error?.name,
+      stack: error?.stack,
+    };
+  }
 }
