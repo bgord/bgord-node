@@ -20,7 +20,7 @@ declare global {
 export class TimeZoneOffset {
   static applyTo(app: express.Application): void {
     app.use((request, _response, next) => {
-      const timeZoneOffsetMinutes = Schema.TimeZoneOffset.parse(
+      const timeZoneOffsetMinutes = Schema.TimeZoneOffsetHeaderValue.parse(
         request.header('time-zone-offset')
       );
 

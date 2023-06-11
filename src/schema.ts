@@ -187,13 +187,13 @@ export const UploadedFile = z.object({
 });
 export type UploadedFileType = z.infer<typeof UploadedFile>;
 
-export const TimeZoneOffset = z
+export const TimeZoneOffsetHeaderValue = z
   .string()
   .trim()
   .or(z.undefined())
   .transform(value => Number(value))
   .transform(value => (isNaN(value) ? 0 : value));
-export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffset>;
+export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffsetHeaderValue>;
 
 export const Language = z
   .string()
