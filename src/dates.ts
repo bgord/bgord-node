@@ -14,6 +14,10 @@ export class DateFormatters {
     return format(date, 'yyyy/MM/dd');
   }
 
+  static monthDay(date: DateFormattersInputType): FormattedDateType {
+    return format(date, 'MM/dd');
+  }
+
   static relative(date: DateFormattersInputType) {
     return formatDistanceToNow(date, { addSuffix: true });
   }
