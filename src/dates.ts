@@ -10,6 +10,10 @@ export class DateFormatters {
     return format(date, 'yyyy/MM/dd hh:mm');
   }
 
+  static date(date: DateFormattersInputType): FormattedDateType {
+    return format(date, 'yyyy/MM/dd');
+  }
+
   static relative(date: DateFormattersInputType) {
     return formatDistanceToNow(date, { addSuffix: true });
   }
