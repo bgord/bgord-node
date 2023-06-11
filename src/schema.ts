@@ -195,6 +195,9 @@ export const TimeZoneOffsetHeaderValue = z
   .transform(value => (isNaN(value) ? 0 : value));
 export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffsetHeaderValue>;
 
+export const TimeZoneOffsetValue = z.number().int();
+export type TimeZoneOffsetValueType = z.infer<typeof TimeZoneOffsetValue>;
+
 export const Language = z
   .string()
   .trim()

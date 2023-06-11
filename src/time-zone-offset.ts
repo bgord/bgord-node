@@ -4,9 +4,9 @@ import * as Schema from './schema';
 import { Time } from './time';
 
 export type TimeZoneOffsetsType = {
-  minutes: Schema.TimeZoneOffsetType;
-  seconds: Schema.TimeZoneOffsetType;
-  miliseconds: Schema.TimeZoneOffsetType;
+  minutes: Schema.TimeZoneOffsetValueType;
+  seconds: Schema.TimeZoneOffsetValueType;
+  miliseconds: Schema.TimeZoneOffsetValueType;
 };
 
 declare global {
@@ -32,5 +32,12 @@ export class TimeZoneOffset {
 
       return next();
     });
+  }
+
+  static adjust(
+    timestamp: Schema.TimestampType,
+    timeZoneOffsetMs: Schema.TimeZoneOffsetValueType
+  ): Schema.TimestampType {
+    return timestamp - timeZoneOffsetMs;
   }
 }
