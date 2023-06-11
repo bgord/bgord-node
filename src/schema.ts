@@ -326,3 +326,28 @@ export const BasicAuthPassword = z
   .max(128)
   .brand('basic-auth-password');
 export type BasicAuthPasswordType = z.infer<typeof BasicAuthPassword>;
+
+export const EmailSubject = z
+  .string()
+  .min(1)
+  .max(128)
+  .brand('email-subject');
+export type EmailSubjectType = z.infer<typeof EmailSubject>;
+
+export const EmailContentHtml = z
+  .string()
+  .min(1)
+  .max(5_000)
+  .brand('email-content-html');
+export type EmailContentHtmlType = z.infer<typeof EmailContentHtml>;
+
+export const EmailTo = z
+  .string()
+  .email()
+  .brand('email-to');
+export type EmailToType = z.infer<typeof EmailTo>;
+
+export const EmailAttachment = z
+  .object({ filename: Path, path: Path })
+  .brand('email-attachment');
+export type EmailAttachmentType = z.infer<typeof EmailAttachment>;
