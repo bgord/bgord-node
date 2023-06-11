@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.132](https://github.com/bgord/bgord-node/compare/v0.58.131...v0.58.132) (2023-06-11)
+
+
+### Features
+
+* add hour schema ([745743c](https://github.com/bgord/bgord-node/commit/745743c666ceaa3457480cce8b6faf38d642fcd4))
+
 ### [0.58.131](https://github.com/bgord/bgord-node/compare/v0.58.130...v0.58.131) (2023-06-11)
 
 ### [0.58.130](https://github.com/bgord/bgord-node/compare/v0.58.129...v0.58.130) (2023-06-11)
