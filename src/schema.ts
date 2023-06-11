@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import _ from 'lodash';
+
 import { NewUUID } from './uuid';
 
 export enum NodeEnvironmentEnum {
@@ -354,3 +356,9 @@ export const EmailAttachment = z
   .object({ filename: Path, path: Path })
   .brand('email-attachment');
 export type EmailAttachmentType = z.infer<typeof EmailAttachment>;
+
+const hours = _.range(0, 24);
+export const Hour = z
+  .number()
+  .refine(value => hours.includes(value), { message: 'invalid_hour' });
+export type HourType = z.infer<typeof Hour>;
