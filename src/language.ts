@@ -12,6 +12,13 @@ export type TranslationsType = Record<
   TranslationsValueType
 >;
 
+export type TranslationPlaceholderType = string;
+export type TranslationPlaceholderValueType = string | number;
+export type TranslationVariableType = Record<
+  TranslationPlaceholderType,
+  TranslationPlaceholderValueType
+>;
+
 declare global {
   namespace Express {
     export interface Request {
@@ -65,8 +72,24 @@ export class Language {
   }
 
   static useTranslations(translations: TranslationsType) {
-    return function t(key: TranslationsKeyType): TranslationsValueType {
-      return translations[key] ?? key;
+    return function translate(
+      key: TranslationsKeyType,
+      variables?: TranslationVariableType
+    ) {
+      const translation = translations[key];
+
+      if (!translation) {
+        console.warn(`[@bgord/node] missing translation for key: ${key}`);
+        return key;
+      }
+
+      if (!variables) return translation;
+
+      return Object.entries(variables).reduce(
+        (result, [placeholder, value]) =>
+          result.replace(`{{${placeholder}}}`, String(value)),
+        translation
+      );
     };
   }
 
