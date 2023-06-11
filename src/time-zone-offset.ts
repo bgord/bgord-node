@@ -34,10 +34,17 @@ export class TimeZoneOffset {
     });
   }
 
-  static adjust(
+  static adjustTimestamp(
     timestamp: Schema.TimestampType,
     timeZoneOffsetMs: Schema.TimeZoneOffsetValueType
   ): Schema.TimestampType {
     return timestamp - timeZoneOffsetMs;
+  }
+
+  static adjustDate(
+    timestamp: Schema.TimestampType,
+    timeZoneOffsetMs: Schema.TimeZoneOffsetValueType
+  ): Date {
+    return new Date(timestamp - timeZoneOffsetMs);
   }
 }
