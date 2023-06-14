@@ -357,7 +357,7 @@ export const EmailAttachment = z
   .brand('email-attachment');
 export type EmailAttachmentType = z.infer<typeof EmailAttachment>;
 
-const hours = _.range(0, 24);
+export const hours = _.range(0, 24);
 export const Hour = z
   .number()
   .refine(value => hours.includes(value), { message: 'invalid_hour' });
