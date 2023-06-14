@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.136](https://github.com/bgord/bgord-node/compare/v0.58.135...v0.58.136) (2023-06-14)
+
+
+### Features
+
+* add Policy#message field ([7082f33](https://github.com/bgord/bgord-node/commit/7082f33ef0fd6e499ce6959bfc75509069e21fe8))
+
 ### [0.58.135](https://github.com/bgord/bgord-node/compare/v0.58.134...v0.58.135) (2023-06-14)
 
 
