@@ -1,5 +1,7 @@
 import { z } from 'zod';
+
 import * as Schema from './schema';
+import { Logger } from './logger';
 
 export const Event = z.object({
   id: Schema.UUID,
@@ -34,3 +36,25 @@ export const ParsedEvent = Event.merge(
 export type EventType = z.infer<typeof Event>;
 export type EventDraftType = z.infer<typeof EventDraft>;
 export type ParsedEventType = z.infer<typeof ParsedEvent>;
+
+export class EventHandler {
+  logger: Logger;
+
+  constructor(logger: Logger) {
+    this.logger = logger;
+  }
+
+  handle<T extends Pick<EventType, 'name'>>(fn: (event: T) => Promise<void>) {
+    return async (event: T) => {
+      try {
+        await fn(event);
+      } catch (error) {
+        this.logger.error({
+          message: `Unknown ${event.name} error handler error`,
+          operation: 'unknown_error_handler_error',
+          metadata: this.logger.formatError(error),
+        });
+      }
+    };
+  }
+}
