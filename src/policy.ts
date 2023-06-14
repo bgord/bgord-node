@@ -7,6 +7,8 @@ export abstract class Policy<T extends BasePolicyConfig> {
 
   abstract error: ts.Constructor<Error>;
 
+  abstract message: string;
+
   throw() {
     throw new this.error();
   }
