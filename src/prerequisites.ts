@@ -1,5 +1,6 @@
 import execa from 'execa';
 
+import * as Schema from './schema';
 import { Mailer } from './mailer';
 
 type PrerequisiteLabelType = string;
@@ -9,6 +10,7 @@ export enum PrerequisiteStrategyEnum {
   exists = 'exists',
   mailer = 'mailer',
   self = 'self',
+  timezoneUTC = 'timezoneUTC',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -34,10 +36,17 @@ type PrerequisiteSelfStrategyConfigType = {
   strategy: PrerequisiteStrategyEnum.self;
 };
 
+type PrerequisiteTimezoneUtcStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.timezoneUTC;
+  timezone: Schema.TimezoneType;
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteExistsStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
-  | PrerequisiteSelfStrategyConfigType;
+  | PrerequisiteSelfStrategyConfigType
+  | PrerequisiteTimezoneUtcStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -65,6 +74,15 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.self) {
       const status = await PrerequisiteSelfVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.timezoneUTC) {
+      const status = await PrerequisiteTimezoneUTCVerificator.verify(
+        this.config
+      );
       this.status = status;
 
       return status;
@@ -123,6 +141,19 @@ class PrerequisiteSelfVerificator {
     _config: PrerequisiteSelfStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     return PrerequisiteStatusEnum.success;
+  }
+}
+
+class PrerequisiteTimezoneUTCVerificator {
+  static async verify(
+    config: PrerequisiteTimezoneUtcStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    try {
+      Schema.TimezoneUTC.parse(config.timezone);
+      return PrerequisiteStatusEnum.success;
+    } catch (error) {
+      return PrerequisiteStatusEnum.failure;
+    }
   }
 }
 
