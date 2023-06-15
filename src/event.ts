@@ -58,3 +58,28 @@ export class EventHandler {
     };
   }
 }
+
+export class EventLogger {
+  logger: Logger;
+
+  constructor(logger: Logger) {
+    this.logger = logger;
+  }
+
+  handle(
+    type: string,
+    _debugName: string,
+    eventName: string | undefined,
+    eventData: Record<string, any> | undefined
+  ) {
+    if (type === 'subscribe') return;
+
+    if (typeof eventName === 'symbol') return;
+
+    this.logger.info({
+      message: `${eventName} emitted`,
+      operation: 'event_emitted',
+      metadata: eventData,
+    });
+  }
+}
