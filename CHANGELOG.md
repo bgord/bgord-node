@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.139](https://github.com/bgord/bgord-node/compare/v0.58.138...v0.58.139) (2023-06-15)
+
+
+### Bug Fixes
+
+* remove timezone branding ([8c36f1e](https://github.com/bgord/bgord-node/commit/8c36f1e9b02208cb8493f3a0c8ee1d45b3c27a68))
+
 ### [0.58.138](https://github.com/bgord/bgord-node/compare/v0.58.137...v0.58.138) (2023-06-15)
 
 
