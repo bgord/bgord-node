@@ -29,13 +29,18 @@ declare global {
   }
 }
 
+type LanguageConfigType = {
+  translationsPath?: Schema.PathType;
+  defaultLanguageName?: Schema.LanguageType;
+};
+
 export class Language {
-  static applyTo(
-    app: express.Application,
-    translationsPath: Schema.PathType,
-    defaultLanguageName: Schema.LanguageType = 'en'
-  ): void {
+  static applyTo(app: express.Application, config?: LanguageConfigType): void {
     app.use(async (request, _response, next) => {
+      const translationsPath =
+        config?.translationsPath ?? Schema.Path.parse('infra/translations');
+      const defaultLanguageName = config?.defaultLanguageName ?? 'en';
+
       const supportedLanguages = await Language.getSupportedLanguages(
         translationsPath
       );
