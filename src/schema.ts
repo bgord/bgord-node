@@ -384,9 +384,8 @@ export const Timezone = z
       }
     },
     { message: 'timezone.invalid' }
-  )
-  .brand('timezone');
+  );
 export type TimezoneType = z.infer<typeof Timezone>;
 
-export const TimezoneUTC = z.literal('UTC').brand('timezone-utc');
+export const TimezoneUTC = z.literal('UTC');
 export type TimezoneUTCType = z.infer<typeof TimezoneUTC>;
