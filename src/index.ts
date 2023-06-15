@@ -24,7 +24,7 @@ export * from './healthcheck';
 export * from './http-logger';
 export * from './image-compressor';
 export * from './image-resizer'
-export * from './language';
+export * from './i18n';
 export * from './logger';
 export * from './mailer';
 export * from './middleware';

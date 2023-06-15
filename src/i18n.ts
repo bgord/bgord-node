@@ -34,14 +34,14 @@ type LanguageConfigType = {
   defaultLanguageName?: Schema.LanguageType;
 };
 
-export class Language {
+export class I18n {
   static applyTo(app: express.Application, config?: LanguageConfigType): void {
     app.use(async (request, _response, next) => {
       const translationsPath =
         config?.translationsPath ?? Schema.Path.parse('infra/translations');
       const defaultLanguageName = config?.defaultLanguageName ?? 'en';
 
-      const supportedLanguages = await Language.getSupportedLanguages(
+      const supportedLanguages = await I18n.getSupportedLanguages(
         translationsPath
       );
 
