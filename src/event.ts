@@ -66,7 +66,7 @@ export class EventLogger {
     this.logger = logger;
   }
 
-  handle(
+  private _handle(
     type: string,
     _debugName: string,
     eventName: string | undefined,
@@ -82,4 +82,6 @@ export class EventLogger {
       metadata: eventData,
     });
   }
+
+  handle = this._handle.bind(this);
 }
