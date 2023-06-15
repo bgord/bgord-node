@@ -362,3 +362,31 @@ export const Hour = z
   .number()
   .refine(value => hours.includes(value), { message: 'invalid_hour' });
 export type HourType = z.infer<typeof Hour>;
+
+export const Timezone = z
+  .string()
+  .min(1)
+  .refine(
+    value => {
+      try {
+        // Create a dummy date and time format using the specified timezone
+        const dummyDate = new Date();
+        const formatter = new Intl.DateTimeFormat('en-US', { timeZone: value });
+
+        // Format the dummy date
+        formatter.format(dummyDate);
+
+        // If the formatting succeeds without throwing an error, the timezone is valid
+        return true;
+      } catch (error) {
+        // An error occurred, indicating an invalid timezone
+        return false;
+      }
+    },
+    { message: 'timezone.invalid' }
+  )
+  .brand('timezone');
+export type TimezoneType = z.infer<typeof Timezone>;
+
+export const TimezoneUTC = z.literal('UTC').brand('timezone-utc');
+export type TimezoneUTCType = z.infer<typeof TimezoneUTC>;
