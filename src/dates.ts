@@ -7,7 +7,7 @@ export type DateFormattersInputType = Parameters<typeof format>[0];
 
 export class DateFormatters {
   static datetime(date: DateFormattersInputType): FormattedDateType {
-    return format(date, 'yyyy/MM/dd hh:mm');
+    return format(date, 'yyyy/MM/dd HH:mm');
   }
 
   static date(date: DateFormattersInputType): FormattedDateType {
