@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.143](https://github.com/bgord/bgord-node/compare/v0.58.142...v0.58.143) (2023-06-16)
+
+
+### Features
+
+* add DateCalculator#getStartOfDayTsInTz ([9f3ef4d](https://github.com/bgord/bgord-node/commit/9f3ef4d59759a70761b83232ff37c7708581d547))
+
 ### [0.58.142](https://github.com/bgord/bgord-node/compare/v0.58.141...v0.58.142) (2023-06-15)
 
 
