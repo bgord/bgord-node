@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.144](https://github.com/bgord/bgord-node/compare/v0.58.143...v0.58.144) (2023-06-16)
+
+
+### Bug Fixes
+
+* add proper datatypes for DateCalculator ([742b4fc](https://github.com/bgord/bgord-node/commit/742b4fc38e9af63337188c047f4e1cf82e0b8524))
+
 ### [0.58.143](https://github.com/bgord/bgord-node/compare/v0.58.142...v0.58.143) (2023-06-16)
 
 
