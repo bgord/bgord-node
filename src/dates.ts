@@ -1,4 +1,6 @@
 import { format, formatDistanceToNow } from 'date-fns';
+
+import {Time} from "./time";
 import type {Falsy} from "./ts-utils";
 
 export type FormattedDateType = string;
@@ -57,4 +59,36 @@ export enum DayOfTheWeekEnum {
   Friday = 5,
   Saturday = 6,
   Sunday = 0,
+}
+
+export class DateCalculator {
+ static getStartOfDayTsInTz(now: number, timeZoneOffsetMs: number) {
+  const startOfDayUTC = new Date();
+  startOfDayUTC.setUTCHours(0, 0, 0, 0);
+
+  const startOfDayInTimeZone = startOfDayUTC.getTime() + timeZoneOffsetMs;
+
+  const timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay =
+    (now - startOfDayInTimeZone) % Time.Days(1).toMs();
+
+  if (
+    timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= Time.Days(1).toMs()
+  ) {
+    return (
+      now -
+      timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay +
+      Time.Days(1).toMs()
+    );
+  }
+
+  if (timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= 0) {
+    return now - timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay;
+  }
+
+  return (
+    now -
+    timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay -
+    Time.Days(1).toMs()
+  );
+}
 }

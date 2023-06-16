@@ -1,4 +1,5 @@
 import { it, expect, describe } from 'vitest';
+
 import { MinMaxScaler } from '../src/min-max-scaler';
 
 describe('MinMaxScaler', () => {
