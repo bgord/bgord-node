@@ -13,7 +13,15 @@ declare global {
 export class RequestId {
   static applyTo(app: express.Application): void {
     app.use(async (request, _response, next) => {
-      request.requestId = Schema.CorrelationId.parse(NewUUID.generate());
+      const requestIdToBeContinued = Schema.CorrelationId.safeParse(
+        request.header('continue-request-id')
+      );
+
+      if (requestIdToBeContinued.success) {
+        request.requestId = requestIdToBeContinued.data;
+      } else {
+        request.requestId = Schema.CorrelationId.parse(NewUUID.generate());
+      }
 
       next();
     });
