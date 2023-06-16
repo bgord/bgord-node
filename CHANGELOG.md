@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.145](https://github.com/bgord/bgord-node/compare/v0.58.144...v0.58.145) (2023-06-16)
+
+
+### Features
+
+* add a way to continue using the same request-id ([42c9469](https://github.com/bgord/bgord-node/commit/42c9469c4b2736e0c573181087620b70ceeab96b))
+
 ### [0.58.144](https://github.com/bgord/bgord-node/compare/v0.58.143...v0.58.144) (2023-06-16)
 
 
