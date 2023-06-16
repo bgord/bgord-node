@@ -1,7 +1,8 @@
 import { format, formatDistanceToNow } from 'date-fns';
 
-import {Time} from "./time";
-import type {Falsy} from "./ts-utils";
+import * as Schema from './schema';
+import { Time } from './time';
+import { Falsy } from './ts-utils';
 
 export type FormattedDateType = string;
 
@@ -37,7 +38,9 @@ export class ComplexDate {
     return ComplexDate._format(timestampMs);
   }
 
-  static falsy(timestampMs: Falsy<ComplexDateInputType>): ComplexDateType | null {
+  static falsy(
+    timestampMs: Falsy<ComplexDateInputType>
+  ): ComplexDateType | null {
     if (!timestampMs) return null;
 
     return ComplexDate._format(timestampMs);
@@ -61,34 +64,40 @@ export enum DayOfTheWeekEnum {
   Sunday = 0,
 }
 
+type GetStartOfDayTsInTzConfigType = {
+  now: Schema.TimestampType;
+  timeZoneOffsetMs: Schema.TimeZoneOffsetValueType;
+};
+
 export class DateCalculator {
- static getStartOfDayTsInTz(now: number, timeZoneOffsetMs: number) {
-  const startOfDayUTC = new Date();
-  startOfDayUTC.setUTCHours(0, 0, 0, 0);
+  static getStartOfDayTsInTz(config: GetStartOfDayTsInTzConfigType) {
+    const startOfDayUTC = new Date();
+    startOfDayUTC.setUTCHours(0, 0, 0, 0);
 
-  const startOfDayInTimeZone = startOfDayUTC.getTime() + timeZoneOffsetMs;
+    const startOfDayInTimeZone =
+      startOfDayUTC.getTime() + config.timeZoneOffsetMs;
 
-  const timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay =
-    (now - startOfDayInTimeZone) % Time.Days(1).toMs();
+    const timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay =
+      (config.now - startOfDayInTimeZone) % Time.Days(1).toMs();
 
-  if (
-    timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= Time.Days(1).toMs()
-  ) {
+    if (
+      timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= Time.Days(1).toMs()
+    ) {
+      return (
+        config.now -
+        timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay +
+        Time.Days(1).toMs()
+      );
+    }
+
+    if (timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= 0) {
+      return config.now - timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay;
+    }
+
     return (
-      now -
-      timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay +
+      config.now -
+      timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay -
       Time.Days(1).toMs()
     );
   }
-
-  if (timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= 0) {
-    return now - timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay;
-  }
-
-  return (
-    now -
-    timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay -
-    Time.Days(1).toMs()
-  );
-}
 }

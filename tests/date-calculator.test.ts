@@ -12,7 +12,10 @@ describe('DateCalculator', () => {
       // GMT+2
       const timeZoneOffsetMs = -7200000;
 
-      const result = DateCalculator.getStartOfDayTsInTz(now, timeZoneOffsetMs);
+      const result = DateCalculator.getStartOfDayTsInTz({
+        now,
+        timeZoneOffsetMs,
+      });
 
       // Wed Jun 14 2023 22:00:00 GMT+0000
       // Thu Jun 15 2023 00:00:00 GMT+0200
@@ -26,7 +29,10 @@ describe('DateCalculator', () => {
       // GMT+0
       const timeZoneOffsetMs = 0;
 
-      const result = DateCalculator.getStartOfDayTsInTz(now, timeZoneOffsetMs);
+      const result = DateCalculator.getStartOfDayTsInTz({
+        now,
+        timeZoneOffsetMs,
+      });
 
       // Thu Jun 15 2023 00:00:00 GMT+0000
       expect(result).toEqual(1686787200000);
@@ -40,7 +46,10 @@ describe('DateCalculator', () => {
       // GMT+5
       const timeZoneOffsetMs = -18000000;
 
-      const result = DateCalculator.getStartOfDayTsInTz(now, timeZoneOffsetMs);
+      const result = DateCalculator.getStartOfDayTsInTz({
+        now,
+        timeZoneOffsetMs,
+      });
 
       // Thu Jun 15 2023 19:00:00 GMT+0000
       // Thu Jun 16 2023 00:00:00 GMT+0500
@@ -55,7 +64,10 @@ describe('DateCalculator', () => {
       // GMT-2
       const timeZoneOffsetMs = 7200000;
 
-      const result = DateCalculator.getStartOfDayTsInTz(now, timeZoneOffsetMs);
+      const result = DateCalculator.getStartOfDayTsInTz({
+        now,
+        timeZoneOffsetMs,
+      });
 
       // Wed Jun 14 2023 02:00:00 GMT+0000
       // Wed Jun 14 2023 00:00:00 GMT-0200
