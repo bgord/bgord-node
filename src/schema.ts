@@ -390,3 +390,10 @@ export type TimezoneType = z.infer<typeof Timezone>;
 
 export const TimezoneUTC = z.literal('UTC');
 export type TimezoneUTCType = z.infer<typeof TimezoneUTC>;
+
+export const BuildVersion = z
+  .string()
+  .min(1)
+  .max(128)
+  .brand('build-version');
+export type BuildVersionType = z.infer<typeof BuildVersion>;

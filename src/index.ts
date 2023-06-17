@@ -3,6 +3,7 @@ export * as Schema from './schema';
 export * as VO from './value-objects';
 export * from './api-key-shield';
 export * from './basic-auth-shield';
+export * from './build-info-repository';
 export * from './cache'
 export * from './cache-response';
 export * from './cache-static-files';
