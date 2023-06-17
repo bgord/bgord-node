@@ -26,27 +26,34 @@ export class DateFormatters {
   }
 }
 
-export type ComplexDateType = {
+export type RelativeDateType = {
   raw: number;
   relative: string;
 };
 
-export type ComplexDateInputType = number;
+export type RelativeDateInputType = number;
 
-export class ComplexDate {
-  static truthy(timestampMs: ComplexDateInputType): ComplexDateType {
-    return ComplexDate._format(timestampMs);
+export class RelativeDate {
+  static to = {
+    now: {
+      truthy: RelativeDate.truthy,
+      falsy: RelativeDate.falsy,
+    },
+  };
+
+  private static truthy(timestampMs: RelativeDateInputType): RelativeDateType {
+    return RelativeDate._format(timestampMs);
   }
 
   static falsy(
-    timestampMs: Falsy<ComplexDateInputType>
-  ): ComplexDateType | null {
+    timestampMs: Falsy<RelativeDateInputType>
+  ): RelativeDateType | null {
     if (!timestampMs) return null;
 
-    return ComplexDate._format(timestampMs);
+    return RelativeDate._format(timestampMs);
   }
 
-  private static _format(timestampMs: ComplexDateInputType) {
+  private static _format(timestampMs: RelativeDateInputType) {
     return {
       raw: timestampMs,
       relative: DateFormatters.relative(timestampMs),
