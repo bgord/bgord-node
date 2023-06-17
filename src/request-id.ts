@@ -1,4 +1,6 @@
 import express from 'express';
+import onHeaders from 'on-headers';
+
 import * as Schema from './schema';
 import { NewUUID } from './uuid';
 
@@ -11,10 +13,12 @@ declare global {
 }
 
 export class RequestId {
+  static CONTINUE_HEADER = 'continue-request-id';
+
   static applyTo(app: express.Application): void {
-    app.use(async (request, _response, next) => {
+    app.use(async (request, response, next) => {
       const requestIdToBeContinued = Schema.CorrelationId.safeParse(
-        request.header('continue-request-id')
+        request.header(RequestId.CONTINUE_HEADER)
       );
 
       if (requestIdToBeContinued.success) {
@@ -22,6 +26,10 @@ export class RequestId {
       } else {
         request.requestId = Schema.CorrelationId.parse(NewUUID.generate());
       }
+
+      onHeaders(response, () =>
+        response.setHeader(RequestId.CONTINUE_HEADER, request.requestId)
+      );
 
       next();
     });
