@@ -169,6 +169,7 @@ export type PathType = z.infer<typeof Path>;
 
 export const Timestamp = z
   .number()
+  .int()
   .positive()
   .default(() => Date.now());
 export type TimestampType = z.infer<typeof Timestamp>;
