@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.148](https://github.com/bgord/bgord-node/compare/v0.58.147...v0.58.148) (2023-06-25)
+
+
+### Bug Fixes
+
+* merging helmet config ([04b4533](https://github.com/bgord/bgord-node/commit/04b4533196b967167b4bf4b7c65826c219504009))
+
 ### [0.58.147](https://github.com/bgord/bgord-node/compare/v0.58.146...v0.58.147) (2023-06-17)
 
 
