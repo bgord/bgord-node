@@ -23,16 +23,20 @@ export function addExpressEssentials(
   app: express.Express,
   config?: ExpressEssentialsConfig
 ) {
-  const helmetConfig = _.merge({}, config?.helmet ?? {}, {
-    contentSecurityPolicy: {
-      useDefaults: true,
-      directives: {
-        'img-src': ["'self'", 'blob:'],
-        'script-src': ["'self'", "'unsafe-inline'"],
-        'script-src-attr': null,
+  const helmetConfig = _.merge(
+    {},
+    {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'img-src': ["'self'", 'blob:'],
+          'script-src': ["'self'", "'unsafe-inline'"],
+          'script-src-attr': null,
+        },
       },
     },
-  });
+    config?.helmet ?? {}
+  );
   app.use(helmet(helmetConfig));
 
   const bodyParserJsonConfig = config?.json ?? undefined;
