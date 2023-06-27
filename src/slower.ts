@@ -11,8 +11,8 @@ export class Slower {
       _response: express.Response,
       next: express.NextFunction
     ) {
-      const delay = config.delayMs ?? 500;
-      await sleep(delay);
+      const delayMs = config.delayMs ?? 500;
+      await sleep({ ms: delayMs });
 
       next();
     }
