@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.149](https://github.com/bgord/bgord-node/compare/v0.58.148...v0.58.149) (2023-07-01)
+
+
+### Features
+
+* add path PrerequisiteStrategyEnum ([50fde36](https://github.com/bgord/bgord-node/commit/50fde3699f36f796baf4d5e03258b5a3d85c3727))
+
+
+### Bug Fixes
+
+* change sleep config type ([62d5c41](https://github.com/bgord/bgord-node/commit/62d5c41438b938e465bac63288e69b0b60290b02))
+
 ### [0.58.148](https://github.com/bgord/bgord-node/compare/v0.58.147...v0.58.148) (2023-06-25)
 
 
