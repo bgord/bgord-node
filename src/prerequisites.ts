@@ -1,25 +1,27 @@
-import execa from 'execa';
-import { constants } from 'fs';
-import fs from 'fs/promises';
+import type { PrismaClient } from "@prisma/client";
+import execa from "execa";
+import { constants } from "fs";
+import fs from "fs/promises";
 
-import * as Schema from './schema';
-import { Mailer } from './mailer';
+import {Mailer} from "./mailer";
+import * as Schema from "./schema";
 
 type PrerequisiteLabelType = string;
 type PrerequisiteBinaryType = string;
 
 export enum PrerequisiteStrategyEnum {
-  exists = 'exists',
-  mailer = 'mailer',
-  self = 'self',
-  timezoneUTC = 'timezoneUTC',
-  path = 'path',
+  exists = "exists",
+  mailer = "mailer",
+  self = "self",
+  timezoneUTC = "timezoneUTC",
+  path = "path",
+  prisma = "prisma",
 }
 
 export enum PrerequisiteStatusEnum {
-  success = 'success',
-  failure = 'failure',
-  undetermined = 'undetermined',
+  success = "success",
+  failure = "failure",
+  undetermined = "undetermined",
 }
 
 type PrerequisiteExistsStrategyConfigType = {
@@ -52,12 +54,19 @@ type PrerequisitePathStrategyConfigType = {
   access?: { write?: boolean; execute?: boolean };
 };
 
+type PrerequisitePrismaStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.prisma;
+  client: PrismaClient;
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteExistsStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
   | PrerequisiteSelfStrategyConfigType
   | PrerequisiteTimezoneUtcStrategyConfigType
-  | PrerequisitePathStrategyConfigType;
+  | PrerequisitePathStrategyConfigType
+  | PrerequisitePrismaStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -106,6 +115,13 @@ export class Prerequisite {
       return status;
     }
 
+    if (this.config.strategy === PrerequisiteStrategyEnum.prisma) {
+      const status = await PrerequisitePrismaVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
+    }
+
     throw new Error(`Unknown PrerequisiteStatusEnum value`);
   }
 
@@ -143,7 +159,7 @@ class PrerequisiteExistsVerificator {
     config: PrerequisiteExistsStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     try {
-      const result = await execa('which', [config.binary]);
+      const result = await execa("which", [config.binary]);
 
       return result.exitCode === 0
         ? PrerequisiteStatusEnum.success
@@ -197,6 +213,28 @@ class PrerequisitePathVerificator {
   }
 }
 
+class PrerequisitePrismaVerificator {
+  static async verify(
+    config: PrerequisitePrismaStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    try {
+      const result = await config.client.$queryRaw`
+        SELECT name
+        FROM sqlite_master
+        WHERE type='table'
+        ORDER BY name;
+      `;
+
+      if (Array.isArray(result) && result.length > 0) {
+        return PrerequisiteStatusEnum.success;
+      }
+      return PrerequisiteStatusEnum.failure;
+    } catch (error) {
+      return PrerequisiteStatusEnum.failure;
+    }
+  }
+}
+
 export class Prerequisites {
   static async check(prerequisites: Prerequisite[]) {
     try {
@@ -212,9 +250,8 @@ export class Prerequisites {
       }
 
       if (failedPrerequisiteLabels.length > 0) {
-        const failedPrerequisiteLabelsFormatted = failedPrerequisiteLabels.join(
-          ', '
-        );
+        const failedPrerequisiteLabelsFormatted =
+          failedPrerequisiteLabels.join(", ");
 
         console.log(
           `Prerequisites failed: ${failedPrerequisiteLabelsFormatted}, quitting...`
@@ -223,7 +260,7 @@ export class Prerequisites {
         process.exit(1);
       }
     } catch (error) {
-      console.log('Prerequisites error', String(error));
+      console.log("Prerequisites error", String(error));
     }
   }
 }
