@@ -1,4 +1,6 @@
 import execa from 'execa';
+import { constants } from 'fs';
+import fs from 'fs/promises';
 
 import * as Schema from './schema';
 import { Mailer } from './mailer';
@@ -11,6 +13,7 @@ export enum PrerequisiteStrategyEnum {
   mailer = 'mailer',
   self = 'self',
   timezoneUTC = 'timezoneUTC',
+  path = 'path',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -42,11 +45,19 @@ type PrerequisiteTimezoneUtcStrategyConfigType = {
   timezone: Schema.TimezoneType;
 };
 
+type PrerequisitePathStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.path;
+  path: string;
+  access?: { write?: boolean; execute?: boolean };
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteExistsStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
   | PrerequisiteSelfStrategyConfigType
-  | PrerequisiteTimezoneUtcStrategyConfigType;
+  | PrerequisiteTimezoneUtcStrategyConfigType
+  | PrerequisitePathStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -83,6 +94,13 @@ export class Prerequisite {
       const status = await PrerequisiteTimezoneUTCVerificator.verify(
         this.config
       );
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.path) {
+      const status = await PrerequisitePathVerificator.verify(this.config);
       this.status = status;
 
       return status;
@@ -150,6 +168,28 @@ class PrerequisiteTimezoneUTCVerificator {
   ): Promise<PrerequisiteStatusEnum> {
     try {
       Schema.TimezoneUTC.parse(config.timezone);
+      return PrerequisiteStatusEnum.success;
+    } catch (error) {
+      return PrerequisiteStatusEnum.failure;
+    }
+  }
+}
+
+class PrerequisitePathVerificator {
+  static async verify(
+    config: PrerequisitePathStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    const write = config.access?.write ?? false;
+    const execute = config.access?.execute ?? false;
+
+    const flags =
+      constants.R_OK |
+      (write ? constants.W_OK : 0) |
+      (execute ? constants.X_OK : 0);
+
+    try {
+      await fs.access(config.path, flags);
+
       return PrerequisiteStatusEnum.success;
     } catch (error) {
       return PrerequisiteStatusEnum.failure;
