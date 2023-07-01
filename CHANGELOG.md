@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.151](https://github.com/bgord/bgord-node/compare/v0.58.150...v0.58.151) (2023-07-01)
+
+
+### Features
+
+* add prisma prereq ([f39b8b4](https://github.com/bgord/bgord-node/commit/f39b8b490aaabaab70b45cd1f65514d77293b4e8))
+
 ### [0.58.150](https://github.com/bgord/bgord-node/compare/v0.58.149...v0.58.150) (2023-07-01)
 
 
