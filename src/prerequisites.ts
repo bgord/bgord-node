@@ -217,9 +217,10 @@ export class Prerequisites {
         );
 
         console.log(
-          `Prerequisites failed: ${failedPrerequisiteLabelsFormatted}, quitting...`,
-          { quit: true }
+          `Prerequisites failed: ${failedPrerequisiteLabelsFormatted}, quitting...`
         );
+
+        process.exit(1);
       }
     } catch (error) {
       console.log('Prerequisites error', String(error));
