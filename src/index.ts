@@ -44,6 +44,7 @@ export * from './response-body-in-locals';
 export * from './route';
 export * from './server-timing';
 export * from './session';
+export * from './simulated-error';
 export * from './sitemap'
 export * from './sleep';
 export * from './slower';
