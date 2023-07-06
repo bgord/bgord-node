@@ -55,11 +55,19 @@ export class Pagination {
     const currentPage = config.pagination.page;
     const lastPage = Pagination.getLastPage(config);
 
+    const previousPage = currentPage > 1 ? currentPage - 1 : undefined;
     const nextPage = currentPage < lastPage ? currentPage + 1 : undefined;
 
     return {
       result: config.result,
-      meta: { exhausted, currentPage, nextPage, lastPage, total: config.total },
+      meta: {
+        exhausted,
+        currentPage,
+        previousPage,
+        nextPage,
+        lastPage,
+        total: config.total,
+      },
     };
   }
 
@@ -95,6 +103,7 @@ export type Paged<T> = {
   meta: {
     exhausted: ExhaustedType;
     currentPage: PageType;
+    previousPage: PageType | undefined;
     nextPage: PageType | undefined;
     lastPage: PageType;
     total: TotalType;
