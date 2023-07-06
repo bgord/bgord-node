@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.153](https://github.com/bgord/bgord-node/compare/v0.58.152...v0.58.153) (2023-07-06)
+
+
+### Features
+
+* add simulated error middleware ([225d981](https://github.com/bgord/bgord-node/commit/225d98173c1e341611f5210545145561acfaa55b))
+
 ### [0.58.152](https://github.com/bgord/bgord-node/compare/v0.58.151...v0.58.152) (2023-07-06)
 
 
