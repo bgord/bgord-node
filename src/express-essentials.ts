@@ -10,6 +10,7 @@ import { ResponseBodyInLocals } from './response-body-in-locals';
 import { ServerTiming } from './server-timing';
 import { StaticFiles, StaticFilesConfigType } from './static-files';
 import { TimeZoneOffset } from './time-zone-offset';
+import { ApiVersion } from './api-version';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -38,6 +39,7 @@ export function addExpressEssentials(
     config?.helmet ?? {}
   );
   app.use(helmet(helmetConfig));
+  app.use(ApiVersion.attach);
 
   const bodyParserJsonConfig = config?.json ?? undefined;
   app.use(express.json(bodyParserJsonConfig));

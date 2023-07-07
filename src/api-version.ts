@@ -8,7 +8,7 @@ export class ApiVersion {
 
   static DEFAULT_API_VERSION = 'unknown';
 
-  static throw = Middleware(
+  static attach = Middleware(
     async (
       _request: express.Request,
       response: express.Response,
