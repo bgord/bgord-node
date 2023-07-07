@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.155](https://github.com/bgord/bgord-node/compare/v0.58.154...v0.58.155) (2023-07-07)
+
+
+### Features
+
+* add api-version to essentials ([544d5dd](https://github.com/bgord/bgord-node/commit/544d5dd4cccd2e0a70779295875b26373ddf43a3))
+
 ### [0.58.154](https://github.com/bgord/bgord-node/compare/v0.58.153...v0.58.154) (2023-07-07)
 
 
