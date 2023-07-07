@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.154](https://github.com/bgord/bgord-node/compare/v0.58.153...v0.58.154) (2023-07-07)
+
+
+### Features
+
+* add api-version middleware ([870403a](https://github.com/bgord/bgord-node/commit/870403a9e49ba2e60ce2ed4539f6664dc69d38fa))
+
 ### [0.58.153](https://github.com/bgord/bgord-node/compare/v0.58.152...v0.58.153) (2023-07-06)
 
 
