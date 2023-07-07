@@ -2,6 +2,7 @@ export * as Errors from './errors';
 export * as Schema from './schema';
 export * as VO from './value-objects';
 export * from './api-key-shield';
+export * from './api-version';
 export * from './basic-auth-shield';
 export * from './build-info-repository';
 export * from './cache'
