@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.161](https://github.com/bgord/bgord-node/compare/v0.58.160...v0.58.161) (2023-07-22)
+
+
+### Features
+
+* add image exit read method ([28c8a48](https://github.com/bgord/bgord-node/commit/28c8a48739676da49334e0e267a31783653b22f5))
+
 ### [0.58.160](https://github.com/bgord/bgord-node/compare/v0.58.159...v0.58.160) (2023-07-22)
 
 
