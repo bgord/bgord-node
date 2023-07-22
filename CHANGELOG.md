@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.160](https://github.com/bgord/bgord-node/compare/v0.58.159...v0.58.160) (2023-07-22)
+
+
+### Features
+
+* add image exif ([cbf082b](https://github.com/bgord/bgord-node/commit/cbf082b052007c59d957fdcaa6e615a517e2e424))
+
 ### [0.58.159](https://github.com/bgord/bgord-node/compare/v0.58.158...v0.58.159) (2023-07-22)
 
 ### [0.58.158](https://github.com/bgord/bgord-node/compare/v0.58.157...v0.58.158) (2023-07-22)
