@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.163](https://github.com/bgord/bgord-node/compare/v0.58.162...v0.58.163) (2023-07-22)
+
+
+### Bug Fixes
+
+* add previousPage to empty pagination ([bac8154](https://github.com/bgord/bgord-node/commit/bac815435b23cc49927532804a564fa6e2f8f108))
+
 ### [0.58.162](https://github.com/bgord/bgord-node/compare/v0.58.161...v0.58.162) (2023-07-22)
 
 
