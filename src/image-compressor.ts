@@ -1,5 +1,4 @@
 import execa from 'execa';
-import { gzip } from 'gzip-cli';
 
 import { PathType, ImageCompressionQualityType } from './schema';
 
@@ -22,9 +21,5 @@ export class ImageCompressor {
       config.input,
       config.input,
     ]);
-  }
-
-  static async package(config: ImageCompressorConfigType) {
-    return gzip({ patterns: [config.input], outputExtensions: ['gz', 'br'] });
   }
 }
