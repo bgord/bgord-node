@@ -26,8 +26,8 @@ export class TimeZoneOffset {
 
       request.timeZoneOffset = {
         minutes: timeZoneOffsetMinutes,
-        seconds: Time.Minutes(timeZoneOffsetMinutes).toSeconds(),
-        miliseconds: Time.Minutes(timeZoneOffsetMinutes).toMs(),
+        seconds: Time.Minutes(timeZoneOffsetMinutes).seconds,
+        miliseconds: Time.Minutes(timeZoneOffsetMinutes).ms,
       };
 
       return next();

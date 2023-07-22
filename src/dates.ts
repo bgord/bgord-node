@@ -85,15 +85,13 @@ export class DateCalculator {
       startOfDayUTC.getTime() + config.timeZoneOffsetMs;
 
     const timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay =
-      (config.now - startOfDayInTimeZone) % Time.Days(1).toMs();
+      (config.now - startOfDayInTimeZone) % Time.Days(1).ms;
 
-    if (
-      timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= Time.Days(1).toMs()
-    ) {
+    if (timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay >= Time.Days(1).ms) {
       return (
         config.now -
         timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay +
-        Time.Days(1).toMs()
+        Time.Days(1).ms
       );
     }
 
@@ -104,7 +102,7 @@ export class DateCalculator {
     return (
       config.now -
       timeSinceNewDayInTimeZoneRelativeToUtcStartOfDay -
-      Time.Days(1).toMs()
+      Time.Days(1).ms
     );
   }
 }

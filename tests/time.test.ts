@@ -6,10 +6,10 @@ describe('Time', () => {
     it('should correctly convert days to hours, minutes, seconds, and ms', () => {
       const days = Time.Days(2);
       expect(days.value).toBe(2);
-      expect(days.toHours()).toBe(48);
-      expect(days.toMinutes()).toBe(2880);
-      expect(days.toSeconds()).toBe(172800);
-      expect(days.toMs()).toBe(172800000);
+      expect(days.hours).toBe(48);
+      expect(days.minutes).toBe(2880);
+      expect(days.seconds).toBe(172800);
+      expect(days.ms).toBe(172800000);
     });
   });
 
@@ -17,9 +17,9 @@ describe('Time', () => {
     it('should correctly convert hours to minutes, seconds, and ms', () => {
       const hours = Time.Hours(3);
       expect(hours.value).toBe(3);
-      expect(hours.toMinutes()).toBe(180);
-      expect(hours.toSeconds()).toBe(10800);
-      expect(hours.toMs()).toBe(10800000);
+      expect(hours.minutes).toBe(180);
+      expect(hours.seconds).toBe(10800);
+      expect(hours.ms).toBe(10800000);
     });
   });
 
@@ -27,8 +27,8 @@ describe('Time', () => {
     it('should correctly convert minutes to seconds and ms', () => {
       const minutes = Time.Minutes(30);
       expect(minutes.value).toBe(30);
-      expect(minutes.toSeconds()).toBe(1800);
-      expect(minutes.toMs()).toBe(1800000);
+      expect(minutes.seconds).toBe(1800);
+      expect(minutes.ms).toBe(1800000);
     });
   });
 
@@ -36,7 +36,7 @@ describe('Time', () => {
     it('should correctly convert seconds to ms', () => {
       const seconds = Time.Seconds(120);
       expect(seconds.value).toBe(120);
-      expect(seconds.toMs()).toBe(120000);
+      expect(seconds.ms).toBe(120000);
     });
   });
 });
