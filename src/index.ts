@@ -24,9 +24,9 @@ export * from './handlebars';
 export * from './hcaptcha-shield';
 export * from './healthcheck';
 export * from './http-logger';
+export * from './i18n';
 export * from './image-compressor';
 export * from './image-resizer'
-export * from './i18n';
 export * from './logger';
 export * from './mailer';
 export * from './middleware';
@@ -34,6 +34,7 @@ export * from './mime';
 export * from './min-max-scaler';
 export * from './noop';
 export * from './open-graph';
+export * from './package-version';
 export * from './pagination';
 export * from './policy';
 export * from './prerequisites';
