@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.157](https://github.com/bgord/bgord-node/compare/v0.58.156...v0.58.157) (2023-07-22)
+
+
+### Bug Fixes
+
+* export package version ([80daea0](https://github.com/bgord/bgord-node/commit/80daea094882ee6e212703b48db08e65b6e86ce3))
+
 ### [0.58.156](https://github.com/bgord/bgord-node/compare/v0.58.155...v0.58.156) (2023-07-22)
 
 
