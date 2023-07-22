@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.158](https://github.com/bgord/bgord-node/compare/v0.58.157...v0.58.158) (2023-07-22)
+
+
+### Features
+
+* add PrerequisiteNodeVerificator ([78b6ebc](https://github.com/bgord/bgord-node/commit/78b6ebc1bc42f9708747471e0569536033fc0ef9))
+
 ### [0.58.157](https://github.com/bgord/bgord-node/compare/v0.58.156...v0.58.157) (2023-07-22)
 
 
