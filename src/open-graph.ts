@@ -1,4 +1,5 @@
 import * as Schema from './schema';
+import { ImageEXIF } from './image-exif';
 
 class OpenGraphTitle {
   value: Schema.OpenGraphTitleValueType;
@@ -154,6 +155,24 @@ class OpenGraphImage {
   }
 }
 
+class OpenGraphImageGenerator {
+  static async generate(config: {
+    path: Schema.PathType;
+    BASE_URL: Schema.UrlWithoutTrailingSlashType;
+  }) {
+    const exif = await ImageEXIF.read(config.path);
+
+    return new OpenGraphImage({
+      url: new OpenGraph.image.url(
+        Schema.Path.parse(`${config.BASE_URL}/${exif.name}`)
+      ),
+      type: new OpenGraph.image.type(exif.mimeType),
+      width: new OpenGraph.image.width(exif.width),
+      height: new OpenGraph.image.height(exif.height),
+    });
+  }
+}
+
 type OpenGraphConfigType = {
   title: OpenGraphTitle;
   description: OpenGraphDescription;
@@ -186,7 +205,7 @@ export const OpenGraph = {
   url: OpenGraphUrl,
   type: OpenGraphType,
   image: {
-    compound: OpenGraphImage,
+    generator: OpenGraphImageGenerator,
     url: OpenGraphImageUrl,
     width: OpenGraphImageWidth,
     height: OpenGraphImageHeight,
