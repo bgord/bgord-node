@@ -5,6 +5,7 @@ import fs from "fs/promises";
 
 import {Mailer} from "./mailer";
 import * as Schema from "./schema";
+import {PackageVersion} from "./package-version";
 
 type PrerequisiteLabelType = string;
 type PrerequisiteBinaryType = string;
@@ -16,6 +17,7 @@ export enum PrerequisiteStrategyEnum {
   timezoneUTC = "timezoneUTC",
   path = "path",
   prisma = "prisma",
+  node = "node"
 }
 
 export enum PrerequisiteStatusEnum {
@@ -60,13 +62,20 @@ type PrerequisitePrismaStrategyConfigType = {
   client: PrismaClient;
 };
 
+type PrerequisiteNodeStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.node;
+  version: PackageVersion;
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteExistsStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
   | PrerequisiteSelfStrategyConfigType
   | PrerequisiteTimezoneUtcStrategyConfigType
   | PrerequisitePathStrategyConfigType
-  | PrerequisitePrismaStrategyConfigType;
+  | PrerequisitePrismaStrategyConfigType
+  | PrerequisiteNodeStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -117,6 +126,13 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.prisma) {
       const status = await PrerequisitePrismaVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.node) {
+      const status = await PrerequisiteNodeVerificator.verify(this.config);
       this.status = status;
 
       return status;
@@ -232,6 +248,20 @@ class PrerequisitePrismaVerificator {
     } catch (error) {
       return PrerequisiteStatusEnum.failure;
     }
+  }
+}
+
+class PrerequisiteNodeVerificator {
+  static async verify(
+    config: PrerequisiteNodeStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    const { stdout } = await execa("node", ["-v"]);
+    const current = PackageVersion.fromStringWithV(stdout);
+
+    if (current.isGreaterThanOrEqual(config.version)) {
+      return PrerequisiteStatusEnum.success;
+    }
+    return PrerequisiteStatusEnum.failure;
   }
 }
 
