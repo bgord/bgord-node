@@ -87,6 +87,7 @@ export class Pagination {
     meta: {
       exhausted: true,
       currentPage: 1,
+      previousPage: undefined,
       nextPage: undefined,
       lastPage: 1,
       total: 0,
