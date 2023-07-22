@@ -11,7 +11,7 @@ type PrerequisiteLabelType = string;
 type PrerequisiteBinaryType = string;
 
 export enum PrerequisiteStrategyEnum {
-  exists = "exists",
+  binary = "binary",
   mailer = "mailer",
   self = "self",
   timezoneUTC = "timezoneUTC",
@@ -26,9 +26,9 @@ export enum PrerequisiteStatusEnum {
   undetermined = "undetermined",
 }
 
-type PrerequisiteExistsStrategyConfigType = {
+type PrerequisiteBinaryStrategyConfigType = {
   label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.exists;
+  strategy: PrerequisiteStrategyEnum.binary;
   binary: PrerequisiteBinaryType;
 };
 
@@ -69,7 +69,7 @@ type PrerequisiteNodeStrategyConfigType = {
 };
 
 type PrerequisiteConfigType =
-  | PrerequisiteExistsStrategyConfigType
+  | PrerequisiteBinaryStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
   | PrerequisiteSelfStrategyConfigType
   | PrerequisiteTimezoneUtcStrategyConfigType
@@ -87,8 +87,8 @@ export class Prerequisite {
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
-    if (this.config.strategy === PrerequisiteStrategyEnum.exists) {
-      const status = await PrerequisiteExistsVerificator.verify(this.config);
+    if (this.config.strategy === PrerequisiteStrategyEnum.binary) {
+      const status = await PrerequisiteBinaryVerificator.verify(this.config);
       this.status = status;
 
       return status;
@@ -170,9 +170,9 @@ class PrerequisiteMailerVerificator {
   }
 }
 
-class PrerequisiteExistsVerificator {
+class PrerequisiteBinaryVerificator {
   static async verify(
-    config: PrerequisiteExistsStrategyConfigType
+    config: PrerequisiteBinaryStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     try {
       const result = await execa("which", [config.binary]);
