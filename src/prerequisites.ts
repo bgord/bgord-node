@@ -144,13 +144,13 @@ export class Prerequisite {
   report() {
     if (this.status === PrerequisiteStatusEnum.success) {
       console.log(
-        `${this.config.label} verified correctly with ${this.config.strategy} strategy`
+        `[x] ${this.config.label} verified correctly with ${this.config.strategy} strategy`
       );
     }
 
     if (this.status === PrerequisiteStatusEnum.failure) {
       console.log(
-        `${this.config.label} not verified correctly with ${this.config.strategy} strategy`
+        `[-] ${this.config.label} not verified correctly with ${this.config.strategy} strategy`
       );
     }
   }
