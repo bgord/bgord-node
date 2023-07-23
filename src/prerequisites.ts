@@ -2,10 +2,12 @@ import { PrismaClient } from '@prisma/client';
 import execa from 'execa';
 import { constants } from 'fs';
 import fs from 'fs/promises';
+import os from 'os';
 
 import { Mailer } from './mailer';
 import * as Schema from './schema';
 import { PackageVersion } from './package-version';
+import { Size, SizeUnit } from './size';
 
 type PrerequisiteLabelType = string;
 type PrerequisiteBinaryType = string;
@@ -18,6 +20,7 @@ export enum PrerequisiteStrategyEnum {
   path = 'path',
   prisma = 'prisma',
   node = 'node',
+  RAM = 'RAM',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -68,6 +71,12 @@ type PrerequisiteNodeStrategyConfigType = {
   version: PackageVersion;
 };
 
+type PrerequisiteRAMStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.RAM;
+  minimum: Size;
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteBinaryStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
@@ -75,7 +84,8 @@ type PrerequisiteConfigType =
   | PrerequisiteTimezoneUtcStrategyConfigType
   | PrerequisitePathStrategyConfigType
   | PrerequisitePrismaStrategyConfigType
-  | PrerequisiteNodeStrategyConfigType;
+  | PrerequisiteNodeStrategyConfigType
+  | PrerequisiteRAMStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -133,6 +143,13 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.node) {
       const status = await PrerequisiteNodeVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.RAM) {
+      const status = await PrerequisiteRAMVerificator.verify(this.config);
       this.status = status;
 
       return status;
@@ -259,6 +276,19 @@ class PrerequisiteNodeVerificator {
     const current = PackageVersion.fromStringWithV(stdout);
 
     if (current.isGreaterThanOrEqual(config.version)) {
+      return PrerequisiteStatusEnum.success;
+    }
+    return PrerequisiteStatusEnum.failure;
+  }
+}
+
+class PrerequisiteRAMVerificator {
+  static async verify(
+    config: PrerequisiteRAMStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    const freeRAM = new Size({ unit: SizeUnit.b, value: os.freemem() });
+
+    if (freeRAM.isGreaterThan(config.minimum)) {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;
