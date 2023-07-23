@@ -3,6 +3,7 @@ import execa from 'execa';
 import { constants } from 'fs';
 import fs from 'fs/promises';
 import os from 'os';
+import checkDiskSpace from 'check-disk-space';
 
 import { Mailer } from './mailer';
 import * as Schema from './schema';
@@ -21,6 +22,7 @@ export enum PrerequisiteStrategyEnum {
   prisma = 'prisma',
   node = 'node',
   RAM = 'RAM',
+  space = 'space',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -77,6 +79,12 @@ type PrerequisiteRAMStrategyConfigType = {
   minimum: Size;
 };
 
+type PrerequisiteSPaceStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.space;
+  minimum: Size;
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteBinaryStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
@@ -85,7 +93,8 @@ type PrerequisiteConfigType =
   | PrerequisitePathStrategyConfigType
   | PrerequisitePrismaStrategyConfigType
   | PrerequisiteNodeStrategyConfigType
-  | PrerequisiteRAMStrategyConfigType;
+  | PrerequisiteRAMStrategyConfigType
+  | PrerequisiteSPaceStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -150,6 +159,13 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.RAM) {
       const status = await PrerequisiteRAMVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.space) {
+      const status = await PrerequisiteSpaceVerificator.verify(this.config);
       this.status = status;
 
       return status;
@@ -289,6 +305,20 @@ class PrerequisiteRAMVerificator {
     const freeRAM = new Size({ unit: SizeUnit.b, value: os.freemem() });
 
     if (freeRAM.isGreaterThan(config.minimum)) {
+      return PrerequisiteStatusEnum.success;
+    }
+    return PrerequisiteStatusEnum.failure;
+  }
+}
+
+class PrerequisiteSpaceVerificator {
+  static async verify(
+    config: PrerequisiteSPaceStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    const bytes = await checkDiskSpace('/');
+    const freeDiskSpace = new Size({ unit: SizeUnit.b, value: bytes.free });
+
+    if (freeDiskSpace.isGreaterThan(config.minimum)) {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;

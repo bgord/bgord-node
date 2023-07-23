@@ -75,6 +75,7 @@
     "@types/qs": "^6.9.7",
     "accept-language-parser": "^1.5.0",
     "axios": "^0.24.0",
+    "check-disk-space": "^3.4.0",
     "cors": "^2.8.5",
     "date-fns": "^2.22.1",
     "dotenv": "^10.0.0",
