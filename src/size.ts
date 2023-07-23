@@ -3,9 +3,10 @@ import { z } from 'zod';
 import * as Schema from './schema';
 
 export enum SizeUnit {
-  'byte' = 'byte',
+  'b' = 'b',
   'KB' = 'KB',
   'MB' = 'MB',
+  'GB' = 'GB',
 }
 
 const SizeValue = z.number().positive();
@@ -49,8 +50,10 @@ export class Size {
         return Schema.SizeInBytes.parse(config.value * 1024);
       case SizeUnit.MB:
         return Schema.SizeInBytes.parse(config.value * 1024 * 1024);
+      case SizeUnit.GB:
+        return Schema.SizeInBytes.parse(config.value * 1024 * 1024 * 1024);
       default:
-        // SizeUnit.byte
+        // SizeUnit.b
         return Schema.SizeInBytes.parse(config.value);
     }
   }
