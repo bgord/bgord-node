@@ -1,7 +1,7 @@
 import * as winston from 'winston';
 
 import * as Schema from './schema';
-import * as VO from './value-objects';
+import { Size, SizeUnit } from './size';
 
 type LogTimestampType = number;
 type LogAppType = string;
@@ -123,10 +123,7 @@ export class Logger {
       this.instance.add(
         new winston.transports.File({
           filename: `/var/log/${this.app}-${this.environment}.log`,
-          maxsize: VO.FileSize.toBytes({
-            unit: VO.FileSizeUnit.MB,
-            value: 10,
-          }),
+          maxsize: Size.toBytes({ unit: SizeUnit.MB, value: 10 }),
         })
       );
     }
