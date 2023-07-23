@@ -38,6 +38,10 @@ export class Size {
     return this.bytes;
   }
 
+  public isGreaterThan(another: Size) {
+    return this.bytes > another.toBytes();
+  }
+
   static toBytes(config: SizeConfigType): Schema.SizeInBytesType {
     return new Size(config).toBytes();
   }

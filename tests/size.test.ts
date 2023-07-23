@@ -93,4 +93,18 @@ describe.only('Size', () => {
 
     expect(bytes).toEqual(805306368);
   });
+
+  test('Comparison function', () => {
+    const first = new Size({ unit: SizeUnit.GB, value: 1 });
+    const second = new Size({ unit: SizeUnit.MB, value: 1 });
+
+    expect(first.isGreaterThan(second)).toBeTruthy();
+  });
+
+  test('Comparison function', () => {
+    const first = new Size({ unit: SizeUnit.MB, value: 1 });
+    const second = new Size({ unit: SizeUnit.MB, value: 1 });
+
+    expect(first.isGreaterThan(second)).toBeFalsy();
+  });
 });
