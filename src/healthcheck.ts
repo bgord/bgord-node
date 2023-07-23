@@ -20,7 +20,9 @@ export class Healthcheck {
 
       const ok = details.every(
         result => result.status === PrerequisiteStatusEnum.success
-      );
+      )
+        ? PrerequisiteStatusEnum.success
+        : PrerequisiteStatusEnum.failure;
 
       const code = ok ? 200 : 424;
 
