@@ -47,7 +47,8 @@ export * from './route';
 export * from './server-timing';
 export * from './session';
 export * from './simulated-error';
-export * from './sitemap'
+export * from './sitemap';
+export * from './size';
 export * from './sleep';
 export * from './slower';
 export * from './sqlite';

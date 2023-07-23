@@ -1,29 +1,29 @@
-import type { PrismaClient } from "@prisma/client";
-import execa from "execa";
-import { constants } from "fs";
-import fs from "fs/promises";
+import { PrismaClient } from '@prisma/client';
+import execa from 'execa';
+import { constants } from 'fs';
+import fs from 'fs/promises';
 
-import {Mailer} from "./mailer";
-import * as Schema from "./schema";
-import {PackageVersion} from "./package-version";
+import { Mailer } from './mailer';
+import * as Schema from './schema';
+import { PackageVersion } from './package-version';
 
 type PrerequisiteLabelType = string;
 type PrerequisiteBinaryType = string;
 
 export enum PrerequisiteStrategyEnum {
-  binary = "binary",
-  mailer = "mailer",
-  self = "self",
-  timezoneUTC = "timezoneUTC",
-  path = "path",
-  prisma = "prisma",
-  node = "node"
+  binary = 'binary',
+  mailer = 'mailer',
+  self = 'self',
+  timezoneUTC = 'timezoneUTC',
+  path = 'path',
+  prisma = 'prisma',
+  node = 'node',
 }
 
 export enum PrerequisiteStatusEnum {
-  success = "success",
-  failure = "failure",
-  undetermined = "undetermined",
+  success = 'success',
+  failure = 'failure',
+  undetermined = 'undetermined',
 }
 
 type PrerequisiteBinaryStrategyConfigType = {
@@ -175,7 +175,7 @@ class PrerequisiteBinaryVerificator {
     config: PrerequisiteBinaryStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     try {
-      const result = await execa("which", [config.binary]);
+      const result = await execa('which', [config.binary]);
 
       return result.exitCode === 0
         ? PrerequisiteStatusEnum.success
@@ -255,7 +255,7 @@ class PrerequisiteNodeVerificator {
   static async verify(
     config: PrerequisiteNodeStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
-    const { stdout } = await execa("node", ["-v"]);
+    const { stdout } = await execa('node', ['-v']);
     const current = PackageVersion.fromStringWithV(stdout);
 
     if (current.isGreaterThanOrEqual(config.version)) {
@@ -280,8 +280,9 @@ export class Prerequisites {
       }
 
       if (failedPrerequisiteLabels.length > 0) {
-        const failedPrerequisiteLabelsFormatted =
-          failedPrerequisiteLabels.join(", ");
+        const failedPrerequisiteLabelsFormatted = failedPrerequisiteLabels.join(
+          ', '
+        );
 
         console.log(
           `Prerequisites failed: ${failedPrerequisiteLabelsFormatted}, quitting...`
@@ -290,7 +291,7 @@ export class Prerequisites {
         process.exit(1);
       }
     } catch (error) {
-      console.log("Prerequisites error", String(error));
+      console.log('Prerequisites error', String(error));
     }
   }
 }
