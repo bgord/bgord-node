@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.167](https://github.com/bgord/bgord-node/compare/v0.58.165...v0.58.167) (2023-07-23)
+
+
+### Features
+
+* add RAM prerequisite ([2c25b62](https://github.com/bgord/bgord-node/commit/2c25b6222d8eca128a422ec0b6157f8843021ff9))
+* add space prereq ([4f710de](https://github.com/bgord/bgord-node/commit/4f710de5588e93f415c42770b22ab51c839ae331))
+
 ### [0.58.166](https://github.com/bgord/bgord-node/compare/v0.58.165...v0.58.166) (2023-07-23)
 
 
