@@ -1,5 +1,4 @@
 import sharp from 'sharp';
-import execa from 'execa';
 import path from 'path';
 
 import * as Schema from './schema';
@@ -8,6 +7,11 @@ export type ImageExifOutputType = {
   width: Schema.WidthType;
   height: Schema.HeightType;
   name: path.ParsedPath['base'];
+};
+
+export type ImageExifClearConfigType = {
+  input: Schema.PathType;
+  output: Schema.PathType;
 };
 
 export class ImageEXIF {
@@ -24,7 +28,9 @@ export class ImageEXIF {
     };
   }
 
-  static async clear(path: Schema.PathType) {
-    return execa('magick', ['mogrify', '-strip', path]);
+  static async clear(config: ImageExifClearConfigType) {
+    return sharp(config.input)
+      .rotate()
+      .toFile(config.output);
   }
 }
