@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.169](https://github.com/bgord/bgord-node/compare/v0.58.168...v0.58.169) (2023-07-25)
+
+
+### Features
+
+* add image converter ([49db094](https://github.com/bgord/bgord-node/commit/49db09452b51aca3a35439607f8a7861e14a8942))
+
 ### [0.58.168](https://github.com/bgord/bgord-node/compare/v0.58.167...v0.58.168) (2023-07-23)
 
 ### [0.58.167](https://github.com/bgord/bgord-node/compare/v0.58.165...v0.58.167) (2023-07-23)
