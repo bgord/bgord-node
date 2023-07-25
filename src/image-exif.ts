@@ -1,12 +1,15 @@
 import sharp from 'sharp';
 import path from 'path';
+import mime from 'mime-types';
 
 import * as Schema from './schema';
+import { MimeRawType } from './mime';
 
 export type ImageExifOutputType = {
   width: Schema.WidthType;
   height: Schema.HeightType;
   name: path.ParsedPath['base'];
+  mimeType: MimeRawType;
 };
 
 export type ImageExifClearConfigType = {
@@ -25,6 +28,7 @@ export class ImageEXIF {
       width: Schema.Width.parse(metadata.width),
       height: Schema.Height.parse(metadata.height),
       name,
+      mimeType: String(mime.contentType(String(metadata.format))),
     };
   }
 
