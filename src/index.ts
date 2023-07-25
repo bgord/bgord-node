@@ -25,6 +25,7 @@ export * from './healthcheck';
 export * from './http-logger';
 export * from './i18n';
 export * from './image-compressor';
+export * from './image-converter';
 export * from './image-exif';
 export * from './image-resizer'
 export * from './logger';
