@@ -1,25 +1,24 @@
-import execa from 'execa';
+import sharp from 'sharp';
 
-import { PathType, ImageCompressionQualityType } from './schema';
+import * as Schema from './schema';
 
 export type ImageCompressorConfigType = {
-  input: PathType;
-  quality?: ImageCompressionQualityType;
+  input: Schema.PathType;
+  output?: Schema.PathType;
+  quality?: Schema.ImageCompressionQualityType;
 };
 
 export class ImageCompressor {
   static async compress(config: ImageCompressorConfigType) {
+    const input = config.input;
+    const output = config.output ?? input;
+
     const quality = config.quality ?? 85;
 
-    return execa('magick', [
-      'convert',
-      '-strip',
-      '-interlace',
-      'Plane',
-      '-quality',
-      `${quality}%`,
-      config.input,
-      config.input,
-    ]);
+    const image = sharp(input);
+    const metadata = await image.metadata();
+    const format = metadata.format as keyof sharp.FormatEnum;
+
+    return image.toFormat(format, { quality }).toFile(output);
   }
 }
