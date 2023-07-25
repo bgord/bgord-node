@@ -1,11 +1,11 @@
-import execa from 'execa';
+import sharp from 'sharp';
 
-import { PathType, WidthType } from './schema';
+import * as Schema from './schema';
 
 export type ImageResizerConfigType = {
-  input: PathType;
-  output?: PathType;
-  width: WidthType;
+  input: Schema.PathType;
+  output?: Schema.PathType;
+  width: Schema.WidthType;
 };
 
 export class ImageResizer {
@@ -13,12 +13,8 @@ export class ImageResizer {
     const input = config.input;
     const output = config.output ?? input;
 
-    return execa('magick', [
-      'convert',
-      input,
-      '-resize',
-      `${config.width}x`,
-      output,
-    ]);
+    return sharp(input)
+      .resize({ width: config.width })
+      .toFile(output);
   }
 }
