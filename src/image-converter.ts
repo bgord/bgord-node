@@ -5,17 +5,15 @@ import * as Schema from './schema';
 export type ImageConverterType = keyof sharp.FormatEnum;
 
 export type ImageConverterConfigType = {
+  format: ImageConverterType;
   input: Schema.PathType;
   output: Schema.PathType;
 };
 
 export class ImageConverter {
-  static async convert(
-    format: ImageConverterType,
-    config: ImageConverterConfigType
-  ) {
+  static async convert(config: ImageConverterConfigType) {
     return sharp(config.input)
-      .toFormat(format)
+      .toFormat(config.format)
       .toFile(config.output);
   }
 }
