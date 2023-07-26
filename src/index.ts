@@ -28,6 +28,7 @@ export * from './image-compressor';
 export * from './image-converter';
 export * from './image-exif';
 export * from './image-resizer'
+export * from './jobs';
 export * from './logger';
 export * from './mailer';
 export * from './middleware';
