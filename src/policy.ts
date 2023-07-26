@@ -18,4 +18,8 @@ export abstract class Policy<T extends BasePolicyConfig> {
       this.throw();
     }
   }
+
+  async passes(config: T) {
+    return !(await this.fails(config));
+  }
 }
