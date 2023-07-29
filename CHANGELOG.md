@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.174](https://github.com/bgord/bgord-node/compare/v0.58.173...v0.58.174) (2023-07-29)
+
+
+### Features
+
+* accept supported languages in i18n ([4918ec6](https://github.com/bgord/bgord-node/commit/4918ec6fa15f1de866e5d26155e1ccf52dc5f054))
+* add translations prereq ([c1a4260](https://github.com/bgord/bgord-node/commit/c1a4260f990c72638ae8fe213b3a8723280db113))
+
 ### [0.58.173](https://github.com/bgord/bgord-node/compare/v0.58.172...v0.58.173) (2023-07-29)
 
 
