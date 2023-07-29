@@ -1,7 +1,6 @@
 import express from 'express';
 import Path from 'path';
 import fs from 'fs/promises';
-import parser from 'accept-language-parser';
 
 import * as Schema from './schema';
 
@@ -19,6 +18,11 @@ export type TranslationVariableType = Record<
   TranslationPlaceholderValueType
 >;
 
+type LanguageConfigType = {
+  translationsPath?: Schema.PathType;
+  defaultLanguage?: Schema.LanguageType;
+};
+
 declare global {
   namespace Express {
     export interface Request {
@@ -29,30 +33,35 @@ declare global {
   }
 }
 
-type LanguageConfigType = {
-  translationsPath?: Schema.PathType;
-  defaultLanguageName?: Schema.LanguageType;
-};
-
 export class I18n {
+  static LANGUAGE_COOKIE_NAME = 'accept-language';
+
+  static DEFAULT_TRANSLATIONS_PATH = Schema.Path.parse('infra/translations');
+
+  static FALLBACK_LANGUAGE = 'en';
+
   static applyTo(app: express.Application, config?: LanguageConfigType): void {
     app.use(async (request, _response, next) => {
       const translationsPath =
-        config?.translationsPath ?? Schema.Path.parse('infra/translations');
-      const defaultLanguageName = config?.defaultLanguageName ?? 'en';
+        config?.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
+
+      const defaultLanguage = config?.defaultLanguage ?? I18n.FALLBACK_LANGUAGE;
 
       const supportedLanguages = await I18n.getSupportedLanguages(
         translationsPath
       );
 
-      const acceptedLanguages = parser.parse(
-        request.headers['accept-language']
-      );
+      const chosenLanguage =
+        request.cookies[I18n.LANGUAGE_COOKIE_NAME] ?? defaultLanguage;
 
-      const languageName = parser.pick(supportedLanguages, acceptedLanguages);
+      const language = supportedLanguages.find(
+        language => language === chosenLanguage
+      )
+        ? chosenLanguage
+        : I18n.FALLBACK_LANGUAGE;
 
       request.supportedLanguages = supportedLanguages;
-      request.language = languageName ?? defaultLanguageName;
+      request.language = language;
       request.translationsPath = translationsPath;
 
       return next();

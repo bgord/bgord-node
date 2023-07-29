@@ -2,6 +2,7 @@ import express from 'express';
 import bodyparser from 'body-parser';
 import helmet from 'helmet';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import _ from 'lodash';
 
 import { MethodOverride } from './method-override';
@@ -43,6 +44,7 @@ export function addExpressEssentials(
 
   const bodyParserJsonConfig = config?.json ?? undefined;
   app.use(express.json(bodyParserJsonConfig));
+  app.use(cookieParser());
 
   const bodyParserUrlencodedConfig = _.merge({}, config?.urlencoded ?? {}, {
     extended: true,
