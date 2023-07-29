@@ -21,6 +21,7 @@ export type TranslationVariableType = Record<
 type LanguageConfigType = {
   translationsPath?: Schema.PathType;
   defaultLanguage?: Schema.LanguageType;
+  supportedLanguages: Record<string, Schema.LanguageType>;
 };
 
 declare global {
@@ -40,27 +41,23 @@ export class I18n {
 
   static FALLBACK_LANGUAGE = 'en';
 
-  static applyTo(app: express.Application, config?: LanguageConfigType): void {
+  static applyTo(app: express.Application, config: LanguageConfigType): void {
     app.use(async (request, _response, next) => {
       const translationsPath =
         config?.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
 
       const defaultLanguage = config?.defaultLanguage ?? I18n.FALLBACK_LANGUAGE;
 
-      const supportedLanguages = await I18n.getSupportedLanguages(
-        translationsPath
-      );
-
       const chosenLanguage =
         request.cookies[I18n.LANGUAGE_COOKIE_NAME] ?? defaultLanguage;
 
-      const language = supportedLanguages.find(
+      const language = Object.keys(config.supportedLanguages).find(
         language => language === chosenLanguage
       )
         ? chosenLanguage
         : I18n.FALLBACK_LANGUAGE;
 
-      request.supportedLanguages = supportedLanguages;
+      request.supportedLanguages = Object.keys(config.supportedLanguages);
       request.language = language;
       request.translationsPath = translationsPath;
 
