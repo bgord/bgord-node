@@ -355,7 +355,7 @@ class PrerequisiteTranslationsVerificator {
     try {
       await fs.access(translationsPath, constants.R_OK);
 
-      for (const language in Object.keys(config.supportedLanguages)) {
+      for (const language in config.supportedLanguages) {
         const languagePath = path.join(translationsPath, `${language}.json`);
         await fs.access(languagePath, constants.R_OK);
       }
