@@ -103,17 +103,4 @@ export class I18n {
       );
     };
   }
-
-  private static async getSupportedLanguages(
-    traslationsPath: Schema.PathType
-  ): Promise<Schema.LanguageType[]> {
-    try {
-      const supportedLanguageFiles = await fs.readdir(traslationsPath);
-      return supportedLanguageFiles.map(filename => Path.parse(filename).name);
-    } catch (error) {
-      console.log('I18n#getSupportedLanguages', error);
-
-      return [];
-    }
-  }
 }
