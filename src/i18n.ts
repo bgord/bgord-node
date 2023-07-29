@@ -18,7 +18,7 @@ export type TranslationVariableType = Record<
   TranslationPlaceholderValueType
 >;
 
-type LanguageConfigType = {
+export type I18nConfigType = {
   translationsPath?: Schema.PathType;
   defaultLanguage?: Schema.LanguageType;
   supportedLanguages: Record<string, Schema.LanguageType>;
@@ -41,7 +41,7 @@ export class I18n {
 
   static FALLBACK_LANGUAGE = 'en';
 
-  static applyTo(app: express.Application, config: LanguageConfigType): void {
+  static applyTo(app: express.Application, config: I18nConfigType): void {
     app.use(async (request, _response, next) => {
       const translationsPath =
         config?.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;

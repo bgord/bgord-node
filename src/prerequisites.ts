@@ -4,9 +4,11 @@ import { constants } from 'fs';
 import fs from 'fs/promises';
 import os from 'os';
 import checkDiskSpace from 'check-disk-space';
+import path from 'path';
 
-import { Mailer } from './mailer';
 import * as Schema from './schema';
+import { I18n, I18nConfigType } from './i18n';
+import { Mailer } from './mailer';
 import { PackageVersion } from './package-version';
 import { Size, SizeUnit } from './size';
 
@@ -23,6 +25,7 @@ export enum PrerequisiteStrategyEnum {
   node = 'node',
   RAM = 'RAM',
   space = 'space',
+  translations = 'translations',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -79,10 +82,17 @@ type PrerequisiteRAMStrategyConfigType = {
   minimum: Size;
 };
 
-type PrerequisiteSPaceStrategyConfigType = {
+type PrerequisiteSpaceStrategyConfigType = {
   label: PrerequisiteLabelType;
   strategy: PrerequisiteStrategyEnum.space;
   minimum: Size;
+};
+
+type PrerequisiteTranslationsStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.translations;
+  translationsPath?: typeof I18n.DEFAULT_TRANSLATIONS_PATH;
+  supportedLanguages: I18nConfigType['supportedLanguages'];
 };
 
 type PrerequisiteConfigType =
@@ -94,7 +104,8 @@ type PrerequisiteConfigType =
   | PrerequisitePrismaStrategyConfigType
   | PrerequisiteNodeStrategyConfigType
   | PrerequisiteRAMStrategyConfigType
-  | PrerequisiteSPaceStrategyConfigType;
+  | PrerequisiteSpaceStrategyConfigType
+  | PrerequisiteTranslationsStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -166,6 +177,15 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.space) {
       const status = await PrerequisiteSpaceVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.translations) {
+      const status = await PrerequisiteTranslationsVerificator.verify(
+        this.config
+      );
       this.status = status;
 
       return status;
@@ -313,7 +333,7 @@ class PrerequisiteRAMVerificator {
 
 class PrerequisiteSpaceVerificator {
   static async verify(
-    config: PrerequisiteSPaceStrategyConfigType
+    config: PrerequisiteSpaceStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     const bytes = await checkDiskSpace('/');
     const freeDiskSpace = new Size({ unit: SizeUnit.b, value: bytes.free });
@@ -322,6 +342,28 @@ class PrerequisiteSpaceVerificator {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;
+  }
+}
+
+class PrerequisiteTranslationsVerificator {
+  static async verify(
+    config: PrerequisiteTranslationsStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    const translationsPath =
+      config.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
+
+    try {
+      await fs.access(translationsPath, constants.R_OK);
+
+      for (const language in Object.keys(config.supportedLanguages)) {
+        const languagePath = path.join(translationsPath, `${language}.json`);
+        await fs.access(languagePath, constants.R_OK);
+      }
+    } catch (error) {
+      return PrerequisiteStatusEnum.failure;
+    }
+
+    return PrerequisiteStatusEnum.success;
   }
 }
 
