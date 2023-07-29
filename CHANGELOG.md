@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.175](https://github.com/bgord/bgord-node/compare/v0.58.174...v0.58.175) (2023-07-29)
+
+
+### Bug Fixes
+
+* remove unused getSupportedLanguages method ([33d21fb](https://github.com/bgord/bgord-node/commit/33d21fbfbd0b891496e404e83b1443df8661e138))
+
 ### [0.58.174](https://github.com/bgord/bgord-node/compare/v0.58.173...v0.58.174) (2023-07-29)
 
 
