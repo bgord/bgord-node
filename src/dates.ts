@@ -26,34 +26,21 @@ export class DateFormatters {
   }
 }
 
-export type RelativeDateType = {
-  raw: number;
-  relative: string;
-};
-
-export type RelativeDateInputType = number;
-
+export type RelativeDateType = { raw: Schema.TimestampType; relative: string };
 export class RelativeDate {
-  static to = {
-    now: {
-      truthy: RelativeDate.truthy,
-      falsy: RelativeDate.falsy,
-    },
-  };
-
-  private static truthy(timestampMs: RelativeDateInputType): RelativeDateType {
+  static truthy(timestampMs: Schema.TimestampType): RelativeDateType {
     return RelativeDate._format(timestampMs);
   }
 
-  private static falsy(
-    timestampMs: Falsy<RelativeDateInputType>
+  static falsy(
+    timestampMs: Falsy<Schema.TimestampType>
   ): RelativeDateType | null {
     if (!timestampMs) return null;
 
     return RelativeDate._format(timestampMs);
   }
 
-  private static _format(timestampMs: RelativeDateInputType) {
+  private static _format(timestampMs: Schema.TimestampType): RelativeDateType {
     return {
       raw: timestampMs,
       relative: DateFormatters.relative(timestampMs),
