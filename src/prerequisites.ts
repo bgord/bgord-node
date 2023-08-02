@@ -5,6 +5,7 @@ import fs from 'fs/promises';
 import os from 'os';
 import checkDiskSpace from 'check-disk-space';
 import path from 'path';
+import net from 'net';
 
 import * as Schema from './schema';
 import { I18n, I18nConfigType } from './i18n';
@@ -26,6 +27,7 @@ export enum PrerequisiteStrategyEnum {
   RAM = 'RAM',
   space = 'space',
   translations = 'translations',
+  port = 'port',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -95,6 +97,12 @@ type PrerequisiteTranslationsStrategyConfigType = {
   supportedLanguages: I18nConfigType['supportedLanguages'];
 };
 
+type PrerequisitePortStrategyConfigType = {
+  label: PrerequisiteLabelType;
+  strategy: PrerequisiteStrategyEnum.port;
+  port: Schema.PortType;
+};
+
 type PrerequisiteConfigType =
   | PrerequisiteBinaryStrategyConfigType
   | PrerequisiteMailerStrategyConfigType
@@ -105,7 +113,8 @@ type PrerequisiteConfigType =
   | PrerequisiteNodeStrategyConfigType
   | PrerequisiteRAMStrategyConfigType
   | PrerequisiteSpaceStrategyConfigType
-  | PrerequisiteTranslationsStrategyConfigType;
+  | PrerequisiteTranslationsStrategyConfigType
+  | PrerequisitePortStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -186,6 +195,13 @@ export class Prerequisite {
       const status = await PrerequisiteTranslationsVerificator.verify(
         this.config
       );
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.port) {
+      const status = await PrerequisitePortVerificator.verify(this.config);
       this.status = status;
 
       return status;
@@ -364,6 +380,22 @@ class PrerequisiteTranslationsVerificator {
     }
 
     return PrerequisiteStatusEnum.success;
+  }
+}
+
+class PrerequisitePortVerificator {
+  static async verify(
+    config: PrerequisitePortStrategyConfigType
+  ): Promise<PrerequisiteStatusEnum> {
+    return new Promise(resolve => {
+      const server = net.createServer();
+
+      server.listen(config.port, () =>
+        server.close(() => resolve(PrerequisiteStatusEnum.success))
+      );
+
+      server.on('error', () => resolve(PrerequisiteStatusEnum.failure));
+    });
   }
 }
 
