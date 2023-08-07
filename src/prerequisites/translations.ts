@@ -54,7 +54,10 @@ export class PrerequisiteTranslationsVerificator {
     const problems: PrerequisiteTranslationsProblemType[] = [];
 
     for (const language of supportedLanguages) {
-      const translations = I18n.getTranslations(language, translationsPath);
+      const translations = await I18n.getTranslations(
+        language,
+        translationsPath
+      );
       const translationKeys = Object.keys(translations);
 
       languageToTranslationKeys[language] = translationKeys;
