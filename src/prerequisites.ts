@@ -1,4 +1,3 @@
-import * as Schema from './schema';
 import { Mailer } from './mailer';
 
 import {
@@ -33,6 +32,10 @@ import {
   PrerequisitePathVerificator,
   PrerequisitePathStrategyConfigType,
 } from './prerequisites/prerequisite-path';
+import {
+  PrerequisiteTimezoneUTCVerificator,
+  PrerequisiteTimezoneUtcStrategyConfigType,
+} from './prerequisites/prerequisite-timezone-utc';
 
 export type PrerequisiteLabelType = string;
 
@@ -65,12 +68,6 @@ type PrerequisiteMailerStrategyConfigType = {
 type PrerequisiteSelfStrategyConfigType = {
   label: PrerequisiteLabelType;
   strategy: PrerequisiteStrategyEnum.self;
-};
-
-type PrerequisiteTimezoneUtcStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.timezoneUTC;
-  timezone: Schema.TimezoneType;
 };
 
 type PrerequisiteConfigType =
@@ -214,19 +211,6 @@ class PrerequisiteSelfVerificator {
     _config: PrerequisiteSelfStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     return PrerequisiteStatusEnum.success;
-  }
-}
-
-class PrerequisiteTimezoneUTCVerificator {
-  static async verify(
-    config: PrerequisiteTimezoneUtcStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    try {
-      Schema.TimezoneUTC.parse(config.timezone);
-      return PrerequisiteStatusEnum.success;
-    } catch (error) {
-      return PrerequisiteStatusEnum.failure;
-    }
   }
 }
 
