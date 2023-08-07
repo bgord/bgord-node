@@ -351,7 +351,9 @@ class PrerequisiteSpaceVerificator {
   static async verify(
     config: PrerequisiteSpaceStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
-    const bytes = await checkDiskSpace('/');
+    const fsRoot = path.sep;
+    const bytes = await checkDiskSpace(fsRoot);
+
     const freeDiskSpace = new Size({ unit: SizeUnit.b, value: bytes.free });
 
     if (freeDiskSpace.isGreaterThan(config.minimum)) {
