@@ -38,6 +38,10 @@ import {
   PrerequisiteMailerVerificator,
   PrerequisiteMailerStrategyConfigType,
 } from './prerequisites/prerequisite-mailer';
+import {
+  PrerequisiteSelfVerificator,
+  PrerequisiteSelfStrategyConfigType,
+} from './prerequisites/prerequisite-self';
 
 export type PrerequisiteLabelType = string;
 
@@ -60,11 +64,6 @@ export enum PrerequisiteStatusEnum {
   failure = 'failure',
   undetermined = 'undetermined',
 }
-
-type PrerequisiteSelfStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.self;
-};
 
 type PrerequisiteConfigType =
   | PrerequisiteBinaryStrategyConfigType
@@ -185,14 +184,6 @@ export class Prerequisite {
         `[-] ${this.config.label} not verified correctly with ${this.config.strategy} strategy`
       );
     }
-  }
-}
-
-class PrerequisiteSelfVerificator {
-  static async verify(
-    _config: PrerequisiteSelfStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    return PrerequisiteStatusEnum.success;
   }
 }
 
