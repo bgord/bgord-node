@@ -12,6 +12,7 @@ import { ServerTiming } from './server-timing';
 import { StaticFiles, StaticFilesConfigType } from './static-files';
 import { TimeZoneOffset } from './time-zone-offset';
 import { ApiVersion } from './api-version';
+import { HCaptchaShield } from './hcaptcha-shield';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -31,9 +32,19 @@ export function addExpressEssentials(
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'img-src': ["'self'", 'blob:'],
-          'script-src': ["'self'", "'unsafe-inline'"],
+          'script-src': [
+            "'self'",
+            "'unsafe-inline'",
+            ...HCaptchaShield.helmetCspConfig['script-src'],
+          ],
           'script-src-attr': null,
+          'style-src': [
+            "'self'",
+            "'unsafe-inline'",
+            ...HCaptchaShield.helmetCspConfig['style-src'],
+          ],
+          'frame-src': [...HCaptchaShield.helmetCspConfig['frame-src']],
+          'connect-src': [...HCaptchaShield.helmetCspConfig['connect-src']],
         },
       },
     },

@@ -60,15 +60,10 @@ export class HCaptchaShield {
     return Middleware(handler);
   }
 
-  static helmetCspConfig: ExpressEssentialsConfig['helmet'] = {
-    contentSecurityPolicy: {
-      useDefaults: true,
-      directives: {
-        'script-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
-        'frame-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
-        'style-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
-        'connect-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
-      },
-    },
+  static helmetCspConfig = {
+    'script-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
+    'frame-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
+    'style-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
+    'connect-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
   };
 }
