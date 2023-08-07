@@ -1,11 +1,9 @@
 import { PrismaClient } from '@prisma/client';
-import execa from 'execa';
 import { constants } from 'fs';
 import fs from 'fs/promises';
 
 import * as Schema from './schema';
 import { Mailer } from './mailer';
-import { PackageVersion } from './package-version';
 
 import {
   PrerequisiteBinaryVerificator,
@@ -27,6 +25,10 @@ import {
   PrerequisiteRAMVerificator,
   PrerequisiteRAMStrategyConfigType,
 } from './prerequisites/prerequisite-ram';
+import {
+  PrerequisiteNodeVerificator,
+  PrerequisiteNodeStrategyConfigType,
+} from './prerequisites/prerequisite-node';
 
 export type PrerequisiteLabelType = string;
 
@@ -78,12 +80,6 @@ type PrerequisitePrismaStrategyConfigType = {
   label: PrerequisiteLabelType;
   strategy: PrerequisiteStrategyEnum.prisma;
   client: PrismaClient;
-};
-
-type PrerequisiteNodeStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.node;
-  version: PackageVersion;
 };
 
 type PrerequisiteConfigType =
@@ -284,20 +280,6 @@ class PrerequisitePrismaVerificator {
     } catch (error) {
       return PrerequisiteStatusEnum.failure;
     }
-  }
-}
-
-class PrerequisiteNodeVerificator {
-  static async verify(
-    config: PrerequisiteNodeStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    const { stdout } = await execa('node', ['-v']);
-    const current = PackageVersion.fromStringWithV(stdout);
-
-    if (current.isGreaterThanOrEqual(config.version)) {
-      return PrerequisiteStatusEnum.success;
-    }
-    return PrerequisiteStatusEnum.failure;
   }
 }
 
