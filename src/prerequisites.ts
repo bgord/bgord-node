@@ -7,7 +7,6 @@ import checkDiskSpace from 'check-disk-space';
 import path from 'path';
 
 import * as Schema from './schema';
-import { I18n, I18nConfigType } from './i18n';
 import { Mailer } from './mailer';
 import { PackageVersion } from './package-version';
 import { Size, SizeUnit } from './size';
@@ -20,6 +19,10 @@ import {
   PrerequisitePortVerificator,
   PrerequisitePortStrategyConfigType,
 } from './prerequisites/prerequisite-port';
+import {
+  PrerequisiteTranslationsVerificator,
+  PrerequisiteTranslationsStrategyConfigType,
+} from './prerequisites/prerequisite-translations';
 
 export type PrerequisiteLabelType = string;
 
@@ -89,13 +92,6 @@ type PrerequisiteSpaceStrategyConfigType = {
   label: PrerequisiteLabelType;
   strategy: PrerequisiteStrategyEnum.space;
   minimum: Size;
-};
-
-type PrerequisiteTranslationsStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.translations;
-  translationsPath?: typeof I18n.DEFAULT_TRANSLATIONS_PATH;
-  supportedLanguages: I18nConfigType['supportedLanguages'];
 };
 
 type PrerequisiteConfigType =
@@ -339,30 +335,6 @@ class PrerequisiteSpaceVerificator {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;
-  }
-}
-
-class PrerequisiteTranslationsVerificator {
-  static async verify(
-    config: PrerequisiteTranslationsStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    const translationsPath =
-      config.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
-
-    try {
-      await fs.access(translationsPath, constants.R_OK);
-
-      for (const language in config.supportedLanguages) {
-        await fs.access(
-          I18n.getTranslationPathForLanguage(language),
-          constants.R_OK
-        );
-      }
-    } catch (error) {
-      return PrerequisiteStatusEnum.failure;
-    }
-
-    return PrerequisiteStatusEnum.success;
   }
 }
 
