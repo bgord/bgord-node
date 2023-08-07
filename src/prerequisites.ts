@@ -2,12 +2,10 @@ import { PrismaClient } from '@prisma/client';
 import execa from 'execa';
 import { constants } from 'fs';
 import fs from 'fs/promises';
-import os from 'os';
 
 import * as Schema from './schema';
 import { Mailer } from './mailer';
 import { PackageVersion } from './package-version';
-import { Size, SizeUnit } from './size';
 
 import {
   PrerequisiteBinaryVerificator,
@@ -25,6 +23,10 @@ import {
   PrerequisiteSpaceVerificator,
   PrerequisiteSpaceStrategyConfigType,
 } from './prerequisites/prerequisite-space';
+import {
+  PrerequisiteRAMVerificator,
+  PrerequisiteRAMStrategyConfigType,
+} from './prerequisites/prerequisite-ram';
 
 export type PrerequisiteLabelType = string;
 
@@ -82,12 +84,6 @@ type PrerequisiteNodeStrategyConfigType = {
   label: PrerequisiteLabelType;
   strategy: PrerequisiteStrategyEnum.node;
   version: PackageVersion;
-};
-
-type PrerequisiteRAMStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.RAM;
-  minimum: Size;
 };
 
 type PrerequisiteConfigType =
@@ -299,19 +295,6 @@ class PrerequisiteNodeVerificator {
     const current = PackageVersion.fromStringWithV(stdout);
 
     if (current.isGreaterThanOrEqual(config.version)) {
-      return PrerequisiteStatusEnum.success;
-    }
-    return PrerequisiteStatusEnum.failure;
-  }
-}
-
-class PrerequisiteRAMVerificator {
-  static async verify(
-    config: PrerequisiteRAMStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    const freeRAM = new Size({ unit: SizeUnit.b, value: os.freemem() });
-
-    if (freeRAM.isGreaterThan(config.minimum)) {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;
