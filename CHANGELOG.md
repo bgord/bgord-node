@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.179](https://github.com/bgord/bgord-node/compare/v0.58.178...v0.58.179) (2023-08-07)
+
+
+### Bug Fixes
+
+* fsRoot in PrerequisiteSpaceVerificator ([0300541](https://github.com/bgord/bgord-node/commit/03005415579410914ef068931eda556ebdb22a46))
+
 ### [0.58.178](https://github.com/bgord/bgord-node/compare/v0.58.177...v0.58.178) (2023-08-02)
 
 
