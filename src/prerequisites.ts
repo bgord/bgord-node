@@ -1,4 +1,3 @@
-import { PrismaClient } from '@prisma/client';
 import { constants } from 'fs';
 import fs from 'fs/promises';
 
@@ -29,6 +28,10 @@ import {
   PrerequisiteNodeVerificator,
   PrerequisiteNodeStrategyConfigType,
 } from './prerequisites/prerequisite-node';
+import {
+  PrerequisitePrismaVerificator,
+  PrerequisitePrismaStrategyConfigType,
+} from './prerequisites/prerequisite-prisma';
 
 export type PrerequisiteLabelType = string;
 
@@ -74,12 +77,6 @@ type PrerequisitePathStrategyConfigType = {
   strategy: PrerequisiteStrategyEnum.path;
   path: string;
   access?: { write?: boolean; execute?: boolean };
-};
-
-type PrerequisitePrismaStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.prisma;
-  client: PrismaClient;
 };
 
 type PrerequisiteConfigType =
@@ -255,28 +252,6 @@ class PrerequisitePathVerificator {
       await fs.access(config.path, flags);
 
       return PrerequisiteStatusEnum.success;
-    } catch (error) {
-      return PrerequisiteStatusEnum.failure;
-    }
-  }
-}
-
-class PrerequisitePrismaVerificator {
-  static async verify(
-    config: PrerequisitePrismaStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    try {
-      const result = await config.client.$queryRaw`
-        SELECT name
-        FROM sqlite_master
-        WHERE type='table'
-        ORDER BY name;
-      `;
-
-      if (Array.isArray(result) && result.length > 0) {
-        return PrerequisiteStatusEnum.success;
-      }
-      return PrerequisiteStatusEnum.failure;
     } catch (error) {
       return PrerequisiteStatusEnum.failure;
     }
