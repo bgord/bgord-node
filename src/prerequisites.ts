@@ -13,8 +13,12 @@ import { Mailer } from './mailer';
 import { PackageVersion } from './package-version';
 import { Size, SizeUnit } from './size';
 
-type PrerequisiteLabelType = string;
-type PrerequisiteBinaryType = string;
+import {
+  PrerequisiteBinaryVerificator,
+  PrerequisiteBinaryStrategyConfigType,
+} from './prerequisites/prerequisite-binary';
+
+export type PrerequisiteLabelType = string;
 
 export enum PrerequisiteStrategyEnum {
   binary = 'binary',
@@ -35,12 +39,6 @@ export enum PrerequisiteStatusEnum {
   failure = 'failure',
   undetermined = 'undetermined',
 }
-
-type PrerequisiteBinaryStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.binary;
-  binary: PrerequisiteBinaryType;
-};
 
 type PrerequisiteMailerStrategyConfigType = {
   label: PrerequisiteLabelType;
@@ -233,22 +231,6 @@ class PrerequisiteMailerVerificator {
       await config.mailer.verify();
 
       return PrerequisiteStatusEnum.success;
-    } catch (error) {
-      return PrerequisiteStatusEnum.failure;
-    }
-  }
-}
-
-class PrerequisiteBinaryVerificator {
-  static async verify(
-    config: PrerequisiteBinaryStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    try {
-      const result = await execa('which', [config.binary]);
-
-      return result.exitCode === 0
-        ? PrerequisiteStatusEnum.success
-        : PrerequisiteStatusEnum.failure;
     } catch (error) {
       return PrerequisiteStatusEnum.failure;
     }
