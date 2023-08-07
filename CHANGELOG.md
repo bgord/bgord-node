@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.185](https://github.com/bgord/bgord-node/compare/v0.58.184...v0.58.185) (2023-08-07)
+
+
+### Bug Fixes
+
+* connect-src self ([3d48e1c](https://github.com/bgord/bgord-node/commit/3d48e1c885cb467021903b4ea816d35782090f30))
+
 ### [0.58.184](https://github.com/bgord/bgord-node/compare/v0.58.182...v0.58.184) (2023-08-07)
 
 
