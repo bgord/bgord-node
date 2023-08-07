@@ -44,7 +44,10 @@ export function addExpressEssentials(
             ...HCaptchaShield.helmetCspConfig['style-src'],
           ],
           'frame-src': [...HCaptchaShield.helmetCspConfig['frame-src']],
-          'connect-src': [...HCaptchaShield.helmetCspConfig['connect-src']],
+          'connect-src': [
+            "'self'",
+            ...HCaptchaShield.helmetCspConfig['connect-src'],
+          ],
         },
       },
     },
