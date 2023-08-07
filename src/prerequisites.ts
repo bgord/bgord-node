@@ -3,8 +3,6 @@ import execa from 'execa';
 import { constants } from 'fs';
 import fs from 'fs/promises';
 import os from 'os';
-import checkDiskSpace from 'check-disk-space';
-import path from 'path';
 
 import * as Schema from './schema';
 import { Mailer } from './mailer';
@@ -23,6 +21,10 @@ import {
   PrerequisiteTranslationsVerificator,
   PrerequisiteTranslationsStrategyConfigType,
 } from './prerequisites/prerequisite-translations';
+import {
+  PrerequisiteSpaceVerificator,
+  PrerequisiteSpaceStrategyConfigType,
+} from './prerequisites/prerequisite-space';
 
 export type PrerequisiteLabelType = string;
 
@@ -85,12 +87,6 @@ type PrerequisiteNodeStrategyConfigType = {
 type PrerequisiteRAMStrategyConfigType = {
   label: PrerequisiteLabelType;
   strategy: PrerequisiteStrategyEnum.RAM;
-  minimum: Size;
-};
-
-type PrerequisiteSpaceStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.space;
   minimum: Size;
 };
 
@@ -316,22 +312,6 @@ class PrerequisiteRAMVerificator {
     const freeRAM = new Size({ unit: SizeUnit.b, value: os.freemem() });
 
     if (freeRAM.isGreaterThan(config.minimum)) {
-      return PrerequisiteStatusEnum.success;
-    }
-    return PrerequisiteStatusEnum.failure;
-  }
-}
-
-class PrerequisiteSpaceVerificator {
-  static async verify(
-    config: PrerequisiteSpaceStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    const fsRoot = path.sep;
-    const bytes = await checkDiskSpace(fsRoot);
-
-    const freeDiskSpace = new Size({ unit: SizeUnit.b, value: bytes.free });
-
-    if (freeDiskSpace.isGreaterThan(config.minimum)) {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;
