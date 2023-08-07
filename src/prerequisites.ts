@@ -374,8 +374,10 @@ class PrerequisiteTranslationsVerificator {
       await fs.access(translationsPath, constants.R_OK);
 
       for (const language in config.supportedLanguages) {
-        const languagePath = path.join(translationsPath, `${language}.json`);
-        await fs.access(languagePath, constants.R_OK);
+        await fs.access(
+          I18n.getTranslationPathForLanguage(language),
+          constants.R_OK
+        );
       }
     } catch (error) {
       return PrerequisiteStatusEnum.failure;

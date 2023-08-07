@@ -103,4 +103,11 @@ export class I18n {
       );
     };
   }
+
+  static getTranslationPathForLanguage(
+    language: Schema.LanguageType,
+    translationsPath = I18n.DEFAULT_TRANSLATIONS_PATH
+  ): Schema.PathType {
+    return Schema.Path.parse(Path.join(translationsPath, `${language}.json`));
+  }
 }
