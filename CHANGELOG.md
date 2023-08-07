@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.184](https://github.com/bgord/bgord-node/compare/v0.58.182...v0.58.184) (2023-08-07)
+
+
+### Features
+
+* add helmet csp ([6aedfc6](https://github.com/bgord/bgord-node/commit/6aedfc6b409a09b0f32a5aafe8859271749d8c64))
+
 ### [0.58.183](https://github.com/bgord/bgord-node/compare/v0.58.182...v0.58.183) (2023-08-07)
 
 
