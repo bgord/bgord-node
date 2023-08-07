@@ -4,7 +4,6 @@ import { z } from 'zod';
 
 import { HCaptchaSecretKey } from './schema';
 import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
-import { ExpressEssentialsConfig } from './express-essentials';
 
 import { Middleware } from './middleware';
 
