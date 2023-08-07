@@ -5,7 +5,6 @@ import fs from 'fs/promises';
 import os from 'os';
 import checkDiskSpace from 'check-disk-space';
 import path from 'path';
-import net from 'net';
 
 import * as Schema from './schema';
 import { I18n, I18nConfigType } from './i18n';
@@ -17,6 +16,10 @@ import {
   PrerequisiteBinaryVerificator,
   PrerequisiteBinaryStrategyConfigType,
 } from './prerequisites/prerequisite-binary';
+import {
+  PrerequisitePortVerificator,
+  PrerequisitePortStrategyConfigType,
+} from './prerequisites/prerequisite-port';
 
 export type PrerequisiteLabelType = string;
 
@@ -93,12 +96,6 @@ type PrerequisiteTranslationsStrategyConfigType = {
   strategy: PrerequisiteStrategyEnum.translations;
   translationsPath?: typeof I18n.DEFAULT_TRANSLATIONS_PATH;
   supportedLanguages: I18nConfigType['supportedLanguages'];
-};
-
-type PrerequisitePortStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.port;
-  port: Schema.PortType;
 };
 
 type PrerequisiteConfigType =
@@ -366,22 +363,6 @@ class PrerequisiteTranslationsVerificator {
     }
 
     return PrerequisiteStatusEnum.success;
-  }
-}
-
-class PrerequisitePortVerificator {
-  static async verify(
-    config: PrerequisitePortStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    return new Promise(resolve => {
-      const server = net.createServer();
-
-      server.listen(config.port, () =>
-        server.close(() => resolve(PrerequisiteStatusEnum.success))
-      );
-
-      server.on('error', () => resolve(PrerequisiteStatusEnum.failure));
-    });
   }
 }
 
