@@ -1,47 +1,4 @@
-import {
-  PrerequisiteBinaryVerificator,
-  PrerequisiteBinaryStrategyConfigType,
-} from './prerequisites/prerequisite-binary';
-import {
-  PrerequisitePortVerificator,
-  PrerequisitePortStrategyConfigType,
-} from './prerequisites/prerequisite-port';
-import {
-  PrerequisiteTranslationsVerificator,
-  PrerequisiteTranslationsStrategyConfigType,
-} from './prerequisites/prerequisite-translations';
-import {
-  PrerequisiteSpaceVerificator,
-  PrerequisiteSpaceStrategyConfigType,
-} from './prerequisites/prerequisite-space';
-import {
-  PrerequisiteRAMVerificator,
-  PrerequisiteRAMStrategyConfigType,
-} from './prerequisites/prerequisite-ram';
-import {
-  PrerequisiteNodeVerificator,
-  PrerequisiteNodeStrategyConfigType,
-} from './prerequisites/prerequisite-node';
-import {
-  PrerequisitePrismaVerificator,
-  PrerequisitePrismaStrategyConfigType,
-} from './prerequisites/prerequisite-prisma';
-import {
-  PrerequisitePathVerificator,
-  PrerequisitePathStrategyConfigType,
-} from './prerequisites/prerequisite-path';
-import {
-  PrerequisiteTimezoneUTCVerificator,
-  PrerequisiteTimezoneUtcStrategyConfigType,
-} from './prerequisites/prerequisite-timezone-utc';
-import {
-  PrerequisiteMailerVerificator,
-  PrerequisiteMailerStrategyConfigType,
-} from './prerequisites/prerequisite-mailer';
-import {
-  PrerequisiteSelfVerificator,
-  PrerequisiteSelfStrategyConfigType,
-} from './prerequisites/prerequisite-self';
+import * as P from './prerequisites/index';
 
 export type PrerequisiteLabelType = string;
 
@@ -66,17 +23,17 @@ export enum PrerequisiteStatusEnum {
 }
 
 type PrerequisiteConfigType =
-  | PrerequisiteBinaryStrategyConfigType
-  | PrerequisiteMailerStrategyConfigType
-  | PrerequisiteSelfStrategyConfigType
-  | PrerequisiteTimezoneUtcStrategyConfigType
-  | PrerequisitePathStrategyConfigType
-  | PrerequisitePrismaStrategyConfigType
-  | PrerequisiteNodeStrategyConfigType
-  | PrerequisiteRAMStrategyConfigType
-  | PrerequisiteSpaceStrategyConfigType
-  | PrerequisiteTranslationsStrategyConfigType
-  | PrerequisitePortStrategyConfigType;
+  | P.PrerequisiteBinaryStrategyConfigType
+  | P.PrerequisiteMailerStrategyConfigType
+  | P.PrerequisiteSelfStrategyConfigType
+  | P.PrerequisiteTimezoneUtcStrategyConfigType
+  | P.PrerequisitePathStrategyConfigType
+  | P.PrerequisitePrismaStrategyConfigType
+  | P.PrerequisiteNodeStrategyConfigType
+  | P.PrerequisiteRAMStrategyConfigType
+  | P.PrerequisiteSpaceStrategyConfigType
+  | P.PrerequisiteTranslationsStrategyConfigType
+  | P.PrerequisitePortStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -89,28 +46,28 @@ export class Prerequisite {
 
   async verify(): Promise<PrerequisiteStatusEnum> {
     if (this.config.strategy === PrerequisiteStrategyEnum.binary) {
-      const status = await PrerequisiteBinaryVerificator.verify(this.config);
+      const status = await P.PrerequisiteBinaryVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.mailer) {
-      const status = await PrerequisiteMailerVerificator.verify(this.config);
+      const status = await P.PrerequisiteMailerVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.self) {
-      const status = await PrerequisiteSelfVerificator.verify(this.config);
+      const status = await P.PrerequisiteSelfVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.timezoneUTC) {
-      const status = await PrerequisiteTimezoneUTCVerificator.verify(
+      const status = await P.PrerequisiteTimezoneUTCVerificator.verify(
         this.config
       );
       this.status = status;
@@ -119,42 +76,42 @@ export class Prerequisite {
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.path) {
-      const status = await PrerequisitePathVerificator.verify(this.config);
+      const status = await P.PrerequisitePathVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.prisma) {
-      const status = await PrerequisitePrismaVerificator.verify(this.config);
+      const status = await P.PrerequisitePrismaVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.node) {
-      const status = await PrerequisiteNodeVerificator.verify(this.config);
+      const status = await P.PrerequisiteNodeVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.RAM) {
-      const status = await PrerequisiteRAMVerificator.verify(this.config);
+      const status = await P.PrerequisiteRAMVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.space) {
-      const status = await PrerequisiteSpaceVerificator.verify(this.config);
+      const status = await P.PrerequisiteSpaceVerificator.verify(this.config);
       this.status = status;
 
       return status;
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.translations) {
-      const status = await PrerequisiteTranslationsVerificator.verify(
+      const status = await P.PrerequisiteTranslationsVerificator.verify(
         this.config
       );
       this.status = status;
@@ -163,7 +120,7 @@ export class Prerequisite {
     }
 
     if (this.config.strategy === PrerequisiteStrategyEnum.port) {
-      const status = await PrerequisitePortVerificator.verify(this.config);
+      const status = await P.PrerequisitePortVerificator.verify(this.config);
       this.status = status;
 
       return status;
