@@ -1,5 +1,3 @@
-import { Mailer } from './mailer';
-
 import {
   PrerequisiteBinaryVerificator,
   PrerequisiteBinaryStrategyConfigType,
@@ -36,6 +34,10 @@ import {
   PrerequisiteTimezoneUTCVerificator,
   PrerequisiteTimezoneUtcStrategyConfigType,
 } from './prerequisites/prerequisite-timezone-utc';
+import {
+  PrerequisiteMailerVerificator,
+  PrerequisiteMailerStrategyConfigType,
+} from './prerequisites/prerequisite-mailer';
 
 export type PrerequisiteLabelType = string;
 
@@ -58,12 +60,6 @@ export enum PrerequisiteStatusEnum {
   failure = 'failure',
   undetermined = 'undetermined',
 }
-
-type PrerequisiteMailerStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.mailer;
-  mailer: Mailer;
-};
 
 type PrerequisiteSelfStrategyConfigType = {
   label: PrerequisiteLabelType;
@@ -188,20 +184,6 @@ export class Prerequisite {
       console.log(
         `[-] ${this.config.label} not verified correctly with ${this.config.strategy} strategy`
       );
-    }
-  }
-}
-
-class PrerequisiteMailerVerificator {
-  static async verify(
-    config: PrerequisiteMailerStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    try {
-      await config.mailer.verify();
-
-      return PrerequisiteStatusEnum.success;
-    } catch (error) {
-      return PrerequisiteStatusEnum.failure;
     }
   }
 }
