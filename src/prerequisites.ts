@@ -1,6 +1,3 @@
-import { constants } from 'fs';
-import fs from 'fs/promises';
-
 import * as Schema from './schema';
 import { Mailer } from './mailer';
 
@@ -32,6 +29,10 @@ import {
   PrerequisitePrismaVerificator,
   PrerequisitePrismaStrategyConfigType,
 } from './prerequisites/prerequisite-prisma';
+import {
+  PrerequisitePathVerificator,
+  PrerequisitePathStrategyConfigType,
+} from './prerequisites/prerequisite-path';
 
 export type PrerequisiteLabelType = string;
 
@@ -70,13 +71,6 @@ type PrerequisiteTimezoneUtcStrategyConfigType = {
   label: PrerequisiteLabelType;
   strategy: PrerequisiteStrategyEnum.timezoneUTC;
   timezone: Schema.TimezoneType;
-};
-
-type PrerequisitePathStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.path;
-  path: string;
-  access?: { write?: boolean; execute?: boolean };
 };
 
 type PrerequisiteConfigType =
@@ -229,28 +223,6 @@ class PrerequisiteTimezoneUTCVerificator {
   ): Promise<PrerequisiteStatusEnum> {
     try {
       Schema.TimezoneUTC.parse(config.timezone);
-      return PrerequisiteStatusEnum.success;
-    } catch (error) {
-      return PrerequisiteStatusEnum.failure;
-    }
-  }
-}
-
-class PrerequisitePathVerificator {
-  static async verify(
-    config: PrerequisitePathStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    const write = config.access?.write ?? false;
-    const execute = config.access?.execute ?? false;
-
-    const flags =
-      constants.R_OK |
-      (write ? constants.W_OK : 0) |
-      (execute ? constants.X_OK : 0);
-
-    try {
-      await fs.access(config.path, flags);
-
       return PrerequisiteStatusEnum.success;
     } catch (error) {
       return PrerequisiteStatusEnum.failure;
