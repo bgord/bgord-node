@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.186](https://github.com/bgord/bgord-node/compare/v0.58.185...v0.58.186) (2023-08-08)
+
+
+### Bug Fixes
+
+* img-src helmet config ([2ea7bfc](https://github.com/bgord/bgord-node/commit/2ea7bfcffa9ef36172f99e9b462a40ff2197dbfa))
+
 ### [0.58.185](https://github.com/bgord/bgord-node/compare/v0.58.184...v0.58.185) (2023-08-07)
 
 
