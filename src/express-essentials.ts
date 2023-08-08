@@ -22,38 +22,36 @@ export type ExpressEssentialsConfig = Partial<{
   staticFiles: StaticFilesConfigType;
 }>;
 
+export const DEFAULT_HELMET_CONFIG = {
+  contentSecurityPolicy: {
+    useDefaults: true,
+    directives: {
+      'script-src': [
+        "'self'",
+        "'unsafe-inline'",
+        ...HCaptchaShield.helmetCspConfig['script-src'],
+      ],
+      'script-src-attr': null,
+      'style-src': [
+        "'self'",
+        "'unsafe-inline'",
+        ...HCaptchaShield.helmetCspConfig['style-src'],
+      ],
+      'frame-src': [...HCaptchaShield.helmetCspConfig['frame-src']],
+      'connect-src': [
+        "'self'",
+        ...HCaptchaShield.helmetCspConfig['connect-src'],
+      ],
+      'img-src': ["'self'", 'data:', 'blob:'],
+    },
+  },
+};
+
 export function addExpressEssentials(
   app: express.Express,
   config?: ExpressEssentialsConfig
 ) {
-  const helmetConfig = _.merge(
-    {},
-    {
-      contentSecurityPolicy: {
-        useDefaults: true,
-        directives: {
-          'script-src': [
-            "'self'",
-            "'unsafe-inline'",
-            ...HCaptchaShield.helmetCspConfig['script-src'],
-          ],
-          'script-src-attr': null,
-          'style-src': [
-            "'self'",
-            "'unsafe-inline'",
-            ...HCaptchaShield.helmetCspConfig['style-src'],
-          ],
-          'frame-src': [...HCaptchaShield.helmetCspConfig['frame-src']],
-          'connect-src': [
-            "'self'",
-            ...HCaptchaShield.helmetCspConfig['connect-src'],
-          ],
-          'img-src': ["'self'", 'data:', 'blob:'],
-        },
-      },
-    },
-    config?.helmet ?? {}
-  );
+  const helmetConfig = config?.helmet ?? DEFAULT_HELMET_CONFIG;
   app.use(helmet(helmetConfig));
   app.use(ApiVersion.attach);
 
