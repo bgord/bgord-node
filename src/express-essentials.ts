@@ -48,6 +48,7 @@ export function addExpressEssentials(
             "'self'",
             ...HCaptchaShield.helmetCspConfig['connect-src'],
           ],
+          'img-src': ["'self'", 'data:', 'blob:'],
         },
       },
     },
