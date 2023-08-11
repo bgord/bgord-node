@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.188](https://github.com/bgord/bgord-node/compare/v0.58.187...v0.58.188) (2023-08-11)
+
+
+### Features
+
+* add Jobs.stopAll ([c83bd6d](https://github.com/bgord/bgord-node/commit/c83bd6d2d07e62d3c9b1c9c95a066c6cc4e2130a))
+
 ### [0.58.187](https://github.com/bgord/bgord-node/compare/v0.58.186...v0.58.187) (2023-08-11)
 
 ### [0.58.186](https://github.com/bgord/bgord-node/compare/v0.58.185...v0.58.186) (2023-08-08)
