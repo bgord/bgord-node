@@ -1,5 +1,5 @@
-const Schedules = {
+const Schedule = {
   EVERY_MINUTE: '* * * * *',
 };
 
-export const Jobs = { Schedules };
+export const Jobs = { Schedule };
