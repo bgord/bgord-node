@@ -27,37 +27,33 @@ export class HCaptchaShield {
     this.secretKey = config.secretKey;
   }
 
-  build() {
-    const that = this;
+  private async _verify(
+    request: express.Request,
+    _response: express.Response,
+    next: express.NextFunction
+  ) {
+    try {
+      const result = await hcaptchaVerify(
+        this.secretKey,
+        this.mode === 'production'
+          ? request.body['h-captcha-response']
+          : this.LOCAL_HCAPTCHA_RESPONSE_PLACEHOLDER
+      );
 
-    async function handler(
-      request: express.Request,
-      _response: express.Response,
-      next: express.NextFunction
-    ) {
-      try {
-        const result = await hcaptchaVerify(
-          that.secretKey,
-          that.mode === 'production'
-            ? request.body['h-captcha-response']
-            : that.LOCAL_HCAPTCHA_RESPONSE_PLACEHOLDER
-        );
-
-        if (!result?.success) {
-          throw new AccessDeniedError({
-            reason: AccessDeniedErrorReasonType.hcaptcha,
-          });
-        }
-        return next();
-      } catch (error) {
+      if (!result?.success) {
         throw new AccessDeniedError({
           reason: AccessDeniedErrorReasonType.hcaptcha,
         });
       }
+      return next();
+    } catch (error) {
+      throw new AccessDeniedError({
+        reason: AccessDeniedErrorReasonType.hcaptcha,
+      });
     }
-
-    return Middleware(handler);
   }
+
+  verify = Middleware(this._verify.bind(this));
 
   static helmetCspConfig = {
     'script-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
