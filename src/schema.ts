@@ -347,10 +347,7 @@ export const EmailContentHtml = z
   .brand('email-content-html');
 export type EmailContentHtmlType = z.infer<typeof EmailContentHtml>;
 
-export const EmailTo = z
-  .string()
-  .email()
-  .brand('email-to');
+export const EmailTo = z.string().email();
 export type EmailToType = z.infer<typeof EmailTo>;
 
 export const EmailAttachment = z
