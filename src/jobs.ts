@@ -1,5 +1,3 @@
-const Schedule = {
-  EVERY_MINUTE: '* * * * *',
-};
-
-export const Jobs = { Schedule };
+export class Jobs {
+  static SCHEDULES = { EVERY_MINUTE: '* * * * *' };
+}
