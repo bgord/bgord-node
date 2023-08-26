@@ -1,13 +1,21 @@
+import { Cron } from 'croner';
+
 import * as Schema from './schema';
 import { Logger } from './logger';
 import { NewUUID } from './uuid';
 import { Stopwatch } from './stopwatch';
 
+type MultipleJobsType = Record<string, Cron>;
+
 export class Jobs {
   static SCHEDULES = { EVERY_MINUTE: '* * * * *' };
 
-  static stopAll(jobs: Record<string, { stop: VoidFunction }>) {
+  static stopAll(jobs: MultipleJobsType) {
     Object.values(jobs).forEach(job => job.stop());
+  }
+
+  static areAllRunning(jobs: MultipleJobsType): boolean {
+    return Object.values(jobs).every(job => job.isRunning());
   }
 }
 
