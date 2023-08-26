@@ -35,11 +35,12 @@ export class JobHandler {
 
   handle(jobProcessor: JobProcessorType) {
     const correlationId = Schema.CorrelationId.parse(NewUUID.generate());
-    const stopwatch = new Stopwatch();
 
     const that = this;
 
     return async () => {
+      const stopwatch = new Stopwatch();
+
       try {
         that.logger.info({
           message: `${jobProcessor.label} start`,
