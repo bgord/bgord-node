@@ -30,6 +30,7 @@ export * from './image-resizer'
 export * from './jobs';
 export * from './logger';
 export * from './mailer';
+export * from './memory-consumption';
 export * from './middleware';
 export * from './mime';
 export * from './min-max-scaler';
