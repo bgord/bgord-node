@@ -1,6 +1,7 @@
 import * as Schema from './schema';
 import { Logger } from './logger';
 import { NewUUID } from './uuid';
+import { Stopwatch } from './stopwatch';
 
 export class Jobs {
   static SCHEDULES = { EVERY_MINUTE: '* * * * *' };
@@ -25,7 +26,7 @@ export class JobHandler {
 
   handle(jobProcessor: JobProcessorType) {
     const correlationId = Schema.CorrelationId.parse(NewUUID.generate());
-    const start = Date.now();
+    const stopwatch = new Stopwatch();
 
     const that = this;
 
@@ -39,24 +40,20 @@ export class JobHandler {
 
         await jobProcessor.process();
 
-        const end = Date.now();
-
         that.logger.info({
           message: `${jobProcessor.label} success`,
           operation: 'job_success',
           correlationId,
-          metadata: { durationMs: end - start },
+          metadata: stopwatch.stop(),
         });
       } catch (error) {
-        const end = Date.now();
-
         that.logger.error({
           message: `${jobProcessor.label} error`,
           operation: 'job_error',
           correlationId,
           metadata: {
             ...that.logger.formatError(error),
-            durationMs: end - start,
+            ...stopwatch.stop(),
           },
         });
       }
