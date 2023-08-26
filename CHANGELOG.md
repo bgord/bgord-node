@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.199](https://github.com/bgord/bgord-node/compare/v0.58.198...v0.58.199) (2023-08-26)
+
+
+### Features
+
+* add outside connectivity prereq ([6f71094](https://github.com/bgord/bgord-node/commit/6f71094d6166e7a03c63ab60564f5b19febdbb22))
+
+
+### Bug Fixes
+
+* formatting ([54d0514](https://github.com/bgord/bgord-node/commit/54d0514aab03c244d345f001436ba39faa3cb350))
+
 ### [0.58.198](https://github.com/bgord/bgord-node/compare/v0.58.197...v0.58.198) (2023-08-26)
 
 ### [0.58.197](https://github.com/bgord/bgord-node/compare/v0.58.196...v0.58.197) (2023-08-26)
