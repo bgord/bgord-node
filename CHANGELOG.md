@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.194](https://github.com/bgord/bgord-node/compare/v0.58.193...v0.58.194) (2023-08-26)
+
+
+### Features
+
+* add jobs prerequisite ([9f7237d](https://github.com/bgord/bgord-node/commit/9f7237d4818a6fee426043981bc2ca3458b3c315))
+* add Jobs#areAllRunning query ([af8cf89](https://github.com/bgord/bgord-node/commit/af8cf8977fc1d027059e704e6e03f42fbec1f7cf))
+* add stopwatch api ([08bcd68](https://github.com/bgord/bgord-node/commit/08bcd68f07f7dd6046391c5a30009844e63569a3))
+
 ### [0.58.193](https://github.com/bgord/bgord-node/compare/v0.58.192...v0.58.193) (2023-08-26)
 
 
