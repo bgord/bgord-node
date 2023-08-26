@@ -80,7 +80,7 @@
     "check-disk-space": "^3.4.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "croner": "^7.0.1",
+    "croner": "6.0.3",
     "date-fns": "^2.22.1",
     "dotenv": "^10.0.0",
     "execa": "^5.1.1",
