@@ -6,6 +6,8 @@ enum StopwatchState {
   stopped = 'finished',
 }
 
+export type StopwatchResultType = { durationMs: TimestampType };
+
 export class Stopwatch {
   private state: StopwatchState;
 
@@ -18,7 +20,7 @@ export class Stopwatch {
     this.startMs = Date.now();
   }
 
-  stop(): { durationMs: TimestampType } {
+  stop(): StopwatchResultType {
     if (this.state === StopwatchState.stopped) {
       throw new Error('Stopwatch is already stopped');
     }
