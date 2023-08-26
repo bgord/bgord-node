@@ -17,6 +17,7 @@ export enum PrerequisiteStrategyEnum {
   migrations = 'migrations',
   jobs = 'jobs',
   memory = 'memory',
+  outsideConnectivity = 'outsideConnectivity',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -39,7 +40,8 @@ type PrerequisiteConfigType =
   | P.PrerequisitePortStrategyConfigType
   | P.PrerequisiteMigrationsStrategyConfigType
   | P.PrerequisiteJobsStrategyConfigType
-  | P.PrerequisiteMemoryStrategyConfigType;
+  | P.PrerequisiteMemoryStrategyConfigType
+  | P.PrerequisiteOutsideConnectivityStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -150,6 +152,15 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.memory) {
       const status = await P.PrerequisiteMemoryVerificator.verify(this.config);
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.outsideConnectivity) {
+      const status = await P.PrerequisiteOutsideConnectivityVerificator.verify(
+        this.config
+      );
       this.status = status;
 
       return status;

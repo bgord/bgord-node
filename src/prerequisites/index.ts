@@ -4,6 +4,7 @@ export * from './mailer';
 export * from './memory';
 export * from './migrations';
 export * from './node';
+export * from './outside-connectivity';
 export * from './path';
 export * from './port';
 export * from './prisma';
