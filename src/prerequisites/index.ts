@@ -1,6 +1,7 @@
 export * from './binary';
 export * from './jobs';
 export * from './mailer';
+export * from './memory';
 export * from './migrations';
 export * from './node';
 export * from './path';
