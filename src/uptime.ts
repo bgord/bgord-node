@@ -1,15 +1,20 @@
 import formatDuration from 'date-fns/formatDuration';
 
+import { TimestampType } from './schema';
+
+export type UptimeResultType = {
+  seconds: TimestampType;
+  formatted: ReturnType<typeof formatDuration>;
+};
+
 export class Uptime {
-  static get() {
+  static get(): UptimeResultType {
     const uptimeSeconds = Math.floor(process.uptime());
     const uptimeFormatted = formatDuration({ seconds: uptimeSeconds });
 
     return {
-      uptime: {
-        seconds: uptimeSeconds,
-        formatted: uptimeFormatted,
-      },
+      seconds: uptimeSeconds,
+      formatted: uptimeFormatted,
     };
   }
 }
