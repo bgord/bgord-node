@@ -2,6 +2,7 @@ import express from 'express';
 import onHeaders from 'on-headers';
 
 import { Middleware } from './middleware';
+import { Stopwatch } from './stopwatch';
 
 export class ServerTiming {
   static HEADER = 'Server-Timing';
@@ -19,14 +20,13 @@ export class ServerTiming {
     response: express.Response,
     next: express.NextFunction
   ) {
-    const requestStartTimestampMs = Date.now();
+    const stopwatch = new Stopwatch();
 
     onHeaders(response, () => {
-      const requestEndTimestampMs = Date.now();
-      const requestDurationMs = requestEndTimestampMs - requestStartTimestampMs;
+      const { durationMs } = stopwatch.stop();
 
-      response.setHeader(ServerTiming.HEADER, `total;dur=${requestDurationMs}`);
-      response.setHeader(ServerTiming.MS_HEADER, requestDurationMs);
+      response.setHeader(ServerTiming.HEADER, `total;dur=${durationMs}`);
+      response.setHeader(ServerTiming.MS_HEADER, durationMs);
     });
 
     next();
