@@ -5,7 +5,8 @@ import { Logger } from './logger';
 import { NewUUID } from './uuid';
 import { Stopwatch } from './stopwatch';
 
-type MultipleJobsType = Record<string, Cron>;
+export type JobNameType = string;
+export type MultipleJobsType = Record<JobNameType, Cron>;
 
 export class Jobs {
   static SCHEDULES = { EVERY_MINUTE: '* * * * *' };
@@ -21,7 +22,7 @@ export class Jobs {
 
 export type JobProcessorType = {
   cron: string;
-  label: string;
+  label: JobNameType;
   process: () => Promise<void>;
 };
 
