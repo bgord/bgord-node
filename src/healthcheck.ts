@@ -7,12 +7,17 @@ import {
 } from './prerequisites';
 import { Stopwatch, StopwatchResultType } from './stopwatch';
 import { Uptime, UptimeResultType } from './uptime';
+import {
+  MemoryConsumption,
+  MemoryConsumptionResultType,
+} from './memory-consumption';
 import { Middleware } from './middleware';
 
 type HealthcheckResultType = {
   ok: PrerequisiteStatusEnum;
-  uptime: UptimeResultType;
   details: { label: PrerequisiteLabelType; status: PrerequisiteStatusEnum }[];
+  uptime: UptimeResultType;
+  memory: MemoryConsumptionResultType;
 } & StopwatchResultType;
 
 export class Healthcheck {
@@ -41,8 +46,9 @@ export class Healthcheck {
 
       const result: HealthcheckResultType = {
         ok,
-        uptime: Uptime.get(),
         details,
+        uptime: Uptime.get(),
+        memory: MemoryConsumption.get(),
         ...stopwatch.stop(),
       };
 
