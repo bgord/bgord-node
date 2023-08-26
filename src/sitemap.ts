@@ -65,6 +65,8 @@ export type SitemapConfigType = {
 };
 
 export class Sitemap {
+  static DEFAULT_PATH = Schema.Path.parse('static/sitemap.xml');
+
   private static generate(config: SitemapConfigType) {
     let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n`;
     sitemap += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
@@ -96,7 +98,7 @@ export class Sitemap {
   }
 
   static async save(config: SitemapConfigType) {
-    const output = config.path ?? `static/sitemap.xml`;
+    const output = config.path ?? Sitemap.DEFAULT_PATH;
     const content = this.generate(config);
 
     return fs.writeFile(output, content);
