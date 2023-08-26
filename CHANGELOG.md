@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.196](https://github.com/bgord/bgord-node/compare/v0.58.195...v0.58.196) (2023-08-26)
+
+
+### Features
+
+* add common mime types ([5fedda5](https://github.com/bgord/bgord-node/commit/5fedda585a794ded930e5eefe8d1c3da994b7f01))
+* add memory consumption to healthcheck ([3e00759](https://github.com/bgord/bgord-node/commit/3e007590017be2a2fc6b46631ea6211618da496d))
+* add memory consuption ([33f170a](https://github.com/bgord/bgord-node/commit/33f170acc4745e29e23550a9a379021001d9489f))
+* add memory prereq ([303320f](https://github.com/bgord/bgord-node/commit/303320f8be56c9e7795a7525a6bc5a2edcc34d34))
+* add uptime ([07041da](https://github.com/bgord/bgord-node/commit/07041da8ff274d022f759f9335abacce760e4f45))
+* add uptime to healthcheck response ([e88b575](https://github.com/bgord/bgord-node/commit/e88b5756887f32526433ce3972653a2fe8db2d82))
+
 ### [0.58.195](https://github.com/bgord/bgord-node/compare/v0.58.194...v0.58.195) (2023-08-26)
 
 
