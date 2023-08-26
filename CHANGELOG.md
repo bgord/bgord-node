@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.197](https://github.com/bgord/bgord-node/compare/v0.58.196...v0.58.197) (2023-08-26)
+
+
+### Bug Fixes
+
+* stopwatch in job handler ([1128f07](https://github.com/bgord/bgord-node/commit/1128f0788ecacf35bc048d3b13cdecf85e4efe63))
+
 ### [0.58.196](https://github.com/bgord/bgord-node/compare/v0.58.195...v0.58.196) (2023-08-26)
 
 
