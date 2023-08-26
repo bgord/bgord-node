@@ -33,6 +33,7 @@ export * from './mailer';
 export * from './memory-consumption';
 export * from './middleware';
 export * from './mime';
+export * from './mime-types';
 export * from './min-max-scaler';
 export * from './noop';
 export * from './open-graph';

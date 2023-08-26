@@ -33,14 +33,4 @@ export class Mime {
 
     return this.subtype === another.subtype || this.subtype === '*';
   }
-
-  static wildcard: MimeRawType = '*/*';
-
-  static jpeg: MimeRawType = 'image/jpeg';
-
-  static png: MimeRawType = 'image/png';
-
-  static wav: MimeRawType[] = ['audio/x-wav', 'audio/wav'];
-
-  static mp4: MimeRawType = 'video/mp4';
 }
