@@ -1,7 +1,7 @@
 import { describe, test, expect } from 'vitest';
 import { Size, SizeUnit } from '../src/size';
 
-describe.only('Size', () => {
+describe('Size', () => {
   test('Create Size instance with bytes', () => {
     const sizeConfig = { unit: SizeUnit.b, value: 500 };
     const size = new Size(sizeConfig);
