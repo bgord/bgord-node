@@ -1,8 +1,19 @@
 import express from 'express';
 
-import { Prerequisite, PrerequisiteStatusEnum } from './prerequisites';
-import { Stopwatch } from './stopwatch';
+import {
+  Prerequisite,
+  PrerequisiteStatusEnum,
+  PrerequisiteLabelType,
+} from './prerequisites';
+import { Stopwatch, StopwatchResultType } from './stopwatch';
+import { Uptime, UptimeResultType } from './uptime';
 import { Middleware } from './middleware';
+
+type HealthcheckResultType = {
+  ok: PrerequisiteStatusEnum;
+  uptime: UptimeResultType;
+  details: { label: PrerequisiteLabelType; status: PrerequisiteStatusEnum }[];
+} & StopwatchResultType;
 
 export class Healthcheck {
   static build(prerequisites: Prerequisite[]) {
@@ -17,7 +28,6 @@ export class Healthcheck {
 
       for (const prerequisite of prerequisites) {
         const status = await prerequisite.verify();
-
         details.push({ label: prerequisite.config.label, status });
       }
 
@@ -29,7 +39,14 @@ export class Healthcheck {
 
       const code = ok ? 200 : 424;
 
-      return response.status(code).send({ ok, details, ...stopwatch.stop() });
+      const result: HealthcheckResultType = {
+        ok,
+        uptime: Uptime.get(),
+        details,
+        ...stopwatch.stop(),
+      };
+
+      return response.status(code).send(result);
     }
 
     return Middleware(handle);
