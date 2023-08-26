@@ -19,7 +19,7 @@ export class RateLimiter {
   }
 
   verify(currentTimestampMs: TimestampType): RateLimiterResultType {
-    if (!this.lastInvocationTimestampMs) {
+    if (this.lastInvocationTimestampMs === null || this.lastInvocationTimestampMs === undefined) {
       this.lastInvocationTimestampMs = currentTimestampMs;
 
       return { allowed: true };
