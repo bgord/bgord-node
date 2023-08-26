@@ -17,7 +17,10 @@ type HealthcheckResultType = {
   ok: PrerequisiteStatusEnum;
   details: { label: PrerequisiteLabelType; status: PrerequisiteStatusEnum }[];
   uptime: UptimeResultType;
-  memory: MemoryConsumptionResultType;
+  memory: {
+    raw: ReturnType<MemoryConsumptionResultType['toBytes']>;
+    formatted: ReturnType<MemoryConsumptionResultType['toString']>;
+  };
 } & StopwatchResultType;
 
 export class Healthcheck {
@@ -48,7 +51,10 @@ export class Healthcheck {
         ok,
         details,
         uptime: Uptime.get(),
-        memory: MemoryConsumption.get(),
+        memory: {
+          raw: MemoryConsumption.get().toBytes(),
+          formatted: MemoryConsumption.get().toString(),
+        },
         ...stopwatch.stop(),
       };
 

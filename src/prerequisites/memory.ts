@@ -1,5 +1,5 @@
 import { MemoryConsumption } from '../memory-consumption';
-import { Size, SizeUnit } from '../size';
+import { Size } from '../size';
 
 import {
   PrerequisiteLabelType,
@@ -17,10 +17,7 @@ export class PrerequisiteMemoryVerificator {
   static async verify(
     config: PrerequisiteMemoryStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
-    const memoryConsumption = new Size({
-      value: MemoryConsumption.get().raw,
-      unit: SizeUnit.b,
-    });
+    const memoryConsumption = MemoryConsumption.get();
 
     if (memoryConsumption.isGreaterThan(config.maximum)) {
       return PrerequisiteStatusEnum.failure;
