@@ -1,4 +1,5 @@
 export * from './binary';
+export * from './jobs';
 export * from './mailer';
 export * from './migrations';
 export * from './node';

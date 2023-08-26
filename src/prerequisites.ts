@@ -15,6 +15,7 @@ export enum PrerequisiteStrategyEnum {
   translations = 'translations',
   port = 'port',
   migrations = 'migrations',
+  jobs = 'jobs',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -35,7 +36,8 @@ type PrerequisiteConfigType =
   | P.PrerequisiteSpaceStrategyConfigType
   | P.PrerequisiteTranslationsStrategyConfigType
   | P.PrerequisitePortStrategyConfigType
-  | P.PrerequisiteMigrationsStrategyConfigType;
+  | P.PrerequisiteMigrationsStrategyConfigType
+  | P.PrerequisiteJobsStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -132,6 +134,13 @@ export class Prerequisite {
       const status = await P.PrerequisiteMigrationsVerificator.verify(
         this.config
       );
+      this.status = status;
+
+      return status;
+    }
+
+    if (this.config.strategy === PrerequisiteStrategyEnum.jobs) {
+      const status = await P.PrerequisiteJobsVerificator.verify(this.config);
       this.status = status;
 
       return status;
