@@ -6,6 +6,7 @@ import os from 'os';
 import { UploadedFile } from './schema';
 import { NotAcceptedMimeError } from './errors';
 import { Mime } from './mime';
+import { MIME_TYPES } from './mime-types';
 import { Middleware } from './middleware';
 
 type FileUploaderConfigType = files.FormDataOptions & { mimeTypes: string[] };
@@ -14,7 +15,7 @@ export class FileUploader {
   static defaultConfig: FileUploaderConfigType = {
     uploadDir: os.tmpdir(),
     autoClean: true,
-    mimeTypes: [Mime.wildcard],
+    mimeTypes: MIME_TYPES.wildcard,
   };
 
   static applyTo(
