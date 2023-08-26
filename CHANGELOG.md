@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.195](https://github.com/bgord/bgord-node/compare/v0.58.194...v0.58.195) (2023-08-26)
+
+
+### Bug Fixes
+
+* croner version ([e95f098](https://github.com/bgord/bgord-node/commit/e95f098b829f5037e0d647e6ed396a1f356a8903))
+
 ### [0.58.194](https://github.com/bgord/bgord-node/compare/v0.58.193...v0.58.194) (2023-08-26)
 
 
