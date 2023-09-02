@@ -1,6 +1,6 @@
 import { Size, SizeUnit } from './size';
 
-export type MemoryConsumptionResultType = Size;
+export type MemoryConsumptionResultType = ReturnType<Size['format']>;
 
 export class MemoryConsumption {
   static get(): MemoryConsumptionResultType {
@@ -9,6 +9,6 @@ export class MemoryConsumption {
     return new Size({
       value: memoryConsumption,
       unit: SizeUnit.b,
-    });
+    }).format(SizeUnit.MB);
   }
 }
