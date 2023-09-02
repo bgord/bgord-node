@@ -25,6 +25,12 @@ export class Size {
 
   private bytes: Schema.SizeInBytesType;
 
+  private static KB_MULTIPLIER = 1024;
+
+  private static MB_MULTIPLIER = 1024 * Size.KB_MULTIPLIER;
+
+  private static GB_MULTIPLIER = 1024 * Size.MB_MULTIPLIER;
+
   constructor(config: SizeConfigType) {
     this.unit = config.unit;
     this.value = SizeValue.parse(config.value);
@@ -46,15 +52,17 @@ export class Size {
   public format(unit: SizeUnit): string {
     switch (unit) {
       case SizeUnit.kB:
-        return `${Approximation.float(this.bytes / 1024)} ${SizeUnit.kB}`;
+        const kbs = Approximation.float(this.bytes / Size.KB_MULTIPLIER);
+
+        return `${kbs} ${SizeUnit.kB}`;
       case SizeUnit.MB:
-        return `${Approximation.float(this.bytes / 1024 / 1024)} ${
-          SizeUnit.MB
-        }`;
+        const mbs = Approximation.float(this.bytes / Size.MB_MULTIPLIER);
+
+        return `${mbs} ${SizeUnit.MB}`;
       case SizeUnit.GB:
-        return `${Approximation.float(this.bytes / 1024 / 1024 / 1024)} ${
-          SizeUnit.GB
-        }`;
+        const gbs = Approximation.float(this.bytes / Size.GB_MULTIPLIER);
+
+        return `${gbs} ${SizeUnit.GB}`;
       default:
         // SizeUnit.b
         return `${this.bytes} ${SizeUnit.b}`;
@@ -70,11 +78,11 @@ export class Size {
   private calculateBytes(config: SizeConfigType): Schema.SizeInBytesType {
     switch (config.unit) {
       case SizeUnit.kB:
-        return Schema.SizeInBytes.parse(config.value * 1024);
+        return Schema.SizeInBytes.parse(config.value * Size.KB_MULTIPLIER);
       case SizeUnit.MB:
-        return Schema.SizeInBytes.parse(config.value * 1024 * 1024);
+        return Schema.SizeInBytes.parse(config.value * Size.MB_MULTIPLIER);
       case SizeUnit.GB:
-        return Schema.SizeInBytes.parse(config.value * 1024 * 1024 * 1024);
+        return Schema.SizeInBytes.parse(config.value * Size.GB_MULTIPLIER);
       default:
         // SizeUnit.b
         return Schema.SizeInBytes.parse(config.value);
