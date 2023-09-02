@@ -9,11 +9,11 @@ describe('Size', () => {
     expect(size.toString()).toEqual('500 b');
   });
 
-  test('Create Size instance with KB', () => {
-    const sizeConfig = { unit: SizeUnit.KB, value: 500 };
+  test('Create Size instance with kB', () => {
+    const sizeConfig = { unit: SizeUnit.kB, value: 500 };
     const size = new Size(sizeConfig);
 
-    expect(size.toString()).toEqual('500 KB');
+    expect(size.toString()).toEqual('500 kB');
   });
 
   test('Create Size instance with MB', () => {
@@ -39,8 +39,8 @@ describe('Size', () => {
     expect(bytes).toEqual(sizeConfig.value);
   });
 
-  test('Convert Size to Bytes (KB)', () => {
-    const sizeConfig = { unit: SizeUnit.KB, value: 512 };
+  test('Convert Size to Bytes (kB)', () => {
+    const sizeConfig = { unit: SizeUnit.kB, value: 512 };
     const size = new Size(sizeConfig);
 
     const bytes = size.toBytes();
@@ -73,8 +73,8 @@ describe('Size', () => {
     expect(bytes).toEqual(sizeConfig.value);
   });
 
-  test('Static method: Convert Size to Bytes (KB)', () => {
-    const sizeConfig = { unit: SizeUnit.KB, value: 256 };
+  test('Static method: Convert Size to Bytes (kB)', () => {
+    const sizeConfig = { unit: SizeUnit.kB, value: 256 };
     const bytes = Size.toBytes(sizeConfig);
 
     expect(bytes).toEqual(262144);
@@ -112,33 +112,33 @@ describe('Size', () => {
     test('should return formatted bytes', () => {
       const bytes = new Size({ unit: SizeUnit.b, value: 1024 });
       expect(bytes.format(SizeUnit.b)).toEqual('1024 b');
-      expect(bytes.format(SizeUnit.KB)).toEqual('1 KB');
+      expect(bytes.format(SizeUnit.kB)).toEqual('1 kB');
       expect(bytes.format(SizeUnit.MB)).toEqual('0 MB');
       expect(bytes.format(SizeUnit.GB)).toEqual('0 GB');
     });
 
-    test('should return formatted KB', () => {
-      const kb = new Size({ unit: SizeUnit.KB, value: 512 });
-      expect(kb.format(SizeUnit.b)).toEqual('524288 b');
-      expect(kb.format(SizeUnit.KB)).toEqual('512 KB');
-      expect(kb.format(SizeUnit.MB)).toEqual('0.5 MB');
-      expect(kb.format(SizeUnit.GB)).toEqual('0 GB');
+    test('should return formatted kB', () => {
+      const kB = new Size({ unit: SizeUnit.kB, value: 512 });
+      expect(kB.format(SizeUnit.b)).toEqual('524288 b');
+      expect(kB.format(SizeUnit.kB)).toEqual('512 kB');
+      expect(kB.format(SizeUnit.MB)).toEqual('0.5 MB');
+      expect(kB.format(SizeUnit.GB)).toEqual('0 GB');
     });
 
     test('should return formatted MB', () => {
-      const mb = new Size({ unit: SizeUnit.MB, value: 128 });
-      expect(mb.format(SizeUnit.b)).toEqual('134217728 b');
-      expect(mb.format(SizeUnit.KB)).toEqual('131072 KB');
-      expect(mb.format(SizeUnit.MB)).toEqual('128 MB');
-      expect(mb.format(SizeUnit.GB)).toEqual('0.13 GB');
+      const MB = new Size({ unit: SizeUnit.MB, value: 128 });
+      expect(MB.format(SizeUnit.b)).toEqual('134217728 b');
+      expect(MB.format(SizeUnit.kB)).toEqual('131072 kB');
+      expect(MB.format(SizeUnit.MB)).toEqual('128 MB');
+      expect(MB.format(SizeUnit.GB)).toEqual('0.13 GB');
     });
 
     test('should return formatted GB', () => {
-      const gb = new Size({ unit: SizeUnit.GB, value: 2 });
-      expect(gb.format(SizeUnit.b)).toEqual('2147483648 b');
-      expect(gb.format(SizeUnit.KB)).toEqual('2097152 KB');
-      expect(gb.format(SizeUnit.MB)).toEqual('2048 MB');
-      expect(gb.format(SizeUnit.GB)).toEqual('2 GB');
+      const GB = new Size({ unit: SizeUnit.GB, value: 2 });
+      expect(GB.format(SizeUnit.b)).toEqual('2147483648 b');
+      expect(GB.format(SizeUnit.kB)).toEqual('2097152 kB');
+      expect(GB.format(SizeUnit.MB)).toEqual('2048 MB');
+      expect(GB.format(SizeUnit.GB)).toEqual('2 GB');
     });
   });
 });

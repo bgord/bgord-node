@@ -5,7 +5,7 @@ import { Approximation } from './approximation';
 
 export enum SizeUnit {
   b = 'b',
-  KB = 'KB',
+  kB = 'kB',
   MB = 'MB',
   GB = 'GB',
 }
@@ -45,8 +45,8 @@ export class Size {
 
   public format(unit: SizeUnit): string {
     switch (unit) {
-      case SizeUnit.KB:
-        return `${Approximation.float(this.bytes / 1024)} ${SizeUnit.KB}`;
+      case SizeUnit.kB:
+        return `${Approximation.float(this.bytes / 1024)} ${SizeUnit.kB}`;
       case SizeUnit.MB:
         return `${Approximation.float(this.bytes / 1024 / 1024)} ${
           SizeUnit.MB
@@ -69,7 +69,7 @@ export class Size {
 
   private calculateBytes(config: SizeConfigType): Schema.SizeInBytesType {
     switch (config.unit) {
-      case SizeUnit.KB:
+      case SizeUnit.kB:
         return Schema.SizeInBytes.parse(config.value * 1024);
       case SizeUnit.MB:
         return Schema.SizeInBytes.parse(config.value * 1024 * 1024);
