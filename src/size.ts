@@ -1,12 +1,13 @@
 import { z } from 'zod';
 
 import * as Schema from './schema';
+import { Approximation } from './approximation';
 
 export enum SizeUnit {
-  'b' = 'b',
-  'KB' = 'KB',
-  'MB' = 'MB',
-  'GB' = 'GB',
+  b = 'b',
+  KB = 'KB',
+  MB = 'MB',
+  GB = 'GB',
 }
 
 const SizeValue = z.number().positive();
@@ -40,6 +41,24 @@ export class Size {
 
   public isGreaterThan(another: Size) {
     return this.bytes > another.toBytes();
+  }
+
+  public format(unit: SizeUnit): string {
+    switch (unit) {
+      case SizeUnit.KB:
+        return `${Approximation.float(this.bytes / 1024)} ${SizeUnit.KB}`;
+      case SizeUnit.MB:
+        return `${Approximation.float(this.bytes / 1024 / 1024)} ${
+          SizeUnit.MB
+        }`;
+      case SizeUnit.GB:
+        return `${Approximation.float(this.bytes / 1024 / 1024 / 1024)} ${
+          SizeUnit.GB
+        }`;
+      default:
+        // SizeUnit.b
+        return `${this.bytes} ${SizeUnit.b}`;
+    }
   }
 
   static toBytes(config: SizeConfigType): Schema.SizeInBytesType {
