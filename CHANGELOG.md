@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.200](https://github.com/bgord/bgord-node/compare/v0.58.199...v0.58.200) (2023-09-02)
+
+
+### Bug Fixes
+
+* uptime formatted duration ([c291cb5](https://github.com/bgord/bgord-node/commit/c291cb58fb72dab85912149009eb825eea6a16d7))
+
 ### [0.58.199](https://github.com/bgord/bgord-node/compare/v0.58.198...v0.58.199) (2023-08-26)
 
 
