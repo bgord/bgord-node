@@ -12,6 +12,7 @@ import {
   MemoryConsumptionResultType,
 } from './memory-consumption';
 import { Middleware } from './middleware';
+import { SizeUnit } from './size';
 
 type HealthcheckResultType = {
   ok: PrerequisiteStatusEnum;
@@ -53,7 +54,7 @@ export class Healthcheck {
         uptime: Uptime.get(),
         memory: {
           raw: MemoryConsumption.get().toBytes(),
-          formatted: MemoryConsumption.get().toString(),
+          formatted: MemoryConsumption.get().format(SizeUnit.MB),
         },
         ...stopwatch.stop(),
       };
