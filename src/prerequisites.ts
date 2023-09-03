@@ -18,6 +18,7 @@ export enum PrerequisiteStrategyEnum {
   jobs = 'jobs',
   memory = 'memory',
   outsideConnectivity = 'outsideConnectivity',
+  sslCertificateExpiry = 'sslCertificateExpiry',
 }
 
 export enum PrerequisiteStatusEnum {
@@ -41,7 +42,8 @@ type PrerequisiteConfigType =
   | P.PrerequisiteMigrationsStrategyConfigType
   | P.PrerequisiteJobsStrategyConfigType
   | P.PrerequisiteMemoryStrategyConfigType
-  | P.PrerequisiteOutsideConnectivityStrategyConfigType;
+  | P.PrerequisiteOutsideConnectivityStrategyConfigType
+  | P.PrerequisiteSSLCertificateExpiryStrategyConfigType;
 
 export class Prerequisite {
   config: PrerequisiteConfigType;
@@ -159,6 +161,17 @@ export class Prerequisite {
 
     if (this.config.strategy === PrerequisiteStrategyEnum.outsideConnectivity) {
       const status = await P.PrerequisiteOutsideConnectivityVerificator.verify(
+        this.config
+      );
+      this.status = status;
+
+      return status;
+    }
+
+    if (
+      this.config.strategy === PrerequisiteStrategyEnum.sslCertificateExpiry
+    ) {
+      const status = await P.PrerequisiteSSLCertificateExpiryVerificator.verify(
         this.config
       );
       this.status = status;
