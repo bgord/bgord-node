@@ -19,7 +19,7 @@ type HealthcheckResultType = {
   details: { label: PrerequisiteLabelType; status: PrerequisiteStatusEnum }[];
   uptime: UptimeResultType;
   memory: {
-    raw: ReturnType<MemoryConsumptionResultType['toBytes']>;
+    bytes: ReturnType<MemoryConsumptionResultType['toBytes']>;
     formatted: ReturnType<MemoryConsumptionResultType['toString']>;
   };
 } & StopwatchResultType;
@@ -53,7 +53,7 @@ export class Healthcheck {
         details,
         uptime: Uptime.get(),
         memory: {
-          raw: MemoryConsumption.get().toBytes(),
+          bytes: MemoryConsumption.get().toBytes(),
           formatted: MemoryConsumption.get().format(SizeUnit.MB),
         },
         ...stopwatch.stop(),
