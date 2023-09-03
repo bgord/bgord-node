@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.201](https://github.com/bgord/bgord-node/compare/v0.58.200...v0.58.201) (2023-09-03)
+
+
+### Features
+
+* add approximation class ([fae7afb](https://github.com/bgord/bgord-node/commit/fae7afb3789923eaca70daaf2b3b0ad206cecaf0))
+* add prerequisite ssl certificate expiry ([659cb2a](https://github.com/bgord/bgord-node/commit/659cb2a0afe7c5e348584a7856781091889302c0))
+
 ### [0.58.200](https://github.com/bgord/bgord-node/compare/v0.58.199...v0.58.200) (2023-09-02)
 
 
