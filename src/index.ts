@@ -56,6 +56,7 @@ export * from './sleep';
 export * from './slower';
 export * from './sqlite';
 export * from './static-files';
+export * from './thousands-separator';
 export * from './time';
 export * from './time-zone-offset';
 export * from './timeout'
