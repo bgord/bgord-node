@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.203](https://github.com/bgord/bgord-node/compare/v0.58.202...v0.58.203) (2023-09-21)
+
+
+### Features
+
+* add dll ([ed70c40](https://github.com/bgord/bgord-node/commit/ed70c4035105adbba57fc135eb0a458adc705b92))
+
 ### [0.58.202](https://github.com/bgord/bgord-node/compare/v0.58.201...v0.58.202) (2023-09-03)
 
 
