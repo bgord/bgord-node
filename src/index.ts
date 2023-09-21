@@ -10,6 +10,7 @@ export * from './cache-static-files';
 export * from './csrf-shield';
 export * from './dates';
 export * from './deep-merge';
+export * from './dll';
 export * from './env-user-auth-shield';
 export * from './environment-validator';
 export * from './event';
