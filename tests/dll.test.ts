@@ -160,6 +160,21 @@ describe('DLL', () => {
     expect(fourthNode.forward(1)).toEqual(null);
   });
 
+  test('prepend on empty dll', () => {
+    const dll = new DoublyLinkedList<Token>();
+    const node1 = new Node<Token>(token);
+
+    expect(dll.getSize()).toEqual(0);
+    expect(dll.getHead()).toEqual(null);
+    expect(dll.getTail()).toEqual(null);
+
+    dll.prepend(node1);
+
+    expect(dll.getSize()).toEqual(1);
+    expect(dll.getHead()).toEqual(node1);
+    expect(dll.getTail()).toEqual(node1);
+  });
+
   test('prepend one node', () => {
     const dll = new DoublyLinkedList<Token>();
     const node1 = new Node<Token>(token);
