@@ -439,6 +439,35 @@ describe('DLL', () => {
     expect(dll.toArray()[2].data).toEqual(data[2]);
   });
 
+  test('reverse()', () => {
+    const token1 = new Token('test1');
+    const token2 = new Token('test2');
+    const token3 = new Token('test3');
+    const token4 = new Token('test4');
+
+    const dll = new DoublyLinkedList<Token>();
+    const node1 = new Node<Token>(token1);
+    const node2 = new Node<Token>(token2);
+    const node3 = new Node<Token>(token3);
+    const node4 = new Node<Token>(token4);
+
+    dll.append(node1);
+    dll.append(node2);
+    dll.append(node3);
+    dll.append(node4);
+
+    expect(dll.getSize()).toEqual(4);
+
+    dll.reverse();
+
+    expect(dll.getSize()).toEqual(4);
+    expect(dll.getHead()).toEqual(node4);
+    expect(dll.getHead().next).toEqual(node3);
+    expect(dll.getHead().next.next).toEqual(node2);
+    expect(dll.getHead().next.next.next).toEqual(node1);
+    expect(dll.getTail()).toEqual(node1);
+  });
+
   test('Symbol.iterator()', () => {
     const dll = new DoublyLinkedList<Token>();
 

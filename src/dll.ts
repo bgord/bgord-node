@@ -6,7 +6,7 @@ export class Node<T> {
 
   public next: Node<T> | null = null;
 
-  constructor(data: Node<T>["data"]) {
+  constructor(data: Node<T>['data']) {
     this.data = data;
   }
 
@@ -147,6 +147,14 @@ export class DoublyLinkedList<T> {
 
   public find(callback: (node: Node<T>) => boolean): Node<T> | null {
     return Array.from(this).find(callback) ?? null;
+  }
+
+  public reverse() {
+    [this.head, this.tail] = [this.tail, this.head];
+
+    for (const node of this) {
+      [node.prev, node.next] = [node.next, node.prev];
+    }
   }
 
   public toArray(): Node<T>[] {
