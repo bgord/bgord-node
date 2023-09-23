@@ -47,7 +47,7 @@ export class DoublyLinkedList<T> {
 
   private tail: Node<T> | null = null;
 
-  public getSize() {
+  public getSize(): DoublyLinkedList<T>['size'] {
     return this.size;
   }
 
@@ -55,15 +55,15 @@ export class DoublyLinkedList<T> {
     return this.size === 0;
   }
 
-  public getHead() {
+  public getHead(): DoublyLinkedList<T>['head'] {
     return this.head;
   }
 
-  public getTail() {
+  public getTail(): DoublyLinkedList<T>['tail'] {
     return this.tail;
   }
 
-  public append(node: Node<T>) {
+  public append(node: Node<T>): void {
     if (this.head === null || this.tail === null) {
       this.size++;
 
@@ -79,7 +79,7 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public prepend(node: Node<T>) {
+  public prepend(node: Node<T>): void {
     if (this.head === null || this.tail === null) {
       this.size++;
 
@@ -94,14 +94,14 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public clear() {
+  public clear(): void {
     this.size = 0;
 
     this.head = null;
     this.tail = null;
   }
 
-  public remove(node: Node<T>) {
+  public remove(node: Node<T>): void {
     if (node.prev) {
       node.prev.next = node.next;
     } else {
@@ -119,7 +119,7 @@ export class DoublyLinkedList<T> {
     node.next = null;
   }
 
-  public insertAfter(node: Node<T>, target: Node<T>) {
+  public insertAfter(node: Node<T>, target: Node<T>): void {
     if (target === this.tail) {
       this.append(node);
     } else {
@@ -132,7 +132,7 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public insertBefore(node: Node<T>, target: Node<T>) {
+  public insertBefore(node: Node<T>, target: Node<T>): void {
     if (target === this.head) {
       this.prepend(node);
     } else {
@@ -149,7 +149,7 @@ export class DoublyLinkedList<T> {
     return Array.from(this).find(callback) ?? null;
   }
 
-  public reverse() {
+  public reverse(): void {
     [this.head, this.tail] = [this.tail, this.head];
 
     for (const node of this) {
@@ -163,12 +163,7 @@ export class DoublyLinkedList<T> {
 
   static fromArray<T>(array: T[]): DoublyLinkedList<T> {
     const dll = new DoublyLinkedList<T>();
-
-    for (const item of array) {
-      const node = new Node<T>(item);
-
-      dll.append(node);
-    }
+    array.forEach(item => dll.append(new Node<T>(item)));
 
     return dll;
   }
