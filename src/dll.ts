@@ -65,12 +65,12 @@ export class DoublyLinkedList<T> {
 
   public append(node: Node<T>) {
     if (this.head === null || this.tail === null) {
-      this.size += 1;
+      this.size++;
 
       this.head = node;
       this.tail = node;
     } else {
-      this.size += 1;
+      this.size++;
 
       this.tail.next = node;
       node.prev = this.tail;
@@ -81,12 +81,12 @@ export class DoublyLinkedList<T> {
 
   public prepend(node: Node<T>) {
     if (this.head === null || this.tail === null) {
-      this.size += 1;
+      this.size++;
 
       this.head = node;
       this.tail = node;
     } else {
-      this.size += 1;
+      this.size++;
 
       node.next = this.head;
       this.head.prev = node;
@@ -114,7 +114,7 @@ export class DoublyLinkedList<T> {
       this.tail = node.prev;
     }
 
-    this.size -= 1;
+    this.size--;
     node.prev = null;
     node.next = null;
   }
@@ -123,7 +123,7 @@ export class DoublyLinkedList<T> {
     if (target === this.tail) {
       this.append(node);
     } else {
-      this.size += 1;
+      this.size++;
 
       node.prev = target;
       node.next = target.next;
@@ -136,7 +136,7 @@ export class DoublyLinkedList<T> {
     if (target === this.head) {
       this.prepend(node);
     } else {
-      this.size += 1;
+      this.size++;
 
       node.next = target;
       node.prev = target.prev;
