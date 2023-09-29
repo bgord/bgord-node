@@ -12,7 +12,7 @@ export class ApiKeyShield {
       _response: express.Response,
       next: express.NextFunction
     ) {
-      if (request.body.apiKey === apiKey) {
+      if (request.headers['bgord-api-key'] === apiKey) {
         return next();
       }
 
