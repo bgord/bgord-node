@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.204](https://github.com/bgord/bgord-node/compare/v0.58.203...v0.58.204) (2023-09-29)
+
+
+### Features
+
+* add dll#reverse ([450f75f](https://github.com/bgord/bgord-node/commit/450f75f7dbb0d72a72d70a95491ddb121e6ff248))
+
+
+### Bug Fixes
+
+* api-key-shield ([20c67f7](https://github.com/bgord/bgord-node/commit/20c67f7d2c6b35af0efb2d212a00498dddde37a8))
+
 ### [0.58.203](https://github.com/bgord/bgord-node/compare/v0.58.202...v0.58.203) (2023-09-21)
 
 
