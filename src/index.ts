@@ -19,6 +19,7 @@ export * from './file';
 export * from './file-uploader';
 export * from './filter';
 export * from './graceful-shutdown';
+export * from './gzip';
 export * from './handlebars';
 export * from './hcaptcha-shield';
 export * from './healthcheck';
