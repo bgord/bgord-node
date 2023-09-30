@@ -1,26 +1,29 @@
 import * as express from 'express';
 
+import * as Schema from './schema';
 import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
-import { ApiKeyType } from './schema';
-
 import { Middleware } from './middleware';
 
-export class ApiKeyShield {
-  static build(apiKey: ApiKeyType) {
-    function verify(
-      request: express.Request,
-      _response: express.Response,
-      next: express.NextFunction
-    ) {
-      if (request.headers['bgord-api-key'] === apiKey) {
-        return next();
-      }
+type ApiKeyShieldConfigType = { API_KEY: Schema.ApiKeyType };
 
-      throw new AccessDeniedError({
-        reason: AccessDeniedErrorReasonType['api-key'],
-      });
+export class ApiKeyShield {
+  static HEADER_NAME = 'bgord-api-key';
+
+  constructor(private config: ApiKeyShieldConfigType) {}
+
+  private _verify(
+    request: express.Request,
+    _response: express.Response,
+    next: express.NextFunction
+  ) {
+    if (request.headers[ApiKeyShield.HEADER_NAME] === this.config.API_KEY) {
+      return next();
     }
 
-    return Middleware(verify);
+    throw new AccessDeniedError({
+      reason: AccessDeniedErrorReasonType['api-key'],
+    });
   }
+
+  verify = Middleware(this._verify.bind(this));
 }
