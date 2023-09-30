@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.206](https://github.com/bgord/bgord-node/compare/v0.58.205...v0.58.206) (2023-09-30)
+
 ### [0.58.205](https://github.com/bgord/bgord-node/compare/v0.58.204...v0.58.205) (2023-09-30)
 
 
