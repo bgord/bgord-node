@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.205](https://github.com/bgord/bgord-node/compare/v0.58.204...v0.58.205) (2023-09-30)
+
+
+### Features
+
+* add gzip ([46f7cc7](https://github.com/bgord/bgord-node/commit/46f7cc7b91092cfd7af16f5fd9563c4c40f90f4c))
+
 ### [0.58.204](https://github.com/bgord/bgord-node/compare/v0.58.203...v0.58.204) (2023-09-29)
 
 
