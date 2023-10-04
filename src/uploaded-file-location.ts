@@ -29,6 +29,6 @@ export class UploadedFileLocation {
   }
 
   async transfer(): Promise<void> {
-    await fs.rename(this.temporary, this.handle.getPath());
+    return fs.rename(this.temporary, this.handle.getPath());
   }
 }
