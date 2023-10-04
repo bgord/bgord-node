@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.208](https://github.com/bgord/bgord-node/compare/v0.58.207...v0.58.208) (2023-10-04)
+
+
+### Features
+
+* add file location summary ([4d9ebbb](https://github.com/bgord/bgord-node/commit/4d9ebbbae0914a829da3fd42d1803d270c6c54fc))
+
 ### [0.58.207](https://github.com/bgord/bgord-node/compare/v0.58.206...v0.58.207) (2023-10-04)
 
 
