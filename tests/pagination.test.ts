@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { Pagination } from '../src/pagination';
 
-describe.only('Pagination', () => {
+describe('Pagination', () => {
   it('should parse pagination values correctly', () => {
     const take = 10;
     const parsed = Pagination.parse({ page: 2 }, take);

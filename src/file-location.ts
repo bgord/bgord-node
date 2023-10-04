@@ -9,7 +9,7 @@ type FileLocationExtensionType = string;
 
 type FileLocationParentType = string;
 
-type FileLocationConfigType = {
+export type FileLocationConfigType = {
   parent: FileLocationParentType;
   basename: FileLocationBasenameType;
   extension: FileLocationExtensionType;

@@ -64,5 +64,6 @@ export * from './time';
 export * from './time-zone-offset';
 export * from './timeout'
 export * from './ts-utils';
+export * from './uploaded-file-location';
 export * from './uptime';
 export * from './uuid';
