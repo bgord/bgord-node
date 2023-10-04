@@ -16,6 +16,7 @@ export * from './environment-validator';
 export * from './event';
 export * from './express-essentials';
 export * from './file';
+export * from './file-location';
 export * from './file-uploader';
 export * from './filter';
 export * from './graceful-shutdown';
