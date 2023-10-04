@@ -94,4 +94,21 @@ describe('FileLocation', () => {
     expect(fileLocation.getPath()).toBe('/path/to/parent/index.html');
     expect(fileLocation.getGzippedPath()).toBe('/path/to/parent/index.html.gz');
   });
+
+  it('should return summary', () => {
+    const fileLocation = new FileLocation({
+      parent: '/path/to/parent',
+      basename: 'index',
+      extension: '.html',
+    });
+
+    expect(fileLocation.summary()).toEqual({
+      parent: '/path/to/parent',
+      basename: 'index',
+      extension: '.html',
+      filename: 'index.html',
+      path: '/path/to/parent/index.html',
+      gzipped: '/path/to/parent/index.html.gz',
+    });
+  });
 });

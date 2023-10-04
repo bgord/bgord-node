@@ -16,7 +16,7 @@ export type FileLocationConfigType = {
 };
 
 export class FileLocation {
-  readonly parent: Schema.PathType; // parent
+  readonly parent: Schema.PathType; // /parent/dir
 
   private basename: FileLocationBasenameType; // index
 
@@ -47,6 +47,17 @@ export class FileLocation {
 
   public getGzippedPath(): Schema.PathType {
     return Schema.Path.parse(`${this.getPath()}.gz`); // parent/index.html.gz
+  }
+
+  public summary() {
+    return {
+      parent: this.parent,
+      basename: this.getBasename(),
+      extension: this.getExtension(),
+      filename: this.getFilename(),
+      path: this.getPath(),
+      gzipped: this.getGzippedPath(),
+    };
   }
 
   public setBasename(basename: FileLocationBasenameType): FileLocation {
