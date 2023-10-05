@@ -61,11 +61,8 @@ export class FileLocation {
   }
 
   public setBasename(basename: FileLocationBasenameType): FileLocation {
-    return new FileLocation({
-      parent: this.parent,
-      basename,
-      extension: this.extension,
-    });
+    this.basename = basename;
+    return this;
   }
 
   public async delete(): Promise<void> {

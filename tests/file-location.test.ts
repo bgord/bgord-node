@@ -73,12 +73,12 @@ describe('FileLocation', () => {
       extension: '.html',
     });
 
-    const newLocation = fileLocation.setBasename('newindex');
+    fileLocation.setBasename('newindex');
 
-    expect(newLocation.getBasename()).toBe('newindex');
-    expect(newLocation.getFilename()).toBe('newindex.html');
-    expect(newLocation.getPath()).toBe('/path/to/parent/newindex.html');
-    expect(newLocation.getGzippedPath()).toBe(
+    expect(fileLocation.getBasename()).toBe('newindex');
+    expect(fileLocation.getFilename()).toBe('newindex.html');
+    expect(fileLocation.getPath()).toBe('/path/to/parent/newindex.html');
+    expect(fileLocation.getGzippedPath()).toBe(
       '/path/to/parent/newindex.html.gz'
     );
   });
