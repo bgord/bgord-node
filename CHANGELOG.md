@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.209](https://github.com/bgord/bgord-node/compare/v0.58.208...v0.58.209) (2023-10-05)
+
+
+### Features
+
+* add rounding strategy and implementations ([2ce5026](https://github.com/bgord/bgord-node/commit/2ce5026b6c7efb2e26ede7eb37a1743e9a0d7712))
+
 ### [0.58.208](https://github.com/bgord/bgord-node/compare/v0.58.207...v0.58.208) (2023-10-04)
 
 
