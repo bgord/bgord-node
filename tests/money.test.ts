@@ -111,6 +111,12 @@ describe.only('Money', () => {
     expect(oneHundred.isLessThan(twoHundred)).toEqual(true);
   });
 
+  it('isZero()', () => {
+    const money = new Money();
+
+    expect(money.isZero()).toEqual(true);
+  });
+
   it('toString()', () => {
     const oneHundred = new Money(9999);
 

@@ -48,15 +48,19 @@ export class Money {
     return this.amount === another.getAmount();
   }
 
-  public toString(): string {
-    return (this.amount / 100).toString();
-  }
-
   public isGreaterThan(another: Money): boolean {
     return this.amount > another.getAmount();
   }
 
   public isLessThan(another: Money): boolean {
     return this.amount < another.getAmount();
+  }
+
+  public isZero(): boolean {
+    return this.amount === Money.ZERO;
+  }
+
+  public toString(): string {
+    return (this.amount / 100).toString();
   }
 }
