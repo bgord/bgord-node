@@ -49,6 +49,7 @@ export * from './rate-limiter';
 export * from './recaptcha-shield';
 export * from './request-id';
 export * from './response-body-in-locals';
+export * from './rounding';
 export * from './route';
 export * from './server-timing';
 export * from './session';
