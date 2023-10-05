@@ -13,6 +13,13 @@ export const MoneyMultiplicationFactor = z
   .brand('money-multiplication-factor');
 type MoneyMultiplicationFactorType = z.infer<typeof MoneyMultiplicationFactor>;
 
+export const MoneyDivisionFactor = z
+  .number()
+  .min(0, { message: 'money.division-factor.invalid' })
+  .refine(value => value !== 0, { message: 'money.division-factor.invalid' })
+  .brand('money-dividion-factor');
+type MoneyDivisionFactorType = z.infer<typeof MoneyDivisionFactor>;
+
 export class Money {
   private static readonly ZERO = 0;
 
@@ -42,6 +49,14 @@ export class Money {
     }
 
     return new Money(MoneyAmount.parse(result));
+  }
+
+  public divide(factor: MoneyDivisionFactorType) {
+    if (factor === 0) {
+      throw new Error('Cannot divide by zero');
+    }
+
+    return new Money(MoneyAmount.parse(this.amount / factor));
   }
 
   public equals(another: Money): boolean {

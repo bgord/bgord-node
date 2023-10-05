@@ -1,5 +1,9 @@
 import { it, expect, describe } from 'vitest';
-import { Money, MoneyMultiplicationFactor } from '../src/money';
+import {
+  Money,
+  MoneyMultiplicationFactor,
+  MoneyDivisionFactor,
+} from '../src/money';
 
 describe.only('Money', () => {
   it('creates an empty instance', () => {
@@ -77,6 +81,34 @@ describe.only('Money', () => {
     const factor = MoneyMultiplicationFactor.parse(1.5);
 
     expect(money.multiply(factor).getAmount()).toEqual(150);
+  });
+
+  it('divide() - int', () => {
+    const money = new Money(99);
+    const factor = MoneyDivisionFactor.parse(1.5);
+
+    expect(money.divide(factor).getAmount()).toEqual(66);
+  });
+
+  it.todo('divide() - float - with default round-to-nearest rounding', () => {
+    const money = new Money(99);
+    const factor = MoneyDivisionFactor.parse(2);
+
+    expect(money.divide(factor).getAmount()).toEqual(150);
+  });
+
+  it.todo('divide() - float - with round-up rounding', () => {
+    const money = new Money(99);
+    const factor = MoneyDivisionFactor.parse(2);
+
+    expect(money.divide(factor).getAmount()).toEqual(150);
+  });
+
+  it.todo('divide() - float - with round-down rounding', () => {
+    const money = new Money(99);
+    const factor = MoneyDivisionFactor.parse(2);
+
+    expect(money.divide(factor).getAmount()).toEqual(150);
   });
 
   it('equals()', () => {
