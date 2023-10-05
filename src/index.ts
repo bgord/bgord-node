@@ -38,6 +38,7 @@ export * from './middleware';
 export * from './mime';
 export * from './mime-types';
 export * from './min-max-scaler';
+export * from './money';
 export * from './noop';
 export * from './open-graph';
 export * from './package-version';
