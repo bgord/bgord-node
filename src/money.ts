@@ -1,5 +1,7 @@
 import z from 'zod';
 
+import { RoundingStrategy, RoundToNearest } from './rounding';
+
 const MoneyAmount = z
   .number()
   .int({ message: 'money.amount.invalid ' })
@@ -25,8 +27,11 @@ export class Money {
 
   private readonly amount: MoneyAmountType;
 
-  constructor(value: number = Money.ZERO) {
+  private readonly rounding: RoundingStrategy;
+
+  constructor(value: number = Money.ZERO, rounding?: RoundingStrategy) {
     this.amount = MoneyAmount.parse(value);
+    this.rounding = rounding ?? new RoundToNearest();
   }
 
   public getAmount(): MoneyAmountType {
