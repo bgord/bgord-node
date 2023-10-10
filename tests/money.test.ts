@@ -153,9 +153,9 @@ describe('Money', () => {
     expect(money.isZero()).toEqual(true);
   });
 
-  it('toString()', () => {
+  it('format()', () => {
     const oneHundred = new Money(9999);
 
-    expect(oneHundred.toString()).toEqual('99.99');
+    expect(oneHundred.format()).toEqual('99.99');
   });
 });

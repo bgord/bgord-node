@@ -91,7 +91,7 @@ export class Money {
     return this.amount === Money.ZERO;
   }
 
-  public toString(): string {
+  public format(): string {
     return (this.amount / 100).toString();
   }
 }
