@@ -13,6 +13,7 @@ import { StaticFiles, StaticFilesConfigType } from './static-files';
 import { TimeZoneOffset } from './time-zone-offset';
 import { ApiVersion } from './api-version';
 import { HCaptchaShield } from './hcaptcha-shield';
+import { Context } from './context';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -76,5 +77,6 @@ export function addExpressEssentials(
   TimeZoneOffset.applyTo(app);
   ServerTiming.applyTo(app);
   RequestId.applyTo(app);
+  Context.applyTo(app);
   ResponseBodyInLocals.applyTo(app);
 }
