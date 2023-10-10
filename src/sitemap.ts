@@ -40,20 +40,20 @@ export const SitemapChangefreq = z
   .brand<'sitemap-changefreq'>();
 export type SitemapChangefreqType = z.infer<typeof SitemapChangefreq>;
 
-export const SitemapPriotity = z
+export const SitemapPriority = z
   .number()
   .min(0)
   .max(1)
   .default(0.5)
   .brand<'sitemap-priority'>();
-export type SitemapPriotityType = z.infer<typeof SitemapPriotity>;
+export type SitemapPriorityType = z.infer<typeof SitemapPriority>;
 
 export const SitemapEntry = z
   .object({
     loc: SitemapLoc,
     lastmod: SitemapLastmod,
     changefreq: SitemapChangefreq,
-    priority: SitemapPriotity,
+    priority: SitemapPriority,
   })
   .brand<'sitemap-entry'>();
 export type SitemapEntryType = z.infer<typeof SitemapEntry>;
