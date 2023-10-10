@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.211](https://github.com/bgord/bgord-node/compare/v0.58.210...v0.58.211) (2023-10-10)
+
+
+### Features
+
+* add context middlewar ([d74054a](https://github.com/bgord/bgord-node/commit/d74054a27d0752cd307cc0ead02e2e4f0ab0ebc4))
+
 ### [0.58.210](https://github.com/bgord/bgord-node/compare/v0.58.209...v0.58.210) (2023-10-05)
 
 ### [0.58.209](https://github.com/bgord/bgord-node/compare/v0.58.208...v0.58.209) (2023-10-05)
