@@ -23,7 +23,7 @@ export const MoneyDivisionFactor = z
   .number()
   .min(0, { message: 'money.division-factor.invalid' })
   .refine(value => value !== 0, { message: 'money.division-factor.invalid' })
-  .brand('money-dividion-factor');
+  .brand('money-division-factor');
 
 export type MoneyDivisionFactorType = z.infer<typeof MoneyDivisionFactor>;
 

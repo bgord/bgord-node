@@ -106,7 +106,7 @@ describe('MinMaxScaler', () => {
   });
 
   describe('getMinMax', () => {
-    it('should hanle empty arrays', () => {
+    it('should handle empty arrays', () => {
       const values = [];
       expect(() => MinMaxScaler.getMinMax(values)).toThrow(
         'An empty array supplied'
