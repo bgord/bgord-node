@@ -154,8 +154,20 @@ describe('Money', () => {
   });
 
   it('format()', () => {
-    const oneHundred = new Money(9999);
+    const cases: [number, string][] = [
+      [9999, '99.99'], // Standard case
+      [90, '0.90'], // Less than a dollar, two decimal places
+      [99, '0.99'], // Less than a dollar, two decimal places
+      [10209, '102.09'], // More than a dollar, two decimal places
+      [0, '0.00'], // Zero value
+      [1, '0.01'], // One cent
+      [100, '1.00'], // One dollar, no cents
+      [1000, '10.00'], // Ten dollars, no cents
+      [123456789, '1234567.89'], // Large value with cents
+    ];
 
-    expect(oneHundred.format()).toEqual('99.99');
+    for (const [value, string] of cases) {
+      expect(new Money(value).format()).toEqual(string);
+    }
   });
 });

@@ -92,6 +92,13 @@ export class Money {
   }
 
   public format(): string {
-    return (this.amount / 100).toString();
+    const result = this.amount / 100;
+
+    const whole = Math.floor(result);
+
+    const fraction = this.amount % 100;
+    const fractionFormatted = fraction.toString().padStart(2, '0');
+
+    return `${whole}.${fractionFormatted}`;
   }
 }
