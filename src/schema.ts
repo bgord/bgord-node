@@ -397,3 +397,12 @@ export const BuildVersion = z
   .max(128)
   .brand('build-version');
 export type BuildVersionType = z.infer<typeof BuildVersion>;
+
+export const EncryptionIV = z
+  .string()
+  .min(1)
+  .transform(value => Buffer.from(value.split(',').map(Number)));
+export type EncryptionIVType = z.infer<typeof EncryptionIV>;
+
+export const EncryptionSecret = z.string().length(64);
+export type EncryptionSecretType = z.infer<typeof EncryptionSecret>;
