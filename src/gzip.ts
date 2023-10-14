@@ -6,6 +6,14 @@ import { promisify } from 'node:util';
 type GzipCompressConfigType = { input: PathLike; output: PathLike };
 
 export class Gzip {
+  static createCompress() {
+    return createGzip();
+  }
+
+  static createDecompress() {
+    return createGunzip();
+  }
+
   static async compress(config: GzipCompressConfigType) {
     return promisify(pipeline)(
       createReadStream(config.input),
