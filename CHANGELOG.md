@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.212](https://github.com/bgord/bgord-node/compare/v0.58.211...v0.58.212) (2023-10-14)
+
+
+### Features
+
+* add encryption api ([886b64a](https://github.com/bgord/bgord-node/commit/886b64a3ffa013aa2ce7de2cfb0fdb5ca6685f0c))
+* expose gzip streams ([8bcc8b1](https://github.com/bgord/bgord-node/commit/8bcc8b1285190b3d051d7f082a64075e8008b923))
+
+
+### Bug Fixes
+
+* priority typo ([cc491fc](https://github.com/bgord/bgord-node/commit/cc491fcfc4ea1b35c3b133a1af1b505e721cb0a0))
+
 ### [0.58.211](https://github.com/bgord/bgord-node/compare/v0.58.210...v0.58.211) (2023-10-10)
 
 
