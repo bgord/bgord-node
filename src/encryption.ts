@@ -6,7 +6,7 @@ import { createReadStream, createWriteStream, PathLike } from 'node:fs';
 import * as Schema from './schema';
 
 export type EncryptionConfig = {
-  password: Schema.EncryptionSecretType;
+  secret: Schema.EncryptionSecretType;
   iv: Schema.EncryptionIVType;
 };
 
@@ -22,20 +22,20 @@ export class Encryption {
 
   constructor(private config: EncryptionConfig) {}
 
-  public async createCipher() {
-    const key = (await scrypt(this.config.password, 'salt', 24)) as Buffer;
+  public async createEncrypt() {
+    const key = (await scrypt(this.config.secret, 'salt', 24)) as Buffer;
 
     return crypto.createCipheriv(this.algorithm, key, this.config.iv);
   }
 
-  public async createDecipher() {
-    const key = (await scrypt(this.config.password, 'salt', 24)) as Buffer;
+  public async createDecrypt() {
+    const key = (await scrypt(this.config.secret, 'salt', 24)) as Buffer;
 
     return crypto.createDecipheriv(this.algorithm, key, this.config.iv);
   }
 
   public async encrypt(config: EncryptionOperationConfig) {
-    const encrypt = await this.createCipher();
+    const encrypt = await this.createEncrypt();
 
     return util.promisify(stream.pipeline)(
       createReadStream(config.input),
@@ -45,7 +45,7 @@ export class Encryption {
   }
 
   public async decrypt(config: EncryptionOperationConfig) {
-    const decrypt = await this.createDecipher();
+    const decrypt = await this.createDecrypt();
 
     return util.promisify(stream.pipeline)(
       createReadStream(config.input),
