@@ -422,3 +422,10 @@ export type ReorderingCorrelationIdType = z.infer<
 
 export const ReorderingItemId = UUID;
 export type ReorderingItemIdType = z.infer<typeof ReorderingItemId>;
+
+export const Reordering = z.object({
+  correlationId: ReorderingCorrelationId,
+  id: ReorderingItemId,
+  position: ReorderingItemPositionValue,
+});
+export type ReorderingType = z.infer<typeof Reordering>;

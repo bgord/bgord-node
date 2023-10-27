@@ -20,7 +20,7 @@ export class ReorderingPosition {
 
 class ReorderingItem {
   constructor(
-    public readonly id: string,
+    public readonly id: Schema.ReorderingItemIdType,
     public readonly position: ReorderingPosition
   ) {}
 
