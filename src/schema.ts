@@ -414,3 +414,8 @@ export const ReorderingItemPositionValue = z
 export type ReorderingItemPositionValueType = z.infer<
   typeof ReorderingItemPositionValue
 >;
+
+export const ReorderingCorrelationId = z.string().min(1);
+export type ReorderingCorrelationIdType = z.infer<
+  typeof ReorderingCorrelationId
+>;
