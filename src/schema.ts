@@ -419,3 +419,6 @@ export const ReorderingCorrelationId = z.string().min(1);
 export type ReorderingCorrelationIdType = z.infer<
   typeof ReorderingCorrelationId
 >;
+
+export const ReorderingItemId = UUID;
+export type ReorderingItemIdType = z.infer<typeof ReorderingItemId>;
