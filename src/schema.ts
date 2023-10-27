@@ -406,3 +406,11 @@ export type EncryptionIVType = z.infer<typeof EncryptionIV>;
 
 export const EncryptionSecret = z.string().length(64);
 export type EncryptionSecretType = z.infer<typeof EncryptionSecret>;
+
+export const ReorderingItemPositionValue = z
+  .number()
+  .int()
+  .min(0);
+export type ReorderingItemPositionValueType = z.infer<
+  typeof ReorderingItemPositionValue
+>;
