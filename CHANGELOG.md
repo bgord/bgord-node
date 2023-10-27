@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.216](https://github.com/bgord/bgord-node/compare/v0.58.215...v0.58.216) (2023-10-27)
+
+
+### Features
+
+* add reordering integrator ([b6865d9](https://github.com/bgord/bgord-node/commit/b6865d92686dad74a215b28f65dfc1a7ce72a923))
+
 ### [0.58.215](https://github.com/bgord/bgord-node/compare/v0.58.214...v0.58.215) (2023-10-27)
 
 ### [0.58.214](https://github.com/bgord/bgord-node/compare/v0.58.213...v0.58.214) (2023-10-27)
