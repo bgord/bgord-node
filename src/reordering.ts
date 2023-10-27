@@ -2,6 +2,10 @@ import { DoublyLinkedList, Node } from './dll';
 
 import * as Schema from './schema';
 
+export type WithReorderingPositionValue<T> = T & {
+  position: Schema.ReorderingItemPositionValueType;
+};
+
 export class ReorderingPosition {
   public readonly value: Schema.ReorderingItemPositionValueType;
 
@@ -128,5 +132,25 @@ export class ReorderingCalculator {
 
   private recalculate() {
     this.dll = ReorderingCalculator.fromArray(this.read().ids).dll;
+  }
+}
+
+export class ReorderingIntegrator {
+  static appendPosition(reordering: Schema.ReorderingType[]) {
+    return function<T extends { id: Schema.ReorderingItemIdType }>(
+      item: T
+    ): WithReorderingPositionValue<T> {
+      return {
+        ...item,
+        position: reordering.find(x => x.id === item.id)?.position ?? 0,
+      };
+    };
+  }
+
+  static sortByPosition() {
+    return (
+      a: WithReorderingPositionValue<unknown>,
+      b: WithReorderingPositionValue<unknown>
+    ) => a.position - b.position;
   }
 }
