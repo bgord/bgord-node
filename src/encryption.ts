@@ -1,7 +1,7 @@
 import * as crypto from 'node:crypto';
 import * as util from 'node:util';
-import * as stream from 'node:stream';
-import { createReadStream, createWriteStream, PathLike } from 'node:fs';
+import * as fs from 'node:fs';
+import { pipeline } from 'node:stream/promises';
 
 import * as Schema from './schema';
 
@@ -11,8 +11,8 @@ export type EncryptionConfig = {
 };
 
 export type EncryptionOperationConfig = {
-  input: PathLike;
-  output: PathLike;
+  input: fs.PathLike;
+  output: fs.PathLike;
 };
 
 const scrypt = util.promisify(crypto.scrypt);
@@ -37,20 +37,20 @@ export class Encryption {
   public async encrypt(config: EncryptionOperationConfig) {
     const encrypt = await this.createEncrypt();
 
-    return util.promisify(stream.pipeline)(
-      createReadStream(config.input),
+    return pipeline(
+      fs.createReadStream(config.input),
       encrypt,
-      createWriteStream(config.output)
+      fs.createWriteStream(config.output)
     );
   }
 
   public async decrypt(config: EncryptionOperationConfig) {
     const decrypt = await this.createDecrypt();
 
-    return util.promisify(stream.pipeline)(
-      createReadStream(config.input),
+    return pipeline(
+      fs.createReadStream(config.input),
       decrypt,
-      createWriteStream(config.output)
+      fs.createWriteStream(config.output)
     );
   }
 }
