@@ -3,7 +3,9 @@ type StepType = number;
 type StepperConfigType = { total: StepType };
 
 export class Stepper {
-  private current: StepType = 1;
+  static DEFAULT_CURRENT = 1;
+
+  private current: StepType = Stepper.DEFAULT_CURRENT;
 
   private total: StepType;
 
@@ -12,19 +14,21 @@ export class Stepper {
       throw new Error('Total value is not an integer');
     }
 
-    if (config.total <= 1) {
+    if (config.total <= Stepper.DEFAULT_CURRENT) {
       throw new Error('Total value should be greater than one');
     }
 
     this.total = config.total;
   }
 
-  public continue() {
+  public continue(): Stepper {
     if (this.isFinished()) {
       throw new Error('Stepper is finished');
     }
 
-    this.current = this.current + 1;
+    this.current++;
+
+    return this;
   }
 
   public read() {
@@ -33,6 +37,15 @@ export class Stepper {
       raw: { current: this.current, total: this.total },
       formatted: `${this.current}/${this.total}`,
     };
+  }
+
+  public reset(): Stepper {
+    this.current = Stepper.DEFAULT_CURRENT;
+    return this;
+  }
+
+  public format(): string {
+    return this.read().formatted;
   }
 
   public isFinished(): boolean {

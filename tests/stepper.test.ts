@@ -54,4 +54,42 @@ describe('Stepper', () => {
       expect(() => stepper.continue()).toThrow('Stepper is finished');
     });
   });
+
+  describe('reset', () => {
+    test('returns a new stepper instance', () => {
+      const stepper = new Stepper({ total: 3 });
+
+      expect(stepper.read()).toEqual({
+        finished: false,
+        formatted: '1/3',
+        raw: { current: 1, total: 3 },
+      });
+
+      stepper.continue();
+
+      expect(stepper.read()).toEqual({
+        finished: false,
+        formatted: '2/3',
+        raw: { current: 2, total: 3 },
+      });
+
+      stepper.reset();
+
+      expect(stepper.read()).toEqual({
+        finished: false,
+        formatted: '1/3',
+        raw: { current: 1, total: 3 },
+      });
+    });
+  });
+
+  describe('format', () => {
+    test('returns a string', () => {
+      const stepper = new Stepper({ total: 3 });
+
+      stepper.continue();
+
+      expect(stepper.format()).toEqual('2/3');
+    });
+  });
 });
