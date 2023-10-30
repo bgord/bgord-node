@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.218](https://github.com/bgord/bgord-node/compare/v0.58.217...v0.58.218) (2023-10-30)
+
+
+### Features
+
+* add Random#generate class ([e3bc4d0](https://github.com/bgord/bgord-node/commit/e3bc4d06bd3c4eeb07b14b4f5d1acbd4cda2ca97))
+* add stepper ([7085445](https://github.com/bgord/bgord-node/commit/7085445aa5dc0a14222f9f270d648ce64b74d4db))
+* add stepper ([d5bf327](https://github.com/bgord/bgord-node/commit/d5bf327f34d2caf430c0dcac8128f274d7a73446))
+
 ### [0.58.217](https://github.com/bgord/bgord-node/compare/v0.58.216...v0.58.217) (2023-10-28)
 
 
