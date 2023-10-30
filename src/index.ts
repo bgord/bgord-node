@@ -48,6 +48,7 @@ export * from './package-version';
 export * from './pagination';
 export * from './policy';
 export * from './prerequisites';
+export * from './random';
 export * from './rate-limit-shield';
 export * from './rate-limiter';
 export * from './recaptcha-shield';
