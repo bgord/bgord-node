@@ -9,11 +9,11 @@ export class Stepper {
 
   constructor(config: StepperConfigType) {
     if (!Number.isInteger(config.total)) {
-      throw new Error('Maximum value is not an integer');
+      throw new Error('Total value is not an integer');
     }
 
-    if (config.total <= 0) {
-      throw new Error('Maximum value should be positive');
+    if (config.total <= 1) {
+      throw new Error('Total value should be greater than one');
     }
 
     this.total = config.total;
@@ -35,7 +35,7 @@ export class Stepper {
     };
   }
 
-  private isFinished(): boolean {
+  public isFinished(): boolean {
     return this.current === this.total;
   }
 }

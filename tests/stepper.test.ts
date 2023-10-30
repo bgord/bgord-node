@@ -6,17 +6,22 @@ describe('Stepper', () => {
   describe('validations', () => {
     test('invalid max', () =>
       expect(() => new Stepper({ total: 1.5 })).toThrow(
-        'Maximum value is not an integer'
-      ));
-
-    test('max equal zero', () =>
-      expect(() => new Stepper({ total: 0 })).toThrow(
-        'Maximum value should be positive'
+        'Total value is not an integer'
       ));
 
     test('negative max', () =>
       expect(() => new Stepper({ total: -1 })).toThrow(
-        'Maximum value should be positive'
+        'Total value should be greater than one'
+      ));
+
+    test('max equal zero', () =>
+      expect(() => new Stepper({ total: 0 })).toThrow(
+        'Total value should be greater than one'
+      ));
+
+    test('total equals one', () =>
+      expect(() => new Stepper({ total: 1 })).toThrow(
+        'Total value should be greater than one'
       ));
   });
 
