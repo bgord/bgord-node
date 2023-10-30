@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.219](https://github.com/bgord/bgord-node/compare/v0.58.218...v0.58.219) (2023-10-30)
+
+
+### Features
+
+* add stepper format/resetl ([1935790](https://github.com/bgord/bgord-node/commit/1935790763af114e59472d80cb24fc31f78b901c))
+
 ### [0.58.218](https://github.com/bgord/bgord-node/compare/v0.58.217...v0.58.218) (2023-10-30)
 
 
