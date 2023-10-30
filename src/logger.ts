@@ -123,7 +123,7 @@ export class Logger {
       this.instance.add(
         new winston.transports.File({
           filename: `/var/log/${this.app}-${this.environment}.log`,
-          maxsize: Size.toBytes({ unit: SizeUnit.MB, value: 10 }),
+          maxsize: Size.toBytes({ unit: SizeUnit.MB, value: 100 }),
         })
       );
     }
