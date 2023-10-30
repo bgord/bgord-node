@@ -50,8 +50,6 @@ describe('Stepper', () => {
         formatted: '3/3',
         raw: { current: 3, total: 3 },
       });
-
-      expect(() => stepper.continue()).toThrow('Stepper is finished');
     });
   });
 

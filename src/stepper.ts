@@ -22,11 +22,7 @@ export class Stepper {
   }
 
   public continue(): Stepper {
-    if (this.isFinished()) {
-      throw new Error('Stepper is finished');
-    }
-
-    this.current++;
+    this.current = Math.min(this.current + 1, this.total);
 
     return this;
   }
