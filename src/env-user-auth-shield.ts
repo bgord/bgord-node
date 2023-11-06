@@ -36,7 +36,7 @@ export class EnvUserAuthShield {
   }
 
   applyTo(app: express.Application): void {
-    app.use(passport.initialize());
+    app.use(passport.initialize() as express.RequestHandler);
     app.use(passport.authenticate('session'));
   }
 

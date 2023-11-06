@@ -58,7 +58,7 @@ export function addExpressEssentials(
 
   const bodyParserJsonConfig = config?.json ?? undefined;
   app.use(express.json(bodyParserJsonConfig));
-  app.use(cookieParser());
+  app.use(cookieParser() as express.RequestHandler);
 
   const bodyParserUrlencodedConfig = _.merge({}, config?.urlencoded ?? {}, {
     extended: true,

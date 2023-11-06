@@ -23,7 +23,7 @@ export class Session {
         saveUninitialized: true,
         name: 'bgord.sid',
         ...overrides,
-      })
+      }) as express.RequestHandler
     );
   }
 }

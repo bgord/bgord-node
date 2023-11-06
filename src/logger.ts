@@ -29,7 +29,7 @@ type LogFullType = {
   operation: LogOperationType;
   method: string;
   url: string;
-  client: { ip: string; userAgent?: string };
+  client: { ip?: string; userAgent?: string };
   correlationId?: LogCorrelationIdType;
   responseCode?: number;
   durationMs?: Schema.TimestampType;
