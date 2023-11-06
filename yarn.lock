@@ -1809,10 +1809,10 @@
   dependencies:
     "@types/express" "*"
 
-"@types/pluralize@^0.0.29":
-  version "0.0.29"
-  resolved "https://registry.npmjs.org/@types/pluralize/-/pluralize-0.0.29.tgz"
-  integrity sha512-BYOID+l2Aco2nBik+iYS4SZX0Lf20KPILP5RGmM1IgzdwNdTs0eebiFriOPcej1sX9mLnSoiNte5zcFxssgpGA==
+"@types/pluralize@0.0.32":
+  version "0.0.32"
+  resolved "https://registry.yarnpkg.com/@types/pluralize/-/pluralize-0.0.32.tgz#1af92c5ab3bb92a4c365ded7d733f9009ade2834"
+  integrity sha512-exDkoRIkWJlbRDRmtYDbI3ZUE28HwBwHe5VKn4mvpvMW7qIRDHO6URItErBsBSX7J8/PrDLSOHCcbUMFXwA6CA==
 
 "@types/prettier@^1.19.0":
   version "1.19.1"
