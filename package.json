@@ -89,7 +89,7 @@
     "express-recaptcha": "^5.0.2",
     "express-session": "^1.17.2",
     "express-static-gzip": "^2.1.1",
-    "hcaptcha": "^0.0.2",
+    "hcaptcha": "0.1.1",
     "helmet": "^6.2.0",
     "lodash": "4.17.21",
     "method-override": "3.0.0",
