@@ -1,10 +1,11 @@
-import _ from 'lodash';
+import mergeWith from 'lodash/mergeWith';
+import isArray from 'lodash/isArray';
 
 export function deepMerge(
   a: Object | undefined,
   b: Object | undefined
 ): Object {
-  return _.mergeWith(
+  return mergeWith(
     {},
     a ?? {},
     b ?? {},
@@ -12,7 +13,7 @@ export function deepMerge(
     // If `a` is an array, concatenate `b` to it,
     // as _.mergeWith doesn't do it.
     function customizer(a: Object, b: Object): Object | void {
-      if (_.isArray(a)) {
+      if (isArray(a)) {
         return a.concat(b);
       }
     }
