@@ -1599,10 +1599,10 @@
   resolved "https://registry.npmjs.org/@tsconfig/node16/-/node16-1.0.3.tgz"
   integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
 
-"@types/accept-language-parser@^1.5.3":
-  version "1.5.3"
-  resolved "https://registry.npmjs.org/@types/accept-language-parser/-/accept-language-parser-1.5.3.tgz"
-  integrity sha512-S8oM29O6nnRC3/+rwYV7GBYIIgNIZ52PCxqBG7OuItq9oATnYWy8FfeLKwvq5F7pIYjeeBSCI7y+l+Z9UEQpVQ==
+"@types/accept-language-parser@1.5.5":
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@types/accept-language-parser/-/accept-language-parser-1.5.5.tgz#fc698de0d3ab41ced80a3bd374a063b75ea9669a"
+  integrity sha512-RwkOGXmBTUbJRvJhdOGkttRpX9RZFrdCiJ2RGCCaNA6UDM7sE/ZMlEter7zvtxm1VL+Zxkyr5fJXAesb0a7b1g==
 
 "@types/babel__core@^7.1.7":
   version "7.1.19"
