@@ -1629,10 +1629,10 @@
   resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.39.tgz"
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
-"@types/express-form-data@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.npmjs.org/@types/express-form-data/-/express-form-data-2.0.2.tgz"
-  integrity sha512-3vIwpv+NQHPam4ONrWbfuEt9cmY0ib1cyZV96x7ZNXbZHcEay37iAT1coVPH7da7aRCtKvjx1SjCSx319soWGg==
+"@types/express-form-data@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/express-form-data/-/express-form-data-2.0.4.tgz#f1172a6cd3d867f8c49345a26f3ab5c44b589f88"
+  integrity sha512-zYlUXBdSHI81FZcZs5gm1caJ1WPcdAyI4ycTmsyY/oXQEjNDqYOLBUc5TT8pMcSV4x7ywCWsOPaPEkUHUjtT0g==
   dependencies:
     "@types/connect" "*"
     "@types/multiparty" "*"
@@ -4024,13 +4024,14 @@ express-async-handler@^1.2.0:
   resolved "https://registry.npmjs.org/express-async-handler/-/express-async-handler-1.2.0.tgz"
   integrity sha512-rCSVtPXRmQSW8rmik/AIb2P0op6l7r1fMW538yyvTMltCO4xQEWMmobfrIxN2V1/mVrgxB8Az3reYF6yUZw37w==
 
-express-form-data@^2.0.17:
-  version "2.0.18"
-  resolved "https://registry.npmjs.org/express-form-data/-/express-form-data-2.0.18.tgz"
-  integrity sha512-UU6bHSqEdUeuhoIKFLF2ABXlCB5iM/AdRVmgdI1GsXc6S9Pnk4yD7S8B7pMFfAlUtIEWLpYW7AFsf4szEZxkeA==
+express-form-data@2.0.22:
+  version "2.0.22"
+  resolved "https://registry.yarnpkg.com/express-form-data/-/express-form-data-2.0.22.tgz#e44bba3760ba47addc881913ad6bc3affe7ef9b3"
+  integrity sha512-bZrcZ5UnrXRbUqI+hNkYcGAkRE+feTOjgUGldEEQSkatZs8UqrOxTcIKsavDwC+1gliXopDW73mI6oHx2KOnBA==
   dependencies:
     connect-multiparty "^2.2.0"
     fs-extra "^9.1.0"
+    signal-exit "^3.0.7"
 
 express-handlebars@^5.3.2:
   version "5.3.5"
@@ -7729,7 +7730,7 @@ siginfo@^2.0.0:
   resolved "https://registry.yarnpkg.com/siginfo/-/siginfo-2.0.0.tgz#32e76c70b79724e3bb567cb9d543eb858ccfaf30"
   integrity sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==
 
-signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3:
+signal-exit@^3.0.0, signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   version "3.0.7"
   resolved "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
