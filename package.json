@@ -48,7 +48,7 @@
     "@size-limit/preset-small-lib": "^5.0.1",
     "@types/accept-language-parser": "1.5.5",
     "@types/cookie-parser": "^1.4.5",
-    "@types/cors": "^2.8.10",
+    "@types/cors": "2.8.15",
     "@types/express": "^4.17.12",
     "@types/express-form-data": "^2.0.2",
     "@types/express-handlebars": "^5.3.1",
