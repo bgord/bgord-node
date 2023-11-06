@@ -106,9 +106,6 @@
     "sharp": "^0.32.6",
     "ssl-checker": "^2.0.8",
     "winston": "^3.11.0",
-    "zod": "^3.22.3"
-  },
-  "resolutions": {
-    "typescript": "^4.7.4"
+    "zod": "3.22.4"
   }
 }
