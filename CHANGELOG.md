@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.226](https://github.com/bgord/bgord-node/compare/v0.58.225...v0.58.226) (2023-11-06)
+
+
+### Bug Fixes
+
+* lodash ([c26cd98](https://github.com/bgord/bgord-node/commit/c26cd98e8e172a5258b01526ae60ebddb7fbdc98))
+* typescript ([78d1854](https://github.com/bgord/bgord-node/commit/78d1854e24a0df2b4bfec1ade3b1b478988f1eb4))
+
 ### [0.58.225](https://github.com/bgord/bgord-node/compare/v0.58.224...v0.58.225) (2023-11-06)
 
 ### [0.58.224](https://github.com/bgord/bgord-node/compare/v0.58.223...v0.58.224) (2023-11-06)
