@@ -49,7 +49,6 @@
     "@types/pluralize": "^0.0.29",
     "@types/session-file-store": "1.2.4",
     "husky": "^6.0.0",
-    "japa": "^3.1.1",
     "prisma": "3.7.0",
     "standard-version": "^9.3.2",
     "tsdx": "^0.14.1",
