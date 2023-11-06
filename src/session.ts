@@ -29,8 +29,9 @@ export class Session {
 }
 
 export class SessionFileStore {
-  static build(options: FileStore.Options = {}) {
+  static build(options: FileStore.Options = {}): session.Store {
+    // @ts-ignore
     const Store = FileStore(Session.session);
-    return new Store(options);
+    return new Store(options) as session.Store;
   }
 }
