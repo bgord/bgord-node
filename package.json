@@ -53,7 +53,6 @@
     "prisma": "3.7.0",
     "standard-version": "^9.3.2",
     "tsdx": "^0.14.1",
-    "tslib": "^2.3.0",
     "typescript": "5.2.2",
     "vitest": "0.34.6"
   },
