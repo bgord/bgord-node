@@ -1,4 +1,4 @@
-import execa from 'execa';
+import { $ } from 'execa';
 
 import {
   PrerequisiteLabelType,
@@ -16,7 +16,7 @@ export class PrerequisiteMigrationsVerificator {
     _config: PrerequisiteMigrationsStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     try {
-      const result = await execa('npx', ['prisma', 'migrate', 'status']);
+      const result = await $`npx prisma migrate status`;
 
       return result.exitCode === 0
         ? PrerequisiteStatusEnum.success
