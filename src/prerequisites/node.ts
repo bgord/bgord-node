@@ -1,4 +1,4 @@
-import { $ } from 'execa';
+import execa from 'execa';
 import { PackageVersion } from '../package-version';
 
 import {
@@ -17,7 +17,7 @@ export class PrerequisiteNodeVerificator {
   static async verify(
     config: PrerequisiteNodeStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
-    const { stdout } = await $`node -v`;
+    const { stdout } = await execa('node', ['-v']);
     const current = PackageVersion.fromStringWithV(stdout);
 
     if (current.isGreaterThanOrEqual(config.version)) {

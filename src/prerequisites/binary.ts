@@ -1,4 +1,4 @@
-import { $ } from 'execa';
+import execa from 'execa';
 
 import {
   PrerequisiteLabelType,
@@ -19,7 +19,7 @@ export class PrerequisiteBinaryVerificator {
     config: PrerequisiteBinaryStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     try {
-      const result = await $`which ${config.binary}`;
+      const result = await execa('which', [config.binary]);
 
       return result.exitCode === 0
         ? PrerequisiteStatusEnum.success
