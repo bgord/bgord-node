@@ -6,7 +6,7 @@ import _ from 'lodash';
 import * as Schema from './schema';
 import { DateFormatters } from './dates';
 
-export type HandlebarsConfigType = handlebars.ExphbsOptions & {
+export type HandlebarsConfigType = handlebars.ExpressHandlebars['config'] & {
   path: Schema.PathType;
 };
 
