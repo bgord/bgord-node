@@ -48,7 +48,7 @@
     "@types/passport-local": "1.0.38",
     "@types/pluralize": "0.0.33",
     "@types/session-file-store": "1.2.5",
-    "husky": "^6.0.0",
+    "husky": "8.0.3",
     "prisma": "3.7.0",
     "standard-version": "^9.3.2",
     "tsdx": "^0.14.1",
