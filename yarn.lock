@@ -1627,14 +1627,7 @@
     "@types/range-parser" "*"
     "@types/send" "*"
 
-"@types/express-session@*":
-  version "1.17.4"
-  resolved "https://registry.npmjs.org/@types/express-session/-/express-session-1.17.4.tgz"
-  integrity sha512-7cNlSI8+oOBUHTfPXMwDxF/Lchx5aJ3ho7+p9jJZYVg9dVDJFh3qdMXmJtRsysnvS+C6x46k9DRYmrmCkE+MVg==
-  dependencies:
-    "@types/express" "*"
-
-"@types/express-session@1.17.9":
+"@types/express-session@*", "@types/express-session@1.17.9":
   version "1.17.9"
   resolved "https://registry.yarnpkg.com/@types/express-session/-/express-session-1.17.9.tgz#2811b8c3f2e7efb5fd239e4cb0f26f58de8c0a62"
   integrity sha512-yIqficLlTPdloeEPhOVenpOUWILkdaXHUWhTOqFGx9JoSuTgeatNjb97k8VvJehbTk0kUSUAHy5r27PXMga89Q==
@@ -1833,10 +1826,10 @@
     "@types/mime" "^1"
     "@types/node" "*"
 
-"@types/session-file-store@1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@types/session-file-store/-/session-file-store-1.2.4.tgz#3673bb85fa150290c85d8cda2b97cde190d9a9b4"
-  integrity sha512-mNM0bMHDx2s0p41xO85KTVv8vIaQnX4ZSSS1MIvwzEEsJ0fndpc7YJciDdEtbjAwhGBeKywuG9720Ugq3cKtTQ==
+"@types/session-file-store@1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@types/session-file-store/-/session-file-store-1.2.5.tgz#87e16ed8200a8e3950acf87acf970a99c819c3ce"
+  integrity sha512-xjIyh40IznXLrvbAY/nmxu5cMcPcE3ZoDrSDvd02m6p8UjUgOtZAGI7Os5DDd6THuxClLWNhFo/awy1tYp64Bg==
   dependencies:
     "@types/express" "*"
     "@types/express-session" "*"
