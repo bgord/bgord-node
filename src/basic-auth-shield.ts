@@ -13,11 +13,7 @@ type BasicAuthShieldConfigType = {
 };
 
 export class BasicAuthShield {
-  config: BasicAuthShieldConfigType;
-
-  constructor(config: BasicAuthShieldConfigType) {
-    this.config = config;
-  }
+  constructor(private readonly config: BasicAuthShieldConfigType) {}
 
   private _verify(
     request: express.Request,

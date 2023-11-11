@@ -3,11 +3,11 @@ type StepType = number;
 type StepperConfigType = { total: StepType };
 
 export class Stepper {
-  static DEFAULT_CURRENT = 1;
+  static readonly DEFAULT_CURRENT = 1;
 
   private current: StepType = Stepper.DEFAULT_CURRENT;
 
-  private total: StepType;
+  private readonly total: StepType;
 
   constructor(config: StepperConfigType) {
     if (!Number.isInteger(config.total)) {
@@ -21,13 +21,13 @@ export class Stepper {
     this.total = config.total;
   }
 
-  public continue(): Stepper {
+  continue(): Stepper {
     this.current = Math.min(this.current + 1, this.total);
 
     return this;
   }
 
-  public read() {
+  read() {
     return {
       finished: this.isFinished(),
       raw: { current: this.current, total: this.total },
@@ -35,16 +35,16 @@ export class Stepper {
     };
   }
 
-  public reset(): Stepper {
+  reset(): Stepper {
     this.current = Stepper.DEFAULT_CURRENT;
     return this;
   }
 
-  public format(): string {
+  format(): string {
     return this.read().formatted;
   }
 
-  public isFinished(): boolean {
+  isFinished(): boolean {
     return this.current === this.total;
   }
 }

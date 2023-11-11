@@ -38,11 +38,7 @@ export type EventDraftType = z.infer<typeof EventDraft>;
 export type ParsedEventType = z.infer<typeof ParsedEvent>;
 
 export class EventHandler {
-  logger: Logger;
-
-  constructor(logger: Logger) {
-    this.logger = logger;
-  }
+  constructor(private readonly logger: Logger) {}
 
   handle<T extends Pick<EventType, 'name'>>(fn: (event: T) => Promise<void>) {
     return async (event: T) => {
@@ -60,11 +56,7 @@ export class EventHandler {
 }
 
 export class EventLogger {
-  logger: Logger;
-
-  constructor(logger: Logger) {
-    this.logger = logger;
-  }
+  constructor(private readonly logger: Logger) {}
 
   private _handle(
     type: string,

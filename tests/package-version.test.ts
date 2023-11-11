@@ -4,44 +4,44 @@ import { PackageVersion } from '../src/package-version';
 describe('PackageVersion', () => {
   describe('isGreaterThanOrEqual method', () => {
     it('major version is greater', () => {
-      const first = new PackageVersion({ major: 2, minor: 1, patch: 0 });
-      const second = new PackageVersion({ major: 1, minor: 9, patch: 3 });
+      const first = new PackageVersion(2, 1, 0);
+      const second = new PackageVersion(1, 9, 3);
       expect(first.isGreaterThanOrEqual(second)).toEqual(true);
     });
 
     it('major version is smaller', () => {
-      const first = new PackageVersion({ major: 1, minor: 9, patch: 3 });
-      const second = new PackageVersion({ major: 2, minor: 1, patch: 0 });
+      const first = new PackageVersion(1, 9, 3);
+      const second = new PackageVersion(2, 1, 0);
       expect(first.isGreaterThanOrEqual(second)).toEqual(false);
     });
 
     it('major version is the same, minor version is greater', () => {
-      const first = new PackageVersion({ major: 1, minor: 9, patch: 0 });
-      const second = new PackageVersion({ major: 1, minor: 8, patch: 5 });
+      const first = new PackageVersion(1, 9, 0);
+      const second = new PackageVersion(1, 8, 5);
       expect(first.isGreaterThanOrEqual(second)).toEqual(true);
     });
 
     it('major version is the same, minor version is smaller', () => {
-      const first = new PackageVersion({ major: 1, minor: 8, patch: 5 });
-      const second = new PackageVersion({ major: 1, minor: 9, patch: 0 });
+      const first = new PackageVersion(1, 8, 5);
+      const second = new PackageVersion(1, 9, 0);
       expect(first.isGreaterThanOrEqual(second)).toEqual(false);
     });
 
     it('major and minor versions are the same, patch version is greater', () => {
-      const first = new PackageVersion({ major: 1, minor: 9, patch: 5 });
-      const second = new PackageVersion({ major: 1, minor: 9, patch: 4 });
+      const first = new PackageVersion(1, 9, 5);
+      const second = new PackageVersion(1, 9, 4);
       expect(first.isGreaterThanOrEqual(second)).toEqual(true);
     });
 
     it('major and minor versions are the same, patch version is smaller', () => {
-      const first = new PackageVersion({ major: 1, minor: 9, patch: 4 });
-      const second = new PackageVersion({ major: 1, minor: 9, patch: 5 });
+      const first = new PackageVersion(1, 9, 4);
+      const second = new PackageVersion(1, 9, 5);
       expect(first.isGreaterThanOrEqual(second)).toEqual(false);
     });
 
     it('versions are the same', () => {
-      const first = new PackageVersion({ major: 1, minor: 9, patch: 4 });
-      const second = new PackageVersion({ major: 1, minor: 9, patch: 4 });
+      const first = new PackageVersion(1, 9, 4);
+      const second = new PackageVersion(1, 9, 4);
       expect(first.isGreaterThanOrEqual(second)).toEqual(true);
     });
   });

@@ -9,13 +9,9 @@ export enum CacheHitEnum {
 }
 
 export class CacheResponse {
-  cache: NodeCache;
+  static readonly CACHE_HIT_HEADER = 'Cache-Hit';
 
-  static CACHE_HIT_HEADER = 'Cache-Hit';
-
-  constructor(cache: NodeCache) {
-    this.cache = cache;
-  }
+  constructor(private readonly cache: NodeCache) {}
 
   private _handle(request: Request, response: Response, next: NextFunction) {
     if (this.cache.has(request.url)) {

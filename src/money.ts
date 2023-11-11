@@ -39,23 +39,23 @@ export class Money {
     this.rounding = rounding ?? new RoundToNearest();
   }
 
-  public getAmount(): MoneyAmountType {
+  getAmount(): MoneyAmountType {
     return this.amount;
   }
 
-  public add(money: Money) {
+  add(money: Money) {
     const result = this.rounding.round(this.amount + money.getAmount());
 
     return new Money(MoneyAmount.parse(result), this.rounding);
   }
 
-  public multiply(factor: MoneyMultiplicationFactorType) {
+  multiply(factor: MoneyMultiplicationFactorType) {
     const result = this.rounding.round(this.amount * factor);
 
     return new Money(MoneyAmount.parse(result), this.rounding);
   }
 
-  public subtract(money: Money) {
+  subtract(money: Money) {
     const result = this.rounding.round(this.amount - money.getAmount());
 
     if (result < Money.ZERO) {
@@ -65,7 +65,7 @@ export class Money {
     return new Money(MoneyAmount.parse(result), this.rounding);
   }
 
-  public divide(factor: MoneyDivisionFactorType) {
+  divide(factor: MoneyDivisionFactorType) {
     if (factor === 0) {
       throw new Error('Cannot divide by zero');
     }
@@ -75,23 +75,23 @@ export class Money {
     return new Money(MoneyAmount.parse(result), this.rounding);
   }
 
-  public equals(another: Money): boolean {
+  equals(another: Money): boolean {
     return this.amount === another.getAmount();
   }
 
-  public isGreaterThan(another: Money): boolean {
+  isGreaterThan(another: Money): boolean {
     return this.amount > another.getAmount();
   }
 
-  public isLessThan(another: Money): boolean {
+  isLessThan(another: Money): boolean {
     return this.amount < another.getAmount();
   }
 
-  public isZero(): boolean {
+  isZero(): boolean {
     return this.amount === Money.ZERO;
   }
 
-  public format(): string {
+  format(): string {
     const result = this.amount / 100;
 
     const whole = Math.floor(result);

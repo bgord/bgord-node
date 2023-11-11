@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 export class Node<T> {
-  public data: T;
+  data: T;
 
-  public prev: Node<T> | null = null;
+  prev: Node<T> | null = null;
 
-  public next: Node<T> | null = null;
+  next: Node<T> | null = null;
 
   constructor(data: Node<T>['data']) {
     this.data = data;
   }
 
-  public forward(n: number): Node<T> | null {
+  forward(n: number): Node<T> | null {
     let currentNode: Node<T> | null = this;
 
     for (let i = 0; i < n; i++) {
@@ -24,7 +24,7 @@ export class Node<T> {
     return currentNode;
   }
 
-  public backward(n: number): Node<T> | null {
+  backward(n: number): Node<T> | null {
     let currentNode: Node<T> | null = this;
 
     for (let i = 0; i < n; i++) {
@@ -47,23 +47,23 @@ export class DoublyLinkedList<T> {
 
   private tail: Node<T> | null = null;
 
-  public getSize(): DoublyLinkedList<T>['size'] {
+  getSize(): DoublyLinkedList<T>['size'] {
     return this.size;
   }
 
-  public isEmpty(): boolean {
+  isEmpty(): boolean {
     return this.size === 0;
   }
 
-  public getHead(): DoublyLinkedList<T>['head'] {
+  getHead(): DoublyLinkedList<T>['head'] {
     return this.head;
   }
 
-  public getTail(): DoublyLinkedList<T>['tail'] {
+  getTail(): DoublyLinkedList<T>['tail'] {
     return this.tail;
   }
 
-  public append(node: Node<T>): void {
+  append(node: Node<T>): void {
     if (this.head === null || this.tail === null) {
       this.size++;
 
@@ -79,7 +79,7 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public prepend(node: Node<T>): void {
+  prepend(node: Node<T>): void {
     if (this.head === null || this.tail === null) {
       this.size++;
 
@@ -94,14 +94,14 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public clear(): void {
+  clear(): void {
     this.size = 0;
 
     this.head = null;
     this.tail = null;
   }
 
-  public remove(node: Node<T>): void {
+  remove(node: Node<T>): void {
     if (node.prev) {
       node.prev.next = node.next;
     } else {
@@ -119,7 +119,7 @@ export class DoublyLinkedList<T> {
     node.next = null;
   }
 
-  public insertAfter(node: Node<T>, target: Node<T>): void {
+  insertAfter(node: Node<T>, target: Node<T>): void {
     if (target === this.tail) {
       this.append(node);
     } else {
@@ -132,7 +132,7 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public insertBefore(node: Node<T>, target: Node<T>): void {
+  insertBefore(node: Node<T>, target: Node<T>): void {
     if (target === this.head) {
       this.prepend(node);
     } else {
@@ -145,11 +145,11 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public find(callback: (node: Node<T>) => boolean): Node<T> | null {
+  find(callback: (node: Node<T>) => boolean): Node<T> | null {
     return Array.from(this).find(callback) ?? null;
   }
 
-  public reverse(): void {
+  reverse(): void {
     [this.head, this.tail] = [this.tail, this.head];
 
     for (const node of this) {
@@ -157,7 +157,7 @@ export class DoublyLinkedList<T> {
     }
   }
 
-  public toArray(): Node<T>[] {
+  toArray(): Node<T>[] {
     return Array.from(this);
   }
 

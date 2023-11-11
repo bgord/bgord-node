@@ -11,8 +11,8 @@ export type RecaptchaVerifierConfigType = {
 };
 
 export class RecaptchaShield {
-  siteKey: RecaptchaVerifierConfigType['siteKey'];
-  secretKey: RecaptchaVerifierConfigType['secretKey'];
+  private readonly siteKey: RecaptchaVerifierConfigType['siteKey'];
+  private readonly secretKey: RecaptchaVerifierConfigType['secretKey'];
 
   constructor(config: RecaptchaVerifierConfigType) {
     this.siteKey = config.siteKey;

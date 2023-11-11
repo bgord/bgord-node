@@ -12,11 +12,7 @@ export type FilterParseConfigType<T extends DefaultFilterSchemaType> = {
 };
 
 export class Filter<T extends DefaultFilterSchemaType> {
-  schema: z.ZodObject<T>;
-
-  constructor(schema: FilterSchemaType<T>) {
-    this.schema = schema;
-  }
+  constructor(private readonly schema: FilterSchemaType<T>) {}
 
   parse(values: FilterValuesType) {
     return Filter._parse({ schema: this.schema, values });

@@ -87,13 +87,14 @@ type LoggerOptionsType = {
 };
 
 export class Logger {
-  private instance: winston.Logger;
+  private readonly instance: winston.Logger;
 
-  private app: LoggerOptionsType['app'];
+  private readonly app: LoggerOptionsType['app'];
 
-  private environment: LoggerOptionsType['environment'];
+  private readonly environment: LoggerOptionsType['environment'];
 
-  private level: LoggerOptionsType['level'] = Schema.LogLevelEnum.verbose;
+  private readonly level: LoggerOptionsType['level'] =
+    Schema.LogLevelEnum.verbose;
 
   constructor(options: LoggerOptionsType) {
     this.app = options.app;

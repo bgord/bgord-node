@@ -6,10 +6,7 @@ import { Mime } from './mime';
 export type DownloadFileConfigType = { filename: fs.PathLike; mime: Mime };
 
 export class DownloadFile {
-  public static attach(
-    response: express.Response,
-    config: DownloadFileConfigType
-  ) {
+  static attach(response: express.Response, config: DownloadFileConfigType) {
     response.setHeader(
       'Content-Disposition',
       `attachment; filename="${config.filename}"`

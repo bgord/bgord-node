@@ -19,17 +19,17 @@ export type SizeConfigType = {
 };
 
 export class Size {
-  private unit: SizeUnit;
+  private readonly unit: SizeUnit;
 
-  private value: SizeValueType;
+  private readonly value: SizeValueType;
 
-  private bytes: Schema.SizeInBytesType;
+  private readonly bytes: Schema.SizeInBytesType;
 
-  private static KB_MULTIPLIER = 1024;
+  private static readonly KB_MULTIPLIER = 1024;
 
-  private static MB_MULTIPLIER = 1024 * Size.KB_MULTIPLIER;
+  private static readonly MB_MULTIPLIER = 1024 * Size.KB_MULTIPLIER;
 
-  private static GB_MULTIPLIER = 1024 * Size.MB_MULTIPLIER;
+  private static readonly GB_MULTIPLIER = 1024 * Size.MB_MULTIPLIER;
 
   constructor(config: SizeConfigType) {
     this.unit = config.unit;
@@ -37,19 +37,19 @@ export class Size {
     this.bytes = this.calculateBytes(config);
   }
 
-  public toString(): string {
+  toString(): string {
     return `${this.value} ${this.unit}`;
   }
 
-  public toBytes(): Schema.SizeInBytesType {
+  toBytes(): Schema.SizeInBytesType {
     return this.bytes;
   }
 
-  public isGreaterThan(another: Size) {
+  isGreaterThan(another: Size) {
     return this.bytes > another.toBytes();
   }
 
-  public format(unit: SizeUnit): string {
+  format(unit: SizeUnit): string {
     switch (unit) {
       case SizeUnit.kB:
         const kbs = Approximation.float(this.bytes / Size.KB_MULTIPLIER);

@@ -5,13 +5,9 @@ import FileStore from 'session-file-store';
 type SessionConfigType = session.SessionOptions;
 
 export class Session {
-  config: SessionConfigType;
+  static readonly session = session;
 
-  static session = session;
-
-  constructor(config: SessionConfigType) {
-    this.config = config;
-  }
+  constructor(private readonly config: SessionConfigType) {}
 
   applyTo(app: express.Application): void {
     const { secret, ...overrides } = this.config;

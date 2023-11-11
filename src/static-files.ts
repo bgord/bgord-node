@@ -11,8 +11,10 @@ export type StaticFilesConfigType = Partial<
 >;
 
 export class StaticFiles {
-  path: Schema.PathType = Schema.Path.parse(defaultStaticFilesPathType);
-  staticGzipOptions: StaticGzipOptionsType = {};
+  private readonly path: Schema.PathType = Schema.Path.parse(
+    defaultStaticFilesPathType
+  );
+  private readonly staticGzipOptions: StaticGzipOptionsType = {};
 
   constructor(config?: StaticFilesConfigType) {
     const { path, ...expressStaticGzipOptions } = config ?? {};

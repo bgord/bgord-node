@@ -27,11 +27,7 @@ export type JobProcessorType = {
 };
 
 export class JobHandler {
-  private logger: Logger;
-
-  constructor(logger: Logger) {
-    this.logger = logger;
-  }
+  constructor(private readonly logger: Logger) {}
 
   handle(jobProcessor: JobProcessorType) {
     const correlationId = Schema.CorrelationId.parse(NewUUID.generate());

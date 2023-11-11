@@ -28,28 +28,28 @@ export class FileLocation {
     this.extension = config.extension;
   }
 
-  public getBasename(): FileLocationBasenameType {
+  getBasename(): FileLocationBasenameType {
     return this.basename; // index
   }
 
-  public getExtension(): FileLocationExtensionType {
+  getExtension(): FileLocationExtensionType {
     return this.extension; // .html
   }
 
-  public getFilename(extension?: FileLocationExtensionType): Schema.PathType {
+  getFilename(extension?: FileLocationExtensionType): Schema.PathType {
     return Schema.Path.parse(`${this.basename}${extension ?? this.extension}`); // index.html
   }
 
-  public getPath(extension?: FileLocationExtensionType): Schema.PathType {
+  getPath(extension?: FileLocationExtensionType): Schema.PathType {
     const filename = this.getFilename(extension);
     return Schema.Path.parse(path.join(this.parent, filename)); // parent/index.html
   }
 
-  public getGzippedPath(): Schema.PathType {
+  getGzippedPath(): Schema.PathType {
     return Schema.Path.parse(`${this.getPath()}.gz`); // parent/index.html.gz
   }
 
-  public summary() {
+  summary() {
     return {
       parent: this.parent,
       basename: this.getBasename(),
@@ -60,12 +60,12 @@ export class FileLocation {
     };
   }
 
-  public setBasename(basename: FileLocationBasenameType): FileLocation {
+  setBasename(basename: FileLocationBasenameType): FileLocation {
     this.basename = basename;
     return this;
   }
 
-  public async delete(): Promise<void> {
+  async delete(): Promise<void> {
     return fs.unlink(this.getPath());
   }
 }

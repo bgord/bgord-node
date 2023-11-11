@@ -17,7 +17,7 @@ type MailerConfigType = {
 type MailerSendOptionsType = SendMailOptions;
 
 export class Mailer {
-  private transport: nodemailer.Transporter;
+  private readonly transport: nodemailer.Transporter;
 
   constructor(config: MailerConfigType) {
     this.transport = nodemailer.createTransport({

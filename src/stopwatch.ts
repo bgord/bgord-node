@@ -9,16 +9,11 @@ enum StopwatchState {
 export type StopwatchResultType = { durationMs: TimestampType };
 
 export class Stopwatch {
-  private state: StopwatchState;
+  private state: StopwatchState = StopwatchState.started;
 
-  private startMs: TimestampType;
+  private readonly startMs: TimestampType = Date.now();
 
   private stopMs: Falsy<TimestampType>;
-
-  constructor() {
-    this.state = StopwatchState.started;
-    this.startMs = Date.now();
-  }
 
   stop(): StopwatchResultType {
     if (this.state === StopwatchState.stopped) {

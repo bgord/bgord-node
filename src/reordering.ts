@@ -7,7 +7,7 @@ export type WithReorderingPositionValue<T> = T & {
 };
 
 export class ReorderingPosition {
-  public readonly value: Schema.ReorderingItemPositionValueType;
+  readonly value: Schema.ReorderingItemPositionValueType;
 
   constructor(value: Schema.ReorderingItemPositionValueType) {
     if (!Schema.ReorderingItemPositionValue.safeParse(value).success) {
@@ -24,8 +24,8 @@ export class ReorderingPosition {
 
 class ReorderingItem {
   constructor(
-    public readonly id: Schema.ReorderingItemIdType,
-    public readonly position: ReorderingPosition
+    readonly id: Schema.ReorderingItemIdType,
+    readonly position: ReorderingPosition
   ) {}
 
   eq(anotherItemId: ReorderingItem['id']): boolean {
@@ -40,9 +40,9 @@ enum ReorderingTransferDirection {
 }
 
 export class ReorderingTransfer {
-  public readonly id: ReorderingItem['id'];
+  readonly id: ReorderingItem['id'];
 
-  public readonly to: ReorderingPosition;
+  readonly to: ReorderingPosition;
 
   constructor(config: {
     id: ReorderingItem['id'];
@@ -52,7 +52,7 @@ export class ReorderingTransfer {
     this.to = new ReorderingPosition(config.to);
   }
 
-  public getDirection(
+  getDirection(
     currentPosition: ReorderingPosition
   ): ReorderingTransferDirection {
     if (this.to.value === currentPosition.value)
@@ -79,14 +79,14 @@ export class ReorderingCalculator {
     return reordering;
   }
 
-  public add(id: ReorderingItem['id']): ReorderingItem {
+  add(id: ReorderingItem['id']): ReorderingItem {
     const position = new ReorderingPosition(this.dll.getSize());
     const item = new ReorderingItem(id, position);
     this.dll.append(new Node(item));
     return item;
   }
 
-  public delete(id: ReorderingItem['id']) {
+  delete(id: ReorderingItem['id']) {
     const item = this.dll.find(x => x.data.eq(id));
     if (!item) {
       throw new Error('Cannot find Item');
@@ -95,7 +95,7 @@ export class ReorderingCalculator {
     this.recalculate();
   }
 
-  public transfer(
+  transfer(
     transfer: ReorderingTransfer
   ): ReturnType<ReorderingCalculator['read']> {
     const current = this.dll.find(node => node.data.eq(transfer.id));
@@ -124,7 +124,7 @@ export class ReorderingCalculator {
     return this.read();
   }
 
-  public read() {
+  read() {
     const ids = Array.from(this.dll).map(item => item.data.id);
     const items = Array.from(this.dll).map(item => item.data);
     return { ids, items };

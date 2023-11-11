@@ -10,7 +10,7 @@ export class UploadedFileLocation {
 
   readonly temporary: Schema.PathType;
 
-  public readonly handle: FileLocation;
+  readonly handle: FileLocation;
 
   constructor(
     file: Schema.UploadedFileType,

@@ -17,10 +17,11 @@ export type HCaptchaVerifierConfigType = {
 };
 
 export class HCaptchaShield {
-  secretKey: HCaptchaSecretKeyType;
-  mode: HCaptchaVerifierModeType;
+  private readonly secretKey: HCaptchaSecretKeyType;
+  private readonly mode: HCaptchaVerifierModeType;
 
-  LOCAL_HCAPTCHA_RESPONSE_PLACEHOLDER = '10000000-aaaa-bbbb-cccc-000000000001';
+  private readonly LOCAL_HCAPTCHA_RESPONSE_PLACEHOLDER =
+    '10000000-aaaa-bbbb-cccc-000000000001';
 
   constructor(config: HCaptchaVerifierConfigType) {
     this.mode = config.mode;

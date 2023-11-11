@@ -55,21 +55,11 @@ export const PackageVersionSchema = z
 export type PackageVersionSchemaType = z.infer<typeof PackageVersionSchema>;
 
 export class PackageVersion {
-  major: MajorType;
-
-  minor: MinorType;
-
-  patch: PatchType;
-
-  constructor(payload: {
-    major: MajorType;
-    minor: MinorType;
-    patch: PatchType;
-  }) {
-    this.major = payload.major;
-    this.minor = payload.minor;
-    this.patch = payload.patch;
-  }
+  constructor(
+    readonly major: MajorType,
+    readonly minor: MinorType,
+    readonly patch: PatchType
+  ) {}
 
   isGreaterThanOrEqual(another: PackageVersion) {
     if (this.major > another.major) return true;
@@ -87,10 +77,6 @@ export class PackageVersion {
   static fromStringWithV(value: string) {
     const version = PackageVersionSchema.parse(value);
 
-    return new PackageVersion({
-      major: version.major,
-      minor: version.minor,
-      patch: version.patch,
-    });
+    return new PackageVersion(version.major, version.minor, version.patch);
   }
 }

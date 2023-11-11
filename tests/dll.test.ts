@@ -215,8 +215,8 @@ describe('DLL', () => {
 
     expect(dll.getSize()).toEqual(3);
     expect(dll.getHead()).toEqual(node3);
-    expect(dll.getHead().next).toEqual(node2);
-    expect(dll.getHead().next.next).toEqual(node1);
+    expect(dll.getHead()?.next).toEqual(node2);
+    expect(dll.getHead()?.next?.next).toEqual(node1);
     expect(dll.getTail()).toEqual(node1);
   });
 
@@ -253,7 +253,7 @@ describe('DLL', () => {
 
     expect(dll.getSize()).toEqual(2);
     expect(dll.getHead()).toEqual(node2);
-    expect(dll.getHead().next).toEqual(node3);
+    expect(dll.getHead()?.next).toEqual(node3);
     expect(dll.getTail()).toEqual(node3);
   });
 
@@ -273,7 +273,7 @@ describe('DLL', () => {
 
     expect(dll.getSize()).toEqual(2);
     expect(dll.getHead()).toEqual(node1);
-    expect(dll.getHead().next).toEqual(node2);
+    expect(dll.getHead()?.next).toEqual(node2);
     expect(dll.getTail()).toEqual(node2);
   });
 
@@ -293,7 +293,7 @@ describe('DLL', () => {
 
     expect(dll.getSize()).toEqual(2);
     expect(dll.getHead()).toEqual(node1);
-    expect(dll.getHead().next).toEqual(node3);
+    expect(dll.getHead()?.next).toEqual(node3);
     expect(dll.getTail()).toEqual(node3);
   });
 

@@ -7,9 +7,9 @@ import { Middleware } from './middleware';
 type ApiKeyShieldConfigType = { API_KEY: Schema.ApiKeyType };
 
 export class ApiKeyShield {
-  static HEADER_NAME = 'bgord-api-key';
+  static readonly HEADER_NAME = 'bgord-api-key';
 
-  constructor(private config: ApiKeyShieldConfigType) {}
+  constructor(private readonly config: ApiKeyShieldConfigType) {}
 
   private _verify(
     request: express.Request,

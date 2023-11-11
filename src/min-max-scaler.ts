@@ -10,10 +10,10 @@ type MinMaxScalerConfigType = {
 };
 
 export class MinMaxScaler {
-  private min: MinMaxScalerValueType;
-  private max: MinMaxScalerValueType;
-  private lower: MinMaxScalerValueType;
-  private upper: MinMaxScalerValueType;
+  private readonly min: MinMaxScalerValueType;
+  private readonly max: MinMaxScalerValueType;
+  private readonly lower: MinMaxScalerValueType;
+  private readonly upper: MinMaxScalerValueType;
 
   constructor(config: MinMaxScalerConfigType) {
     const lower = config.bound?.lower ?? 0;

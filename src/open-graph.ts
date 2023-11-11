@@ -2,7 +2,7 @@ import * as Schema from './schema';
 import { ImageEXIF } from './image-exif';
 
 class OpenGraphTitle {
-  value: Schema.OpenGraphTitleValueType;
+  private readonly value: Schema.OpenGraphTitleValueType;
 
   constructor(value: Schema.OpenGraphTitleValueType) {
     this.value = Schema.OpenGraphTitleValue.parse(value);
@@ -18,7 +18,7 @@ class OpenGraphTitle {
 }
 
 class OpenGraphDescription {
-  value: Schema.OpenGraphDescriptionValueType;
+  private readonly value: Schema.OpenGraphDescriptionValueType;
 
   constructor(value: Schema.OpenGraphDescriptionValueType) {
     this.value = Schema.OpenGraphDescriptionValue.parse(value);
@@ -34,7 +34,7 @@ class OpenGraphDescription {
 }
 
 class OpenGraphUrl {
-  value: Schema.OpenGraphUrlValueType;
+  private readonly value: Schema.OpenGraphUrlValueType;
 
   constructor(value: Schema.OpenGraphUrlValueType) {
     this.value = Schema.OpenGraphUrlValue.parse(value);
@@ -50,7 +50,7 @@ class OpenGraphUrl {
 }
 
 class OpenGraphType {
-  value: Schema.OpenGraphTypeValueType;
+  private readonly value: Schema.OpenGraphTypeValueType;
 
   constructor(value: Schema.OpenGraphTypeValueType) {
     this.value = Schema.OpenGraphTypeValue.parse(value);
@@ -66,7 +66,7 @@ class OpenGraphType {
 }
 
 class OpenGraphImageUrl {
-  value: Schema.OpenGraphImageUrlValueType;
+  private readonly value: Schema.OpenGraphImageUrlValueType;
 
   constructor(path: Schema.PathType) {
     this.value = Schema.OpenGraphImageUrlValue.parse(path);
@@ -82,7 +82,7 @@ class OpenGraphImageUrl {
 }
 
 class OpenGraphImageType {
-  value: Schema.OpenGraphImageTypeValueType;
+  private readonly value: Schema.OpenGraphImageTypeValueType;
 
   constructor(value: Schema.OpenGraphImageTypeValueType) {
     this.value = Schema.OpenGraphImageTypeValue.parse(value);
@@ -98,7 +98,7 @@ class OpenGraphImageType {
 }
 
 class OpenGraphImageWidth {
-  value: Schema.OpenGraphImageWidthValueType;
+  private readonly value: Schema.OpenGraphImageWidthValueType;
 
   constructor(value: Schema.OpenGraphImageWidthValueType) {
     this.value = Schema.OpenGraphImageWidthValue.parse(value);
@@ -114,7 +114,7 @@ class OpenGraphImageWidth {
 }
 
 class OpenGraphImageHeight {
-  value: Schema.OpenGraphImageHeightValueType;
+  private readonly value: Schema.OpenGraphImageHeightValueType;
 
   constructor(value: Schema.OpenGraphImageHeightValueType) {
     this.value = Schema.OpenGraphImageHeightValue.parse(value);
@@ -137,7 +137,7 @@ export type OpenGraphImageConfigType = {
 };
 
 class OpenGraphImage {
-  value: OpenGraphImageConfigType;
+  private readonly value: OpenGraphImageConfigType;
 
   constructor(value: OpenGraphImageConfigType) {
     this.value = value;
