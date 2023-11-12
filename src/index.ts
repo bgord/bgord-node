@@ -4,7 +4,7 @@ export * from './api-key-shield';
 export * from './api-version';
 export * from './basic-auth-shield';
 export * from './build-info-repository';
-export * from './cache'
+export * from './cache';
 export * from './cache-response';
 export * from './cache-static-files';
 export * from './clock';
@@ -33,7 +33,7 @@ export * from './i18n';
 export * from './image-compressor';
 export * from './image-converter';
 export * from './image-exif';
-export * from './image-resizer'
+export * from './image-resizer';
 export * from './jobs';
 export * from './logger';
 export * from './mailer';
@@ -70,9 +70,9 @@ export * from './static-files';
 export * from './thousands-separator';
 export * from './time';
 export * from './time-zone-offset';
-export * from './timeout'
+export * from './timeout';
 export * from './ts-utils';
 export * from './uploaded-file-location';
 export * from './uptime';
 export * from './uuid';
-export * from './stepper'
+export * from './stepper';
