@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.231](https://github.com/bgord/bgord-node/compare/v0.58.230...v0.58.231) (2023-11-12)
+
+
+### Bug Fixes
+
+* dont use unsupported satisfies ([15ea75b](https://github.com/bgord/bgord-node/commit/15ea75bf583faf00d67af86975f4d9810c1c56d7))
+* formatting ([7ea05c6](https://github.com/bgord/bgord-node/commit/7ea05c6dc58defdcadb79909ad181efc5485b373))
+
 ### [0.58.230](https://github.com/bgord/bgord-node/compare/v0.58.229...v0.58.230) (2023-11-12)
 
 
