@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.230](https://github.com/bgord/bgord-node/compare/v0.58.229...v0.58.230) (2023-11-12)
+
+
+### Bug Fixes
+
+* clock export ([6e69bc7](https://github.com/bgord/bgord-node/commit/6e69bc7dac2a9c2b2b80feea645f1010e3373ec7))
+
 ### [0.58.229](https://github.com/bgord/bgord-node/compare/v0.58.228...v0.58.229) (2023-11-12)
 
 
