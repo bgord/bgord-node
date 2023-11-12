@@ -1,6 +1,6 @@
 export type HourFormatter = (value: Hour['value']) => string;
 
-export const HourFormatters = {
+export const HourFormatters: Record<string, HourFormatter> = {
   TWENTY_FOUR_HOURS: value => value.toString().padStart(2, '0'),
 
   AM_PM: value => {
@@ -11,7 +11,7 @@ export const HourFormatters = {
   TWELVE_HOURS: value => (value % 12).toString().padStart(2, '0'),
 
   TWELVE_HOURS_WO_PADDING: value => (value % 12).toString(),
-} satisfies Record<string, HourFormatter>;
+} as const;
 
 export class Hour {
   private readonly value: number;
@@ -86,7 +86,10 @@ export class Minute {
   }
 
   get() {
-    return { raw: this.value, formatted: this.value.toString().padStart(2, '0') };
+    return {
+      raw: this.value,
+      formatted: this.value.toString().padStart(2, '0'),
+    };
   }
 
   equals(another: Minute): boolean {
@@ -108,10 +111,10 @@ export class Minute {
 
 export type ClockFormatter = (hour: Hour, minute: Minute) => string;
 
-export const ClockFormatters = {
+export const ClockFormatters: Record<string, ClockFormatter> = {
   TWENTY_FOUR_HOURS: (hour, minute) =>
     `${hour.get().formatted}:${minute.get().formatted}`,
-} satisfies Record<string, ClockFormatter>;
+} as const;
 
 export class Clock {
   private readonly formatter: ClockFormatter;
