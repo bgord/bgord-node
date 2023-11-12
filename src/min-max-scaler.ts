@@ -9,6 +9,8 @@ type MinMaxScalerConfigType = {
   };
 };
 
+import { Approximation } from './approximation';
+
 export class MinMaxScaler {
   private readonly min: MinMaxScalerValueType;
   private readonly max: MinMaxScalerValueType;
@@ -52,7 +54,7 @@ export class MinMaxScaler {
 
     return {
       actual: value,
-      scaled: Number(result.toFixed(2)),
+      scaled: Approximation.float(result, 2),
       isMin: value === min,
       isMax: value === max,
     };
