@@ -7,6 +7,7 @@ export * from './build-info-repository';
 export * from './cache'
 export * from './cache-response';
 export * from './cache-static-files';
+export * from './clock';
 export * from './context';
 export * from './csrf-shield';
 export * from './dates';
