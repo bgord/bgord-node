@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.229](https://github.com/bgord/bgord-node/compare/v0.58.228...v0.58.229) (2023-11-12)
+
+
+### Features
+
+* clock vo ([0bfc8df](https://github.com/bgord/bgord-node/commit/0bfc8df698211ad2d24e1cc95202fe03bfcdb0bc))
+
 ### [0.58.228](https://github.com/bgord/bgord-node/compare/v0.58.227...v0.58.228) (2023-11-11)
 
 ### [0.58.227](https://github.com/bgord/bgord-node/compare/v0.58.226...v0.58.227) (2023-11-10)
