@@ -6,8 +6,8 @@ export type MimeSubtypeType = string;
 
 export class Mime {
   readonly raw: MimeRawType;
-  private readonly type: MimeTypeType;
-  private readonly subtype: MimeSubtypeType;
+  readonly type: MimeTypeType;
+  readonly subtype: MimeSubtypeType;
 
   constructor(value: MimeRawType) {
     const [type, subtype] = value.split('/');

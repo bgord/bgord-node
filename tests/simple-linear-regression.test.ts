@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
 
-import { SLR } from '../src/slr';
+import { SLR } from '../src/simple-linear-regression';
 
 describe('SimpleLinearRegression', () => {
   test('predicts correctly from two pairs', async () => {
