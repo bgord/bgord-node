@@ -39,4 +39,43 @@ describe('SimpleLinearRegression', () => {
     const reconstructed = new SLR(params);
     expect(reconstructed.predict(10)).toEqual(20);
   });
+
+  describe('validations', () => {
+    test('Sum of x values is too big', async () => {
+      expect(() =>
+        SLR.fromPairs([
+          { x: Number.MAX_SAFE_INTEGER, y: 2 },
+          { x: Number.MAX_SAFE_INTEGER, y: 4 },
+        ])
+      ).toThrow('Sum of x values is too big');
+    });
+
+    test('Sum of y values is too big', async () => {
+      expect(() =>
+        SLR.fromPairs([
+          { y: Number.MAX_SAFE_INTEGER, x: 2 },
+          { y: Number.MAX_SAFE_INTEGER, x: 4 },
+        ])
+      ).toThrow('Sum of y values is too big');
+    });
+
+    test('Sum of x squared values is too big', async () => {
+      expect(() =>
+        SLR.fromPairs([
+          { x: Number.MAX_SAFE_INTEGER / 4, y: 2 },
+          { x: Number.MAX_SAFE_INTEGER / 4, y: 4 },
+        ])
+      ).toThrow('Sum of x squared values is too big');
+    });
+
+    test('At least two pairs needed - empty', async () => {
+      expect(() => SLR.fromPairs([])).toThrow('At least two pairs needed');
+    });
+
+    test('At least two pairs needed - one pair', async () => {
+      expect(() => SLR.fromPairs([{ x: 1, y: 2 }])).toThrow(
+        'At least two pairs needed'
+      );
+    });
+  });
 });
