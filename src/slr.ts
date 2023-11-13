@@ -6,20 +6,23 @@ export class Sum {
   }
 }
 
+export type SLRPairType = { x: number; y: number };
+
+export type SLRParamsType = { a: number; b: number };
+
+export type SLRPredictionType = number;
+
 export class SLR {
   private readonly rounding: RoundingStrategy = new RoundToNearest();
 
   constructor(
-    private readonly params: { a: number; b: number },
+    private readonly params: SLRParamsType,
     rounding?: RoundingStrategy
   ) {
     this.rounding = rounding ?? this.rounding;
   }
 
-  static fromPairs(
-    pairs: { x: number; y: number }[],
-    rounding?: RoundingStrategy
-  ) {
+  static fromPairs(pairs: SLRPairType[], rounding?: RoundingStrategy) {
     const x = pairs.map(pair => pair.x);
     const y = pairs.map(pair => pair.y);
     const xx = x.map(x => Math.pow(x, 2));
@@ -38,7 +41,7 @@ export class SLR {
     return new SLR({ a, b }, rounding);
   }
 
-  predict(x: number, strategy?: RoundingStrategy): number {
+  predict(x: SLRPairType['x'], strategy?: RoundingStrategy): SLRPredictionType {
     const rounding = strategy ?? this.rounding;
     const prediction = this.params.b * x + this.params.a;
 
