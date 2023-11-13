@@ -54,7 +54,13 @@ export class SLR {
       throw new Error('Sum of x times y values is too big');
     }
 
-    const b = (sXY - (sX * sY) / n) / (sSX - Math.pow(sX, 2) / n);
+    const bDenominator = sSX - Math.pow(sX, 2) / n;
+
+    if (bDenominator === 0) {
+      throw new Error('Unable to create the model');
+    }
+
+    const b = (sXY - (sX * sY) / n) / bDenominator;
     const a = (sY - b * sX) / n;
 
     return new SLR({ a, b }, rounding);

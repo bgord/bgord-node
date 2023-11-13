@@ -40,6 +40,15 @@ describe('SimpleLinearRegression', () => {
     expect(reconstructed.predict(10)).toEqual(20);
   });
 
+  test('uncalculable result', async () => {
+    expect(() =>
+      SLR.fromPairs([
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+      ])
+    ).toThrow('Unable to create the model');
+  });
+
   describe('validations', () => {
     test('Sum of x values is too big', async () => {
       expect(() =>
