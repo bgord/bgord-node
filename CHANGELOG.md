@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.232](https://github.com/bgord/bgord-node/compare/v0.58.231...v0.58.232) (2023-11-13)
+
+
+### Features
+
+* add min max scaler descale method ([1e6c5fc](https://github.com/bgord/bgord-node/commit/1e6c5fc0c814ada5ee5c30a7097a6b8b3b1105f1))
+* add simple linear regression ([e42c81a](https://github.com/bgord/bgord-node/commit/e42c81af1c0f7e0649369be094c098ac5843c582))
+* add simple linear regression module ([401aaa1](https://github.com/bgord/bgord-node/commit/401aaa134ff7bc4c948ff3233e433a53d23b6a5f))
+
+
+### Bug Fixes
+
+* possible nan result ([192ef02](https://github.com/bgord/bgord-node/commit/192ef025c65baf0fc3941446022b66418b1ce196))
+* types in tests ([e8e5442](https://github.com/bgord/bgord-node/commit/e8e54420318fc5ddcea450390b4cd882b1ac88bf))
+
 ### [0.58.231](https://github.com/bgord/bgord-node/compare/v0.58.230...v0.58.231) (2023-11-12)
 
 
