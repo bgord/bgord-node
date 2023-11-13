@@ -6,12 +6,11 @@ export class Sum {
   }
 }
 
-export class SimpleLinearRegression {
+export class SLR {
   private readonly rounding: RoundingStrategy = new RoundToNearest();
 
   constructor(
-    private readonly a: number,
-    private readonly b: number,
+    private readonly params: { a: number; b: number },
     rounding?: RoundingStrategy
   ) {
     this.rounding = rounding ?? this.rounding;
@@ -36,20 +35,17 @@ export class SimpleLinearRegression {
     const b = (sXY - (sX * sY) / n) / (sSX - Math.pow(sX, 2) / n);
     const a = (sY - b * sX) / n;
 
-    return new SimpleLinearRegression(a, b, rounding);
+    return new SLR({ a, b }, rounding);
   }
 
   predict(x: number, strategy?: RoundingStrategy): number {
     const rounding = strategy ?? this.rounding;
-    const prediction = this.b * x + this.a;
+    const prediction = this.params.b * x + this.params.a;
 
     return rounding.round(prediction);
   }
 
-  inspect(): {
-    a: SimpleLinearRegression['a'];
-    b: SimpleLinearRegression['b'];
-  } {
-    return { a: this.a, b: this.b };
+  inspect(): SLR['params'] {
+    return this.params;
   }
 }
