@@ -7,7 +7,7 @@ import * as Errors from './errors';
 import { RateLimiter } from './rate-limiter';
 
 type RateLimitShieldOptionsType = {
-  limitMs: Schema.TimestampType;
+  ms: Schema.TimestampType;
 };
 
 export class RateLimitShield {

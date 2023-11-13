@@ -6,7 +6,7 @@ import { TimestampType } from './schema';
 import { RequestTimeoutError } from './errors';
 
 type TimeoutConfigType = {
-  timeoutMs: TimestampType;
+  ms: TimestampType;
 };
 
 export class Timeout {
@@ -16,10 +16,7 @@ export class Timeout {
       response: express.Response,
       next: express.NextFunction
     ) {
-      const timeout = setTimeout(
-        () => request.emit('timeout'),
-        config.timeoutMs
-      );
+      const timeout = setTimeout(() => request.emit('timeout'), config.ms);
 
       request.on('timeout', () => next(new RequestTimeoutError(config)));
       onHeaders(response, () => clearTimeout(timeout));

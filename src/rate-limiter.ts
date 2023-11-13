@@ -2,7 +2,7 @@ import type {TimestampType} from './schema';
 import type {Falsy} from "./ts-utils";
 
 export type RateLimiterOptionsType = {
-  limitMs: TimestampType;
+  ms: TimestampType;
 };
 
 export type RateLimiterResultSuccessType = { allowed: true };
@@ -30,7 +30,7 @@ export class RateLimiter {
     }
 
     const nextAllowedTimestampMs =
-      this.lastInvocationTimestampMs + this.options.limitMs;
+      this.lastInvocationTimestampMs + this.options.ms;
 
     if (nextAllowedTimestampMs <= currentTimestampMs) {
       this.lastInvocationTimestampMs = currentTimestampMs;

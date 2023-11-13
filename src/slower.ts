@@ -2,7 +2,7 @@ import express from 'express';
 import { sleep } from './sleep';
 import { Middleware } from './middleware';
 
-type SlowerConfigType = { delayMs?: number };
+type SlowerConfigType = { ms?: number };
 
 export class Slower {
   static build(config: SlowerConfigType) {
@@ -11,8 +11,8 @@ export class Slower {
       _response: express.Response,
       next: express.NextFunction
     ) {
-      const delayMs = config.delayMs ?? 500;
-      await sleep({ ms: delayMs });
+      const ms = config.ms ?? 500;
+      await sleep({ ms });
 
       next();
     }

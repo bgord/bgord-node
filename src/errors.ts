@@ -64,15 +64,15 @@ export class TooManyRequestsError extends Error {
 }
 
 export type RequestTimerErrorConfigType = {
-  timeoutMs: TimestampType;
+  ms: TimestampType;
 };
 
 export class RequestTimeoutError extends Error {
-  timeoutMs: RequestTimerErrorConfigType['timeoutMs'];
+  ms: RequestTimerErrorConfigType['ms'];
 
   constructor(config: RequestTimerErrorConfigType) {
     super();
     Object.setPrototypeOf(this, RequestTimeoutError.prototype);
-    this.timeoutMs = config.timeoutMs;
+    this.ms = config.ms;
   }
 }
