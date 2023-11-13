@@ -7,72 +7,114 @@ describe('MinMaxScaler', () => {
     it('should scale a value within the configured range', () => {
       const config = { min: 0, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
-      const scaledValue = scaler.scale(50);
-      expect(scaledValue).eql({
-        actual: 50,
-        scaled: 15,
-        isMin: false,
-        isMax: false,
+
+      const original = 50;
+      const scaled = 15;
+
+      const result = scaler.scale(original);
+
+      expect(result).eql({ original, scaled, isMin: false, isMax: false });
+
+      expect(scaler.descale(result.scaled)).toEqual({
+        isLowerBound: false,
+        isUpperBound: false,
+        original,
+        scaled,
       });
     });
 
     it('should scale a value within the configured range up to 2 decimal places', () => {
       const config = { min: 0, max: 27, bound: { lower: 0, upper: 9 } };
       const scaler = new MinMaxScaler(config);
-      const scaledValue = scaler.scale(5);
-      expect(scaledValue).eql({
-        scaled: 1.67,
-        actual: 5,
-        isMin: false,
-        isMax: false,
+
+      const original = 5;
+      const scaled = 1.67;
+
+      const result = scaler.scale(original);
+
+      expect(result).eql({ scaled, original, isMin: false, isMax: false });
+
+      expect(scaler.descale(result.scaled)).toEqual({
+        isLowerBound: false,
+        isUpperBound: false,
+        original: 5.01,
+        scaled,
       });
     });
 
     it('should scale a value with default range', () => {
       const config = { min: 0, max: 100 };
       const scaler = new MinMaxScaler(config);
-      const scaledValue = scaler.scale(50);
-      expect(scaledValue).eql({
-        scaled: 0.5,
-        actual: 50,
-        isMin: false,
-        isMax: false,
+
+      const original = 50;
+      const scaled = 0.5;
+
+      const result = scaler.scale(original);
+
+      expect(result).eql({ scaled, original, isMin: false, isMax: false });
+
+      expect(scaler.descale(result.scaled)).toEqual({
+        isLowerBound: false,
+        isUpperBound: false,
+        original,
+        scaled,
       });
     });
 
     it('should handle the minimum value', () => {
       const config = { min: 0, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
-      const scaledValue = scaler.scale(0);
-      expect(scaledValue).eql({
-        scaled: 10,
-        actual: 0,
-        isMin: true,
-        isMax: false,
+
+      const original = 0;
+      const scaled = 10;
+
+      const result = scaler.scale(original);
+
+      expect(result).eql({ scaled, original, isMin: true, isMax: false });
+
+      expect(scaler.descale(result.scaled)).toEqual({
+        isLowerBound: true,
+        isUpperBound: false,
+        original,
+        scaled,
       });
     });
 
     it('should handle the maximum value', () => {
       const config = { min: 0, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
-      const scaledValue = scaler.scale(100);
-      expect(scaledValue).eql({
-        scaled: 20,
-        actual: 100,
-        isMin: false,
-        isMax: true,
+
+      const original = 100;
+      const scaled = 20;
+
+      const result = scaler.scale(original);
+
+      expect(result).eql({ scaled, original, isMin: false, isMax: true });
+
+      expect(scaler.descale(result.scaled)).toEqual({
+        isLowerBound: false,
+        isUpperBound: true,
+        original,
+        scaled,
       });
     });
 
     it('should handle min=max case', () => {
       const config = { min: 100, max: 100, bound: { lower: 10, upper: 20 } };
       const scaler = new MinMaxScaler(config);
-      const scaledValue = scaler.scale(100);
-      expect(scaledValue).eql({
-        scaled: 15,
-        actual: 100,
-        isMin: true,
-        isMax: true,
+
+      const original = 100;
+      const scaled = 15;
+
+      const result = scaler.scale(original);
+
+      expect(result).eql({ scaled, original, isMin: true, isMax: true });
+
+      expect(scaler.descale(result.scaled)).toEqual({
+        isLowerBound: false,
+        isUpperBound: false,
+        original,
+        scaled,
       });
     });
 
@@ -102,6 +144,16 @@ describe('MinMaxScaler', () => {
       expect(() => new MinMaxScaler(config).scale(15)).toThrow(
         'Value out of min/max range'
       );
+    });
+  });
+
+  describe('descale', () => {
+    it('should be in bounds', () => {
+      const config = { min: 0, max: 100, bound: { lower: 10, upper: 20 } };
+      const scaler = new MinMaxScaler(config);
+
+      expect(() => scaler.descale(5)).toThrow('Scaled value out of bounds');
+      expect(() => scaler.descale(25)).toThrow('Scaled value out of bounds');
     });
   });
 
