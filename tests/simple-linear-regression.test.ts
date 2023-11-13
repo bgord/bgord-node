@@ -1,10 +1,10 @@
 import { describe, test, expect } from 'vitest';
 
-import { SLR } from '../src/simple-linear-regression';
+import { SimpleLinearRegression } from '../src/simple-linear-regression';
 
 describe('SimpleLinearRegression', () => {
   test('predicts correctly from two pairs', async () => {
-    const model = SLR.fromPairs([
+    const model = SimpleLinearRegression.fromPairs([
       { x: 1, y: 2 },
       { x: 2, y: 4 },
     ]);
@@ -12,7 +12,7 @@ describe('SimpleLinearRegression', () => {
   });
 
   test('predicts correctly from three pairs', async () => {
-    const model = SLR.fromPairs([
+    const model = SimpleLinearRegression.fromPairs([
       { x: 1, y: 2 },
       { x: 2, y: 4 },
       { x: 3, y: 6 },
@@ -21,7 +21,7 @@ describe('SimpleLinearRegression', () => {
   });
 
   test('predicts correctly from three pairs', async () => {
-    const model = SLR.fromPairs([
+    const model = SimpleLinearRegression.fromPairs([
       { x: 1, y: 2 },
       { x: 2, y: 4 },
       { x: 3, y: 6 },
@@ -30,19 +30,19 @@ describe('SimpleLinearRegression', () => {
   });
 
   test('works the same way when constructed directly', async () => {
-    const model = SLR.fromPairs([
+    const model = SimpleLinearRegression.fromPairs([
       { x: 1, y: 2 },
       { x: 2, y: 4 },
       { x: 3, y: 6 },
     ]);
     const params = model.inspect();
-    const reconstructed = new SLR(params);
+    const reconstructed = new SimpleLinearRegression(params);
     expect(reconstructed.predict(10)).toEqual(20);
   });
 
   test('uncalculable result', async () => {
     expect(() =>
-      SLR.fromPairs([
+      SimpleLinearRegression.fromPairs([
         { x: 0, y: 0 },
         { x: 0, y: 0 },
       ])
@@ -52,7 +52,7 @@ describe('SimpleLinearRegression', () => {
   describe('validations', () => {
     test('Sum of x values is too big', async () => {
       expect(() =>
-        SLR.fromPairs([
+        SimpleLinearRegression.fromPairs([
           { x: Number.MAX_SAFE_INTEGER, y: 2 },
           { x: Number.MAX_SAFE_INTEGER, y: 4 },
         ])
@@ -61,7 +61,7 @@ describe('SimpleLinearRegression', () => {
 
     test('Sum of y values is too big', async () => {
       expect(() =>
-        SLR.fromPairs([
+        SimpleLinearRegression.fromPairs([
           { y: Number.MAX_SAFE_INTEGER, x: 2 },
           { y: Number.MAX_SAFE_INTEGER, x: 4 },
         ])
@@ -70,7 +70,7 @@ describe('SimpleLinearRegression', () => {
 
     test('Sum of x squared values is too big', async () => {
       expect(() =>
-        SLR.fromPairs([
+        SimpleLinearRegression.fromPairs([
           { x: Number.MAX_SAFE_INTEGER / 4, y: 2 },
           { x: Number.MAX_SAFE_INTEGER / 4, y: 4 },
         ])
@@ -78,11 +78,13 @@ describe('SimpleLinearRegression', () => {
     });
 
     test('At least two pairs needed - empty', async () => {
-      expect(() => SLR.fromPairs([])).toThrow('At least two pairs needed');
+      expect(() => SimpleLinearRegression.fromPairs([])).toThrow(
+        'At least two pairs needed'
+      );
     });
 
     test('At least two pairs needed - one pair', async () => {
-      expect(() => SLR.fromPairs([{ x: 1, y: 2 }])).toThrow(
+      expect(() => SimpleLinearRegression.fromPairs([{ x: 1, y: 2 }])).toThrow(
         'At least two pairs needed'
       );
     });

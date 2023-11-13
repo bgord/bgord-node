@@ -1,6 +1,6 @@
 import { RoundToNearest, RoundingStrategy } from './rounding';
 
-export class Sum {
+class Sum {
   static of(values: number[]): number {
     return values.reduce((sum, x) => sum + x, 0);
   }
@@ -12,7 +12,7 @@ export type SLRParamsType = { a: number; b: number };
 
 export type SLRPredictionType = number;
 
-export class SLR {
+export class SimpleLinearRegression {
   private readonly rounding: RoundingStrategy = new RoundToNearest();
 
   constructor(
@@ -63,7 +63,7 @@ export class SLR {
     const b = (sXY - (sX * sY) / n) / bDenominator;
     const a = (sY - b * sX) / n;
 
-    return new SLR({ a, b }, rounding);
+    return new SimpleLinearRegression({ a, b }, rounding);
   }
 
   predict(x: SLRPairType['x'], strategy?: RoundingStrategy): SLRPredictionType {
@@ -73,7 +73,7 @@ export class SLR {
     return rounding.round(prediction);
   }
 
-  inspect(): SLR['params'] {
+  inspect(): SimpleLinearRegression['params'] {
     return this.params;
   }
 }
