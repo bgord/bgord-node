@@ -8,6 +8,16 @@ import { Stopwatch } from './stopwatch';
 export type JobNameType = string;
 export type MultipleJobsType = Record<JobNameType, Cron>;
 
+export enum UTC_DAY_OF_THE_WEEK {
+  Monday = 1,
+  Tuesday = 2,
+  Wednesday = 3,
+  Thursday = 4,
+  Friday = 5,
+  Saturday = 6,
+  Sunday = 0,
+}
+
 export class Jobs {
   static SCHEDULES = { EVERY_MINUTE: '* * * * *', EVERY_HOUR: '0 * * * *' };
 
