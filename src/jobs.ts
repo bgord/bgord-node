@@ -9,7 +9,7 @@ export type JobNameType = string;
 export type MultipleJobsType = Record<JobNameType, Cron>;
 
 export class Jobs {
-  static SCHEDULES = { EVERY_MINUTE: '* * * * *' };
+  static SCHEDULES = { EVERY_MINUTE: '* * * * *', EVERY_HOUR: '0 * * * *' };
 
   static stopAll(jobs: MultipleJobsType) {
     Object.values(jobs).forEach(job => job.stop());
