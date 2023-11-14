@@ -40,4 +40,14 @@ export class Time {
       ms: value * 1000,
     };
   }
+
+  static Ms(value: number) {
+    return {
+      days: Approximation.float(value / 1000 / 60 / 60 / 24),
+      hours: Approximation.float(value / 1000 / 60 / 60),
+      minutes: Approximation.float(value / 1000 / 60),
+      seconds: Approximation.float(value / 1000),
+      value,
+    };
+  }
 }

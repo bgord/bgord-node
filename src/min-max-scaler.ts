@@ -1,3 +1,5 @@
+import { Approximation } from './approximation';
+
 type MinMaxScalerValueType = number;
 
 type MinMaxScalerConfigType = {
@@ -8,8 +10,6 @@ type MinMaxScalerConfigType = {
     upper: MinMaxScalerValueType;
   };
 };
-
-import { Approximation } from './approximation';
 
 export class MinMaxScaler {
   private readonly min: MinMaxScalerValueType;
