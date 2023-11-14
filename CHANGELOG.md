@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.235](https://github.com/bgord/bgord-node/compare/v0.58.234...v0.58.235) (2023-11-14)
+
+
+### Features
+
+* add Time.ms ([eebb94e](https://github.com/bgord/bgord-node/commit/eebb94e31ff47c9081bde9895be33018fe57b222))
+
 ### [0.58.234](https://github.com/bgord/bgord-node/compare/v0.58.233...v0.58.234) (2023-11-13)
 
 ### [0.58.233](https://github.com/bgord/bgord-node/compare/v0.58.232...v0.58.233) (2023-11-13)
