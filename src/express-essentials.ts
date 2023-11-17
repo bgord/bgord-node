@@ -14,6 +14,7 @@ import { TimeZoneOffset } from './time-zone-offset';
 import { ApiVersion } from './api-version';
 import { HCaptchaShield } from './hcaptcha-shield';
 import { Context } from './context';
+import { ETagExtractor, WeakETagExtractor } from './etag-extractor';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -79,5 +80,7 @@ export function addExpressEssentials(
   ServerTiming.applyTo(app);
   RequestId.applyTo(app);
   Context.applyTo(app);
+  WeakETagExtractor.applyTo(app);
+  ETagExtractor.applyTo(app);
   ResponseBodyInLocals.applyTo(app);
 }
