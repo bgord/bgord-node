@@ -6,7 +6,7 @@ import { Revision } from '../src/revision';
 
 describe('Revision class', () => {
   test('Revision constructor should create a valid Revision instance', () => {
-    const revisionValue = 123;
+    const revisionValue = 0;
     const revision = new Revision(revisionValue);
 
     expect(revision.value).toBe(revisionValue);

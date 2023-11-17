@@ -433,5 +433,5 @@ export type ReorderingType = z.infer<typeof Reordering>;
 export const Revision = z
   .number()
   .int()
-  .positive();
+  .min(0);
 export type RevisionType = z.infer<typeof Revision>;
