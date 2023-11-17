@@ -76,3 +76,17 @@ export class RequestTimeoutError extends Error {
     this.ms = config.ms;
   }
 }
+
+export class InvalidRevisionError extends Error {
+  constructor() {
+    super();
+    Object.setPrototypeOf(this, InvalidRevisionError.prototype);
+  }
+}
+
+export class RevisionMismatchError extends Error {
+  constructor() {
+    super();
+    Object.setPrototypeOf(this, RevisionMismatchError.prototype);
+  }
+}

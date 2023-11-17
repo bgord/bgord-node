@@ -429,3 +429,9 @@ export const Reordering = z.object({
   position: ReorderingItemPositionValue,
 });
 export type ReorderingType = z.infer<typeof Reordering>;
+
+export const Revision = z
+  .number()
+  .int()
+  .positive();
+export type RevisionType = z.infer<typeof Revision>;
