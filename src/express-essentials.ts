@@ -52,6 +52,7 @@ export function addExpressEssentials(
   app: express.Express,
   config?: ExpressEssentialsConfig
 ) {
+  app.set('etag', false);
   const helmetConfig = config?.helmet ?? DEFAULT_HELMET_CONFIG;
   app.use(helmet(helmetConfig));
   app.use(ApiVersion.attach);
