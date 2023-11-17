@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.238](https://github.com/bgord/bgord-node/compare/v0.58.237...v0.58.238) (2023-11-17)
+
+
+### Features
+
+* add etag vos ([b734bcb](https://github.com/bgord/bgord-node/commit/b734bcb6a41beeb9d22f402b81ea330c6f99009c))
+
 ### [0.58.237](https://github.com/bgord/bgord-node/compare/v0.58.236...v0.58.237) (2023-11-14)
 
 ### [0.58.236](https://github.com/bgord/bgord-node/compare/v0.58.235...v0.58.236) (2023-11-14)
