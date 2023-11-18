@@ -22,7 +22,7 @@ export class Revision {
     if (!this.matches(another)) throw new Errors.RevisionMismatchError();
   }
 
-  increment(): Revision {
+  next(): Revision {
     return new Revision(this.value + 1);
   }
 
