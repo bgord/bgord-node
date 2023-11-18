@@ -1,5 +1,8 @@
 export * as Errors from './errors';
 export * as Schema from './schema';
+export * from "./etag"
+export * from "./etag-extractor"
+export * from "./revision"
 export * from './api-key-shield';
 export * from './api-version';
 export * from './basic-auth-shield';
@@ -60,6 +63,7 @@ export * from './rounding';
 export * from './route';
 export * from './server-timing';
 export * from './session';
+export * from './simple-linear-regression';
 export * from './simulated-error';
 export * from './sitemap';
 export * from './size';
@@ -67,6 +71,7 @@ export * from './sleep';
 export * from './slower';
 export * from './sqlite';
 export * from './static-files';
+export * from './stepper';
 export * from './thousands-separator';
 export * from './time';
 export * from './time-zone-offset';
@@ -75,5 +80,3 @@ export * from './ts-utils';
 export * from './uploaded-file-location';
 export * from './uptime';
 export * from './uuid';
-export * from './simple-linear-regression';
-export * from './stepper';
