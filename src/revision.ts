@@ -6,6 +6,8 @@ import * as Errors from './errors';
 export class Revision {
   readonly value: Schema.RevisionType;
 
+  static initial: Schema.RevisionType = 0;
+
   constructor(value: unknown) {
     const result = Schema.Revision.safeParse(value);
 
