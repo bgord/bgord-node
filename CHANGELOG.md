@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.240](https://github.com/bgord/bgord-node/compare/v0.58.239...v0.58.240) (2023-11-18)
+
+
+### Bug Fixes
+
+* missing etag export ([be81643](https://github.com/bgord/bgord-node/commit/be816431ec4e12a7c56e379c4694cbe32302eb87))
+
 ### [0.58.239](https://github.com/bgord/bgord-node/compare/v0.58.238...v0.58.239) (2023-11-17)
 
 
