@@ -38,7 +38,7 @@ describe('Revision class', () => {
 
   test('Revision increment should create a new Revision with incremented value', () => {
     const revision = new Revision(123);
-    const incrementedRevision = revision.increment();
+    const incrementedRevision = revision.next();
 
     expect(incrementedRevision.value).toBe(revision.value + 1);
   });
@@ -61,7 +61,7 @@ describe('Revision class', () => {
     const weakEtag = WeakETag.fromHeader('W/123');
     const revision = Revision.fromWeakETag(weakEtag);
 
-    expect(revision.value).toBe(weakEtag.revision);
+    expect(revision.value).toBe(weakEtag?.revision);
   });
 
   test('Revision fromWeakETag should throw InvalidRevisionError for null WeakETag', () => {
