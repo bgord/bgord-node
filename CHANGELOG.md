@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.242](https://github.com/bgord/bgord-node/compare/v0.58.241...v0.58.242) (2023-11-26)
+
+
+### Bug Fixes
+
+* healthcheck ok attribute ([f96e74e](https://github.com/bgord/bgord-node/commit/f96e74e3c3031ce5e3c69207fe702a7763c0dae3))
+* revision tests ([8b7bb0f](https://github.com/bgord/bgord-node/commit/8b7bb0f5c7eba8bc93be79ba00eafb2a1d683cad))
+
 ### [0.58.241](https://github.com/bgord/bgord-node/compare/v0.58.240...v0.58.241) (2023-11-18)
 
 ### [0.58.240](https://github.com/bgord/bgord-node/compare/v0.58.239...v0.58.240) (2023-11-18)
