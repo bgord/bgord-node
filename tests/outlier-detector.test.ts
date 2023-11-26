@@ -5,13 +5,13 @@ import { OutlierDetector } from '../src/outlier-detector';
 describe('Outlier detector', () => {
   test('throws for empty values array', () => {
     expect(() => new OutlierDetector([], 2)).toThrow(
-      'Values should have at least two values'
+      'At least two values are needed'
     );
   });
 
   test('throws for two values array', () => {
     expect(() => new OutlierDetector([], 2)).toThrow(
-      'Values should have at least two values'
+      'At least two values are needed'
     );
   });
 

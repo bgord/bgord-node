@@ -7,7 +7,7 @@ export class OutlierDetector {
 
   constructor(values: number[], threshold: number) {
     if (values.length < 2) {
-      throw new Error('Values should have at least two values');
+      throw new Error('At least two values are needed');
     }
 
     this.zScore = new ZScore(values);

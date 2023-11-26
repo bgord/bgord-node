@@ -11,7 +11,7 @@ export class ZScore {
     private readonly rounding: RoundingStrategy = new RoundToDecimal(2)
   ) {
     if (values.length < 2) {
-      throw new Error('Values should have at least two values');
+      throw new Error('At least two values are needed');
     }
 
     this.mean = Mean.calculate(values);

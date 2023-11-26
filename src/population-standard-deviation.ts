@@ -8,7 +8,7 @@ export class PopulationStandardDeviation {
     rounding: RoundingStrategy = new RoundToDecimal(2)
   ): number {
     if (values.length < 2) {
-      throw new Error('Values should have at least two values');
+      throw new Error('At least two values are needed');
     }
 
     const mean = Mean.calculate(values);

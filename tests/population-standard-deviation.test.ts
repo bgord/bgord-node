@@ -4,13 +4,13 @@ import { PopulationStandardDeviation } from '../src/population-standard-deviatio
 describe('Standard Deviation Calculation', () => {
   test('throws an error for an empty set of values', () => {
     expect(() => PopulationStandardDeviation.calculate([])).toThrow(
-      'Values should have at least two values'
+      'At least two values are needed'
     );
   });
 
   test('throws an error for a single value', () => {
     expect(() => PopulationStandardDeviation.calculate([1])).toThrow(
-      'Values should have at least two values'
+      'At least two values are needed'
     );
   });
 

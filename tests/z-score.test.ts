@@ -5,15 +5,11 @@ import { ZScore } from '../src/z-score';
 
 describe('Z-score', () => {
   test('throws for empty values array', () => {
-    expect(() => new ZScore([])).toThrow(
-      'Values should have at least two values'
-    );
+    expect(() => new ZScore([])).toThrow('At least two values are needed');
   });
 
   test('throws for one value', () => {
-    expect(() => new ZScore([1])).toThrow(
-      'Values should have at least two values'
-    );
+    expect(() => new ZScore([1])).toThrow('At least two values are needed');
   });
 
   test('works for two values', () => {
