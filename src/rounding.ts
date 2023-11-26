@@ -19,3 +19,13 @@ export class RoundDown extends RoundingStrategy {
     return Math.floor(value);
   }
 }
+
+export class RoundToDecimal extends RoundingStrategy {
+  constructor(private readonly decimals: number) {
+    super();
+  }
+
+  round(value: number): number {
+    return parseFloat(value.toFixed(this.decimals));
+  }
+}
