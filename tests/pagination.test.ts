@@ -49,7 +49,7 @@ describe('Pagination', () => {
     expect(emptyPaged.meta.previousPage).toBe(undefined);
     expect(emptyPaged.meta.nextPage).toBe(undefined);
     expect(emptyPaged.meta.lastPage).toBe(1);
-    expect(emptyPaged.meta.total).toBe(1);
+    expect(emptyPaged.meta.total).toBe(0);
   });
 
   it('should get first page correctly', () => {
