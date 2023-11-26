@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.243](https://github.com/bgord/bgord-node/compare/v0.58.242...v0.58.243) (2023-11-26)
+
+
+### Features
+
+* add mean class ([52805f6](https://github.com/bgord/bgord-node/commit/52805f6b0851669703861b7465871df7c336292f))
+* add outlier detector ([c60cd8c](https://github.com/bgord/bgord-node/commit/c60cd8c30e8831c7b178b59d1659840d5314bd77))
+* add standard deviation ([6a64738](https://github.com/bgord/bgord-node/commit/6a64738fd91e546305aac42f5d5d406e5b00a61f))
+* add z-score ([8f2b7db](https://github.com/bgord/bgord-node/commit/8f2b7db8b191453ae01b6eb2bacd6e1b94768e03))
+
+
+### Bug Fixes
+
+* pagination tests ([8303d77](https://github.com/bgord/bgord-node/commit/8303d77d6c2d66e4b42494c24b2b5b7f2be26666))
+
 ### [0.58.242](https://github.com/bgord/bgord-node/compare/v0.58.241...v0.58.242) (2023-11-26)
 
 
