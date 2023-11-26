@@ -49,6 +49,7 @@ export * from './min-max-scaler';
 export * from './money';
 export * from './noop';
 export * from './open-graph';
+export * from './outlier-detector';
 export * from './package-version';
 export * from './pagination';
 export * from './policy';
