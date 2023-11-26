@@ -46,7 +46,7 @@ export class Healthcheck {
         ? PrerequisiteStatusEnum.success
         : PrerequisiteStatusEnum.failure;
 
-      const code = ok ? 200 : 424;
+      const code = ok === PrerequisiteStatusEnum.success ? 200 : 424;
 
       const result: HealthcheckResultType = {
         ok,
