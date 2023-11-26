@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 import * as Schema from './schema';
-import { Approximation } from './approximation';
+import { RoundToDecimal } from './rounding';
 
 export enum SizeUnit {
   b = 'b',
@@ -50,17 +50,19 @@ export class Size {
   }
 
   format(unit: SizeUnit): string {
+    const rounding = new RoundToDecimal(2);
+
     switch (unit) {
       case SizeUnit.kB:
-        const kbs = Approximation.float(this.bytes / Size.KB_MULTIPLIER);
+        const kbs = rounding.round(this.bytes / Size.KB_MULTIPLIER);
 
         return `${kbs} ${SizeUnit.kB}`;
       case SizeUnit.MB:
-        const mbs = Approximation.float(this.bytes / Size.MB_MULTIPLIER);
+        const mbs = rounding.round(this.bytes / Size.MB_MULTIPLIER);
 
         return `${mbs} ${SizeUnit.MB}`;
       case SizeUnit.GB:
-        const gbs = Approximation.float(this.bytes / Size.GB_MULTIPLIER);
+        const gbs = rounding.round(this.bytes / Size.GB_MULTIPLIER);
 
         return `${gbs} ${SizeUnit.GB}`;
       default:

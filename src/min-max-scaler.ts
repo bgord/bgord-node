@@ -1,4 +1,4 @@
-import { Approximation } from './approximation';
+import { RoundToDecimal, RoundingStrategy } from './rounding';
 
 type MinMaxScalerValueType = number;
 
@@ -9,6 +9,7 @@ type MinMaxScalerConfigType = {
     lower: MinMaxScalerValueType;
     upper: MinMaxScalerValueType;
   };
+  rounding?: RoundingStrategy;
 };
 
 export class MinMaxScaler {
@@ -17,7 +18,11 @@ export class MinMaxScaler {
   private readonly lower: MinMaxScalerValueType;
   private readonly upper: MinMaxScalerValueType;
 
+  private readonly rounding: RoundingStrategy;
+
   constructor(config: MinMaxScalerConfigType) {
+    const rounding = config.rounding ?? new RoundToDecimal(2);
+
     const lower = config.bound?.lower ?? 0;
     const upper = config.bound?.upper ?? 1;
 
@@ -28,6 +33,8 @@ export class MinMaxScaler {
     if (upper - lower <= 0) {
       throw new Error('Invalid MinMaxScaler bound config');
     }
+
+    this.rounding = rounding;
 
     this.min = config.min;
     this.max = config.max;
@@ -54,7 +61,7 @@ export class MinMaxScaler {
 
     return {
       original: value,
-      scaled: Approximation.float(result, 2),
+      scaled: this.rounding.round(result),
       isMin: value === min,
       isMax: value === max,
     };
@@ -70,7 +77,7 @@ export class MinMaxScaler {
     const result = ((scaled - lower) / (upper - lower)) * (max - min) + min;
 
     return {
-      original: Approximation.float(result, 2),
+      original: this.rounding.round(result),
       scaled,
       isLowerBound: scaled === lower,
       isUpperBound: scaled === upper,

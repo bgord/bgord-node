@@ -1,4 +1,6 @@
-import { Approximation } from './approximation';
+import { RoundToDecimal } from './rounding';
+
+const rounding = new RoundToDecimal(2);
 
 export class Time {
   static Days(value: number) {
@@ -13,7 +15,7 @@ export class Time {
 
   static Hours(value: number) {
     return {
-      days: Approximation.float(value / 24),
+      days: rounding.round(value / 24),
       value,
       minutes: value * 60,
       seconds: value * 60 * 60,
@@ -23,8 +25,8 @@ export class Time {
 
   static Minutes(value: number) {
     return {
-      days: Approximation.float(value / 60 / 24),
-      hours: Approximation.float(value / 60),
+      days: rounding.round(value / 60 / 24),
+      hours: rounding.round(value / 60),
       value,
       seconds: value * 60,
       ms: value * 60 * 1000,
@@ -33,9 +35,9 @@ export class Time {
 
   static Seconds(value: number) {
     return {
-      days: Approximation.float(value / 60 / 60 / 24),
-      hours: Approximation.float(value / 60 / 60),
-      minutes: Approximation.float(value / 60),
+      days: rounding.round(value / 60 / 60 / 24),
+      hours: rounding.round(value / 60 / 60),
+      minutes: rounding.round(value / 60),
       value,
       ms: value * 1000,
     };
@@ -43,10 +45,10 @@ export class Time {
 
   static Ms(value: number) {
     return {
-      days: Approximation.float(value / 1000 / 60 / 60 / 24),
-      hours: Approximation.float(value / 1000 / 60 / 60),
-      minutes: Approximation.float(value / 1000 / 60),
-      seconds: Approximation.float(value / 1000),
+      days: rounding.round(value / 1000 / 60 / 60 / 24),
+      hours: rounding.round(value / 1000 / 60 / 60),
+      minutes: rounding.round(value / 1000 / 60),
+      seconds: rounding.round(value / 1000),
       value,
     };
   }
