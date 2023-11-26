@@ -1,10 +1,5 @@
 import { RoundToNearest, RoundingStrategy } from './rounding';
-
-class Sum {
-  static of(values: number[]): number {
-    return values.reduce((sum, x) => sum + x, 0);
-  }
-}
+import { Sum } from './sum';
 
 export type SLRPairType = { x: number; y: number };
 
