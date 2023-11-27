@@ -9,7 +9,9 @@ export type ImageResizerConfigType = {
 };
 
 export class ImageResizer {
-  static async resizeToWidth(config: ImageResizerConfigType) {
+  static async resizeToWidth(
+    config: ImageResizerConfigType
+  ): Promise<sharp.OutputInfo> {
     return sharp(config.input)
       .resize({ width: config.width })
       .toFile(config.output);

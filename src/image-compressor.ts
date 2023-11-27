@@ -9,7 +9,9 @@ export type ImageCompressorConfigType = {
 };
 
 export class ImageCompressor {
-  static async compress(config: ImageCompressorConfigType) {
+  static async compress(
+    config: ImageCompressorConfigType
+  ): Promise<sharp.OutputInfo> {
     const quality = config.quality ?? 85;
 
     const image = sharp(config.input);

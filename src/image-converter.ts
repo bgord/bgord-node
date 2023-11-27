@@ -11,7 +11,9 @@ export type ImageConverterConfigType = {
 };
 
 export class ImageConverter {
-  static async convert(config: ImageConverterConfigType) {
+  static async convert(
+    config: ImageConverterConfigType
+  ): Promise<sharp.OutputInfo> {
     return sharp(config.input)
       .toFormat(config.format)
       .toFile(config.output);

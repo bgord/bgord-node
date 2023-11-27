@@ -32,7 +32,9 @@ export class ImageEXIF {
     };
   }
 
-  static async clear(config: ImageExifClearConfigType) {
+  static async clear(
+    config: ImageExifClearConfigType
+  ): Promise<sharp.OutputInfo> {
     return sharp(config.input)
       .rotate()
       .toFile(config.output);
