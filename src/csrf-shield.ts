@@ -41,16 +41,11 @@ export class CsrfShield {
       const field = UUID.parse(request.session?._csrf);
       const match = UUID.parse(request.body?.[CsrfShield.field]);
 
-      if (field === match) {
-        return next();
-      }
-      throw new AccessDeniedError({
-        reason: AccessDeniedErrorReasonType.csrf,
-      });
+      if (field === match) return next();
+
+      throw new AccessDeniedError({ reason: AccessDeniedErrorReasonType.csrf });
     } catch (error) {
-      throw new AccessDeniedError({
-        reason: AccessDeniedErrorReasonType.csrf,
-      });
+      throw new AccessDeniedError({ reason: AccessDeniedErrorReasonType.csrf });
     }
   }
 
