@@ -72,7 +72,6 @@ export * from './sitemap';
 export * from './size';
 export * from './sleep';
 export * from './slower';
-export * from './sqlite';
 export * from './static-files';
 export * from './stepper';
 export * from './thousands-separator';
