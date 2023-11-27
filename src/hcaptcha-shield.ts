@@ -1,5 +1,5 @@
 import express from 'express';
-import { verify as hcaptchaVerify } from 'hcaptcha';
+import hcaptcha from 'hcaptcha';
 import { z } from 'zod';
 
 import { HCaptchaSecretKey } from './schema';
@@ -34,7 +34,7 @@ export class HCaptchaShield {
     next: express.NextFunction
   ) {
     try {
-      const result = await hcaptchaVerify(
+      const result = await hcaptcha.verify(
         this.secretKey,
         this.mode === 'production'
           ? request.body['h-captcha-response']
