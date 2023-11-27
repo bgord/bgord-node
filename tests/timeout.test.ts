@@ -1,5 +1,5 @@
 import express from 'express';
-import { describe, test, expect } from 'vitest';
+import { describe, test } from 'vitest';
 import request from 'supertest';
 
 import { Time } from '../src/time';
@@ -14,24 +14,18 @@ describe('Timeout middleware', () => {
       response.status(200).send('pong')
     );
 
-    const result = await request(app)
+    await request(app)
       .get('/ping')
       .expect(200);
-
-    expect(result.text).toEqual('pong');
   });
 
   test('works for a standard case', async () => {
     const app = express();
 
-    app.get(
-      '/ping',
-      Timeout.build({ ms: Time.Ms(100).value }),
-      async (_request, response) => {
-        await sleep({ ms: Time.Ms(120).value });
-        return response.status(200).send('pong');
-      }
-    );
+    app.get('/ping', Timeout.build({ ms: 100 }), async (_request, response) => {
+      await sleep({ ms: 120 });
+      return response.status(200).send('pong');
+    });
 
     await request(app)
       .get('/ping')

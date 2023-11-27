@@ -7,7 +7,9 @@ describe('SimulatedError middleware', () => {
   test('throws an error', async () => {
     const app = express();
 
-    app.get('/ping', SimulatedError.throw, (_request, _response) => {});
+    app.get('/ping', SimulatedError.throw, (_request, _response) =>
+      expect.unreachable()
+    );
 
     const result = await request(app)
       .get('/ping')
@@ -23,7 +25,7 @@ describe('SimulatedError middleware', () => {
       '/ping',
       (_request, _response, next) => next(),
       SimulatedError.throw,
-      (_request, _response) => {}
+      (_request, _response) => expect.unreachable()
     );
 
     const result = await request(app)
