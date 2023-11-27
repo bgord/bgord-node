@@ -16,6 +16,12 @@ export class ETagExtractor {
     app.use(async (request, _response, next) => {
       try {
         const header = String(request.headers[ETag.IF_MATCH_HEADER_NAME]);
+
+        if (!header || header === 'undefined') {
+          request.ETag = null;
+          return next();
+        }
+
         const etag = ETag.fromHeader(header);
         request.ETag = etag;
       } catch (error) {
@@ -32,6 +38,12 @@ export class WeakETagExtractor {
     app.use(async (request, _response, next) => {
       try {
         const header = String(request.headers[WeakETag.IF_MATCH_HEADER_NAME]);
+
+        if (!header || header === 'undefined') {
+          request.WeakETag = null;
+          return next();
+        }
+
         const weakEtag = WeakETag.fromHeader(header);
         request.WeakETag = weakEtag;
       } catch (error) {

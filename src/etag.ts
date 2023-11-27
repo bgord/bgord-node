@@ -17,6 +17,8 @@ export class ETag {
     if (value?.startsWith('W/')) return null;
 
     const candidate = Number(value);
+
+    if (Number.isNaN(candidate)) return null;
     return new ETag(candidate);
   }
 }
@@ -38,6 +40,8 @@ export class WeakETag {
     if (!value?.startsWith('W/')) throw Error('Invalid WeakETag');
 
     const candidate = Number(value.split('W/')[1]);
+
+    if (Number.isNaN(candidate)) return null;
     return new WeakETag(candidate);
   }
 }
