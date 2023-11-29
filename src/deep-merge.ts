@@ -1,9 +1,11 @@
 import mergeWith from 'lodash/mergeWith';
 import isArray from 'lodash/isArray';
 
+type NonArrayObject = { [key: string]: any } & { length?: never };
+
 export function deepMerge(
-  a: Object | undefined,
-  b: Object | undefined
+  a: NonArrayObject | undefined,
+  b: NonArrayObject | undefined
 ): Object {
   return mergeWith(
     {},
