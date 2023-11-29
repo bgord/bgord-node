@@ -26,6 +26,12 @@ describe('Mean', () => {
     expect(result).toEqual(3.33);
   });
 
+  test('works for all zeros', () => {
+    const result = Mean.calculate([0, 0, 0]);
+
+    expect(result).toEqual(0);
+  });
+
   test('works with non-default rounding', () => {
     const rounding = new RoundToNearest();
     const result = Mean.calculate([1, 3, 6], rounding);

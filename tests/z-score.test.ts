@@ -38,4 +38,11 @@ describe('Z-score', () => {
 
     expect(result).toEqual(-1);
   });
+
+  test('works for all zeros', () => {
+    const rounding = new RoundToNearest();
+    const result = new ZScore([0, 0, 0], rounding).calculate(1);
+
+    expect(result).toEqual(Infinity);
+  });
 });

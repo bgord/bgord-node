@@ -32,4 +32,13 @@ describe('Outlier detector', () => {
 
     expect(result).toEqual([1, 3, 1, 3, 1, 3]);
   });
+
+  test('works for all zeros', () => {
+    const values = [0, 0, 0, 0];
+
+    const outlierDetector = new OutlierDetector(values, 2);
+    const result = values.filter(value => outlierDetector.check(value));
+
+    expect(result).toEqual([]);
+  });
 });

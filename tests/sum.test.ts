@@ -17,4 +17,9 @@ describe('Sum', () => {
     const result = Sum.of([1, 3, 6]);
     expect(result).toEqual(10);
   });
+
+  test('works for all zeros', () => {
+    const result = Sum.of([0, 0, 0]);
+    expect(result).toEqual(0);
+  });
 });

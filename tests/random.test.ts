@@ -27,6 +27,12 @@ describe('Random', () => {
         'Minimum value cannot be greater than maximum value'
       );
     });
+
+    test('all zeros', () => {
+      expect(() => Random.generate({ min: 0, max: 0 })).toThrow(
+        'Minimum and maximum values cannot be equal'
+      );
+    });
   });
 
   describe('generate', () => {

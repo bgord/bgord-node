@@ -40,6 +40,27 @@ describe('SimpleLinearRegression', () => {
     expect(reconstructed.predict(10)).toEqual(20);
   });
 
+  test('works for all zeros in y', async () => {
+    const model = SimpleLinearRegression.fromPairs([
+      { x: 0, y: 0 },
+      { x: 1, y: 0 },
+      { x: 2, y: 0 },
+    ]);
+    const params = model.inspect();
+    const reconstructed = new SimpleLinearRegression(params);
+    expect(reconstructed.predict(10)).toEqual(0);
+  });
+
+  test('works for all zeros', async () => {
+    expect(() =>
+      SimpleLinearRegression.fromPairs([
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+      ])
+    ).toThrow('Unable to create the model');
+  });
+
   test('uncalculable result', async () => {
     expect(() =>
       SimpleLinearRegression.fromPairs([
