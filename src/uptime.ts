@@ -1,21 +1,19 @@
-import formatDuration from 'date-fns/formatDuration';
-
+import { DateFormatters } from './dates';
+import { RoundToNearest } from './rounding';
 import { Time } from './time';
 import { TimestampType } from './schema';
 
 export type UptimeResultType = {
   seconds: TimestampType;
-  formatted: ReturnType<typeof formatDuration>;
+  formatted: ReturnType<typeof DateFormatters['relative']>;
 };
 
 export class Uptime {
   static get(): UptimeResultType {
-    const uptimeSeconds = Math.floor(process.uptime());
-    const uptimeFormatted = formatDuration(Time.Seconds(uptimeSeconds));
+    const rounding = new RoundToNearest();
+    const uptime = Time.Seconds(rounding.round(process.uptime()));
+    const uptimeFormatted = DateFormatters.relative(Date.now() - uptime.ms);
 
-    return {
-      seconds: uptimeSeconds,
-      formatted: uptimeFormatted,
-    };
+    return { seconds: uptime.value, formatted: uptimeFormatted };
   }
 }
