@@ -85,7 +85,7 @@
     "passport-local": "1.0.0",
     "pluralize": "8.0.0",
     "session-file-store": "1.5.0",
-    "sharp": "0.32.6",
+    "sharp": "0.33.0",
     "ssl-checker": "2.0.8",
     "winston": "3.11.0",
     "zod": "3.22.4"
