@@ -7,20 +7,17 @@ import {
 } from './prerequisites';
 import { Stopwatch, StopwatchResultType } from './stopwatch';
 import { Uptime, UptimeResultType } from './uptime';
-import {
-  MemoryConsumption,
-  MemoryConsumptionResultType,
-} from './memory-consumption';
+import { MemoryConsumption } from './memory-consumption';
 import { Middleware } from './middleware';
-import { SizeUnit } from './size';
+import { Size, SizeUnit } from './size';
 
 type HealthcheckResultType = {
   ok: PrerequisiteStatusEnum;
   details: { label: PrerequisiteLabelType; status: PrerequisiteStatusEnum }[];
   uptime: UptimeResultType;
   memory: {
-    bytes: ReturnType<MemoryConsumptionResultType['toBytes']>;
-    formatted: ReturnType<MemoryConsumptionResultType['toString']>;
+    bytes: Size['bytes'];
+    formatted: ReturnType<Size['format']>;
   };
 } & StopwatchResultType;
 
