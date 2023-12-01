@@ -5,9 +5,7 @@ import { SizeUnit } from '../src/size';
 
 describe('MemoryConsumption class', () => {
   test('get method returns memory consumption size', () => {
-    const spy = vi.spyOn(process, 'memoryUsage');
-
-    spy.mockImplementationOnce(() => ({
+    const spy = vi.spyOn(process, 'memoryUsage').mockImplementationOnce(() => ({
       ...process.memoryUsage(),
       rss: 123123123,
     }));

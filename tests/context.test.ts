@@ -24,7 +24,6 @@ describe('Context class', () => {
   test('applyTo method adds context to the request', async () => {
     const app = express();
 
-    // Mock request
     const mockRequestId = 'mock-request-id';
     const mockTimeZoneOffset = {
       minutes: 60,
