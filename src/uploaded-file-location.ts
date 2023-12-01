@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import * as fs from 'node:fs/promises';
+import fs from 'node:fs/promises';
 
 import * as Schema from './schema';
 import { FileLocation, FileLocationConfigType } from './file-location';
