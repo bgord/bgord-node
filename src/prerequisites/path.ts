@@ -1,5 +1,5 @@
 import { constants } from 'fs';
-import fs from 'fs/promises';
+import fsp from 'fs/promises';
 
 import {
   PrerequisiteLabelType,
@@ -27,7 +27,7 @@ export class PrerequisitePathVerificator {
       (execute ? constants.X_OK : 0);
 
     try {
-      await fs.access(config.path, flags);
+      await fsp.access(config.path, flags);
 
       return PrerequisiteStatusEnum.success;
     } catch (error) {
