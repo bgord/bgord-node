@@ -12,7 +12,7 @@ describe('PrerequisiteOutsideConnectivityVerificator class', () => {
   test('verify method returns success for successful outside connectivity', async () => {
     const spy = vi
       .spyOn(global, 'fetch')
-      .mockImplementationOnce(async () => ({ ok: true } as any));
+      .mockResolvedValue({ ok: true } as any);
 
     const config: PrerequisiteOutsideConnectivityStrategyConfigType = {
       label: 'Outside Connectivity Success',
@@ -30,7 +30,7 @@ describe('PrerequisiteOutsideConnectivityVerificator class', () => {
   test('verify method returns failure for unsuccessful outside connectivity', async () => {
     const spy = vi
       .spyOn(global, 'fetch')
-      .mockImplementationOnce(async () => ({ ok: false } as any));
+      .mockResolvedValue({ ok: false } as any);
 
     const config: PrerequisiteOutsideConnectivityStrategyConfigType = {
       label: 'Outside Connectivity Success',

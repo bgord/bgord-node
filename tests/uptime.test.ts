@@ -3,7 +3,7 @@ import { Uptime } from '../src/uptime';
 
 describe('Uptime class', () => {
   test('get method returns uptime in seconds and formatted duration', () => {
-    const spy = vi.spyOn(process, 'uptime').mockImplementationOnce(() => 12345);
+    const spy = vi.spyOn(process, 'uptime').mockReturnValue(12345);
 
     const result = Uptime.get();
 

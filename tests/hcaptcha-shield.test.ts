@@ -12,7 +12,7 @@ describe('HCaptchaShield middleware', () => {
   test('verifies hCaptcha successfully', async () => {
     const spy = vi
       .spyOn(hcaptcha, 'verify')
-      .mockImplementationOnce(async () => ({ success: true }));
+      .mockResolvedValue({ success: true });
 
     const app = express();
     app.use(express.json());
@@ -40,7 +40,7 @@ describe('HCaptchaShield middleware', () => {
   test('handles hCaptcha verification failure', async () => {
     const spy = vi
       .spyOn(hcaptcha, 'verify')
-      .mockImplementationOnce(async () => ({ success: false }));
+      .mockResolvedValue({ success: false });
 
     const app = express();
     app.use(express.json());

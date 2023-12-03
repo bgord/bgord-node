@@ -14,7 +14,7 @@ describe('PrerequisiteBinaryVerificator class', () => {
   test('verify method returns success for existing binary', async () => {
     const spy = vi
       .spyOn(execa, 'command')
-      .mockImplementationOnce(() => ({ exitCode: 0 } as any));
+      .mockResolvedValue({ exitCode: 0 } as any);
 
     const config: PrerequisiteBinaryStrategyConfigType = {
       label: 'Existing Binary',
@@ -31,7 +31,7 @@ describe('PrerequisiteBinaryVerificator class', () => {
   test('verify method returns failure for non-existing binary', async () => {
     const spy = vi
       .spyOn(execa, 'command')
-      .mockImplementationOnce(() => ({ exitCode: 1 } as any));
+      .mockResolvedValue({ exitCode: 1 } as any);
 
     const config: PrerequisiteBinaryStrategyConfigType = {
       label: 'Non-Existing Binary',

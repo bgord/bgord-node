@@ -24,7 +24,7 @@ describe('Mailer class', () => {
 
     const spy = vi
       .spyOn(nodemailer, 'createTransport')
-      .mockImplementation(() => ({ sendMail } as any));
+      .mockReturnValue({ sendMail } as any);
 
     const mailer = new Mailer({
       SMTP_HOST: 'smtp.example.com',
@@ -43,7 +43,6 @@ describe('Mailer class', () => {
     await mailer.send(sendOptions);
 
     expect(sendMail).toHaveBeenCalledWith(sendOptions);
-
     spy.mockRestore();
   });
 
@@ -64,7 +63,6 @@ describe('Mailer class', () => {
     await mailer.verify();
 
     expect(verify).toHaveBeenCalled();
-
     spy.mockRestore();
   });
 });

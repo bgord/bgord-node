@@ -7,9 +7,7 @@ import { File } from '../src/file';
 describe('File class', () => {
   test('getSizeInBytes method returns size of the file in bytes', async () => {
     const filePath = Schema.Path.parse('test-file.txt');
-    const spy = vi
-      .spyOn(fs, 'stat')
-      .mockImplementationOnce(() => ({ size: 1024 } as any));
+    const spy = vi.spyOn(fs, 'stat').mockResolvedValue({ size: 1024 } as any);
 
     const result = await File.getSizeInBytes(filePath);
 

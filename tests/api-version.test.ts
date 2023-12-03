@@ -8,12 +8,10 @@ import { BuildInfoRepository } from '../src/build-info-repository';
 
 describe('ApiVersion middleware', () => {
   test('sets API version in header with known build version', async () => {
-    const spy = vi
-      .spyOn(BuildInfoRepository, 'extract')
-      .mockImplementationOnce(async () => ({
-        BUILD_DATE: 123,
-        BUILD_VERSION: Schema.BuildVersion.parse('1.0.0'),
-      }));
+    const spy = vi.spyOn(BuildInfoRepository, 'extract').mockResolvedValue({
+      BUILD_DATE: 123,
+      BUILD_VERSION: Schema.BuildVersion.parse('1.0.0'),
+    });
 
     const app = express();
 
@@ -27,17 +25,14 @@ describe('ApiVersion middleware', () => {
 
     expect(spy).toBeCalledTimes(1);
     expect(result.header[ApiVersion.HEADER_NAME]).toBe('1.0.0');
-
     spy.mockRestore();
   });
 
   test('sets default API version in header with unknown build version', async () => {
-    const spy = vi
-      .spyOn(BuildInfoRepository, 'extract')
-      .mockImplementationOnce(async () => ({
-        BUILD_DATE: 123,
-        BUILD_VERSION: Schema.BuildVersion.parse('unknown'),
-      }));
+    const spy = vi.spyOn(BuildInfoRepository, 'extract').mockResolvedValue({
+      BUILD_DATE: 123,
+      BUILD_VERSION: Schema.BuildVersion.parse('unknown'),
+    });
 
     const app = express();
 
@@ -52,7 +47,6 @@ describe('ApiVersion middleware', () => {
     expect(result.header[ApiVersion.HEADER_NAME]).toBe(
       ApiVersion.DEFAULT_API_VERSION
     );
-
     spy.mockRestore();
   });
 });
