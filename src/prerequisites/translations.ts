@@ -1,4 +1,4 @@
-import fs from 'fs/promises';
+import fsp from 'fs/promises';
 import { constants } from 'fs';
 
 import * as Schema from '../schema';
@@ -30,10 +30,10 @@ export class PrerequisiteTranslationsVerificator {
       config.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
 
     try {
-      await fs.access(translationsPath, constants.R_OK);
+      await fsp.access(translationsPath, constants.R_OK);
 
       for (const language in config.supportedLanguages) {
-        await fs.access(
+        await fsp.access(
           I18n.getTranslationPathForLanguage(language),
           constants.R_OK
         );
