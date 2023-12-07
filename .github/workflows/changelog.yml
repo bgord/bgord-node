@@ -28,5 +28,5 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           branch: master
-          commit_message: "docs: generate CHANGELOG"
+          commit_message: "docs: generate CHANGELOG [skip ci]"
           file_pattern: CHANGELOG.md
