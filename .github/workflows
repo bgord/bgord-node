@@ -1,0 +1,32 @@
+name: Changelog
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-20.04
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Generate a changelog
+        run: bgord-scripts/changelog-generate.sh
+
+      - name: Print changelog
+        run: cat CHANGELOG.md
+
+      - name: Commit CHANGELOG.md
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          branch: master
+          commit_message: "docs: generate CHANGELOG"
+          file_pattern: CHANGELOG.md
