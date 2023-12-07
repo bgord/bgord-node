@@ -53,7 +53,24 @@ describe('PrerequisiteBinaryVerificator class', () => {
     const config: PrerequisiteBinaryStrategyConfigType = {
       label: 'Binary Check Error',
       strategy: PrerequisiteStrategyEnum.binary,
-      binary: 'node', // Adjust the binary name based on your needs
+      binary: 'node',
+    };
+
+    const result = await PrerequisiteBinaryVerificator.verify(config);
+
+    expect(result).toBe(PrerequisiteStatusEnum.failure);
+    spy.mockRestore();
+  });
+
+  test('verify method returns failure on binary with whitespace', async () => {
+    const spy = vi
+      .spyOn(execa, 'command')
+      .mockResolvedValue({ exitCode: 0 } as any);
+
+    const config: PrerequisiteBinaryStrategyConfigType = {
+      label: 'Binary validation error',
+      strategy: PrerequisiteStrategyEnum.binary,
+      binary: 'node and something',
     };
 
     const result = await PrerequisiteBinaryVerificator.verify(config);

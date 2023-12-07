@@ -1,3 +1,4 @@
+import z from 'zod';
 import execa from 'execa';
 
 import {
@@ -6,7 +7,13 @@ import {
   PrerequisiteStatusEnum,
 } from '../prerequisites';
 
-type PrerequisiteBinaryType = string;
+const PrerequisiteBinary = z
+  .string()
+  .min(1)
+  .max(64)
+  .refine(value => !value.includes(' '));
+
+type PrerequisiteBinaryType = z.infer<typeof PrerequisiteBinary>;
 
 export type PrerequisiteBinaryStrategyConfigType = {
   label: PrerequisiteLabelType;
@@ -19,7 +26,9 @@ export class PrerequisiteBinaryVerificator {
     config: PrerequisiteBinaryStrategyConfigType
   ): Promise<PrerequisiteStatusEnum> {
     try {
-      const result = await execa.command(`which ${config.binary}`);
+      const binary = PrerequisiteBinary.parse(config.binary);
+
+      const result = await execa.command(`which ${binary}`);
 
       return result.exitCode === 0
         ? PrerequisiteStatusEnum.success
