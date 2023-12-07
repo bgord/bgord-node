@@ -1,10 +1,12 @@
 # Changelog
+- 2023-12-07 15:51 ebfa38e **feature: add version to healthcheck**
 - 2023-12-07 14:23 cc9f33c **feature: add skipping ci flag to changelog commit**
 - 2023-12-07 14:18 44876b5 **Merge branch 'master' of github.com:bgord/bgord-node**
 - 2023-12-07 14:18 21c768a **step: add prerequisite binary validation**
 - 2023-12-07 14:05 90594d8 **Merge pull request #43 from bgord/dependabot/npm_and_yarn/vitest-1.0.2**
 - 2023-12-07 14:04 7874db2 **Merge pull request #42 from bgord/dependabot/npm_and_yarn/typescript-5.3.3**
 - 2023-12-07 14:03 42a6b2b **Merge pull request #40 from bgord/dependabot/npm_and_yarn/vite-5.0.5**
+- 2023-12-07 13:23 87009c6 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-07 13:05 ce95f6e **docs: generate CHANGELOG**
 - 2023-12-07 13:04 dc12575 **chore(deps-dev): bump vitest from 0.34.6 to 1.0.2**
 - 2023-12-07 13:04 9aefb7d **docs: generate CHANGELOG**
