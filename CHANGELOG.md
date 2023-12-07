@@ -1,6 +1,9 @@
 # Changelog
+- 2023-12-07 14:05 90594d8 **Merge pull request #43 from bgord/dependabot/npm_and_yarn/vitest-1.0.2**
 - 2023-12-07 14:04 7874db2 **Merge pull request #42 from bgord/dependabot/npm_and_yarn/typescript-5.3.3**
 - 2023-12-07 14:03 42a6b2b **Merge pull request #40 from bgord/dependabot/npm_and_yarn/vite-5.0.5**
+- 2023-12-07 13:04 dc12575 **chore(deps-dev): bump vitest from 0.34.6 to 1.0.2**
+- 2023-12-07 13:04 9aefb7d **docs: generate CHANGELOG**
 - 2023-12-07 11:05 b81cb92 **step: add changelog workflow**
 - 2023-12-07 11:03 36ee0f0 **step: add changelog workflow**
 - 2023-12-07 11:02 a7d7185 **step: bump bgord/scripts**
