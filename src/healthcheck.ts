@@ -1,10 +1,12 @@
 import express from 'express';
 
+import * as Schema from './schema';
 import {
   Prerequisite,
   PrerequisiteStatusEnum,
   PrerequisiteLabelType,
 } from './prerequisites';
+import { BuildInfoRepository } from './build-info-repository';
 import { Stopwatch, StopwatchResultType } from './stopwatch';
 import { Uptime, UptimeResultType } from './uptime';
 import { MemoryConsumption } from './memory-consumption';
@@ -13,6 +15,7 @@ import { Size, SizeUnit } from './size';
 
 type HealthcheckResultType = {
   ok: PrerequisiteStatusEnum;
+  version: Schema.BuildVersionType;
   details: { label: PrerequisiteLabelType; status: PrerequisiteStatusEnum }[];
   uptime: UptimeResultType;
   memory: {
@@ -29,6 +32,8 @@ export class Healthcheck {
       _next: express.NextFunction
     ) {
       const stopwatch = new Stopwatch();
+
+      const build = await BuildInfoRepository.extract();
 
       const details = [];
 
@@ -48,6 +53,7 @@ export class Healthcheck {
       const result: HealthcheckResultType = {
         ok,
         details,
+        version: build.BUILD_VERSION ?? Schema.BuildVersion.parse('unknown'),
         uptime: Uptime.get(),
         memory: {
           bytes: MemoryConsumption.get().toBytes(),
