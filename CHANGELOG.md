@@ -1,7 +1,12 @@
 # Changelog
+- 2023-12-07 14:04 7874db2 **Merge pull request #42 from bgord/dependabot/npm_and_yarn/typescript-5.3.3**
+- 2023-12-07 14:03 42a6b2b **Merge pull request #40 from bgord/dependabot/npm_and_yarn/vite-5.0.5**
 - 2023-12-07 11:05 b81cb92 **step: add changelog workflow**
 - 2023-12-07 11:03 36ee0f0 **step: add changelog workflow**
 - 2023-12-07 11:02 a7d7185 **step: bump bgord/scripts**
+- 2023-12-07 10:05 b9398f0 **docs: generate CHANGELOG**
+- 2023-12-07 03:03 9e3efe8 **chore(deps-dev): bump typescript from 5.3.2 to 5.3.3**
+- 2023-12-06 00:03 1474d4e **chore(deps): bump vite from 4.5.0 to 5.0.5**
 - 2023-12-03 12:31 30125b6 **step: add csrf-shield tests**
 - 2023-12-03 12:15 8e23601 **step: add prereq translations tests**
 - 2023-12-03 12:03 b63658e **step: add prereq prisma tests**
