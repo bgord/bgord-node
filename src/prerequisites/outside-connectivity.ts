@@ -2,17 +2,23 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteOutsideConnectivityStrategyConfigType = {
+export type PrerequisiteOutsideConnectivityConfigType = {
   label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.outsideConnectivity;
 };
 
-export class PrerequisiteOutsideConnectivityVerificator {
-  static async verify(
-    _config: PrerequisiteOutsideConnectivityStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteOutsideConnectivity extends AbstractPrerequisite<
+  PrerequisiteOutsideConnectivityConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.outsideConnectivity;
+
+  constructor(readonly config: PrerequisiteOutsideConnectivityConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     try {
       const result = await fetch('https://google.com');
 

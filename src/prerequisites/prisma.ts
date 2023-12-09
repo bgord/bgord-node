@@ -4,20 +4,26 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisitePrismaStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.prisma;
+export type PrerequisitePrismaConfigType = {
   client: PrismaClient;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisitePrismaVerificator {
-  static async verify(
-    config: PrerequisitePrismaStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisitePrisma extends AbstractPrerequisite<
+  PrerequisitePrismaConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.prisma;
+
+  constructor(readonly config: PrerequisitePrismaConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     try {
-      const result = await config.client.$queryRaw`
+      const result = await this.config.client.$queryRaw`
         SELECT name
         FROM sqlite_master
         WHERE type='table'

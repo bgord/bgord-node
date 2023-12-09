@@ -1,27 +1,16 @@
 import { describe, test, expect, vi } from 'vitest';
-import {
-  PrerequisiteStatusEnum,
-  PrerequisiteStrategyEnum,
-} from '../src/prerequisites';
-import {
-  PrerequisiteOutsideConnectivityStrategyConfigType,
-  PrerequisiteOutsideConnectivityVerificator,
-} from '../src/prerequisites/outside-connectivity';
+import { PrerequisiteStatusEnum } from '../src/prerequisites';
+import { PrerequisiteOutsideConnectivity } from '../src/prerequisites/outside-connectivity';
 
-describe('PrerequisiteOutsideConnectivityVerificator class', () => {
+describe('PrerequisiteOutsideConnectivity class', () => {
   test('verify method returns success for successful outside connectivity', async () => {
     const spy = vi
       .spyOn(global, 'fetch')
       .mockResolvedValue({ ok: true } as any);
 
-    const config: PrerequisiteOutsideConnectivityStrategyConfigType = {
-      label: 'Outside Connectivity Success',
-      strategy: PrerequisiteStrategyEnum.outsideConnectivity,
-    };
-
-    const result = await PrerequisiteOutsideConnectivityVerificator.verify(
-      config
-    );
+    const result = await new PrerequisiteOutsideConnectivity({
+      label: 'outside-connectivity',
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.success);
     spy.mockRestore();
@@ -32,14 +21,9 @@ describe('PrerequisiteOutsideConnectivityVerificator class', () => {
       .spyOn(global, 'fetch')
       .mockResolvedValue({ ok: false } as any);
 
-    const config: PrerequisiteOutsideConnectivityStrategyConfigType = {
-      label: 'Outside Connectivity Success',
-      strategy: PrerequisiteStrategyEnum.outsideConnectivity,
-    };
-
-    const result = await PrerequisiteOutsideConnectivityVerificator.verify(
-      config
-    );
+    const result = await new PrerequisiteOutsideConnectivity({
+      label: 'outside-Connectivity',
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
     spy.mockRestore();
@@ -50,14 +34,9 @@ describe('PrerequisiteOutsideConnectivityVerificator class', () => {
       .spyOn(global, 'fetch')
       .mockRejectedValue(new Error('Network error'));
 
-    const config: PrerequisiteOutsideConnectivityStrategyConfigType = {
-      label: 'Outside Connectivity Error',
-      strategy: PrerequisiteStrategyEnum.outsideConnectivity,
-    };
-
-    const result = await PrerequisiteOutsideConnectivityVerificator.verify(
-      config
-    );
+    const result = await new PrerequisiteOutsideConnectivity({
+      label: 'outside-connectivity',
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
 

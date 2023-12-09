@@ -2,17 +2,23 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteSelfStrategyConfigType = {
+export type PrerequisiteSelfConfigType = {
   label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.self;
 };
 
-export class PrerequisiteSelfVerificator {
-  static async verify(
-    _config: PrerequisiteSelfStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteSelf extends AbstractPrerequisite<
+  PrerequisiteSelfConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.self;
+
+  constructor(readonly config: PrerequisiteSelfConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     return PrerequisiteStatusEnum.success;
   }
 }

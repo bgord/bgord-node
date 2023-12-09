@@ -2,7 +2,8 @@ import express from 'express';
 
 import * as Schema from './schema';
 import {
-  Prerequisite,
+  AbstractPrerequisite,
+  BasePrerequisiteConfig,
   PrerequisiteStatusEnum,
   PrerequisiteLabelType,
 } from './prerequisites';
@@ -25,7 +26,7 @@ type HealthcheckResultType = {
 } & StopwatchResultType;
 
 export class Healthcheck {
-  static build(prerequisites: Prerequisite[]) {
+  static build(prerequisites: AbstractPrerequisite<BasePrerequisiteConfig>[]) {
     async function handle(
       _request: express.Request,
       response: express.Response,
@@ -39,7 +40,7 @@ export class Healthcheck {
 
       for (const prerequisite of prerequisites) {
         const status = await prerequisite.verify();
-        details.push({ label: prerequisite.config.label, status });
+        details.push({ label: prerequisite.label, status });
       }
 
       const ok = details.every(

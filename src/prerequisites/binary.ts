@@ -3,30 +3,35 @@ import execa from 'execa';
 
 import {
   PrerequisiteLabelType,
-  PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  PrerequisiteStrategyEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-const PrerequisiteBinary = z
+const PrerequisiteBinaryValue = z
   .string()
   .min(1)
   .max(64)
   .refine(value => !value.includes(' '));
+type PrerequisiteBinaryValueType = z.infer<typeof PrerequisiteBinaryValue>;
 
-type PrerequisiteBinaryType = z.infer<typeof PrerequisiteBinary>;
-
-export type PrerequisiteBinaryStrategyConfigType = {
+type PrerequisiteBinaryConfigType = {
+  binary: PrerequisiteBinaryValueType;
   label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.binary;
-  binary: PrerequisiteBinaryType;
 };
 
-export class PrerequisiteBinaryVerificator {
-  static async verify(
-    config: PrerequisiteBinaryStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteBinary extends AbstractPrerequisite<
+  PrerequisiteBinaryConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.binary;
+
+  constructor(readonly config: PrerequisiteBinaryConfigType) {
+    super(config);
+  }
+
+  async verify() {
     try {
-      const binary = PrerequisiteBinary.parse(config.binary);
+      const binary = PrerequisiteBinaryValue.parse(this.config.binary);
 
       const result = await execa.command(`which ${binary}`);
 

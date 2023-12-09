@@ -3,20 +3,26 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteMailerStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.mailer;
+export type PrerequisiteMailerConfigType = {
   mailer: Mailer;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisiteMailerVerificator {
-  static async verify(
-    config: PrerequisiteMailerStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteMailer extends AbstractPrerequisite<
+  PrerequisiteMailerConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.mailer;
+
+  constructor(readonly config: PrerequisiteMailerConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     try {
-      await config.mailer.verify();
+      await this.config.mailer.verify();
 
       return PrerequisiteStatusEnum.success;
     } catch (error) {

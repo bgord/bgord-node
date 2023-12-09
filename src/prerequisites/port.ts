@@ -5,22 +5,28 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisitePortStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.port;
+export type PrerequisitePortConfigType = {
   port: Schema.PortType;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisitePortVerificator {
-  static async verify(
-    config: PrerequisitePortStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisitePort extends AbstractPrerequisite<
+  PrerequisitePortConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.port;
+
+  constructor(readonly config: PrerequisitePortConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     return new Promise(resolve => {
       const server = net.createServer();
 
-      server.listen(config.port, () =>
+      server.listen(this.config.port, () =>
         server.close(() => resolve(PrerequisiteStatusEnum.success))
       );
 

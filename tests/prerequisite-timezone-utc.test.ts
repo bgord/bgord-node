@@ -1,37 +1,23 @@
 import { describe, test, expect } from 'vitest';
 
-import {
-  PrerequisiteStatusEnum,
-  PrerequisiteStrategyEnum,
-} from '../src/prerequisites';
-import {
-  PrerequisiteTimezoneUTCVerificator,
-  PrerequisiteTimezoneUtcStrategyConfigType,
-} from '../src/prerequisites/timezone-utc';
+import { PrerequisiteStatusEnum } from '../src/prerequisites';
+import { PrerequisiteTimezoneUTC } from '../src/prerequisites/timezone-utc';
 
 describe('PrerequisiteTimezoneUTCVerificator class', () => {
   test('verify method returns success for valid timezone', async () => {
-    const validConfig: PrerequisiteTimezoneUtcStrategyConfigType = {
-      label: 'Valid Timezone',
-      strategy: PrerequisiteStrategyEnum.timezoneUTC,
+    const result = await new PrerequisiteTimezoneUTC({
+      label: 'utc',
       timezone: 'UTC',
-    };
-
-    const result = await PrerequisiteTimezoneUTCVerificator.verify(validConfig);
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.success);
   });
 
   test('verify method returns failure for invalid timezone', async () => {
-    const invalidConfig: PrerequisiteTimezoneUtcStrategyConfigType = {
-      label: 'Invalid Timezone',
-      strategy: PrerequisiteStrategyEnum.timezoneUTC,
+    const result = await new PrerequisiteTimezoneUTC({
+      label: 'utc',
       timezone: 'InvalidTimezone',
-    };
-
-    const result = await PrerequisiteTimezoneUTCVerificator.verify(
-      invalidConfig
-    );
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
   });

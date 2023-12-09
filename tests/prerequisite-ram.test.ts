@@ -2,28 +2,19 @@ import os from 'os';
 import { describe, test, expect, vi } from 'vitest';
 
 import { Size, SizeUnit } from '../src/size';
-import {
-  PrerequisiteStatusEnum,
-  PrerequisiteStrategyEnum,
-} from '../src/prerequisites';
-import {
-  PrerequisiteRAMStrategyConfigType,
-  PrerequisiteRAMVerificator,
-} from '../src/prerequisites/ram';
+import { PrerequisiteStatusEnum } from '../src/prerequisites';
+import { PrerequisiteRAM } from '../src/prerequisites/ram';
 
-describe('PrerequisiteRAMVerificator class', () => {
+describe('PrerequisiteRAM class', () => {
   test('verify method returns success for valid RAM', async () => {
     const spy = vi
       .spyOn(os, 'freemem')
       .mockReturnValue(new Size({ unit: SizeUnit.GB, value: 1 }).toBytes());
 
-    const validConfig: PrerequisiteRAMStrategyConfigType = {
-      label: 'Valid RAM',
-      strategy: PrerequisiteStrategyEnum.RAM,
+    const result = await new PrerequisiteRAM({
+      label: 'ram',
       minimum: new Size({ value: 512, unit: SizeUnit.MB }),
-    };
-
-    const result = await PrerequisiteRAMVerificator.verify(validConfig);
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.success);
 
@@ -35,13 +26,10 @@ describe('PrerequisiteRAMVerificator class', () => {
       .spyOn(os, 'freemem')
       .mockReturnValue(new Size({ value: 256, unit: SizeUnit.MB }).toBytes());
 
-    const invalidConfig: PrerequisiteRAMStrategyConfigType = {
-      label: 'Invalid RAM',
-      strategy: PrerequisiteStrategyEnum.RAM,
+    const result = await new PrerequisiteRAM({
+      label: 'ram',
       minimum: new Size({ value: 512, unit: SizeUnit.MB }),
-    };
-
-    const result = await PrerequisiteRAMVerificator.verify(invalidConfig);
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
 

@@ -6,24 +6,30 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteSpaceStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.space;
+export type PrerequisiteSpaceConfigType = {
   minimum: Size;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisiteSpaceVerificator {
-  static async verify(
-    config: PrerequisiteSpaceStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteSpace extends AbstractPrerequisite<
+  PrerequisiteSpaceConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.space;
+
+  constructor(readonly config: PrerequisiteSpaceConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     const fsRoot = path.sep;
     const bytes = await checkDiskSpace(fsRoot);
 
     const freeDiskSpace = new Size({ unit: SizeUnit.b, value: bytes.free });
 
-    if (freeDiskSpace.isGreaterThan(config.minimum)) {
+    if (freeDiskSpace.isGreaterThan(this.config.minimum)) {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;

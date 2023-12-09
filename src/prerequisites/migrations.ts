@@ -4,17 +4,23 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteMigrationsStrategyConfigType = {
+export type PrerequisiteMigrationsConfigType = {
   label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.migrations;
 };
 
-export class PrerequisiteMigrationsVerificator {
-  static async verify(
-    _config: PrerequisiteMigrationsStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteMigrations extends AbstractPrerequisite<
+  PrerequisiteMigrationsConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.migrations;
+
+  constructor(readonly config: PrerequisiteMigrationsConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     try {
       const result = await execa.command(`npx prisma migrate status`);
 

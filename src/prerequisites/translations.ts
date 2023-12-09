@@ -7,13 +7,13 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteTranslationsStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.translations;
+export type PrerequisiteTranslationsConfigType = {
   translationsPath?: typeof I18n.DEFAULT_TRANSLATIONS_PATH;
   supportedLanguages: I18nConfigType['supportedLanguages'];
+  label: PrerequisiteLabelType;
 };
 
 type PrerequisiteTranslationsProblemType = {
@@ -22,17 +22,23 @@ type PrerequisiteTranslationsProblemType = {
   missingInLanguage: Schema.LanguageType;
 };
 
-export class PrerequisiteTranslationsVerificator {
-  static async verify(
-    config: PrerequisiteTranslationsStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteTranslations extends AbstractPrerequisite<
+  PrerequisiteTranslationsConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.translations;
+
+  constructor(readonly config: PrerequisiteTranslationsConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     const translationsPath =
-      config.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
+      this.config.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
 
     try {
       await fsp.access(translationsPath, constants.R_OK);
 
-      for (const language in config.supportedLanguages) {
+      for (const language in this.config.supportedLanguages) {
         await fsp.access(
           I18n.getTranslationPathForLanguage(language),
           constants.R_OK
@@ -42,7 +48,7 @@ export class PrerequisiteTranslationsVerificator {
       return PrerequisiteStatusEnum.failure;
     }
 
-    const supportedLanguages = Object.keys(config.supportedLanguages);
+    const supportedLanguages = Object.keys(this.config.supportedLanguages);
 
     if (supportedLanguages.length === 1) return PrerequisiteStatusEnum.success;
 

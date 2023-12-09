@@ -5,21 +5,27 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisitePathStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.path;
+export type PrerequisitePathConfigType = {
   path: string;
   access?: { write?: boolean; execute?: boolean };
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisitePathVerificator {
-  static async verify(
-    config: PrerequisitePathStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    const write = config.access?.write ?? false;
-    const execute = config.access?.execute ?? false;
+export class PrerequisitePath extends AbstractPrerequisite<
+  PrerequisitePathConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.path;
+
+  constructor(readonly config: PrerequisitePathConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
+    const write = this.config.access?.write ?? false;
+    const execute = this.config.access?.execute ?? false;
 
     const flags =
       constants.R_OK |
@@ -27,7 +33,7 @@ export class PrerequisitePathVerificator {
       (execute ? constants.X_OK : 0);
 
     try {
-      await fsp.access(config.path, flags);
+      await fsp.access(this.config.path, flags);
 
       return PrerequisiteStatusEnum.success;
     } catch (error) {

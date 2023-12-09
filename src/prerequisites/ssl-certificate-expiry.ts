@@ -4,25 +4,31 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteSSLCertificateExpiryStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.sslCertificateExpiry;
+export type PrerequisiteSSLCertificateExpiryConfigType = {
   host: string;
   validDaysMinimum: number;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisiteSSLCertificateExpiryVerificator {
-  static async verify(
-    config: PrerequisiteSSLCertificateExpiryStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteSSLCertificateExpiry extends AbstractPrerequisite<
+  PrerequisiteSSLCertificateExpiryConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.sslCertificateExpiry;
+
+  constructor(readonly config: PrerequisiteSSLCertificateExpiryConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     try {
-      const result = await sslChecker(config.host);
+      const result = await sslChecker(this.config.host);
 
       if (!result.valid) return PrerequisiteStatusEnum.failure;
 
-      return result.daysRemaining <= config.validDaysMinimum
+      return result.daysRemaining <= this.config.validDaysMinimum
         ? PrerequisiteStatusEnum.failure
         : PrerequisiteStatusEnum.success;
     } catch (error) {

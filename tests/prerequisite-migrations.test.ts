@@ -1,27 +1,18 @@
 import execa from 'execa';
 import { describe, test, expect, vi } from 'vitest';
 
-import {
-  PrerequisiteStatusEnum,
-  PrerequisiteStrategyEnum,
-} from '../src/prerequisites';
-import {
-  PrerequisiteMigrationsStrategyConfigType,
-  PrerequisiteMigrationsVerificator,
-} from '../src/prerequisites/migrations';
+import { PrerequisiteStatusEnum } from '../src/prerequisites';
+import { PrerequisiteMigrations } from '../src/prerequisites/migrations';
 
-describe('PrerequisiteMigrationsVerificator class', () => {
+describe('PrerequisiteMigrations class', () => {
   test('verify method returns success for successful migrations status', async () => {
     const spy = vi
       .spyOn(execa, 'command')
       .mockResolvedValue({ exitCode: 0 } as any);
 
-    const config: PrerequisiteMigrationsStrategyConfigType = {
-      label: 'Successful Migrations Status',
-      strategy: PrerequisiteStrategyEnum.migrations,
-    };
-
-    const result = await PrerequisiteMigrationsVerificator.verify(config);
+    const result = await new PrerequisiteMigrations({
+      label: 'migrations',
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.success);
     spy.mockRestore();
@@ -32,12 +23,9 @@ describe('PrerequisiteMigrationsVerificator class', () => {
       .spyOn(execa, 'command')
       .mockResolvedValue({ exitCode: 1 } as any);
 
-    const config: PrerequisiteMigrationsStrategyConfigType = {
-      label: 'Failed Migrations Status',
-      strategy: PrerequisiteStrategyEnum.migrations,
-    };
-
-    const result = await PrerequisiteMigrationsVerificator.verify(config);
+    const result = await new PrerequisiteMigrations({
+      label: 'migrations',
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
     spy.mockRestore();
@@ -48,12 +36,9 @@ describe('PrerequisiteMigrationsVerificator class', () => {
       .spyOn(execa, 'command')
       .mockRejectedValue(new Error('Command execution error'));
 
-    const config: PrerequisiteMigrationsStrategyConfigType = {
-      label: 'Migrations Status Check Error',
-      strategy: PrerequisiteStrategyEnum.migrations,
-    };
-
-    const result = await PrerequisiteMigrationsVerificator.verify(config);
+    const result = await new PrerequisiteMigrations({
+      label: 'migrations',
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
     spy.mockRestore();

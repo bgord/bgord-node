@@ -5,21 +5,27 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteRAMStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.RAM;
+export type PrerequisiteRAMConfigType = {
   minimum: Size;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisiteRAMVerificator {
-  static async verify(
-    config: PrerequisiteRAMStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteRAM extends AbstractPrerequisite<
+  PrerequisiteRAMConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.RAM;
+
+  constructor(readonly config: PrerequisiteRAMConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     const freeRAM = new Size({ unit: SizeUnit.b, value: os.freemem() });
 
-    if (freeRAM.isGreaterThan(config.minimum)) {
+    if (freeRAM.isGreaterThan(this.config.minimum)) {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;

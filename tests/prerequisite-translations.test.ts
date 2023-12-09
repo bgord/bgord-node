@@ -1,28 +1,19 @@
 import fsp from 'fs/promises';
 import { I18n } from '../src/i18n';
 import { describe, test, expect, vi } from 'vitest';
-import {
-  PrerequisiteStatusEnum,
-  PrerequisiteStrategyEnum,
-} from '../src/prerequisites';
-import {
-  PrerequisiteTranslationsStrategyConfigType,
-  PrerequisiteTranslationsVerificator,
-} from '../src/prerequisites/translations';
+import { PrerequisiteStatusEnum } from '../src/prerequisites';
+import { PrerequisiteTranslations } from '../src/prerequisites/translations';
 
-describe('PrerequisiteTranslationsVerificator class', () => {
+describe('PrerequisiteTranslations class', () => {
   test('verify method returns failure for translations that not exist', async () => {
     const spy = vi
       .spyOn(fsp, 'access')
       .mockRejectedValue(new Error('Does not exist'));
 
-    const config: PrerequisiteTranslationsStrategyConfigType = {
-      label: 'Valid Translations',
-      strategy: PrerequisiteStrategyEnum.translations,
+    const result = await new PrerequisiteTranslations({
+      label: 'translations',
       supportedLanguages: { en: 'en', es: 'es' },
-    };
-
-    const result = await PrerequisiteTranslationsVerificator.verify(config);
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
     spy.mockRestore();
@@ -31,13 +22,10 @@ describe('PrerequisiteTranslationsVerificator class', () => {
   test('verify method returns success for translations that exists', async () => {
     const spy = vi.spyOn(fsp, 'access').mockResolvedValue(undefined);
 
-    const config: PrerequisiteTranslationsStrategyConfigType = {
-      label: 'Valid Translations',
-      strategy: PrerequisiteStrategyEnum.translations,
+    const result = await new PrerequisiteTranslations({
+      label: 'translations',
       supportedLanguages: { en: 'en' },
-    };
-
-    const result = await PrerequisiteTranslationsVerificator.verify(config);
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.success);
     spy.mockRestore();
@@ -62,16 +50,10 @@ describe('PrerequisiteTranslationsVerificator class', () => {
       }
     );
 
-    const config: PrerequisiteTranslationsStrategyConfigType = {
-      label: 'Inconsistent Translations',
-      strategy: PrerequisiteStrategyEnum.translations,
-      supportedLanguages: {
-        en: 'English',
-        es: 'Spanish',
-      },
-    };
-
-    const result = await PrerequisiteTranslationsVerificator.verify(config);
+    const result = await new PrerequisiteTranslations({
+      label: 'translations',
+      supportedLanguages: { en: 'English', es: 'Spanish' },
+    }).verify();
 
     expect(result).toBe(PrerequisiteStatusEnum.failure);
     vi.restoreAllMocks();

@@ -4,19 +4,25 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteJobsStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.jobs;
+export type PrerequisiteJobsConfigType = {
   jobs: MultipleJobsType;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisiteJobsVerificator {
-  static async verify(
-    config: PrerequisiteJobsStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
-    return Jobs.areAllRunning(config.jobs)
+export class PrerequisiteJobs extends AbstractPrerequisite<
+  PrerequisiteJobsConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.jobs;
+
+  constructor(readonly config: PrerequisiteJobsConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
+    return Jobs.areAllRunning(this.config.jobs)
       ? PrerequisiteStatusEnum.success
       : PrerequisiteStatusEnum.failure;
   }

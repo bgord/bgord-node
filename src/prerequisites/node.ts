@@ -5,22 +5,28 @@ import {
   PrerequisiteLabelType,
   PrerequisiteStrategyEnum,
   PrerequisiteStatusEnum,
+  AbstractPrerequisite,
 } from '../prerequisites';
 
-export type PrerequisiteNodeStrategyConfigType = {
-  label: PrerequisiteLabelType;
-  strategy: PrerequisiteStrategyEnum.node;
+export type PrerequisiteNodeConfigType = {
   version: PackageVersion;
+  label: PrerequisiteLabelType;
 };
 
-export class PrerequisiteNodeVerificator {
-  static async verify(
-    config: PrerequisiteNodeStrategyConfigType
-  ): Promise<PrerequisiteStatusEnum> {
+export class PrerequisiteNode extends AbstractPrerequisite<
+  PrerequisiteNodeConfigType
+> {
+  readonly strategy = PrerequisiteStrategyEnum.node;
+
+  constructor(readonly config: PrerequisiteNodeConfigType) {
+    super(config);
+  }
+
+  async verify(): Promise<PrerequisiteStatusEnum> {
     const { stdout } = await execa('node', ['-v']);
     const current = PackageVersion.fromStringWithV(stdout);
 
-    if (current.isGreaterThanOrEqual(config.version)) {
+    if (current.isGreaterThanOrEqual(this.config.version)) {
       return PrerequisiteStatusEnum.success;
     }
     return PrerequisiteStatusEnum.failure;
