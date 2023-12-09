@@ -1,20 +1,14 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.247](https://github.com/bgord/bgord-node/compare/v0.58.246...v0.58.247) (2023-12-09)
-
-
-### Features
-
-* add prereq enabled property ([d446300](https://github.com/bgord/bgord-node/commit/d446300b594ddfa99cf61cb7fefd09e70b597c10))
-
-# Changelog
+## 2023-12-09 14:25 v0.58.247
+- 2023-12-09 14:25 bbf11c6 **chore(release): 0.58.247**
+- 2023-12-09 14:21 d446300 **feature: add prereq enabled property**
+- 2023-12-09 12:43 fa0e5b3 **refactor: prereq to abstract prereq**
 ## 2023-12-07 16:12 v0.58.246
 - 2023-12-07 16:12 72c0635 **chore(release): 0.58.246**
 ## 2023-12-07 15:56 v0.58.245
 - 2023-12-07 15:56 bd31ff7 **chore(release): 0.58.245**
 - 2023-12-07 15:51 ebfa38e **feature: add version to healthcheck**
+- 2023-12-07 15:12 83b3f87 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-07 14:54 7352489 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-07 14:23 cc9f33c **feature: add skipping ci flag to changelog commit**
 - 2023-12-07 14:18 44876b5 **Merge branch 'master' of github.com:bgord/bgord-node**
