@@ -1,20 +1,13 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.249](https://github.com/bgord/bgord-node/compare/v0.58.248...v0.58.249) (2023-12-09)
-
-
-### Bug Fixes
-
-* reexport all prerequisites ([09487b3](https://github.com/bgord/bgord-node/commit/09487b3246ac7e1f067e8ee98ae5fdd05db082e1))
-
-# Changelog
+## 2023-12-09 14:32 v0.58.249
+- 2023-12-09 14:32 21f30ea **chore(release): 0.58.249**
+- 2023-12-09 14:31 09487b3 **fix: reexport all prerequisites**
 ## 2023-12-09 14:26 v0.58.248
 - 2023-12-09 14:26 6fb6b33 **chore(release): 0.58.248**
 ## 2023-12-09 14:25 v0.58.247
 - 2023-12-09 14:25 bbf11c6 **chore(release): 0.58.247**
 - 2023-12-09 14:21 d446300 **feature: add prereq enabled property**
+- 2023-12-09 13:26 6d5c507 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-09 13:25 308c7e5 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-09 12:43 fa0e5b3 **refactor: prereq to abstract prereq**
 ## 2023-12-07 16:12 v0.58.246
