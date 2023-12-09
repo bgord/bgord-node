@@ -12,6 +12,7 @@ export type PrerequisitePathConfigType = {
   path: string;
   access?: { write?: boolean; execute?: boolean };
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisitePath extends AbstractPrerequisite<
@@ -24,6 +25,8 @@ export class PrerequisitePath extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     const write = this.config.access?.write ?? false;
     const execute = this.config.access?.execute ?? false;
 

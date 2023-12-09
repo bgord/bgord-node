@@ -11,6 +11,7 @@ import {
 export type PrerequisiteMemoryConfigType = {
   maximum: Size;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteMemory extends AbstractPrerequisite<
@@ -23,6 +24,8 @@ export class PrerequisiteMemory extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     const memoryConsumption = MemoryConsumption.get();
 
     if (memoryConsumption.isGreaterThan(this.config.maximum)) {

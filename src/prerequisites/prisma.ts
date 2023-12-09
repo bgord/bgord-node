@@ -10,6 +10,7 @@ import {
 export type PrerequisitePrismaConfigType = {
   client: PrismaClient;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisitePrisma extends AbstractPrerequisite<
@@ -22,6 +23,8 @@ export class PrerequisitePrisma extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     try {
       const result = await this.config.client.$queryRaw`
         SELECT name

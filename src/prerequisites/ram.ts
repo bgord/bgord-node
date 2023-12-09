@@ -11,6 +11,7 @@ import {
 export type PrerequisiteRAMConfigType = {
   minimum: Size;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteRAM extends AbstractPrerequisite<
@@ -23,6 +24,8 @@ export class PrerequisiteRAM extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     const freeRAM = new Size({ unit: SizeUnit.b, value: os.freemem() });
 
     if (freeRAM.isGreaterThan(this.config.minimum)) {

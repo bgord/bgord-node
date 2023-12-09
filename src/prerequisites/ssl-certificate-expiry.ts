@@ -11,6 +11,7 @@ export type PrerequisiteSSLCertificateExpiryConfigType = {
   host: string;
   validDaysMinimum: number;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteSSLCertificateExpiry extends AbstractPrerequisite<
@@ -23,6 +24,8 @@ export class PrerequisiteSSLCertificateExpiry extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     try {
       const result = await sslChecker(this.config.host);
 

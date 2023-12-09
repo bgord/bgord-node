@@ -9,6 +9,7 @@ import {
 
 export type PrerequisiteMigrationsConfigType = {
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteMigrations extends AbstractPrerequisite<
@@ -21,6 +22,8 @@ export class PrerequisiteMigrations extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     try {
       const result = await execa.command(`npx prisma migrate status`);
 

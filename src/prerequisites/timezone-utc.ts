@@ -9,6 +9,7 @@ import {
 export type PrerequisiteTimezoneUtcConfigType = {
   timezone: Schema.TimezoneType;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteTimezoneUTC extends AbstractPrerequisite<
@@ -21,6 +22,8 @@ export class PrerequisiteTimezoneUTC extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     try {
       Schema.TimezoneUTC.parse(this.config.timezone);
       return PrerequisiteStatusEnum.success;

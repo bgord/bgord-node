@@ -10,6 +10,7 @@ import {
 export type PrerequisiteJobsConfigType = {
   jobs: MultipleJobsType;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteJobs extends AbstractPrerequisite<
@@ -22,6 +23,8 @@ export class PrerequisiteJobs extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     return Jobs.areAllRunning(this.config.jobs)
       ? PrerequisiteStatusEnum.success
       : PrerequisiteStatusEnum.failure;

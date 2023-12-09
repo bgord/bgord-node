@@ -7,6 +7,7 @@ import {
 
 export type PrerequisiteSelfConfigType = {
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteSelf extends AbstractPrerequisite<
@@ -19,6 +20,7 @@ export class PrerequisiteSelf extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
     return PrerequisiteStatusEnum.success;
   }
 }

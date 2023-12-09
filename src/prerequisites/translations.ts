@@ -14,6 +14,7 @@ export type PrerequisiteTranslationsConfigType = {
   translationsPath?: typeof I18n.DEFAULT_TRANSLATIONS_PATH;
   supportedLanguages: I18nConfigType['supportedLanguages'];
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 type PrerequisiteTranslationsProblemType = {
@@ -32,6 +33,8 @@ export class PrerequisiteTranslations extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     const translationsPath =
       this.config.translationsPath ?? I18n.DEFAULT_TRANSLATIONS_PATH;
 

@@ -12,6 +12,7 @@ import {
 export type PrerequisiteSpaceConfigType = {
   minimum: Size;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteSpace extends AbstractPrerequisite<
@@ -24,6 +25,8 @@ export class PrerequisiteSpace extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     const fsRoot = path.sep;
     const bytes = await checkDiskSpace(fsRoot);
 

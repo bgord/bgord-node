@@ -11,6 +11,7 @@ import {
 export type PrerequisiteNodeConfigType = {
   version: PackageVersion;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteNode extends AbstractPrerequisite<
@@ -23,6 +24,8 @@ export class PrerequisiteNode extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     const { stdout } = await execa('node', ['-v']);
     const current = PackageVersion.fromStringWithV(stdout);
 

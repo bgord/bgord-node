@@ -18,6 +18,7 @@ type PrerequisiteBinaryValueType = z.infer<typeof PrerequisiteBinaryValue>;
 type PrerequisiteBinaryConfigType = {
   binary: PrerequisiteBinaryValueType;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteBinary extends AbstractPrerequisite<
@@ -30,6 +31,8 @@ export class PrerequisiteBinary extends AbstractPrerequisite<
   }
 
   async verify() {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     try {
       const binary = PrerequisiteBinaryValue.parse(this.config.binary);
 

@@ -44,7 +44,7 @@ export class Healthcheck {
       }
 
       const ok = details.every(
-        result => result.status === PrerequisiteStatusEnum.success
+        result => result.status !== PrerequisiteStatusEnum.failure
       )
         ? PrerequisiteStatusEnum.success
         : PrerequisiteStatusEnum.failure;

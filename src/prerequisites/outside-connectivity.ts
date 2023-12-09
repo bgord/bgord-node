@@ -7,6 +7,7 @@ import {
 
 export type PrerequisiteOutsideConnectivityConfigType = {
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteOutsideConnectivity extends AbstractPrerequisite<
@@ -19,6 +20,8 @@ export class PrerequisiteOutsideConnectivity extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     try {
       const result = await fetch('https://google.com');
 

@@ -9,6 +9,7 @@ import {
 export type PrerequisiteMailerConfigType = {
   mailer: Mailer;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisiteMailer extends AbstractPrerequisite<
@@ -21,6 +22,8 @@ export class PrerequisiteMailer extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     try {
       await this.config.mailer.verify();
 

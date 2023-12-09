@@ -60,4 +60,19 @@ describe('PrerequisiteBinaryVerificator class', () => {
     expect(result).toBe(PrerequisiteStatusEnum.failure);
     spy.mockRestore();
   });
+
+  test('verifies as undetermined when not enabled', async () => {
+    const spy = vi
+      .spyOn(execa, 'command')
+      .mockResolvedValue({ exitCode: 0 } as any);
+
+    const result = await new PrerequisiteBinary({
+      label: 'binary',
+      enabled: false,
+      binary: 'node and something',
+    }).verify();
+
+    expect(result).toBe(PrerequisiteStatusEnum.undetermined);
+    spy.mockRestore();
+  });
 });

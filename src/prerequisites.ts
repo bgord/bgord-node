@@ -26,13 +26,14 @@ export enum PrerequisiteStatusEnum {
   undetermined = 'undetermined',
 }
 
-export type BasePrerequisiteConfig = { label: PrerequisiteLabelType } & Record<
-  string,
-  unknown
->;
+export type BasePrerequisiteConfig = {
+  label: PrerequisiteLabelType;
+  enabled?: boolean;
+} & Record<string, unknown>;
 
 export abstract class AbstractPrerequisite<T extends BasePrerequisiteConfig> {
   readonly label: PrerequisiteLabelType;
+  readonly enabled: boolean = true;
   abstract readonly strategy: PrerequisiteStrategyEnum;
   abstract readonly config: T;
 
@@ -40,6 +41,7 @@ export abstract class AbstractPrerequisite<T extends BasePrerequisiteConfig> {
 
   constructor(config: T) {
     this.label = config.label;
+    this.enabled = config.enabled ?? true;
   }
 
   abstract verify(): Promise<PrerequisiteStatusEnum>;
@@ -54,6 +56,12 @@ export abstract class AbstractPrerequisite<T extends BasePrerequisiteConfig> {
     if (this.status === PrerequisiteStatusEnum.failure) {
       console.log(
         `[-] ${this.config.label} not verified correctly with ${this.config.strategy} strategy`
+      );
+    }
+
+    if (this.status === PrerequisiteStatusEnum.undetermined) {
+      console.log(
+        `[?] ${this.config.label} not enabled with ${this.config.strategy} strategy`
       );
     }
   }

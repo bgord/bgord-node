@@ -11,6 +11,7 @@ import {
 export type PrerequisitePortConfigType = {
   port: Schema.PortType;
   label: PrerequisiteLabelType;
+  enabled?: boolean;
 };
 
 export class PrerequisitePort extends AbstractPrerequisite<
@@ -23,6 +24,8 @@ export class PrerequisitePort extends AbstractPrerequisite<
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
+    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
+
     return new Promise(resolve => {
       const server = net.createServer();
 
