@@ -1,13 +1,10 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.248](https://github.com/bgord/bgord-node/compare/v0.58.247...v0.58.248) (2023-12-09)
-
-# Changelog
+## 2023-12-09 14:26 v0.58.248
+- 2023-12-09 14:26 6fb6b33 **chore(release): 0.58.248**
 ## 2023-12-09 14:25 v0.58.247
 - 2023-12-09 14:25 bbf11c6 **chore(release): 0.58.247**
 - 2023-12-09 14:21 d446300 **feature: add prereq enabled property**
+- 2023-12-09 13:25 308c7e5 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-09 12:43 fa0e5b3 **refactor: prereq to abstract prereq**
 ## 2023-12-07 16:12 v0.58.246
 - 2023-12-07 16:12 72c0635 **chore(release): 0.58.246**
