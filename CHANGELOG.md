@@ -1,11 +1,14 @@
 # Changelog
+- 2023-12-11 17:24 5df24d3 **Merge pull request #45 from bgord/dependabot/npm_and_yarn/vitest-1.0.4**
 ## 2023-12-11 16:55 v0.58.251
 - 2023-12-11 16:55 2f9e9e7 **chore(release): 0.58.251**
 - 2023-12-11 16:54 5c47e2b **fix: undefined strategy name in logs**
 ## 2023-12-11 16:52 v0.58.250
 - 2023-12-11 16:52 c900f06 **chore(release): 0.58.250**
 - 2023-12-11 16:51 7aebdc1 **fix: prereq internal state**
+- 2023-12-11 15:55 609c271 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-11 15:53 91c5f98 **docs: generate CHANGELOG [skip ci]**
+- 2023-12-11 02:41 6eb4412 **chore(deps-dev): bump vitest from 1.0.2 to 1.0.4**
 ## 2023-12-09 14:32 v0.58.249
 - 2023-12-09 14:32 21f30ea **chore(release): 0.58.249**
 - 2023-12-09 14:31 09487b3 **fix: reexport all prerequisites**
