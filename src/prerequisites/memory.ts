@@ -29,8 +29,8 @@ export class PrerequisiteMemory extends AbstractPrerequisite<
     const memoryConsumption = MemoryConsumption.get();
 
     if (memoryConsumption.isGreaterThan(this.config.maximum)) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
-    return PrerequisiteStatusEnum.success;
+    return this.pass();
   }
 }

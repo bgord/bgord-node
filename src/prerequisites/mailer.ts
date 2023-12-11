@@ -26,10 +26,9 @@ export class PrerequisiteMailer extends AbstractPrerequisite<
 
     try {
       await this.config.mailer.verify();
-
-      return PrerequisiteStatusEnum.success;
+      return this.pass();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }

@@ -25,11 +25,9 @@ export class PrerequisiteOutsideConnectivity extends AbstractPrerequisite<
     try {
       const result = await fetch('https://google.com');
 
-      return result.ok
-        ? PrerequisiteStatusEnum.success
-        : PrerequisiteStatusEnum.failure;
+      return result.ok ? this.pass() : this.reject();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }

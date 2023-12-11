@@ -28,9 +28,7 @@ export class PrerequisiteRAM extends AbstractPrerequisite<
 
     const freeRAM = new Size({ unit: SizeUnit.b, value: os.freemem() });
 
-    if (freeRAM.isGreaterThan(this.config.minimum)) {
-      return PrerequisiteStatusEnum.success;
-    }
-    return PrerequisiteStatusEnum.failure;
+    if (freeRAM.isGreaterThan(this.config.minimum)) return this.pass();
+    return this.reject();
   }
 }

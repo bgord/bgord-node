@@ -30,8 +30,8 @@ export class PrerequisiteNode extends AbstractPrerequisite<
     const current = PackageVersion.fromStringWithV(stdout);
 
     if (current.isGreaterThanOrEqual(this.config.version)) {
-      return PrerequisiteStatusEnum.success;
+      return this.pass();
     }
-    return PrerequisiteStatusEnum.failure;
+    return this.reject();
   }
 }

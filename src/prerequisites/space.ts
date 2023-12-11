@@ -32,9 +32,7 @@ export class PrerequisiteSpace extends AbstractPrerequisite<
 
     const freeDiskSpace = new Size({ unit: SizeUnit.b, value: bytes.free });
 
-    if (freeDiskSpace.isGreaterThan(this.config.minimum)) {
-      return PrerequisiteStatusEnum.success;
-    }
-    return PrerequisiteStatusEnum.failure;
+    if (freeDiskSpace.isGreaterThan(this.config.minimum)) return this.pass();
+    return this.reject();
   }
 }

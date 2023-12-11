@@ -27,11 +27,9 @@ export class PrerequisiteMigrations extends AbstractPrerequisite<
     try {
       const result = await execa.command(`npx prisma migrate status`);
 
-      return result.exitCode === 0
-        ? PrerequisiteStatusEnum.success
-        : PrerequisiteStatusEnum.failure;
+      return result.exitCode === 0 ? this.pass() : this.reject();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }

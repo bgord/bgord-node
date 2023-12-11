@@ -38,11 +38,9 @@ export class PrerequisiteBinary extends AbstractPrerequisite<
 
       const result = await execa.command(`which ${binary}`);
 
-      return result.exitCode === 0
-        ? PrerequisiteStatusEnum.success
-        : PrerequisiteStatusEnum.failure;
+      return result.exitCode === 0 ? this.pass() : this.reject();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }

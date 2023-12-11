@@ -25,8 +25,6 @@ export class PrerequisiteJobs extends AbstractPrerequisite<
   async verify(): Promise<PrerequisiteStatusEnum> {
     if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
 
-    return Jobs.areAllRunning(this.config.jobs)
-      ? PrerequisiteStatusEnum.success
-      : PrerequisiteStatusEnum.failure;
+    return Jobs.areAllRunning(this.config.jobs) ? this.pass() : this.reject();
   }
 }

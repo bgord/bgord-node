@@ -30,10 +30,16 @@ export class PrerequisitePort extends AbstractPrerequisite<
       const server = net.createServer();
 
       server.listen(this.config.port, () =>
-        server.close(() => resolve(PrerequisiteStatusEnum.success))
+        server.close(() => {
+          this.pass();
+          return resolve(PrerequisiteStatusEnum.success);
+        })
       );
 
-      server.on('error', () => resolve(PrerequisiteStatusEnum.failure));
+      server.on('error', () => {
+        this.reject();
+        return resolve(PrerequisiteStatusEnum.failure);
+      });
     });
   }
 }

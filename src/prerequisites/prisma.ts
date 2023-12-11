@@ -33,12 +33,10 @@ export class PrerequisitePrisma extends AbstractPrerequisite<
         ORDER BY name;
       `;
 
-      if (Array.isArray(result) && result.length > 0) {
-        return PrerequisiteStatusEnum.success;
-      }
-      return PrerequisiteStatusEnum.failure;
+      if (Array.isArray(result) && result.length > 0) return this.pass();
+      return this.reject();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }

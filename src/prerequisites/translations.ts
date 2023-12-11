@@ -48,12 +48,12 @@ export class PrerequisiteTranslations extends AbstractPrerequisite<
         );
       }
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
 
     const supportedLanguages = Object.keys(this.config.supportedLanguages);
 
-    if (supportedLanguages.length === 1) return PrerequisiteStatusEnum.success;
+    if (supportedLanguages.length === 1) return this.pass();
 
     const languageToTranslationKeys: Record<
       Schema.LanguageType,
@@ -94,10 +94,10 @@ export class PrerequisiteTranslations extends AbstractPrerequisite<
       }
     }
 
-    if (problems.length === 0) return PrerequisiteStatusEnum.success;
+    if (problems.length === 0) return this.pass();
 
     console.log(problems);
 
-    return PrerequisiteStatusEnum.failure;
+    return this.reject();
   }
 }

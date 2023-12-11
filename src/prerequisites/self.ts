@@ -21,6 +21,6 @@ export class PrerequisiteSelf extends AbstractPrerequisite<
 
   async verify(): Promise<PrerequisiteStatusEnum> {
     if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
-    return PrerequisiteStatusEnum.success;
+    return this.pass();
   }
 }

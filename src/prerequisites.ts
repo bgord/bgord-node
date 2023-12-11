@@ -46,6 +46,16 @@ export abstract class AbstractPrerequisite<T extends BasePrerequisiteConfig> {
 
   abstract verify(): Promise<PrerequisiteStatusEnum>;
 
+  protected pass(): PrerequisiteStatusEnum.success {
+    this.status = PrerequisiteStatusEnum.success;
+    return PrerequisiteStatusEnum.success;
+  }
+
+  protected reject(): PrerequisiteStatusEnum.failure {
+    this.status = PrerequisiteStatusEnum.failure;
+    return PrerequisiteStatusEnum.failure;
+  }
+
   report() {
     if (this.status === PrerequisiteStatusEnum.success) {
       console.log(

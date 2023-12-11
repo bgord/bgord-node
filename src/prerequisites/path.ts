@@ -38,9 +38,9 @@ export class PrerequisitePath extends AbstractPrerequisite<
     try {
       await fsp.access(this.config.path, flags);
 
-      return PrerequisiteStatusEnum.success;
+      return this.pass();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }

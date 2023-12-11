@@ -26,9 +26,9 @@ export class PrerequisiteTimezoneUTC extends AbstractPrerequisite<
 
     try {
       Schema.TimezoneUTC.parse(this.config.timezone);
-      return PrerequisiteStatusEnum.success;
+      return this.pass();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }

@@ -32,10 +32,10 @@ export class PrerequisiteSSLCertificateExpiry extends AbstractPrerequisite<
       if (!result.valid) return PrerequisiteStatusEnum.failure;
 
       return result.daysRemaining <= this.config.validDaysMinimum
-        ? PrerequisiteStatusEnum.failure
-        : PrerequisiteStatusEnum.success;
+        ? this.reject()
+        : this.pass();
     } catch (error) {
-      return PrerequisiteStatusEnum.failure;
+      return this.reject();
     }
   }
 }
