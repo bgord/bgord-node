@@ -1,4 +1,15 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.250](https://github.com/bgord/bgord-node/compare/v0.58.249...v0.58.250) (2023-12-11)
+
+
+### Bug Fixes
+
+* prereq internal state ([7aebdc1](https://github.com/bgord/bgord-node/commit/7aebdc12f907a2b72b3e7327a7e484ab0a8500e3))
+
+# Changelog
 ## 2023-12-09 14:32 v0.58.249
 - 2023-12-09 14:32 21f30ea **chore(release): 0.58.249**
 - 2023-12-09 14:31 09487b3 **fix: reexport all prerequisites**
