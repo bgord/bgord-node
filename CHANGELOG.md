@@ -1,18 +1,11 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.251](https://github.com/bgord/bgord-node/compare/v0.58.250...v0.58.251) (2023-12-11)
-
-
-### Bug Fixes
-
-* undefined strategy name in logs ([5c47e2b](https://github.com/bgord/bgord-node/commit/5c47e2bd56d7c73c7e6fb0d23aa7bbe497e56b7f))
-
-# Changelog
+## 2023-12-11 16:55 v0.58.251
+- 2023-12-11 16:55 2f9e9e7 **chore(release): 0.58.251**
+- 2023-12-11 16:54 5c47e2b **fix: undefined strategy name in logs**
 ## 2023-12-11 16:52 v0.58.250
 - 2023-12-11 16:52 c900f06 **chore(release): 0.58.250**
 - 2023-12-11 16:51 7aebdc1 **fix: prereq internal state**
+- 2023-12-11 15:53 91c5f98 **docs: generate CHANGELOG [skip ci]**
 ## 2023-12-09 14:32 v0.58.249
 - 2023-12-09 14:32 21f30ea **chore(release): 0.58.249**
 - 2023-12-09 14:31 09487b3 **fix: reexport all prerequisites**
