@@ -1,4 +1,15 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.252](https://github.com/bgord/bgord-node/compare/v0.58.251...v0.58.252) (2023-12-16)
+
+
+### Bug Fixes
+
+* undetermined prerequisite log ([b998f14](https://github.com/bgord/bgord-node/commit/b998f14f7148d027ebf548098bd15bb204d1eff5))
+
+# Changelog
 - 2023-12-11 17:24 5df24d3 **Merge pull request #45 from bgord/dependabot/npm_and_yarn/vitest-1.0.4**
 ## 2023-12-11 16:55 v0.58.251
 - 2023-12-11 16:55 2f9e9e7 **chore(release): 0.58.251**
