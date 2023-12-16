@@ -71,7 +71,7 @@ export abstract class AbstractPrerequisite<T extends BasePrerequisiteConfig> {
 
     if (this.status === PrerequisiteStatusEnum.undetermined) {
       console.log(
-        `[?] ${this.config.label} not enabled with ${this.config.strategy} strategy`
+        `[?] ${this.config.label} not enabled with ${this.strategy} strategy`
       );
     }
   }
