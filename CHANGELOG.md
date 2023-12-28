@@ -1,4 +1,15 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.253](https://github.com/bgord/bgord-node/compare/v0.58.252...v0.58.253) (2023-12-28)
+
+
+### Features
+
+* add decorators ([2bb924a](https://github.com/bgord/bgord-node/commit/2bb924a435d6896c9e91fc35e731b27497d5d252))
+
+# Changelog
 - 2023-12-28 13:19 cb0d59e **Merge branch 'dependabot/npm_and_yarn/date-fns-3.0.6'**
 - 2023-12-28 13:18 1897a25 **Merge branch 'dependabot/npm_and_yarn/types/supertest-6.0.2'**
 - 2023-12-28 13:14 52cf1e0 **Merge pull request #52 from bgord/dependabot/npm_and_yarn/vitest-1.1.0**
