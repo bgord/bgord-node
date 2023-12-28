@@ -1,7 +1,9 @@
 # Changelog
+- 2023-12-28 16:47 2bb924a **feature: add decorators**
 - 2023-12-28 13:19 cb0d59e **Merge branch 'dependabot/npm_and_yarn/date-fns-3.0.6'**
 - 2023-12-28 13:18 1897a25 **Merge branch 'dependabot/npm_and_yarn/types/supertest-6.0.2'**
 - 2023-12-28 13:14 52cf1e0 **Merge pull request #52 from bgord/dependabot/npm_and_yarn/vitest-1.1.0**
+- 2023-12-28 12:19 626560b **docs: generate CHANGELOG [skip ci]**
 - 2023-12-28 12:14 ec2ebde **docs: generate CHANGELOG [skip ci]**
 - 2023-12-28 02:29 d575143 **chore(deps-dev): bump @types/supertest from 2.0.16 to 6.0.2**
 - 2023-12-25 02:32 ab56381 **chore(deps): bump date-fns from 2.30.0 to 3.0.6**
