@@ -1,7 +1,10 @@
 # Changelog
+- 2023-12-28 13:14 52cf1e0 **Merge pull request #52 from bgord/dependabot/npm_and_yarn/vitest-1.1.0**
+- 2023-12-20 02:12 25c7252 **chore(deps-dev): bump vitest from 1.0.4 to 1.1.0**
 ## 2023-12-16 16:10 v0.58.252
 - 2023-12-16 16:10 563df59 **chore(release): 0.58.252**
 - 2023-12-16 16:09 b998f14 **fix: undetermined prerequisite log**
+- 2023-12-16 15:10 fca0fe6 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-11 17:24 5df24d3 **Merge pull request #45 from bgord/dependabot/npm_and_yarn/vitest-1.0.4**
 ## 2023-12-11 16:55 v0.58.251
 - 2023-12-11 16:55 2f9e9e7 **chore(release): 0.58.251**
