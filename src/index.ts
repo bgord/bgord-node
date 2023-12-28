@@ -14,6 +14,7 @@ export * from './clock';
 export * from './context';
 export * from './csrf-shield';
 export * from './dates';
+export * from './decorators';
 export * from './deep-merge';
 export * from './dll';
 export * from './download-file';
