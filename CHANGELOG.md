@@ -1,10 +1,17 @@
 # Changelog
+- 2024-01-05 13:07 85e5c23 **Merge pull request #60 from bgord/dependabot/npm_and_yarn/express-form-data-2.0.23**
+- 2024-01-05 13:07 5b296ca **Merge pull request #62 from bgord/dependabot/npm_and_yarn/vitest-1.1.2**
+- 2024-01-05 13:07 346ba4d **Merge pull request #61 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.8**
+- 2024-01-05 02:46 19b40f7 **chore(deps-dev): bump vitest from 1.1.0 to 1.1.2**
+- 2024-01-01 02:10 b415e32 **chore(deps): bump nodemailer from 6.9.7 to 6.9.8**
+- 2024-01-01 02:10 68b1b51 **chore(deps): bump express-form-data from 2.0.22 to 2.0.23**
 ## 2023-12-28 16:51 v0.58.254
 - 2023-12-28 16:51 084ade6 **chore(release): 0.58.254**
 - 2023-12-28 16:50 2e2fbcf **Merge branch 'master' of github.com:bgord/bgord-node**
 ## 2023-12-28 16:49 v0.58.253
 - 2023-12-28 16:49 4c50bd7 **chore(release): 0.58.253**
 - 2023-12-28 16:47 2bb924a **feature: add decorators**
+- 2023-12-28 15:51 b6e1fc1 **docs: generate CHANGELOG [skip ci]**
 - 2023-12-28 15:48 0081b7e **docs: generate CHANGELOG [skip ci]**
 - 2023-12-28 13:19 cb0d59e **Merge branch 'dependabot/npm_and_yarn/date-fns-3.0.6'**
 - 2023-12-28 13:18 1897a25 **Merge branch 'dependabot/npm_and_yarn/types/supertest-6.0.2'**
