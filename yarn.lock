@@ -4085,10 +4085,10 @@ express-async-handler@1.2.0:
   resolved "https://registry.yarnpkg.com/express-async-handler/-/express-async-handler-1.2.0.tgz#ffc9896061d90f8d2e71a2d2b8668db5b0934391"
   integrity sha512-rCSVtPXRmQSW8rmik/AIb2P0op6l7r1fMW538yyvTMltCO4xQEWMmobfrIxN2V1/mVrgxB8Az3reYF6yUZw37w==
 
-express-form-data@2.0.22:
-  version "2.0.22"
-  resolved "https://registry.yarnpkg.com/express-form-data/-/express-form-data-2.0.22.tgz#e44bba3760ba47addc881913ad6bc3affe7ef9b3"
-  integrity sha512-bZrcZ5UnrXRbUqI+hNkYcGAkRE+feTOjgUGldEEQSkatZs8UqrOxTcIKsavDwC+1gliXopDW73mI6oHx2KOnBA==
+express-form-data@2.0.23:
+  version "2.0.23"
+  resolved "https://registry.yarnpkg.com/express-form-data/-/express-form-data-2.0.23.tgz#180f7fcb3123268f73a041e331eaa65ee614f33a"
+  integrity sha512-Efm2t+xL6vEqUPs4kAyBY9xG/8LGpbSVnnFLZw6HgdxHzSRlg2/sNlA2UdMlcIKMH+LDOn7NKXUDGJK125F4rw==
   dependencies:
     connect-multiparty "^2.2.0"
     fs-extra "^9.1.0"
