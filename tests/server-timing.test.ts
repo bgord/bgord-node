@@ -29,7 +29,7 @@ describe('ServerTiming middleware', () => {
     const app = express();
 
     app.get('/ping', ServerTiming.handle, async (_request, response) => {
-      await sleep({ ms: Time.Ms(100).value });
+      await sleep(Time.Ms(100));
       response.status(200).send('pong');
     });
 

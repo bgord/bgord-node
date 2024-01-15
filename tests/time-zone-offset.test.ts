@@ -21,7 +21,7 @@ describe('TimeZoneOffset middleware', () => {
       .expect(200);
 
     expect(result.body.timeZoneOffset).toEqual({
-      minutes: Time.Minutes(120).value,
+      minutes: Time.Minutes(120).minutes,
       seconds: Time.Minutes(120).seconds,
       miliseconds: Time.Minutes(120).ms,
     });

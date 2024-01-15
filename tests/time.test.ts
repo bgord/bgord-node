@@ -5,7 +5,7 @@ describe('Time', () => {
   describe('Days', () => {
     it('should correctly convert days', () => {
       const days = Time.Days(2);
-      expect(days.value).toBe(2);
+      expect(days.days).toBe(2);
       expect(days.hours).toBe(48);
       expect(days.minutes).toBe(2880);
       expect(days.seconds).toBe(172800);
@@ -17,7 +17,7 @@ describe('Time', () => {
     it('should correctly convert hours', () => {
       const hours = Time.Hours(3);
       expect(hours.days).toBe(0.13);
-      expect(hours.value).toBe(3);
+      expect(hours.hours).toBe(3);
       expect(hours.minutes).toBe(180);
       expect(hours.seconds).toBe(10800);
       expect(hours.ms).toBe(10800000);
@@ -29,7 +29,7 @@ describe('Time', () => {
       const minutes = Time.Minutes(30);
       expect(minutes.days).toBe(0.02);
       expect(minutes.hours).toBe(0.5);
-      expect(minutes.value).toBe(30);
+      expect(minutes.minutes).toBe(30);
       expect(minutes.seconds).toBe(1800);
       expect(minutes.ms).toBe(1800000);
     });
@@ -41,7 +41,7 @@ describe('Time', () => {
       expect(seconds.days).toBe(0);
       expect(seconds.hours).toBe(0.03);
       expect(seconds.minutes).toBe(2);
-      expect(seconds.value).toBe(120);
+      expect(seconds.seconds).toBe(120);
       expect(seconds.ms).toBe(120000);
     });
   });
@@ -53,7 +53,7 @@ describe('Time', () => {
       expect(ms.hours).toBe(0);
       expect(ms.minutes).toBe(0.01);
       expect(ms.seconds).toBe(0.5);
-      expect(ms.value).toBe(500);
+      expect(ms.ms).toBe(500);
     });
   });
 });
