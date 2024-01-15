@@ -60,4 +60,16 @@ export class Time {
       ms: value,
     };
   }
+
+  static Now(now = Date.now()) {
+    return {
+      Minus(time: TimeResultType): TimeResultType {
+        return Time.Ms(now - time.ms);
+      },
+
+      Add(time: TimeResultType): TimeResultType {
+        return Time.Ms(now + time.ms);
+      },
+    };
+  }
 }

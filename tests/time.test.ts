@@ -56,4 +56,16 @@ describe('Time', () => {
       expect(ms.ms).toBe(500);
     });
   });
+
+  describe('Now', () => {
+    it('minus', () => {
+      const result = Time.Now(1700000000000).Minus(Time.Ms(500));
+      expect(result.ms).toEqual(1699999999500);
+    });
+
+    it('add', () => {
+      const result = Time.Now(1700000000000).Add(Time.Ms(500));
+      expect(result.ms).toEqual(1700000000500);
+    });
+  });
 });
