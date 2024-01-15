@@ -1,4 +1,15 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.256](https://github.com/bgord/bgord-node/compare/v0.58.255...v0.58.256) (2024-01-15)
+
+
+### Features
+
+* add Time.now API ([062c2d7](https://github.com/bgord/bgord-node/commit/062c2d72110e2d93fa849c8c4211236b7e639c21))
+
+# Changelog
 ## 2024-01-15 13:02 v0.58.255
 - 2024-01-15 13:02 7ba4b89 **chore(release): 0.58.255**
 - 2024-01-15 12:55 55e6823 **refactor: use stable time result return type**
