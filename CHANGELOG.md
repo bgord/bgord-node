@@ -1,4 +1,10 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.255](https://github.com/bgord/bgord-node/compare/v0.58.254...v0.58.255) (2024-01-15)
+
+# Changelog
 - 2024-01-11 22:09 39e1cc0 **Merge pull request #64 from bgord/dependabot/npm_and_yarn/vitest-1.1.3**
 - 2024-01-11 22:08 48b1d1e **Merge pull request #67 from bgord/dependabot/npm_and_yarn/date-fns-3.2.0**
 - 2024-01-11 21:09 1c4d5a3 **docs: generate CHANGELOG [skip ci]**
