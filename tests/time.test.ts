@@ -68,4 +68,16 @@ describe('Time', () => {
       expect(result.ms).toEqual(1700000000500);
     });
   });
+
+  describe('isAfter', () => {
+    it('returns true is another time is after', () => {
+      expect(Time.Ms(1700000000000).isAfter(Time.Ms(0))).toEqual(true);
+    });
+
+    it('returns false is another time is not after', () => {
+      expect(
+        Time.Ms(1700000000000).isAfter(Time.Now().Minus(Time.Days(3)))
+      ).toEqual(false);
+    });
+  });
 });
