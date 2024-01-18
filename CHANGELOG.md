@@ -1,11 +1,16 @@
 # Changelog
+- 2024-01-18 08:46 ed22a33 **Merge pull request #73 from bgord/dependabot/npm_and_yarn/vitest-1.2.1**
+- 2024-01-18 08:46 8c74605 **Merge pull request #68 from bgord/dependabot/npm_and_yarn/supertest-6.3.4**
+- 2024-01-18 02:44 3c77997 **chore(deps-dev): bump vitest from 1.1.3 to 1.2.1**
 ## 2024-01-15 13:10 v0.58.256
 - 2024-01-15 13:10 53dc257 **chore(release): 0.58.256**
 - 2024-01-15 13:10 062c2d7 **feature: add Time.now API**
 ## 2024-01-15 13:02 v0.58.255
 - 2024-01-15 13:02 7ba4b89 **chore(release): 0.58.255**
 - 2024-01-15 12:55 55e6823 **refactor: use stable time result return type**
+- 2024-01-15 12:11 ae27e32 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-15 12:02 4597f03 **docs: generate CHANGELOG [skip ci]**
+- 2024-01-15 02:27 15fb238 **chore(deps-dev): bump supertest from 6.3.3 to 6.3.4**
 - 2024-01-11 22:09 39e1cc0 **Merge pull request #64 from bgord/dependabot/npm_and_yarn/vitest-1.1.3**
 - 2024-01-11 22:08 48b1d1e **Merge pull request #67 from bgord/dependabot/npm_and_yarn/date-fns-3.2.0**
 - 2024-01-11 21:09 32d4402 **docs: generate CHANGELOG [skip ci]**
