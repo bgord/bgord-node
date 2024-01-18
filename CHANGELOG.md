@@ -1,4 +1,10 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.257](https://github.com/bgord/bgord-node/compare/v0.58.256...v0.58.257) (2024-01-18)
+
+# Changelog
 - 2024-01-18 08:46 ed22a33 **Merge pull request #73 from bgord/dependabot/npm_and_yarn/vitest-1.2.1**
 - 2024-01-18 08:46 8c74605 **Merge pull request #68 from bgord/dependabot/npm_and_yarn/supertest-6.3.4**
 - 2024-01-18 02:44 3c77997 **chore(deps-dev): bump vitest from 1.1.3 to 1.2.1**
