@@ -1,9 +1,12 @@
 # Changelog
+- 2024-01-22 14:04 3ec0b74 **Merge pull request #76 from bgord/dependabot/npm_and_yarn/dotenv-16.3.2**
+- 2024-01-22 03:00 5a2c847 **chore(deps): bump dotenv from 16.3.1 to 16.3.2**
 ## 2024-01-18 13:26 v0.58.258
 - 2024-01-18 13:26 cf5cd26 **chore(release): 0.58.258**
 ## 2024-01-18 13:18 v0.58.257
 - 2024-01-18 13:18 3284dbb **chore(release): 0.58.257**
 - 2024-01-18 13:08 dbb5b57 **refactor: extract TimeResultInterface**
+- 2024-01-18 12:31 2358553 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-18 12:19 f2e4963 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-18 08:46 ed22a33 **Merge pull request #73 from bgord/dependabot/npm_and_yarn/vitest-1.2.1**
 - 2024-01-18 08:46 8c74605 **Merge pull request #68 from bgord/dependabot/npm_and_yarn/supertest-6.3.4**
