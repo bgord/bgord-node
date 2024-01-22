@@ -1,6 +1,9 @@
 # Changelog
+- 2024-01-22 14:05 885b291 **Merge pull request #74 from bgord/dependabot/npm_and_yarn/vite-5.0.12**
 - 2024-01-22 14:04 3ec0b74 **Merge pull request #76 from bgord/dependabot/npm_and_yarn/dotenv-16.3.2**
+- 2024-01-22 13:05 7d2ac85 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-22 03:00 5a2c847 **chore(deps): bump dotenv from 16.3.1 to 16.3.2**
+- 2024-01-19 23:08 21e4add **chore(deps): bump vite from 5.0.6 to 5.0.12**
 ## 2024-01-18 13:26 v0.58.258
 - 2024-01-18 13:26 cf5cd26 **chore(release): 0.58.258**
 ## 2024-01-18 13:18 v0.58.257
