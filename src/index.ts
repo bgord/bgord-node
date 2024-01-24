@@ -23,6 +23,7 @@ export * from './env-user-auth-shield';
 export * from './environment-validator';
 export * from './event';
 export * from './express-essentials';
+export * from './feature-flag';
 export * from './file';
 export * from './file-location';
 export * from './file-uploader';
