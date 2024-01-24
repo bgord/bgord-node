@@ -1,4 +1,15 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.260](https://github.com/bgord/bgord-node/compare/v0.58.259...v0.58.260) (2024-01-24)
+
+
+### Bug Fixes
+
+* feature flag export ([d44c023](https://github.com/bgord/bgord-node/commit/d44c023f1cfde04625765ac3ef0d67f647797bc8))
+
+# Changelog
 ## 2024-01-24 12:01 v0.58.259
 - 2024-01-24 12:01 b02ba44 **chore(release): 0.58.259**
 - 2024-01-24 12:00 ea4669e **feature: add feature flag module**
