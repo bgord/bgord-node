@@ -1,17 +1,10 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.259](https://github.com/bgord/bgord-node/compare/v0.58.257...v0.58.259) (2024-01-24)
-
-
-### Features
-
-* add feature flag module ([ea4669e](https://github.com/bgord/bgord-node/commit/ea4669ec1777d66c2e3b8664927b9483c3717e82))
-
-# Changelog
+## 2024-01-24 12:01 v0.58.259
+- 2024-01-24 12:01 b02ba44 **chore(release): 0.58.259**
+- 2024-01-24 12:00 ea4669e **feature: add feature flag module**
 - 2024-01-22 14:05 885b291 **Merge pull request #74 from bgord/dependabot/npm_and_yarn/vite-5.0.12**
 - 2024-01-22 14:04 3ec0b74 **Merge pull request #76 from bgord/dependabot/npm_and_yarn/dotenv-16.3.2**
+- 2024-01-22 13:05 de7f243 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-22 13:05 7d2ac85 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-22 03:00 5a2c847 **chore(deps): bump dotenv from 16.3.1 to 16.3.2**
 - 2024-01-19 23:08 21e4add **chore(deps): bump vite from 5.0.6 to 5.0.12**
