@@ -141,7 +141,11 @@ export const RecaptchaSecretKey = z
   .length(40);
 export type RecaptchaSecretKeyType = z.infer<typeof RecaptchaSecretKey>;
 
-export const FeatureFlag = z.literal('yes').or(z.literal('no'));
+export enum FeatureFlagEnum {
+  yes = 'yes',
+  no = 'no',
+}
+export const FeatureFlag = z.nativeEnum(FeatureFlagEnum);
 export type FeatureFlagType = z.infer<typeof FeatureFlag>;
 
 export const Localhost = z.literal('127.0.0.1');
