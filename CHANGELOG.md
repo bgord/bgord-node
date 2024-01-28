@@ -1,5 +1,21 @@
 # Changelog
+<<<<<<< HEAD
+- 2024-01-28 16:16 0c6737a **feature: add polyfills**
+=======
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.262](https://github.com/bgord/bgord-node/compare/v0.58.261...v0.58.262) (2024-01-28)
+
+
+### Features
+
+* add polyfills ([0c6737a](https://github.com/bgord/bgord-node/commit/0c6737ab6fc98eae9fd481bd3f4187e5ef18edd3))
+
+# Changelog
+>>>>>>> a566ac3 (chore(release): 0.58.262)
 - 2024-01-28 16:12 ab8debc **step: bump bgord/scripts**
+- 2024-01-28 15:13 99da616 **docs: generate CHANGELOG [skip ci]**
 ## 2024-01-28 12:19 v0.58.261
 - 2024-01-28 12:19 847e695 **chore(release): 0.58.261**
 - 2024-01-28 12:18 3a57b17 **feature: upgrade to prisma v5**
