@@ -1,3 +1,5 @@
+import './polyfills';
+
 import express from 'express';
 import bodyparser from 'body-parser';
 import helmet from 'helmet';
