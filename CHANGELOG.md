@@ -1,9 +1,12 @@
 # Changelog
+- 2024-01-28 16:50 6b4c4bf **feature: add code scanning gh workflows**
+- 2024-01-28 16:50 1491a17 **step: bump bgord/scripts**
 ## 2024-01-28 16:17 v0.58.263
 ## 2024-01-28 16:17 v0.58.262
 - 2024-01-28 16:17 05d00a7 **chore(release): 0.58.263**
 - 2024-01-28 16:16 0c6737a **feature: add polyfills**
 - 2024-01-28 16:12 ab8debc **step: bump bgord/scripts**
+- 2024-01-28 15:17 9a01da1 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 15:16 6223b60 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 15:13 99da616 **docs: generate CHANGELOG [skip ci]**
 ## 2024-01-28 12:19 v0.58.261
