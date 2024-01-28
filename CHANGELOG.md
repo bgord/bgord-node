@@ -1,4 +1,5 @@
 # Changelog
+- 2024-01-28 17:04 b524919 **Merge pull request #77 from bgord/dependabot/npm_and_yarn/date-fns-3.3.1**
 - 2024-01-28 17:03 6395532 **Merge pull request #80 from bgord/dependabot/npm_and_yarn/dotenv-16.4.1**
 - 2024-01-28 17:03 25fdabc **Merge pull request #81 from bgord/dependabot/npm_and_yarn/husky-9.0.6**
 - 2024-01-28 17:02 cc2ae1d **Merge pull request #82 from bgord/dependabot/npm_and_yarn/vitest-1.2.2**
@@ -9,6 +10,8 @@
 - 2024-01-28 16:17 05d00a7 **chore(release): 0.58.263**
 - 2024-01-28 16:16 0c6737a **feature: add polyfills**
 - 2024-01-28 16:12 ab8debc **step: bump bgord/scripts**
+- 2024-01-28 16:04 054ab15 **chore(deps): bump date-fns from 3.2.0 to 3.3.1**
+- 2024-01-28 16:03 c0f7b17 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 15:51 a8e7b97 **chore(deps-dev): bump vitest from 1.2.1 to 1.2.2**
 - 2024-01-28 15:50 684dd11 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 15:17 9a01da1 **docs: generate CHANGELOG [skip ci]**
