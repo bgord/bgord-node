@@ -1,8 +1,10 @@
 # Changelog
+- 2024-01-28 16:12 ab8debc **step: bump bgord/scripts**
 ## 2024-01-28 12:19 v0.58.261
 - 2024-01-28 12:19 847e695 **chore(release): 0.58.261**
 - 2024-01-28 12:18 3a57b17 **feature: upgrade to prisma v5**
 - 2024-01-28 11:54 7f964a8 **feature: add inspector decorator**
+- 2024-01-28 11:19 bc8e73a **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 10:55 80b57e0 **docs: generate CHANGELOG [skip ci]**
 ## 2024-01-24 12:04 v0.58.260
 - 2024-01-24 12:04 d44c023 **fix: feature flag export**
