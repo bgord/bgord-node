@@ -1,4 +1,7 @@
 # Changelog
+- 2024-01-28 17:03 6395532 **Merge pull request #80 from bgord/dependabot/npm_and_yarn/dotenv-16.4.1**
+- 2024-01-28 17:03 25fdabc **Merge pull request #81 from bgord/dependabot/npm_and_yarn/husky-9.0.6**
+- 2024-01-28 17:02 cc2ae1d **Merge pull request #82 from bgord/dependabot/npm_and_yarn/vitest-1.2.2**
 - 2024-01-28 16:50 6b4c4bf **feature: add code scanning gh workflows**
 - 2024-01-28 16:50 1491a17 **step: bump bgord/scripts**
 ## 2024-01-28 16:17 v0.58.263
@@ -6,6 +9,8 @@
 - 2024-01-28 16:17 05d00a7 **chore(release): 0.58.263**
 - 2024-01-28 16:16 0c6737a **feature: add polyfills**
 - 2024-01-28 16:12 ab8debc **step: bump bgord/scripts**
+- 2024-01-28 15:51 a8e7b97 **chore(deps-dev): bump vitest from 1.2.1 to 1.2.2**
+- 2024-01-28 15:50 684dd11 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 15:17 9a01da1 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 15:16 6223b60 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 15:13 99da616 **docs: generate CHANGELOG [skip ci]**
@@ -13,8 +18,10 @@
 - 2024-01-28 12:19 847e695 **chore(release): 0.58.261**
 - 2024-01-28 12:18 3a57b17 **feature: upgrade to prisma v5**
 - 2024-01-28 11:54 7f964a8 **feature: add inspector decorator**
+- 2024-01-28 11:20 6f5f23b **chore(deps-dev): bump husky from 8.0.3 to 9.0.6**
 - 2024-01-28 11:19 bc8e73a **docs: generate CHANGELOG [skip ci]**
 - 2024-01-28 10:55 80b57e0 **docs: generate CHANGELOG [skip ci]**
+- 2024-01-25 03:02 c49b15d **chore(deps): bump dotenv from 16.3.2 to 16.4.1**
 ## 2024-01-24 12:04 v0.58.260
 - 2024-01-24 12:04 d44c023 **fix: feature flag export**
 - 2024-01-24 12:04 8beb1fc **chore(release): 0.58.260**
