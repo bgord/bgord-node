@@ -1,17 +1,9 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.261](https://github.com/bgord/bgord-node/compare/v0.58.260...v0.58.261) (2024-01-28)
-
-
-### Features
-
-* add inspector decorator ([7f964a8](https://github.com/bgord/bgord-node/commit/7f964a88b02569cc2cf5d0073266f840cbf2c6d4))
-* upgrade to prisma v5 ([3a57b17](https://github.com/bgord/bgord-node/commit/3a57b17fe9e32b0449d8f4b4b76bb8f27a8f9d98))
-
-# Changelog
+## 2024-01-28 12:19 v0.58.261
+- 2024-01-28 12:19 847e695 **chore(release): 0.58.261**
+- 2024-01-28 12:18 3a57b17 **feature: upgrade to prisma v5**
 - 2024-01-28 11:54 7f964a8 **feature: add inspector decorator**
+- 2024-01-28 10:55 80b57e0 **docs: generate CHANGELOG [skip ci]**
 ## 2024-01-24 12:04 v0.58.260
 - 2024-01-24 12:04 d44c023 **fix: feature flag export**
 - 2024-01-24 12:04 8beb1fc **chore(release): 0.58.260**
