@@ -1,10 +1,12 @@
 # Changelog
+- 2024-01-28 11:54 7f964a8 **feature: add inspector decorator**
 ## 2024-01-24 12:04 v0.58.260
 - 2024-01-24 12:04 d44c023 **fix: feature flag export**
 - 2024-01-24 12:04 8beb1fc **chore(release): 0.58.260**
 ## 2024-01-24 12:01 v0.58.259
 - 2024-01-24 12:01 b02ba44 **chore(release): 0.58.259**
 - 2024-01-24 12:00 ea4669e **feature: add feature flag module**
+- 2024-01-24 11:04 bfe46c1 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-24 11:01 de8d06f **docs: generate CHANGELOG [skip ci]**
 - 2024-01-22 14:05 885b291 **Merge pull request #74 from bgord/dependabot/npm_and_yarn/vite-5.0.12**
 - 2024-01-22 14:04 3ec0b74 **Merge pull request #76 from bgord/dependabot/npm_and_yarn/dotenv-16.3.2**
