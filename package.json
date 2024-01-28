@@ -31,7 +31,7 @@
   "author": "Bartosz Gordon",
   "module": "dist/bgord-node.esm.js",
   "devDependencies": {
-    "@prisma/client": "3.7.0",
+    "@prisma/client": "5.8.1",
     "@types/accept-language-parser": "1.5.6",
     "@types/cookie-parser": "1.4.6",
     "@types/cors": "2.8.17",
@@ -50,7 +50,7 @@
     "@types/session-file-store": "1.2.5",
     "@types/supertest": "^6.0.2",
     "husky": "8.0.3",
-    "prisma": "3.7.0",
+    "prisma": "5.8.1",
     "standard-version": "9.5.0",
     "supertest": "^6.3.4",
     "tsdx": "0.14.1",
