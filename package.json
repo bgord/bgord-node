@@ -71,7 +71,7 @@
     "express-form-data": "2.0.23",
     "express-handlebars": "7.1.2",
     "express-recaptcha": "5.1.0",
-    "express-session": "1.17.3",
+    "express-session": "1.18.0",
     "express-static-gzip": "2.1.7",
     "hcaptcha": "0.1.1",
     "helmet": "7.1.0",
