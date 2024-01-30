@@ -1,5 +1,8 @@
 # Changelog
+- 2024-01-30 09:08 0ccf72d **Merge pull request #84 from bgord/dependabot/npm_and_yarn/husky-9.0.7**
+- 2024-01-30 02:52 016d002 **chore(deps-dev): bump husky from 9.0.6 to 9.0.7**
 - 2024-01-29 08:44 c4d2ef2 **Merge pull request #83 from bgord/dependabot/npm_and_yarn/express-session-1.18.0**
+- 2024-01-29 07:44 85d6175 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-29 02:45 48f6079 **chore(deps): bump express-session from 1.17.3 to 1.18.0**
 - 2024-01-28 17:04 b524919 **Merge pull request #77 from bgord/dependabot/npm_and_yarn/date-fns-3.3.1**
 - 2024-01-28 17:03 6395532 **Merge pull request #80 from bgord/dependabot/npm_and_yarn/dotenv-16.4.1**
