@@ -58,6 +58,7 @@
     "vitest": "1.2.2"
   },
   "dependencies": {
+    "@lucia-auth/adapter-prisma": "4.0.0",
     "accept-language-parser": "1.5.0",
     "check-disk-space": "3.4.0",
     "cookie-parser": "1.4.6",
@@ -76,11 +77,13 @@
     "hcaptcha": "0.1.1",
     "helmet": "7.1.0",
     "lodash": "4.17.21",
+    "lucia": "3.0.1",
     "method-override": "3.0.0",
     "mime-types": "2.1.35",
     "node-cache": "5.1.2",
     "nodemailer": "6.9.8",
     "on-headers": "1.0.2",
+    "oslo": "1.0.3",
     "passport": "0.7.0",
     "passport-local": "1.0.0",
     "pluralize": "8.0.0",
