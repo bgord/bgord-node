@@ -1,5 +1,10 @@
 # Changelog
+- 2024-01-31 10:22 915feaf **Merge pull request #85 from bgord/dependabot/npm_and_yarn/prisma-5.9.0**
+- 2024-01-31 10:22 790e0d7 **Merge pull request #86 from bgord/dependabot/npm_and_yarn/prisma/client-5.9.0**
+- 2024-01-31 02:23 75d8254 **chore(deps-dev): bump @prisma/client from 5.8.1 to 5.9.0**
+- 2024-01-31 02:22 71db4a6 **chore(deps-dev): bump prisma from 5.8.1 to 5.9.0**
 - 2024-01-30 09:08 0ccf72d **Merge pull request #84 from bgord/dependabot/npm_and_yarn/husky-9.0.7**
+- 2024-01-30 08:08 cdb4f24 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-30 02:52 016d002 **chore(deps-dev): bump husky from 9.0.6 to 9.0.7**
 - 2024-01-29 08:44 c4d2ef2 **Merge pull request #83 from bgord/dependabot/npm_and_yarn/express-session-1.18.0**
 - 2024-01-29 07:44 85d6175 **docs: generate CHANGELOG [skip ci]**
