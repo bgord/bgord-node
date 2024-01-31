@@ -50,7 +50,7 @@
     "@types/session-file-store": "1.2.5",
     "@types/supertest": "^6.0.2",
     "husky": "9.0.7",
-    "prisma": "5.8.1",
+    "prisma": "5.9.0",
     "standard-version": "9.5.0",
     "supertest": "^6.3.4",
     "tsdx": "0.14.1",
