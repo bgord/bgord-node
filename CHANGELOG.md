@@ -1,18 +1,13 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.264](https://github.com/bgord/bgord-node/compare/v0.58.263...v0.58.264) (2024-01-31)
-
-
-### Features
-
-* add auth shield ([f9eaf68](https://github.com/bgord/bgord-node/commit/f9eaf684eb41e21db1479ec58d9f9ec965a78f54))
-* add code scanning gh workflows ([6b4c4bf](https://github.com/bgord/bgord-node/commit/6b4c4bf7ab385ffca9c9690d0f89900f612c6eed))
-
-# Changelog
+## 2024-01-31 22:03 v0.58.264
+- 2024-01-31 22:03 8746606 **chore(release): 0.58.264**
+- 2024-01-31 21:48 82e432a **refactor: remove old auth related code**
+- 2024-01-31 21:43 f9eaf68 **feature: add auth shield**
+- 2024-01-31 21:41 2938748 **step: add credential vos**
+- 2024-01-31 21:40 4287835 **step: install auth packages**
 - 2024-01-31 10:22 915feaf **Merge pull request #85 from bgord/dependabot/npm_and_yarn/prisma-5.9.0**
 - 2024-01-31 10:22 790e0d7 **Merge pull request #86 from bgord/dependabot/npm_and_yarn/prisma/client-5.9.0**
+- 2024-01-31 09:22 f264aa4 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-31 02:23 75d8254 **chore(deps-dev): bump @prisma/client from 5.8.1 to 5.9.0**
 - 2024-01-31 02:22 71db4a6 **chore(deps-dev): bump prisma from 5.8.1 to 5.9.0**
 - 2024-01-30 09:08 0ccf72d **Merge pull request #84 from bgord/dependabot/npm_and_yarn/husky-9.0.7**
