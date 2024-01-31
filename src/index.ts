@@ -5,6 +5,7 @@ export * from "./etag-extractor"
 export * from "./revision"
 export * from './api-key-shield';
 export * from './api-version';
+export * from './auth-shield';
 export * from './basic-auth-shield';
 export * from './build-info-repository';
 export * from './cache';
