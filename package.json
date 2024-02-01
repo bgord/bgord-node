@@ -76,7 +76,7 @@
     "method-override": "3.0.0",
     "mime-types": "2.1.35",
     "node-cache": "5.1.2",
-    "nodemailer": "6.9.8",
+    "nodemailer": "6.9.9",
     "on-headers": "1.0.2",
     "oslo": "1.0.3",
     "pluralize": "8.0.0",
