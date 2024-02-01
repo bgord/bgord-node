@@ -1,4 +1,4 @@
-import { Middbg.leware } from './middleware';
+import { Middleware } from './middleware';
 
 export class Redirector {
   static build(path: string) {
