@@ -77,6 +77,7 @@ export * from './random';
 export * from './rate-limit-shield';
 export * from './rate-limiter';
 export * from './recaptcha-shield';
+export * from './redirector';
 export * from './reordering';
 export * from './request-id';
 export * from './response-body-in-locals';
