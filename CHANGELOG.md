@@ -1,5 +1,7 @@
 # Changelog
+- 2024-02-01 12:32 73e1f2f **refactor: ugprade execa**
 - 2024-02-01 12:07 4e98320 **fix: event handler error messages**
+- 2024-02-01 11:08 1f42d47 **docs: generate CHANGELOG [skip ci]**
 ## 2024-01-31 22:03 v0.58.264
 - 2024-01-31 22:03 8746606 **chore(release): 0.58.264**
 - 2024-01-31 21:48 82e432a **refactor: remove old auth related code**
