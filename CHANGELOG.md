@@ -1,19 +1,10 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.268](https://github.com/bgord/bgord-node/compare/v0.58.264...v0.58.268) (2024-02-01)
-
-
-### Bug Fixes
-
-* event handler error messages ([4e98320](https://github.com/bgord/bgord-node/commit/4e983208b48b976a847854592171d122605dcecd))
-* execa in binary prereq ([2eaabe1](https://github.com/bgord/bgord-node/commit/2eaabe10d36eb08abcb2ca05c255a61053e7266e))
-
-# Changelog
+## 2024-02-01 12:48 v0.58.268
+- 2024-02-01 12:48 0d56805 **chore(release): 0.58.268**
 - 2024-02-01 12:45 2eaabe1 **fix: execa in binary prereq**
 - 2024-02-01 12:32 73e1f2f **refactor: ugprade execa**
 - 2024-02-01 12:07 4e98320 **fix: event handler error messages**
+- 2024-02-01 11:46 3f94a1a **docs: generate CHANGELOG [skip ci]**
 ## 2024-02-01 11:32 v0.58.265
 - 2024-02-01 11:32 90636b4 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 11:08 1f42d47 **docs: generate CHANGELOG [skip ci]**
