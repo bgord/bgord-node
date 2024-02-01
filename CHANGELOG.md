@@ -1,10 +1,13 @@
 # Changelog
+- 2024-02-01 13:34 9ba8e83 **feature: add redirector**
+- 2024-02-01 13:11 ec90fec **refactor: update nodemailer**
 - 2024-02-01 13:06 4f120f3 **refactor: update packages**
 ## 2024-02-01 12:48 v0.58.268
 - 2024-02-01 12:48 0d56805 **chore(release): 0.58.268**
 - 2024-02-01 12:45 2eaabe1 **fix: execa in binary prereq**
 - 2024-02-01 12:32 73e1f2f **refactor: ugprade execa**
 - 2024-02-01 12:07 4e98320 **fix: event handler error messages**
+- 2024-02-01 12:07 25060c3 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 11:48 6ab9d61 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 11:46 3f94a1a **docs: generate CHANGELOG [skip ci]**
 ## 2024-02-01 11:32 v0.58.265
