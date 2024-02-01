@@ -1,10 +1,12 @@
 # Changelog
+- 2024-02-01 12:07 4e98320 **fix: event handler error messages**
 ## 2024-01-31 22:03 v0.58.264
 - 2024-01-31 22:03 8746606 **chore(release): 0.58.264**
 - 2024-01-31 21:48 82e432a **refactor: remove old auth related code**
 - 2024-01-31 21:43 f9eaf68 **feature: add auth shield**
 - 2024-01-31 21:41 2938748 **step: add credential vos**
 - 2024-01-31 21:40 4287835 **step: install auth packages**
+- 2024-01-31 21:03 0178f01 **docs: generate CHANGELOG [skip ci]**
 - 2024-01-31 10:22 915feaf **Merge pull request #85 from bgord/dependabot/npm_and_yarn/prisma-5.9.0**
 - 2024-01-31 10:22 790e0d7 **Merge pull request #86 from bgord/dependabot/npm_and_yarn/prisma/client-5.9.0**
 - 2024-01-31 09:22 f264aa4 **docs: generate CHANGELOG [skip ci]**
