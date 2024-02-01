@@ -46,8 +46,8 @@ export class EventHandler {
         await fn(event);
       } catch (error) {
         this.logger.error({
-          message: `Unknown ${event.name} error handler error`,
-          operation: 'unknown_error_handler_error',
+          message: `Unknown ${event.name} event handler error`,
+          operation: 'unknown_event_handler_error',
           metadata: this.logger.formatError(error),
         });
       }
