@@ -1,4 +1,4 @@
-import execa from 'execa';
+import { $ } from 'execa';
 import { PackageVersion } from '../package-version';
 
 import {
@@ -26,7 +26,7 @@ export class PrerequisiteNode extends AbstractPrerequisite<
   async verify(): Promise<PrerequisiteStatusEnum> {
     if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
 
-    const { stdout } = await execa('node', ['-v']);
+    const { stdout } = await $`node -v`;
     const current = PackageVersion.fromStringWithV(stdout);
 
     if (current.isGreaterThanOrEqual(this.config.version)) {

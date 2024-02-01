@@ -36,7 +36,7 @@ export class PrerequisiteBinary extends AbstractPrerequisite<
     try {
       const binary = PrerequisiteBinaryValue.parse(this.config.binary);
 
-      const result = await execa.command(`which ${binary}`);
+      const result = await execa.$`which ${binary}`;
 
       return result.exitCode === 0 ? this.pass() : this.reject();
     } catch (error) {

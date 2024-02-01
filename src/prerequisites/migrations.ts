@@ -1,4 +1,4 @@
-import execa from 'execa';
+import { $ } from 'execa';
 
 import {
   PrerequisiteLabelType,
@@ -25,7 +25,7 @@ export class PrerequisiteMigrations extends AbstractPrerequisite<
     if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
 
     try {
-      const result = await execa.command(`npx prisma migrate status`);
+      const result = await $`npx prisma migrate status`;
 
       return result.exitCode === 0 ? this.pass() : this.reject();
     } catch (error) {
