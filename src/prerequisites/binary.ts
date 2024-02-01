@@ -1,5 +1,5 @@
 import z from 'zod';
-import execa from 'execa';
+import { $ } from 'execa';
 
 import {
   PrerequisiteLabelType,
@@ -36,7 +36,7 @@ export class PrerequisiteBinary extends AbstractPrerequisite<
     try {
       const binary = PrerequisiteBinaryValue.parse(this.config.binary);
 
-      const result = await execa.$`which ${binary}`;
+      const result = await $`which ${binary}`;
 
       return result.exitCode === 0 ? this.pass() : this.reject();
     } catch (error) {
