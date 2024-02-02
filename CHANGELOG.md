@@ -1,5 +1,7 @@
 # Changelog
+- 2024-02-02 13:41 49ac1ef **feature: add prepublishOnly script**
 - 2024-02-02 13:06 934432c **feature: add JobHandler#protect**
+- 2024-02-02 12:07 7dce344 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-02 09:41 648bb36 **Merge pull request #87 from bgord/dependabot/npm_and_yarn/husky-9.0.10**
 - 2024-02-02 09:37 5803428 **Merge pull request #89 from bgord/dependabot/npm_and_yarn/prisma/client-5.9.1**
 - 2024-02-02 09:37 06ba929 **Merge pull request #88 from bgord/dependabot/npm_and_yarn/prisma-5.9.1**
