@@ -1,4 +1,8 @@
 # Changelog
+- 2024-02-02 09:37 5803428 **Merge pull request #89 from bgord/dependabot/npm_and_yarn/prisma/client-5.9.1**
+- 2024-02-02 09:37 06ba929 **Merge pull request #88 from bgord/dependabot/npm_and_yarn/prisma-5.9.1**
+- 2024-02-02 02:39 dade80b **chore(deps-dev): bump @prisma/client from 5.9.0 to 5.9.1**
+- 2024-02-02 02:39 3059704 **chore(deps-dev): bump prisma from 5.9.0 to 5.9.1**
 - 2024-02-01 13:34 d7bc997 **feature: add redirector**
 - 2024-02-01 13:34 9ba8e83 **feature: add redirector**
 - 2024-02-01 13:11 ec90fec **refactor: update nodemailer**
@@ -6,6 +10,7 @@
 ## 2024-02-01 12:48 v0.58.268
 - 2024-02-01 12:48 0d56805 **chore(release): 0.58.268**
 - 2024-02-01 12:45 2eaabe1 **fix: execa in binary prereq**
+- 2024-02-01 12:36 018a086 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 12:35 17db957 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 12:32 73e1f2f **refactor: ugprade execa**
 - 2024-02-01 12:07 4e98320 **fix: event handler error messages**
