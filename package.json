@@ -45,7 +45,7 @@
     "@types/on-headers": "1.0.3",
     "@types/pluralize": "0.0.33",
     "@types/supertest": "6.0.2",
-    "husky": "9.0.7",
+    "husky": "9.0.10",
     "prisma": "5.9.1",
     "standard-version": "9.5.0",
     "supertest": "6.3.4",
