@@ -1,6 +1,9 @@
 # Changelog
+- 2024-02-02 09:41 648bb36 **Merge pull request #87 from bgord/dependabot/npm_and_yarn/husky-9.0.10**
 - 2024-02-02 09:37 5803428 **Merge pull request #89 from bgord/dependabot/npm_and_yarn/prisma/client-5.9.1**
 - 2024-02-02 09:37 06ba929 **Merge pull request #88 from bgord/dependabot/npm_and_yarn/prisma-5.9.1**
+- 2024-02-02 08:39 00b4c14 **chore(deps-dev): bump husky from 9.0.7 to 9.0.10**
+- 2024-02-02 08:37 08ccdbe **docs: generate CHANGELOG [skip ci]**
 - 2024-02-02 02:39 dade80b **chore(deps-dev): bump @prisma/client from 5.9.0 to 5.9.1**
 - 2024-02-02 02:39 3059704 **chore(deps-dev): bump prisma from 5.9.0 to 5.9.1**
 - 2024-02-01 13:34 d7bc997 **feature: add redirector**
