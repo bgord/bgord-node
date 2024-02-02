@@ -75,4 +75,15 @@ export class JobHandler {
       }
     };
   }
+
+  protect(cron: Cron) {
+    const that = this;
+
+    return async () => {
+      that.logger.info({
+        message: `${cron.name} overrun`,
+        operation: 'job_overrun',
+      });
+    };
+  }
 }
