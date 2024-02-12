@@ -1,6 +1,9 @@
 # Changelog
 - 2024-02-12 08:15 94739f5 **Merge pull request #92 from bgord/dependabot/npm_and_yarn/dotenv-16.4.2**
+- 2024-02-12 08:15 2bb940e **Merge pull request #91 from bgord/dependabot/npm_and_yarn/oslo-1.1.0**
+- 2024-02-12 07:15 d1fa4d8 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-12 02:19 8f49307 **chore(deps): bump dotenv from 16.4.1 to 16.4.2**
+- 2024-02-08 02:41 39b3227 **chore(deps): bump oslo from 1.0.4 to 1.1.0**
 - 2024-02-05 08:23 7fc34c3 **Merge pull request #90 from bgord/dependabot/npm_and_yarn/oslo-1.0.4**
 - 2024-02-05 07:23 483bbee **docs: generate CHANGELOG [skip ci]**
 - 2024-02-05 02:30 23ec740 **chore(deps): bump oslo from 1.0.3 to 1.0.4**
