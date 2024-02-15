@@ -1,6 +1,11 @@
 # Changelog
+- 2024-02-15 08:34 7d248de **Merge pull request #95 from bgord/dependabot/npm_and_yarn/husky-9.0.11**
+- 2024-02-15 08:34 1045d6f **Merge pull request #96 from bgord/dependabot/npm_and_yarn/dotenv-16.4.4**
+- 2024-02-14 02:37 bcd187b **chore(deps): bump dotenv from 16.4.3 to 16.4.4**
+- 2024-02-14 02:37 6038a56 **chore(deps-dev): bump husky from 9.0.10 to 9.0.11**
 - 2024-02-13 09:15 6c848a2 **Merge pull request #93 from bgord/dependabot/npm_and_yarn/oslo-1.1.1**
 - 2024-02-13 09:15 3380c1e **Merge pull request #94 from bgord/dependabot/npm_and_yarn/dotenv-16.4.3**
+- 2024-02-13 08:15 432fdd1 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-13 02:31 e1f849e **chore(deps): bump dotenv from 16.4.2 to 16.4.3**
 - 2024-02-13 02:30 32e2657 **chore(deps): bump oslo from 1.1.0 to 1.1.1**
 - 2024-02-12 08:15 94739f5 **Merge pull request #92 from bgord/dependabot/npm_and_yarn/dotenv-16.4.2**
