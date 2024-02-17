@@ -82,7 +82,7 @@
     "oslo": "1.1.1",
     "pluralize": "8.0.0",
     "sharp": "0.32.6",
-    "ssl-checker": "2.0.8",
+    "ssl-checker": "2.0.9",
     "winston": "3.11.0",
     "zod": "3.22.4"
   },
