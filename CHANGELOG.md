@@ -1,5 +1,8 @@
 # Changelog
 - 2024-02-19 08:23 be3e6d9 **Merge pull request #101 from bgord/dependabot/npm_and_yarn/oslo-1.1.2**
+- 2024-02-19 08:23 428871b **Merge pull request #100 from bgord/dependabot/npm_and_yarn/croner-8.0.1**
+- 2024-02-19 07:23 d776849 **docs: generate CHANGELOG [skip ci]**
+- 2024-02-19 02:16 da9bd4b **chore(deps): bump croner from 8.0.0 to 8.0.1**
 - 2024-02-19 02:16 3f2b08d **chore(deps): bump oslo from 1.1.1 to 1.1.2**
 - 2024-02-17 08:55 34d3647 **Merge pull request #98 from bgord/dependabot/npm_and_yarn/undici-5.28.3**
 - 2024-02-17 08:55 0ef97ca **Merge pull request #97 from bgord/dependabot/npm_and_yarn/ssl-checker-2.0.9**
