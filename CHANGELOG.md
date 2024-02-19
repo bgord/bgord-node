@@ -1,6 +1,9 @@
 # Changelog
+- 2024-02-19 08:23 be3e6d9 **Merge pull request #101 from bgord/dependabot/npm_and_yarn/oslo-1.1.2**
+- 2024-02-19 02:16 3f2b08d **chore(deps): bump oslo from 1.1.1 to 1.1.2**
 - 2024-02-17 08:55 34d3647 **Merge pull request #98 from bgord/dependabot/npm_and_yarn/undici-5.28.3**
 - 2024-02-17 08:55 0ef97ca **Merge pull request #97 from bgord/dependabot/npm_and_yarn/ssl-checker-2.0.9**
+- 2024-02-17 07:55 2a79cf3 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-16 18:45 e6891ea **chore(deps): bump undici from 5.28.2 to 5.28.3**
 - 2024-02-16 02:34 5d082b9 **chore(deps): bump ssl-checker from 2.0.8 to 2.0.9**
 - 2024-02-15 08:34 7d248de **Merge pull request #95 from bgord/dependabot/npm_and_yarn/husky-9.0.11**
