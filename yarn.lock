@@ -7275,10 +7275,10 @@ oslo@1.0.1:
     "@node-rs/argon2" "1.7.2"
     "@node-rs/bcrypt" "1.9.2"
 
-oslo@1.1.1, oslo@^1.0.3:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/oslo/-/oslo-1.1.1.tgz#ed30559861c3dbf20bf3eddcb6f284467b6fb305"
-  integrity sha512-BuJp5GfBW3jkUDLb8VftXD9FRTfjnodMyVshSy6p4UP8PhQI8auTxAQlef9NdFe6JC4mEgZb/mhMJpfNVudDTA==
+oslo@1.1.2, oslo@^1.0.3:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/oslo/-/oslo-1.1.2.tgz#d17c7876a55b5fd19d7d51f501ea50941dcd4358"
+  integrity sha512-l5tmumAHJy6wTfcxjwbPtcEn23lxnsBqbW1PqM11lqnQ79Q8Gzc7b3+OjRpLTbiqkfvhT4/BZ2Ooe8/QCJxyEg==
   dependencies:
     "@node-rs/argon2" "1.7.0"
     "@node-rs/bcrypt" "1.9.0"
