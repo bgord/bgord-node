@@ -1,7 +1,12 @@
 # Changelog
+- 2024-02-21 08:27 f49ac45 **Merge pull request #104 from bgord/dependabot/npm_and_yarn/prisma/client-5.10.1**
+- 2024-02-21 08:27 25935f3 **Merge pull request #105 from bgord/dependabot/npm_and_yarn/vitest-1.3.1**
+- 2024-02-21 02:27 5b61474 **chore(deps-dev): bump vitest from 1.3.0 to 1.3.1**
+- 2024-02-21 02:26 1691fe6 **chore(deps-dev): bump @prisma/client from 5.9.1 to 5.10.1**
 - 2024-02-19 08:23 be3e6d9 **Merge pull request #101 from bgord/dependabot/npm_and_yarn/oslo-1.1.2**
 - 2024-02-19 08:23 a306a0b **Merge pull request #99 from bgord/dependabot/npm_and_yarn/vitest-1.3.0**
 - 2024-02-19 08:23 428871b **Merge pull request #100 from bgord/dependabot/npm_and_yarn/croner-8.0.1**
+- 2024-02-19 07:24 0ff614c **docs: generate CHANGELOG [skip ci]**
 - 2024-02-19 07:23 d776849 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-19 07:23 7e38560 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-19 02:16 da9bd4b **chore(deps): bump croner from 8.0.0 to 8.0.1**
