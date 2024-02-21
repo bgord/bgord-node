@@ -1,7 +1,10 @@
 # Changelog
 - 2024-02-21 08:27 f49ac45 **Merge pull request #104 from bgord/dependabot/npm_and_yarn/prisma/client-5.10.1**
+- 2024-02-21 08:27 98f85ed **Merge pull request #103 from bgord/dependabot/npm_and_yarn/prisma-5.10.1**
 - 2024-02-21 08:27 25935f3 **Merge pull request #105 from bgord/dependabot/npm_and_yarn/vitest-1.3.1**
+- 2024-02-21 07:27 189a12a **docs: generate CHANGELOG [skip ci]**
 - 2024-02-21 02:27 5b61474 **chore(deps-dev): bump vitest from 1.3.0 to 1.3.1**
+- 2024-02-21 02:26 e90a611 **chore(deps-dev): bump prisma from 5.9.1 to 5.10.1**
 - 2024-02-21 02:26 1691fe6 **chore(deps-dev): bump @prisma/client from 5.9.1 to 5.10.1**
 - 2024-02-19 08:23 be3e6d9 **Merge pull request #101 from bgord/dependabot/npm_and_yarn/oslo-1.1.2**
 - 2024-02-19 08:23 a306a0b **Merge pull request #99 from bgord/dependabot/npm_and_yarn/vitest-1.3.0**
