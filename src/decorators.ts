@@ -25,8 +25,8 @@ export class Decorators {
 
         that.logger.info({
           message: `${label} duration`,
-          operation: 'decorators_duration',
-          metadata: { duration: that.rounding.round(after - before) },
+          operation: 'decorators_duration_ms',
+          metadata: { durationMs: that.rounding.round(after - before) },
         });
 
         return value;
