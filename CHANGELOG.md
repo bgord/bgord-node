@@ -1,8 +1,10 @@
 # Changelog
+- 2024-02-22 16:10 d6040ab **fix: duration decorator ms duration**
 - 2024-02-21 08:27 f49ac45 **Merge pull request #104 from bgord/dependabot/npm_and_yarn/prisma/client-5.10.1**
 - 2024-02-21 08:27 98f85ed **Merge pull request #103 from bgord/dependabot/npm_and_yarn/prisma-5.10.1**
 - 2024-02-21 08:27 80c1367 **Merge pull request #102 from bgord/dependabot/npm_and_yarn/dotenv-16.4.5**
 - 2024-02-21 08:27 25935f3 **Merge pull request #105 from bgord/dependabot/npm_and_yarn/vitest-1.3.1**
+- 2024-02-21 07:28 3bd80e8 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-21 07:27 f65d0e1 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-21 07:27 189a12a **docs: generate CHANGELOG [skip ci]**
 - 2024-02-21 02:27 5b61474 **chore(deps-dev): bump vitest from 1.3.0 to 1.3.1**
