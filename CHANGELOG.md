@@ -1,5 +1,12 @@
 # Changelog
+- 2024-02-23 08:37 e7ecfb5 **Merge pull request #107 from bgord/dependabot/npm_and_yarn/prisma-5.10.2**
+- 2024-02-23 08:36 95e40a1 **Merge pull request #108 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.10**
+- 2024-02-23 08:36 895adc5 **Merge pull request #106 from bgord/dependabot/npm_and_yarn/prisma/client-5.10.2**
+- 2024-02-23 02:37 6294f6c **chore(deps): bump nodemailer from 6.9.9 to 6.9.10**
 - 2024-02-22 16:10 d6040ab **fix: duration decorator ms duration**
+- 2024-02-22 15:11 77f1baf **docs: generate CHANGELOG [skip ci]**
+- 2024-02-22 02:53 4e55a6e **chore(deps-dev): bump @prisma/client from 5.10.1 to 5.10.2**
+- 2024-02-22 02:53 1c66e4f **chore(deps-dev): bump prisma from 5.10.1 to 5.10.2**
 - 2024-02-21 08:27 f49ac45 **Merge pull request #104 from bgord/dependabot/npm_and_yarn/prisma/client-5.10.1**
 - 2024-02-21 08:27 98f85ed **Merge pull request #103 from bgord/dependabot/npm_and_yarn/prisma-5.10.1**
 - 2024-02-21 08:27 80c1367 **Merge pull request #102 from bgord/dependabot/npm_and_yarn/dotenv-16.4.5**
