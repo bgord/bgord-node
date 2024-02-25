@@ -17,6 +17,7 @@ import { ApiVersion } from './api-version';
 import { HCaptchaShield } from './hcaptcha-shield';
 import { Context } from './context';
 import { ETagExtractor, WeakETagExtractor } from './etag-extractor';
+import { Size, SizeUnit } from './size';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -60,7 +61,9 @@ export function addExpressEssentials(
   app.use(helmet(helmetConfig));
   app.use(ApiVersion.attach);
 
-  const bodyParserJsonConfig = config?.json ?? undefined;
+  const bodyParserJsonConfig = config?.json ?? {
+    limit: new Size({ value: 1, unit: SizeUnit.MB }).toString(),
+  };
   app.use(express.json(bodyParserJsonConfig));
   app.use(cookieParser() as express.RequestHandler);
 
