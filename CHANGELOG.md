@@ -1,5 +1,7 @@
 # Changelog
+- 2024-02-26 13:08 f0fd214 **fix: missing graceful shutdown process exit**
 - 2024-02-25 21:05 c346d0a **feature: limit Request Size**
+- 2024-02-25 20:05 f9e9ed7 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-23 08:37 e7ecfb5 **Merge pull request #107 from bgord/dependabot/npm_and_yarn/prisma-5.10.2**
 - 2024-02-23 08:36 95e40a1 **Merge pull request #108 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.10**
 - 2024-02-23 08:36 895adc5 **Merge pull request #106 from bgord/dependabot/npm_and_yarn/prisma/client-5.10.2**
