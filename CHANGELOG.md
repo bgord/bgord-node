@@ -1,5 +1,8 @@
 # Changelog
+- 2024-02-26 22:04 fdb81d2 **Merge pull request #109 from bgord/dependabot/npm_and_yarn/oslo-1.1.3**
 - 2024-02-26 13:08 f0fd214 **fix: missing graceful shutdown process exit**
+- 2024-02-26 12:11 21aacb4 **docs: generate CHANGELOG [skip ci]**
+- 2024-02-26 02:48 29ad999 **chore(deps): bump oslo from 1.1.2 to 1.1.3**
 - 2024-02-25 21:05 c346d0a **feature: limit Request Size**
 - 2024-02-25 20:05 f9e9ed7 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-23 08:37 e7ecfb5 **Merge pull request #107 from bgord/dependabot/npm_and_yarn/prisma-5.10.2**
