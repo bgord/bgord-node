@@ -16,11 +16,13 @@ export class GracefulShutdown {
     process.on('SIGTERM', async () => {
       console.log('SIGTERM signal received: closing HTTP server');
       await GracefulShutdown.shutdown(server, callback);
+      process.exit(0);
     });
 
     process.on('SIGINT', async () => {
       console.log('SIGINT signal received: closing HTTP server');
       await GracefulShutdown.shutdown(server, callback);
+      process.exit(0);
     });
 
     process.on('unhandledRejection', async event => {
@@ -32,6 +34,7 @@ export class GracefulShutdown {
       console.log(JSON.stringify(event));
 
       await GracefulShutdown.shutdown(server, callback);
+      process.exit(1);
     });
   }
 }
