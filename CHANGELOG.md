@@ -1,5 +1,12 @@
 # Changelog
+- 2024-03-02 11:43 c3d64fe **Merge pull request #112 from bgord/dependabot/npm_and_yarn/types/cookie-parser-1.4.7**
+- 2024-03-02 11:43 82095a8 **Merge pull request #111 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.11**
+- 2024-03-02 11:43 34f77eb **Merge pull request #110 from bgord/dependabot/npm_and_yarn/express-4.18.3**
+- 2024-03-01 02:41 eccd639 **chore(deps): bump nodemailer from 6.9.10 to 6.9.11**
+- 2024-03-01 02:41 abeaf83 **chore(deps-dev): bump @types/cookie-parser from 1.4.6 to 1.4.7**
+- 2024-03-01 02:40 7292e31 **chore(deps): bump express from 4.18.2 to 4.18.3**
 - 2024-02-26 22:04 fdb81d2 **Merge pull request #109 from bgord/dependabot/npm_and_yarn/oslo-1.1.3**
+- 2024-02-26 21:05 4547d0a **docs: generate CHANGELOG [skip ci]**
 - 2024-02-26 13:08 f0fd214 **fix: missing graceful shutdown process exit**
 - 2024-02-26 12:11 21aacb4 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-26 02:48 29ad999 **chore(deps): bump oslo from 1.1.2 to 1.1.3**
