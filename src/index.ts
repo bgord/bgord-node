@@ -19,6 +19,7 @@ export * from './decorators';
 export * from './deep-merge';
 export * from './dll';
 export * from './download-file';
+export * from './email-censor'
 export * from './encryption';
 export * from './environment-validator';
 export * from './event';
