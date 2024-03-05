@@ -1,5 +1,7 @@
 # Changelog
+- 2024-03-05 10:21 e93a9fa **feature: add email censor**
 - 2024-03-04 08:03 8f0841c **Merge pull request #113 from bgord/dependabot/npm_and_yarn/winston-3.12.0**
+- 2024-03-04 07:03 5d0eb63 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-04 02:30 2b9c3c5 **chore(deps): bump winston from 3.11.0 to 3.12.0**
 - 2024-03-02 11:43 c3d64fe **Merge pull request #112 from bgord/dependabot/npm_and_yarn/types/cookie-parser-1.4.7**
 - 2024-03-02 11:43 82095a8 **Merge pull request #111 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.11**
