@@ -1,5 +1,8 @@
 # Changelog
+- 2024-03-08 08:43 b0e2372 **Merge pull request #114 from bgord/dependabot/npm_and_yarn/typescript-5.4.2**
+- 2024-03-07 02:25 9502c59 **chore(deps-dev): bump typescript from 5.3.3 to 5.4.2**
 - 2024-03-05 10:21 e93a9fa **feature: add email censor**
+- 2024-03-05 09:23 fd666a9 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-04 08:03 8f0841c **Merge pull request #113 from bgord/dependabot/npm_and_yarn/winston-3.12.0**
 - 2024-03-04 07:03 5d0eb63 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-04 02:30 2b9c3c5 **chore(deps): bump winston from 3.11.0 to 3.12.0**
