@@ -2,18 +2,32 @@ import sharp from 'sharp';
 
 import * as Schema from './schema';
 
-export type ImageResizerConfigType = {
+export type ImageResizerWidthConfigType = {
   input: Schema.PathType;
   output: Schema.PathType;
   width: Schema.WidthType;
 };
 
+export type ImageResizerHeightConfigType = {
+  input: Schema.PathType;
+  output: Schema.PathType;
+  height: Schema.WidthType;
+};
+
 export class ImageResizer {
   static async resizeToWidth(
-    config: ImageResizerConfigType
+    config: ImageResizerWidthConfigType
   ): Promise<sharp.OutputInfo> {
     return sharp(config.input)
       .resize({ width: config.width })
+      .toFile(config.output);
+  }
+
+  static async resizeToHeight(
+    config: ImageResizerHeightConfigType
+  ): Promise<sharp.OutputInfo> {
+    return sharp(config.input)
+      .resize({ height: config.height })
       .toFile(config.output);
   }
 }
