@@ -1,6 +1,8 @@
 # Changelog
+- 2024-03-10 20:04 a58ca0c **fix: image resizer height type**
 - 2024-03-10 19:58 96d2452 **feature: add image resizer resize to height**
 - 2024-03-10 19:58 9210c26 **feature: add five minutes cache for static files**
+- 2024-03-10 18:59 323d356 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-10 14:30 e48d332 **feature: add percentage service**
 - 2024-03-10 13:33 e56332f **docs: generate CHANGELOG [skip ci]**
 - 2024-03-08 08:43 b0e2372 **Merge pull request #114 from bgord/dependabot/npm_and_yarn/typescript-5.4.2**
