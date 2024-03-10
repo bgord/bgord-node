@@ -1,5 +1,7 @@
 # Changelog
+- 2024-03-10 14:30 e48d332 **feature: add percentage service**
 - 2024-03-08 08:43 b0e2372 **Merge pull request #114 from bgord/dependabot/npm_and_yarn/typescript-5.4.2**
+- 2024-03-08 07:43 51f8a88 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-07 02:25 9502c59 **chore(deps-dev): bump typescript from 5.3.3 to 5.4.2**
 - 2024-03-05 10:21 e93a9fa **feature: add email censor**
 - 2024-03-05 09:23 fd666a9 **docs: generate CHANGELOG [skip ci]**
