@@ -1,9 +1,12 @@
 import * as express from 'express';
+
 import { Middleware } from './middleware';
+import { Time } from './time';
 
 export enum CacheStaticFilesStrategy {
   never = 'never',
   always = 'always',
+  five_minutes = 'five_minutes',
 }
 
 export class CacheStaticFiles {
@@ -22,7 +25,13 @@ export class CacheStaticFiles {
       if (strategy === CacheStaticFilesStrategy.always) {
         response.setHeader(
           'cache-control',
-          'public, max-age=31536000, immutable'
+          `public, max-age=${Time.Days(365).seconds}, immutable`
+        );
+      }
+      if (strategy === CacheStaticFilesStrategy.five_minutes) {
+        response.setHeader(
+          'cache-control',
+          `public, max-age=${Time.Minutes(5).seconds}`
         );
       }
       return next();
