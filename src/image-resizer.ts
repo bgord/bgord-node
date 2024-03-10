@@ -11,7 +11,7 @@ export type ImageResizerWidthConfigType = {
 export type ImageResizerHeightConfigType = {
   input: Schema.PathType;
   output: Schema.PathType;
-  height: Schema.WidthType;
+  height: Schema.HeightType;
 };
 
 export class ImageResizer {
