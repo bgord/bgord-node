@@ -6581,10 +6581,10 @@ lru-cache@^6.0.0:
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.2.0.tgz#0bd445ca57363465900f4d1f9bd8db343a4d95c3"
   integrity sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==
 
-lucia@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lucia/-/lucia-3.0.1.tgz#28d283275cf1e8867e9f29d5c8f7cfd053424abf"
-  integrity sha512-srwUkTCGgr6N4mFpaKZVZy5kwiRZdsrbIDv9Wrjar+xyw1MjojYQQ7oRbegjRWOZ3yI8xOOclK3sz/rga2J7/w==
+lucia@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/lucia/-/lucia-3.1.1.tgz#0615c99a6989bed2ea78b3b9426280299daafaa3"
+  integrity sha512-Ygvgnqq7Ha7lYVaZATPwkPD2s2Qlsm71Z2o0byx/abNBfFldCRow5sNii6RqMsuMpK957RAI3Gw4/aWoagkc7A==
   dependencies:
     oslo "1.0.1"
 
