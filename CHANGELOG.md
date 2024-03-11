@@ -1,7 +1,10 @@
 # Changelog
+- 2024-03-11 09:46 a471126 **Merge pull request #117 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.12**
+- 2024-03-11 02:30 571db9c **chore(deps): bump nodemailer from 6.9.11 to 6.9.12**
 - 2024-03-10 20:04 a58ca0c **fix: image resizer height type**
 - 2024-03-10 19:58 96d2452 **feature: add image resizer resize to height**
 - 2024-03-10 19:58 9210c26 **feature: add five minutes cache for static files**
+- 2024-03-10 19:05 36919eb **docs: generate CHANGELOG [skip ci]**
 - 2024-03-10 18:59 323d356 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-10 14:30 e48d332 **feature: add percentage service**
 - 2024-03-10 13:33 e56332f **docs: generate CHANGELOG [skip ci]**
