@@ -1,7 +1,9 @@
 # Changelog
+- 2024-03-13 14:43 6a617cd **bump version**
 - 2024-03-11 09:47 af905c3 **Merge pull request #115 from bgord/dependabot/npm_and_yarn/lucia-auth/adapter-prisma-4.0.1**
 - 2024-03-11 09:46 a471126 **Merge pull request #117 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.12**
 - 2024-03-11 09:46 34c8cf8 **Merge pull request #116 from bgord/dependabot/npm_and_yarn/lucia-3.1.1**
+- 2024-03-11 08:47 f0afdc6 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-11 08:46 9712caa **docs: generate CHANGELOG [skip ci]**
 - 2024-03-11 02:30 8430e2c **chore(deps): bump lucia from 3.0.1 to 3.1.1**
 - 2024-03-11 02:30 571db9c **chore(deps): bump nodemailer from 6.9.11 to 6.9.12**
