@@ -1,8 +1,13 @@
 # Changelog
+- 2024-03-14 08:28 d430a28 **Merge pull request #119 from bgord/dependabot/npm_and_yarn/prisma-5.11.0**
+- 2024-03-14 08:28 34bb512 **Merge pull request #120 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.0**
 - 2024-03-14 08:27 7d8c487 **Merge pull request #121 from bgord/dependabot/npm_and_yarn/prisma/client-5.11.0**
+- 2024-03-14 07:27 3dafa5d **docs: generate CHANGELOG [skip ci]**
 - 2024-03-13 14:43 6a617cd **bump version**
 - 2024-03-13 13:43 ebccc9f **docs: generate CHANGELOG [skip ci]**
 - 2024-03-13 03:00 9ebd911 **chore(deps-dev): bump @prisma/client from 5.10.2 to 5.11.0**
+- 2024-03-13 03:00 51c20d7 **chore(deps-dev): bump @types/lodash from 4.14.202 to 4.17.0**
+- 2024-03-13 02:59 844e843 **chore(deps-dev): bump prisma from 5.10.2 to 5.11.0**
 - 2024-03-11 09:47 af905c3 **Merge pull request #115 from bgord/dependabot/npm_and_yarn/lucia-auth/adapter-prisma-4.0.1**
 - 2024-03-11 09:46 a471126 **Merge pull request #117 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.12**
 - 2024-03-11 09:46 34c8cf8 **Merge pull request #116 from bgord/dependabot/npm_and_yarn/lucia-3.1.1**
