@@ -1,9 +1,12 @@
 # Changelog
+- 2024-03-18 08:23 da0e135 **Merge pull request #123 from bgord/dependabot/npm_and_yarn/date-fns-3.6.0**
+- 2024-03-18 02:04 6b33e4b **chore(deps): bump date-fns from 3.4.0 to 3.6.0**
 - 2024-03-14 08:29 6a77ac2 **Merge pull request #118 from bgord/dependabot/npm_and_yarn/date-fns-3.4.0**
 - 2024-03-14 08:28 d430a28 **Merge pull request #119 from bgord/dependabot/npm_and_yarn/prisma-5.11.0**
 - 2024-03-14 08:28 34bb512 **Merge pull request #120 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.0**
 - 2024-03-14 08:27 7d8c487 **Merge pull request #121 from bgord/dependabot/npm_and_yarn/prisma/client-5.11.0**
 - 2024-03-14 07:29 ab9444d **docs: generate CHANGELOG [skip ci]**
+- 2024-03-14 07:29 23e8f07 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-14 07:27 3dafa5d **docs: generate CHANGELOG [skip ci]**
 - 2024-03-13 14:43 6a617cd **bump version**
 - 2024-03-13 13:43 ebccc9f **docs: generate CHANGELOG [skip ci]**
