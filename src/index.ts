@@ -41,6 +41,7 @@ export * from './image-converter';
 export * from './image-exif';
 export * from './image-resizer';
 export * from './jobs';
+export * from './leap-year-checker';
 export * from './logger';
 export * from './mailer';
 export * from './mean';
