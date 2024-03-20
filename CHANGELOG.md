@@ -1,6 +1,8 @@
 # Changelog
+- 2024-03-20 16:15 650de85 **feature: add leap year checker**
 - 2024-03-18 08:24 5b4a0df **Merge pull request #122 from bgord/dependabot/npm_and_yarn/vitest-1.4.0**
 - 2024-03-18 08:23 da0e135 **Merge pull request #123 from bgord/dependabot/npm_and_yarn/date-fns-3.6.0**
+- 2024-03-18 07:24 dc0ae98 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-18 07:23 3a800f3 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-18 02:04 a9d1444 **chore(deps-dev): bump vitest from 1.3.1 to 1.4.0**
 - 2024-03-18 02:04 6b33e4b **chore(deps): bump date-fns from 3.4.0 to 3.6.0**
