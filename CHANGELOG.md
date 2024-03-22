@@ -1,5 +1,8 @@
 # Changelog
+- 2024-03-22 08:13 9eb1e52 **Merge pull request #126 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.13**
+- 2024-03-21 02:16 3f28fa5 **chore(deps): bump nodemailer from 6.9.12 to 6.9.13**
 - 2024-03-20 16:15 650de85 **feature: add leap year checker**
+- 2024-03-20 15:16 b65a9b3 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-18 08:24 5b4a0df **Merge pull request #122 from bgord/dependabot/npm_and_yarn/vitest-1.4.0**
 - 2024-03-18 08:23 da0e135 **Merge pull request #123 from bgord/dependabot/npm_and_yarn/date-fns-3.6.0**
 - 2024-03-18 07:24 dc0ae98 **docs: generate CHANGELOG [skip ci]**
