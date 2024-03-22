@@ -64,7 +64,7 @@
     "date-fns": "3.6.0",
     "dotenv": "16.4.5",
     "execa": "8.0.1",
-    "express": "4.18.3",
+    "express": "4.19.1",
     "express-async-handler": "1.2.0",
     "express-form-data": "2.0.23",
     "express-handlebars": "7.1.2",
