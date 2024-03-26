@@ -1,7 +1,14 @@
 # Changelog
+- 2024-03-26 08:14 e0e9b90 **Merge pull request #129 from bgord/dependabot/npm_and_yarn/express-4.19.2**
+- 2024-03-26 08:14 600f009 **Merge pull request #128 from bgord/dependabot/npm_and_yarn/sharp-0.33.3**
+- 2024-03-26 08:14 2509cb4 **Merge pull request #127 from bgord/dependabot/npm_and_yarn/winston-3.13.0**
+- 2024-03-26 02:24 c44712b **chore(deps): bump express from 4.19.1 to 4.19.2**
+- 2024-03-25 03:01 af86678 **chore(deps): bump sharp from 0.32.6 to 0.33.3**
+- 2024-03-25 03:00 cb70abd **chore(deps): bump winston from 3.12.0 to 3.13.0**
 - 2024-03-22 08:14 f3b6cd0 **Merge pull request #124 from bgord/dependabot/npm_and_yarn/typescript-5.4.3**
 - 2024-03-22 08:14 f33f8ad **Merge pull request #125 from bgord/dependabot/npm_and_yarn/express-4.19.1**
 - 2024-03-22 08:13 9eb1e52 **Merge pull request #126 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.13**
+- 2024-03-22 07:15 1a1d2ef **docs: generate CHANGELOG [skip ci]**
 - 2024-03-22 07:14 7a4a8e7 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-22 07:14 14774c9 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-21 02:16 3f28fa5 **chore(deps): bump nodemailer from 6.9.12 to 6.9.13**
