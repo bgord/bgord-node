@@ -1,7 +1,10 @@
 # Changelog
+- 2024-03-30 15:16 6424639 **Merge pull request #130 from bgord/dependabot/npm_and_yarn/oslo-1.2.0**
+- 2024-03-29 02:22 917d6b1 **chore(deps): bump oslo from 1.1.3 to 1.2.0**
 - 2024-03-26 08:14 e0e9b90 **Merge pull request #129 from bgord/dependabot/npm_and_yarn/express-4.19.2**
 - 2024-03-26 08:14 600f009 **Merge pull request #128 from bgord/dependabot/npm_and_yarn/sharp-0.33.3**
 - 2024-03-26 08:14 2509cb4 **Merge pull request #127 from bgord/dependabot/npm_and_yarn/winston-3.13.0**
+- 2024-03-26 07:14 8ed46c7 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-26 02:24 c44712b **chore(deps): bump express from 4.19.1 to 4.19.2**
 - 2024-03-25 03:01 af86678 **chore(deps): bump sharp from 0.32.6 to 0.33.3**
 - 2024-03-25 03:00 cb70abd **chore(deps): bump winston from 3.12.0 to 3.13.0**
