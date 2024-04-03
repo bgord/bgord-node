@@ -1,5 +1,10 @@
 # Changelog
+- 2024-04-03 08:37 94ca400 **Merge pull request #131 from bgord/dependabot/npm_and_yarn/prisma/client-5.12.0**
+- 2024-04-03 08:36 2980541 **Merge pull request #132 from bgord/dependabot/npm_and_yarn/prisma-5.12.0**
+- 2024-04-03 02:56 89bc02e **chore(deps-dev): bump @prisma/client from 5.11.0 to 5.12.0**
+- 2024-04-03 02:56 26d4f39 **chore(deps-dev): bump prisma from 5.11.0 to 5.12.0**
 - 2024-03-30 15:16 6424639 **Merge pull request #130 from bgord/dependabot/npm_and_yarn/oslo-1.2.0**
+- 2024-03-30 14:16 a9d09b4 **docs: generate CHANGELOG [skip ci]**
 - 2024-03-29 02:22 917d6b1 **chore(deps): bump oslo from 1.1.3 to 1.2.0**
 - 2024-03-26 08:14 e0e9b90 **Merge pull request #129 from bgord/dependabot/npm_and_yarn/express-4.19.2**
 - 2024-03-26 08:14 600f009 **Merge pull request #128 from bgord/dependabot/npm_and_yarn/sharp-0.33.3**
