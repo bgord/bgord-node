@@ -1,6 +1,15 @@
 # Changelog
+- 2024-04-05 08:16 ac78db8 **Merge pull request #133 from bgord/dependabot/npm_and_yarn/vite-5.2.8**
+- 2024-04-05 08:16 aa1d29d **Merge pull request #134 from bgord/dependabot/npm_and_yarn/prisma-5.12.1**
+- 2024-04-05 08:16 70e5481 **Merge pull request #135 from bgord/dependabot/npm_and_yarn/prisma/client-5.12.1**
+- 2024-04-05 08:15 eaa8f29 **Merge pull request #136 from bgord/dependabot/npm_and_yarn/typescript-5.4.4**
+- 2024-04-05 02:36 7d4898a **chore(deps-dev): bump typescript from 5.4.3 to 5.4.4**
+- 2024-04-05 02:35 cab7dd6 **chore(deps-dev): bump prisma from 5.12.0 to 5.12.1**
+- 2024-04-05 02:35 5ff970f **chore(deps-dev): bump @prisma/client from 5.12.0 to 5.12.1**
+- 2024-04-03 17:58 cfce7eb **chore(deps): bump vite from 5.0.12 to 5.2.8**
 - 2024-04-03 08:37 94ca400 **Merge pull request #131 from bgord/dependabot/npm_and_yarn/prisma/client-5.12.0**
 - 2024-04-03 08:36 2980541 **Merge pull request #132 from bgord/dependabot/npm_and_yarn/prisma-5.12.0**
+- 2024-04-03 06:37 fe8b67a **docs: generate CHANGELOG [skip ci]**
 - 2024-04-03 02:56 89bc02e **chore(deps-dev): bump @prisma/client from 5.11.0 to 5.12.0**
 - 2024-04-03 02:56 26d4f39 **chore(deps-dev): bump prisma from 5.11.0 to 5.12.0**
 - 2024-03-30 15:16 6424639 **Merge pull request #130 from bgord/dependabot/npm_and_yarn/oslo-1.2.0**
