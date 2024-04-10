@@ -60,7 +60,7 @@
     "check-disk-space": "3.4.0",
     "cookie-parser": "1.4.6",
     "cors": "2.8.5",
-    "croner": "8.0.1",
+    "croner": "8.0.2",
     "date-fns": "3.6.0",
     "dotenv": "16.4.5",
     "execa": "8.0.1",
