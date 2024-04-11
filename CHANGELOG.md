@@ -1,8 +1,13 @@
 # Changelog
+- 2024-04-11 08:06 fd3230d **Merge pull request #138 from bgord/dependabot/npm_and_yarn/typescript-5.4.5**
+- 2024-04-11 08:06 56376ee **Merge pull request #137 from bgord/dependabot/npm_and_yarn/croner-8.0.2**
+- 2024-04-11 02:58 98c2070 **chore(deps-dev): bump typescript from 5.4.4 to 5.4.5**
+- 2024-04-10 02:21 2cf1840 **chore(deps): bump croner from 8.0.1 to 8.0.2**
 - 2024-04-05 08:16 ac78db8 **Merge pull request #133 from bgord/dependabot/npm_and_yarn/vite-5.2.8**
 - 2024-04-05 08:16 aa1d29d **Merge pull request #134 from bgord/dependabot/npm_and_yarn/prisma-5.12.1**
 - 2024-04-05 08:16 70e5481 **Merge pull request #135 from bgord/dependabot/npm_and_yarn/prisma/client-5.12.1**
 - 2024-04-05 08:15 eaa8f29 **Merge pull request #136 from bgord/dependabot/npm_and_yarn/typescript-5.4.4**
+- 2024-04-05 06:16 026b124 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-05 02:36 7d4898a **chore(deps-dev): bump typescript from 5.4.3 to 5.4.4**
 - 2024-04-05 02:35 cab7dd6 **chore(deps-dev): bump prisma from 5.12.0 to 5.12.1**
 - 2024-04-05 02:35 5ff970f **chore(deps-dev): bump @prisma/client from 5.12.0 to 5.12.1**
