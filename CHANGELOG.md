@@ -1,6 +1,9 @@
 # Changelog
+- 2024-04-15 08:27 a677cab **Merge pull request #139 from bgord/dependabot/npm_and_yarn/vitest-1.5.0**
+- 2024-04-12 02:44 0864ab1 **chore(deps-dev): bump vitest from 1.4.0 to 1.5.0**
 - 2024-04-11 08:06 fd3230d **Merge pull request #138 from bgord/dependabot/npm_and_yarn/typescript-5.4.5**
 - 2024-04-11 08:06 56376ee **Merge pull request #137 from bgord/dependabot/npm_and_yarn/croner-8.0.2**
+- 2024-04-11 06:06 fe8a61f **docs: generate CHANGELOG [skip ci]**
 - 2024-04-11 02:58 98c2070 **chore(deps-dev): bump typescript from 5.4.4 to 5.4.5**
 - 2024-04-10 02:21 2cf1840 **chore(deps): bump croner from 8.0.1 to 8.0.2**
 - 2024-04-05 08:16 ac78db8 **Merge pull request #133 from bgord/dependabot/npm_and_yarn/vite-5.2.8**
