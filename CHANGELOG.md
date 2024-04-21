@@ -1,5 +1,8 @@
 # Changelog
+- 2024-04-21 18:13 0a57871 **Merge pull request #140 from bgord/dependabot/npm_and_yarn/zod-3.22.5**
+- 2024-04-19 02:15 4d72ebc **chore(deps): bump zod from 3.22.4 to 3.22.5**
 - 2024-04-15 08:27 a677cab **Merge pull request #139 from bgord/dependabot/npm_and_yarn/vitest-1.5.0**
+- 2024-04-15 06:27 fb54838 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-12 02:44 0864ab1 **chore(deps-dev): bump vitest from 1.4.0 to 1.5.0**
 - 2024-04-11 08:06 fd3230d **Merge pull request #138 from bgord/dependabot/npm_and_yarn/typescript-5.4.5**
 - 2024-04-11 08:06 56376ee **Merge pull request #137 from bgord/dependabot/npm_and_yarn/croner-8.0.2**
