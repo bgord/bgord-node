@@ -1,5 +1,8 @@
 # Changelog
+- 2024-04-23 08:11 1ae94f1 **Merge pull request #142 from bgord/dependabot/npm_and_yarn/zod-3.23.3**
+- 2024-04-23 02:04 456dbd5 **chore(deps): bump zod from 3.22.5 to 3.23.3**
 - 2024-04-21 18:13 0a57871 **Merge pull request #140 from bgord/dependabot/npm_and_yarn/zod-3.22.5**
+- 2024-04-21 16:13 7540ba4 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-19 02:15 4d72ebc **chore(deps): bump zod from 3.22.4 to 3.22.5**
 - 2024-04-15 08:27 a677cab **Merge pull request #139 from bgord/dependabot/npm_and_yarn/vitest-1.5.0**
 - 2024-04-15 06:27 fb54838 **docs: generate CHANGELOG [skip ci]**
