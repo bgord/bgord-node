@@ -104,4 +104,5 @@ export * from './ts-utils';
 export * from './uploaded-file-location';
 export * from './uptime';
 export * from './uuid';
+export * from './visually-unambigious-characters-generator';
 export * from './z-score';
