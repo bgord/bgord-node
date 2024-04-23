@@ -1,5 +1,7 @@
 # Changelog
+- 2024-04-23 12:52 c20e25c **feature: add VisuallyUnambigiousCharacters**
 - 2024-04-23 11:05 27077fd **fix: zod version**
+- 2024-04-23 09:06 4a5847c **docs: generate CHANGELOG [skip ci]**
 - 2024-04-23 08:11 1ae94f1 **Merge pull request #142 from bgord/dependabot/npm_and_yarn/zod-3.23.3**
 - 2024-04-23 06:11 b2be606 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-23 02:04 456dbd5 **chore(deps): bump zod from 3.22.5 to 3.23.3**
