@@ -1,9 +1,12 @@
 # Changelog
+- 2024-04-25 08:15 4b537be **Merge pull request #146 from bgord/dependabot/npm_and_yarn/supertest-7.0.0**
 - 2024-04-25 08:14 eda78f6 **Merge pull request #147 from bgord/dependabot/npm_and_yarn/vitest-1.5.1**
 - 2024-04-25 08:13 2899f7a **Merge pull request #148 from bgord/dependabot/npm_and_yarn/lucia-3.2.0**
+- 2024-04-25 06:14 693a854 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-25 06:13 182d673 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-25 02:32 b2b7f56 **chore(deps-dev): bump vitest from 1.5.0 to 1.5.1**
 - 2024-04-25 02:32 5e7ddce **chore(deps): bump lucia from 3.1.1 to 3.2.0**
+- 2024-04-25 02:31 ef3ab60 **chore(deps-dev): bump supertest from 6.3.4 to 7.0.0**
 - 2024-04-23 12:52 c20e25c **feature: add VisuallyUnambigiousCharacters**
 - 2024-04-23 11:05 27077fd **fix: zod version**
 - 2024-04-23 10:54 9db9799 **docs: generate CHANGELOG [skip ci]**
