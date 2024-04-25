@@ -1,9 +1,12 @@
 # Changelog
 - 2024-04-25 08:15 9722038 **Merge pull request #145 from bgord/dependabot/npm_and_yarn/prisma/client-5.13.0**
+- 2024-04-25 08:15 567b408 **Merge pull request #143 from bgord/dependabot/npm_and_yarn/prisma-5.13.0**
 - 2024-04-25 08:15 4b537be **Merge pull request #146 from bgord/dependabot/npm_and_yarn/supertest-7.0.0**
 - 2024-04-25 08:14 eda78f6 **Merge pull request #147 from bgord/dependabot/npm_and_yarn/vitest-1.5.1**
 - 2024-04-25 08:13 2899f7a **Merge pull request #148 from bgord/dependabot/npm_and_yarn/lucia-3.2.0**
+- 2024-04-25 06:15 99808c9 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-25 06:15 7e2416e **docs: generate CHANGELOG [skip ci]**
+- 2024-04-25 06:15 216e472 **chore(deps-dev): bump prisma from 5.12.1 to 5.13.0**
 - 2024-04-25 06:14 693a854 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-25 06:13 182d673 **docs: generate CHANGELOG [skip ci]**
 - 2024-04-25 02:32 b2b7f56 **chore(deps-dev): bump vitest from 1.5.0 to 1.5.1**
