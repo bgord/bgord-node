@@ -1,5 +1,8 @@
 # Changelog
+- 2024-05-05 10:17 5c97340 **Merge pull request #152 from bgord/dependabot/npm_and_yarn/types/nodemailer-6.4.15**
+- 2024-05-03 02:14 20a8315 **chore(deps-dev): bump @types/nodemailer from 6.4.14 to 6.4.15**
 - 2024-05-02 12:51 78de54e **Merge pull request #151 from bgord/dependabot/npm_and_yarn/vitest-1.5.3**
+- 2024-05-02 10:51 9640e90 **docs: generate CHANGELOG [skip ci]**
 - 2024-05-01 02:06 0437ae3 **chore(deps-dev): bump vitest from 1.5.2 to 1.5.3**
 - 2024-04-28 09:11 3bf82c2 **Merge pull request #149 from bgord/dependabot/npm_and_yarn/vitest-1.5.2**
 - 2024-04-28 07:11 f1d15ae **docs: generate CHANGELOG [skip ci]**
