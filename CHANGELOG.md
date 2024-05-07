@@ -1,6 +1,9 @@
 # Changelog
+- 2024-05-07 08:16 bd61059 **Merge pull request #154 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.1**
 - 2024-05-07 08:14 e43957a **Merge pull request #155 from bgord/dependabot/npm_and_yarn/vitest-1.6.0**
+- 2024-05-07 06:15 ea0da9d **docs: generate CHANGELOG [skip ci]**
 - 2024-05-06 02:54 be19552 **chore(deps-dev): bump vitest from 1.5.3 to 1.6.0**
+- 2024-05-06 02:54 73595b3 **chore(deps-dev): bump @types/lodash from 4.17.0 to 4.17.1**
 - 2024-05-05 10:17 5c97340 **Merge pull request #152 from bgord/dependabot/npm_and_yarn/types/nodemailer-6.4.15**
 - 2024-05-05 08:18 85905d6 **docs: generate CHANGELOG [skip ci]**
 - 2024-05-03 02:14 20a8315 **chore(deps-dev): bump @types/nodemailer from 6.4.14 to 6.4.15**
