@@ -8367,10 +8367,10 @@ sshpk@^1.7.0:
     safer-buffer "^2.0.2"
     tweetnacl "~0.14.0"
 
-ssl-checker@2.0.9:
-  version "2.0.9"
-  resolved "https://registry.yarnpkg.com/ssl-checker/-/ssl-checker-2.0.9.tgz#d855af4e4da7f2a95046b21049f6aa31e0d0988a"
-  integrity sha512-aKIJBxTqWOPaeCrbuOGTyGtolJH+Yrbatldgj/wPADkoVtZ+7ySHQ///Y4H590MeTWkr1AE0T7iP5YXX/ZXpEw==
+ssl-checker@2.0.10:
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/ssl-checker/-/ssl-checker-2.0.10.tgz#113836677f9b150db4db74211c282d13b8d36ecd"
+  integrity sha512-SS6rrZocToJWHM1p6iVNb583ybB3UqT1fymCHSWuEdXDUqKA6O1D5Fb8KJVmhj3XKXE82IEWcr+idJrc4jUzFQ==
 
 stack-trace@0.0.x:
   version "0.0.10"
