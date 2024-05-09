@@ -1,6 +1,11 @@
 # Changelog
+- 2024-05-09 08:53 a9ee445 **Merge pull request #158 from bgord/dependabot/npm_and_yarn/execa-9.0.0**
+- 2024-05-09 08:53 340cba6 **Merge pull request #159 from bgord/dependabot/npm_and_yarn/ssl-checker-2.0.10**
+- 2024-05-09 03:27 46dffd7 **chore(deps): bump ssl-checker from 2.0.9 to 2.0.10**
+- 2024-05-09 03:26 6cd2582 **chore(deps): bump execa from 8.0.1 to 9.0.0**
 - 2024-05-07 08:16 bd61059 **Merge pull request #154 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.1**
 - 2024-05-07 08:14 e43957a **Merge pull request #155 from bgord/dependabot/npm_and_yarn/vitest-1.6.0**
+- 2024-05-07 06:16 d246f5f **docs: generate CHANGELOG [skip ci]**
 - 2024-05-07 06:15 ea0da9d **docs: generate CHANGELOG [skip ci]**
 - 2024-05-06 02:54 be19552 **chore(deps-dev): bump vitest from 1.5.3 to 1.6.0**
 - 2024-05-06 02:54 73595b3 **chore(deps-dev): bump @types/lodash from 4.17.0 to 4.17.1**
