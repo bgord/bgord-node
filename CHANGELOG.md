@@ -1,4 +1,10 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.282](https://github.com/bgord/bgord-node/compare/v0.58.281...v0.58.282) (2024-05-10)
+
+# Changelog
 ## 2024-05-10 19:00 v0.58.281
 - 2024-05-10 19:00 9e710ce **chore(release): 0.58.281**
 - 2024-05-10 19:00 09b7b91 **step: bump version**
