@@ -1,32 +1,10 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [0.58.281](https://github.com/bgord/bgord-node/compare/v0.58.271...v0.58.281) (2024-05-10)
-
-
-### Features
-
-* add email censor ([e93a9fa](https://github.com/bgord/bgord-node/commit/e93a9fa9fc1a2aaab2ee7d5f14dba06fbea2ea89))
-* add five minutes cache for static files ([9210c26](https://github.com/bgord/bgord-node/commit/9210c26e3775da4ccc4ec2781378649d91a24a52))
-* add image resizer resize to height ([96d2452](https://github.com/bgord/bgord-node/commit/96d24522f69e8941e6a87765ee659bbb8c5f8453))
-* add leap year checker ([650de85](https://github.com/bgord/bgord-node/commit/650de85cbd7aa82d436a61d00f37d9f1e82e136a))
-* add percentage service ([e48d332](https://github.com/bgord/bgord-node/commit/e48d332a242d7a018177376b983af08ca06e93cb))
-* add prepublishOnly script ([49ac1ef](https://github.com/bgord/bgord-node/commit/49ac1efdf28f8ca3c1f77f5174948c83752f880c))
-* add VisuallyUnambigiousCharacters ([c20e25c](https://github.com/bgord/bgord-node/commit/c20e25c68121579e1b21e2a567dd77ccfeb2dea4))
-* limit Request Size ([c346d0a](https://github.com/bgord/bgord-node/commit/c346d0a7edb1a7bcb95a240965e89ee7d249313d))
-
-
-### Bug Fixes
-
-* duration decorator ms duration ([d6040ab](https://github.com/bgord/bgord-node/commit/d6040abf68167dc4467d655918aea07c5c03057a))
-* image resizer height type ([a58ca0c](https://github.com/bgord/bgord-node/commit/a58ca0c40678da83c81bd2fa245e1a3e4ea6df01))
-* missing graceful shutdown process exit ([f0fd214](https://github.com/bgord/bgord-node/commit/f0fd214d8c1aa0f2052e822f24a4b4c8c9249b1f))
-* zod version ([27077fd](https://github.com/bgord/bgord-node/commit/27077fd8d39d86bb460b312353615248387f5588))
-
-# Changelog
+## 2024-05-10 19:00 v0.58.281
+- 2024-05-10 19:00 9e710ce **chore(release): 0.58.281**
+- 2024-05-10 19:00 09b7b91 **step: bump version**
 - 2024-05-09 08:53 a9ee445 **Merge pull request #158 from bgord/dependabot/npm_and_yarn/execa-9.0.0**
 - 2024-05-09 08:53 340cba6 **Merge pull request #159 from bgord/dependabot/npm_and_yarn/ssl-checker-2.0.10**
+- 2024-05-09 06:53 78943eb **docs: generate CHANGELOG [skip ci]**
 - 2024-05-09 03:27 46dffd7 **chore(deps): bump ssl-checker from 2.0.9 to 2.0.10**
 - 2024-05-09 03:26 6cd2582 **chore(deps): bump execa from 8.0.1 to 9.0.0**
 - 2024-05-07 08:16 bd61059 **Merge pull request #154 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.1**
