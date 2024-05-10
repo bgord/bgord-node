@@ -32,6 +32,7 @@
   "author": "Bartosz Gordon",
   "module": "dist/bgord-node.esm.js",
   "devDependencies": {
+    "@biomejs/biome": "1.7.3",
     "@prisma/client": "5.13.0",
     "@types/accept-language-parser": "1.5.6",
     "@types/cookie-parser": "1.4.7",
