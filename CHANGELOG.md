@@ -1,4 +1,5 @@
 # Changelog
+- 2024-05-10 19:09 eccc546 **step: restore zod**
 ## 2024-05-10 19:07 v0.58.283
 - 2024-05-10 19:07 be61dca **chore(release): 0.58.283**
 ## 2024-05-10 19:06 v0.58.282
@@ -7,6 +8,7 @@
 ## 2024-05-10 19:00 v0.58.281
 - 2024-05-10 19:00 9e710ce **chore(release): 0.58.281**
 - 2024-05-10 19:00 09b7b91 **step: bump version**
+- 2024-05-10 17:07 3cb358b **docs: generate CHANGELOG [skip ci]**
 - 2024-05-10 17:03 f6c472b **docs: generate CHANGELOG [skip ci]**
 - 2024-05-09 08:53 a9ee445 **Merge pull request #158 from bgord/dependabot/npm_and_yarn/execa-9.0.0**
 - 2024-05-09 08:53 340cba6 **Merge pull request #159 from bgord/dependabot/npm_and_yarn/ssl-checker-2.0.10**
