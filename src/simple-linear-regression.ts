@@ -26,7 +26,7 @@ export class SimpleLinearRegression {
 
     const x = pairs.map(pair => pair.x);
     const y = pairs.map(pair => pair.y);
-    const xx = x.map(x => Math.pow(x, 2));
+    const xx = x.map(x => x ** 2);
     const xy = pairs.map(pair => pair.x * pair.y);
 
     const sX = Sum.of(x);
@@ -49,7 +49,7 @@ export class SimpleLinearRegression {
       throw new Error('Sum of x times y values is too big');
     }
 
-    const bDenominator = sSX - Math.pow(sX, 2) / n;
+    const bDenominator = sSX - sX ** 2 / n;
 
     if (bDenominator === 0) {
       throw new Error('Unable to create the model');

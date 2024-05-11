@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import fs from 'fs/promises';
+import fs from 'node:fs/promises';
 
 import * as Schema from './schema';
 
@@ -99,7 +99,7 @@ export class Sitemap {
 
   static async save(config: SitemapConfigType) {
     const output = config.path ?? Sitemap.DEFAULT_PATH;
-    const content = this.generate(config);
+    const content = Sitemap.generate(config);
 
     return fs.writeFile(output, content);
   }

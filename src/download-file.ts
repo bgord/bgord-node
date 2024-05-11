@@ -1,5 +1,5 @@
 import express from 'express';
-import fs from 'fs';
+import fs from 'node:fs';
 
 import { Mime } from './mime';
 

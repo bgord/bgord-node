@@ -14,7 +14,7 @@ export class PopulationStandardDeviation {
     const mean = Mean.calculate(values);
     const n = values.length;
 
-    const squaredDifferences = values.map(value => Math.pow(value - mean, 2));
+    const squaredDifferences = values.map(value => (value - mean) ** 2);
     const sumOfSquaredDifferences = Sum.of(squaredDifferences);
 
     const variance = sumOfSquaredDifferences / n;

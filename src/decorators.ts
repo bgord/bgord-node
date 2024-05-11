@@ -14,11 +14,11 @@ export class Decorators {
       propertyKey: string,
       descriptor: PropertyDescriptor
     ) {
-      const original: (...args: Array<unknown>) => unknown = descriptor.value;
+      const original: (...args: unknown[]) => unknown = descriptor.value;
 
       const label = `${target.name}.${propertyKey}`;
 
-      descriptor.value = function(...args: Array<unknown>) {
+      descriptor.value = function(...args: unknown[]) {
         const before = performance.now();
         const value = original.apply(this, args);
         const after = performance.now();
@@ -42,11 +42,11 @@ export class Decorators {
       propertyKey: string,
       descriptor: PropertyDescriptor
     ) {
-      const original: (...args: Array<unknown>) => unknown = descriptor.value;
+      const original: (...args: unknown[]) => unknown = descriptor.value;
 
       const label = `${target.name}.${propertyKey}`;
 
-      descriptor.value = async function(...args: Array<unknown>) {
+      descriptor.value = async function(...args: unknown[]) {
         const value = await original.apply(this, args);
 
         that.logger.info({

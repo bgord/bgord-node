@@ -1,5 +1,5 @@
-import { constants } from 'fs';
-import fsp from 'fs/promises';
+import { constants } from 'node:fs';
+import fsp from 'node:fs/promises';
 
 import {
   PrerequisiteLabelType,

@@ -75,7 +75,9 @@ export class ReorderingCalculator {
 
   static fromArray(ids: ReorderingItem['id'][]) {
     const reordering = new ReorderingCalculator();
-    ids.forEach(id => reordering.add(id));
+    for (const id of ids) {
+      reordering.add(id);
+    }
     return reordering;
   }
 

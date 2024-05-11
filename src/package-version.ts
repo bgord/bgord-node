@@ -16,20 +16,24 @@ export const PackageVersionSchema = z
         if (!version) return false;
 
         const [major, minor, patch] = version.split('.');
-        if (!major || !minor || !patch) return false;
+        if (!(major && minor && patch)) return false;
 
         if (
-          !Number.isInteger(Number(major)) ||
-          !Number.isInteger(Number(minor)) ||
-          !Number.isInteger(Number(patch))
+          !(
+            Number.isInteger(Number(major)) &&
+            Number.isInteger(Number(minor)) &&
+            Number.isInteger(Number(patch))
+          )
         ) {
           return false;
         }
 
         if (
-          !Number.isInteger(Number(major)) ||
-          !Number.isInteger(Number(minor)) ||
-          !Number.isInteger(Number(patch))
+          !(
+            Number.isInteger(Number(major)) &&
+            Number.isInteger(Number(minor)) &&
+            Number.isInteger(Number(patch))
+          )
         ) {
           return false;
         }

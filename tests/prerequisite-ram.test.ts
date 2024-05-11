@@ -1,4 +1,4 @@
-import os from 'os';
+import os from 'node:os';
 import { describe, test, expect, vi } from 'vitest';
 
 import { Size, SizeUnit } from '../src/size';

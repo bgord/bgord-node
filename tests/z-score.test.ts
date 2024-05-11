@@ -43,6 +43,6 @@ describe('Z-score', () => {
     const rounding = new RoundToNearest();
     const result = new ZScore([0, 0, 0], rounding).calculate(1);
 
-    expect(result).toEqual(Infinity);
+    expect(result).toEqual(Number.POSITIVE_INFINITY);
   });
 });

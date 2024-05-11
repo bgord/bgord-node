@@ -1,5 +1,5 @@
 import * as Schema from './schema';
-import fs from 'fs/promises';
+import fs from 'node:fs/promises';
 
 export class File {
   static async getSizeInBytes(

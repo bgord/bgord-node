@@ -26,6 +26,6 @@ export class RoundToDecimal extends RoundingStrategy {
   }
 
   round(value: number): number {
-    return parseFloat(value.toFixed(this.decimals));
+    return Number.parseFloat(value.toFixed(this.decimals));
   }
 }

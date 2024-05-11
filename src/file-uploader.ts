@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import express from 'express';
 import files from 'express-form-data';
-import os from 'os';
+import os from 'node:os';
 
 import { UploadedFile } from './schema';
 import { NotAcceptedMimeError } from './errors';

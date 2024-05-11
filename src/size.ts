@@ -53,21 +53,25 @@ export class Size {
     const rounding = new RoundToDecimal(2);
 
     switch (unit) {
-      case SizeUnit.kB:
+      case SizeUnit.kB: {
         const kbs = rounding.round(this.bytes / Size.KB_MULTIPLIER);
 
         return `${kbs} ${SizeUnit.kB}`;
-      case SizeUnit.MB:
+      }
+      case SizeUnit.MB: {
         const mbs = rounding.round(this.bytes / Size.MB_MULTIPLIER);
 
         return `${mbs} ${SizeUnit.MB}`;
-      case SizeUnit.GB:
+      }
+      case SizeUnit.GB: {
         const gbs = rounding.round(this.bytes / Size.GB_MULTIPLIER);
 
         return `${gbs} ${SizeUnit.GB}`;
-      default:
+      }
+      default: {
         // SizeUnit.b
         return `${this.bytes} ${SizeUnit.b}`;
+      }
     }
   }
 

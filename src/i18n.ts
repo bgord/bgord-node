@@ -1,6 +1,6 @@
 import express from 'express';
-import Path from 'path';
-import fs from 'fs/promises';
+import Path from 'node:path';
+import fs from 'node:fs/promises';
 
 import * as Schema from './schema';
 
@@ -76,6 +76,7 @@ export class I18n {
 
       return JSON.parse(file.toString());
     } catch (error) {
+      // biome-ignore lint: lint/suspicious/noConsoleLog
       console.log('I18n#getTranslations', error);
 
       return {};

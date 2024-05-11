@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 import checkDiskSpace from 'check-disk-space';
 
 import { Size, SizeUnit } from '../size';

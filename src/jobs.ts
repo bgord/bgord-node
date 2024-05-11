@@ -22,6 +22,7 @@ export class Jobs {
   static SCHEDULES = { EVERY_MINUTE: '* * * * *', EVERY_HOUR: '0 * * * *' };
 
   static stopAll(jobs: MultipleJobsType) {
+    // biome-ignore lint: lint/complexity/noForEach
     Object.values(jobs).forEach(job => job.stop());
   }
 
@@ -42,6 +43,7 @@ export class JobHandler {
   handle(jobProcessor: JobProcessorType) {
     const correlationId = Schema.CorrelationId.parse(NewUUID.generate());
 
+    // biome-ignore lint: lint/complexity/noUselessThisAlias
     const that = this;
 
     return async () => {
@@ -77,6 +79,7 @@ export class JobHandler {
   }
 
   protect(cron: Cron) {
+    // biome-ignore lint: lint/complexity/noUselessThisAlias
     const that = this;
 
     return async () => {

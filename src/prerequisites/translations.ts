@@ -1,5 +1,5 @@
-import fsp from 'fs/promises';
-import { constants } from 'fs';
+import fsp from 'node:fs/promises';
+import { constants } from 'node:fs';
 
 import * as Schema from '../schema';
 import { I18n, I18nConfigType, TranslationsKeyType } from '../i18n';
@@ -96,6 +96,7 @@ export class PrerequisiteTranslations extends AbstractPrerequisite<
 
     if (problems.length === 0) return this.pass();
 
+      // biome-ignore lint: lint/suspicious/noConsoleLog
     console.log(problems);
 
     return this.reject();

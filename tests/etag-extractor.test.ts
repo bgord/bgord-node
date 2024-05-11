@@ -7,7 +7,7 @@ import { ETagExtractor, WeakETagExtractor } from '../src/etag-extractor';
 
 declare global {
   namespace Express {
-    export interface Request {
+    interface Request {
       ETag: ETag | null;
       WeakETag: WeakETag | null;
     }

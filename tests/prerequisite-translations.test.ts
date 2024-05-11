@@ -1,4 +1,4 @@
-import fsp from 'fs/promises';
+import fsp from 'node:fs/promises';
 import { I18n } from '../src/i18n';
 import { describe, test, expect, vi } from 'vitest';
 import { PrerequisiteStatusEnum } from '../src/prerequisites';

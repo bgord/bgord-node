@@ -1,5 +1,5 @@
 import sharp from 'sharp';
-import path from 'path';
+import path from 'node:path';
 import mime from 'mime-types';
 
 import * as Schema from './schema';

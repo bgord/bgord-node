@@ -6,14 +6,14 @@ import * as Schema from '../src/schema';
 import { TimeZoneOffsetsType } from '../src/time-zone-offset';
 import { Context } from '../src/context';
 
-export type ContextType = {
+type ContextType = {
   requestId: Schema.CorrelationIdType;
   timeZoneOffset: TimeZoneOffsetsType;
 };
 
 declare global {
   namespace Express {
-    export interface Request {
+    interface Request {
       requestId: Schema.CorrelationIdType;
       context: ContextType;
     }

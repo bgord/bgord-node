@@ -199,7 +199,7 @@ export const TimeZoneOffsetHeaderValue = z
   .trim()
   .or(z.undefined())
   .transform(value => Number(value))
-  .transform(value => (isNaN(value) ? 0 : value));
+  .transform(value => (Number.isNaN(value) ? 0 : value));
 export type TimeZoneOffsetType = z.infer<typeof TimeZoneOffsetHeaderValue>;
 
 export const TimeZoneOffsetValue = z.number().int();
@@ -310,7 +310,7 @@ export const AuthorizationHeader = z
 
     const [username, password] = decrypted.split(':');
 
-    if (!username || !password) {
+    if (!(username && password)) {
       context.addIssue({
         code: z.ZodIssueCode.custom,
         message: 'authorization_header_error',

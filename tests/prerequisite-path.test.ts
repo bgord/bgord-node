@@ -1,4 +1,4 @@
-import fsp from 'fs/promises';
+import fsp from 'node:fs/promises';
 import { describe, test, expect, vi } from 'vitest';
 import { PrerequisiteStatusEnum } from '../src/prerequisites';
 import { PrerequisitePath } from '../src/prerequisites/path';

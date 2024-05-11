@@ -49,13 +49,12 @@ export class EnvironmentValidator<SchemaType> {
 
     if (result.success) {
       this.type = result.data;
+    } else if (this.quit) {
+      // biome-ignore lint: lint/suspicious/noConsoleLog
+      console.log(`Invalid EnvironmentType: ${config.type}`);
+      process.exit(1);
     } else {
-      if (this.quit) {
-        console.log(`Invalid EnvironmentType: ${config.type}`);
-        process.exit(1);
-      } else {
-        throw new NodeEnvironmentError();
-      }
+      throw new NodeEnvironmentError();
     }
   }
 
@@ -65,6 +64,7 @@ export class EnvironmentValidator<SchemaType> {
     const environment = dotenv.config({ path }).parsed;
 
     if (!environment) {
+      // biome-ignore lint: lint/suspicious/noConsoleLog
       console.log(`Missing or empty environment file: ${path}`);
       process.exit(1);
     }

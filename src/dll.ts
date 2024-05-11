@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-this-alias */
 export class Node<T> {
   data: T;
 
@@ -127,6 +126,7 @@ export class DoublyLinkedList<T> {
 
       node.prev = target;
       node.next = target.next;
+      // biome-ignore lint: lint/style/noNonNullAssertion
       target.next!.prev = node;
       target.next = node;
     }
@@ -140,6 +140,7 @@ export class DoublyLinkedList<T> {
 
       node.next = target;
       node.prev = target.prev;
+      // biome-ignore lint: lint/style/noNonNullAssertion
       target.prev!.next = node;
       target.prev = node;
     }
@@ -163,7 +164,10 @@ export class DoublyLinkedList<T> {
 
   static fromArray<T>(array: T[]): DoublyLinkedList<T> {
     const dll = new DoublyLinkedList<T>();
-    array.forEach(item => dll.append(new Node<T>(item)));
+
+    for (const item of array) {
+      dll.append(new Node<T>(item));
+    }
 
     return dll;
   }

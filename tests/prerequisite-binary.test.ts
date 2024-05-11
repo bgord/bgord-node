@@ -8,6 +8,7 @@ describe.skip('PrerequisiteBinaryVerificator class', () => {
   test('verify method returns success for existing binary', async () => {
     const spy = vi
       .spyOn(execa, 'execa')
+      // @ts-ignore
       .mockResolvedValue({ exitCode: 0 } as any);
 
     const result = await new PrerequisiteBinary({
@@ -22,6 +23,7 @@ describe.skip('PrerequisiteBinaryVerificator class', () => {
   test('verify method returns failure for non-existing binary', async () => {
     const spy = vi
       .spyOn(execa, 'execa')
+      // @ts-ignore
       .mockResolvedValue({ exitCode: 1 } as any);
 
     const result = await new PrerequisiteBinary({
@@ -36,6 +38,7 @@ describe.skip('PrerequisiteBinaryVerificator class', () => {
   test('verify method returns failure on error during binary check', async () => {
     const spy = vi
       .spyOn(execa, 'execa')
+      // @ts-ignore
       .mockRejectedValue(new Error('Command execution error'));
 
     const result = await new PrerequisiteBinary({
@@ -50,6 +53,7 @@ describe.skip('PrerequisiteBinaryVerificator class', () => {
   test('verify method returns failure on binary with whitespace', async () => {
     const spy = vi
       .spyOn(execa, 'execa')
+      // @ts-ignore
       .mockResolvedValue({ exitCode: 0 } as any);
 
     const result = await new PrerequisiteBinary({
@@ -64,6 +68,7 @@ describe.skip('PrerequisiteBinaryVerificator class', () => {
   test('verifies as undetermined when not enabled', async () => {
     const spy = vi
       .spyOn(execa, 'execa')
+      // @ts-ignore
       .mockResolvedValue({ exitCode: 0 } as any);
 
     const result = await new PrerequisiteBinary({
