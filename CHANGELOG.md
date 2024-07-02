@@ -1,4 +1,20 @@
 # Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.58.287](https://github.com/bgord/bgord-node/compare/v0.58.283...v0.58.287) (2024-07-02)
+
+
+### Features
+
+* streak calculator ([5372c95](https://github.com/bgord/bgord-node/commit/5372c95c95b4e7c6c32de77dc8bc6804d80ff6ef))
+
+
+### Bug Fixes
+
+* linting errors ([9a20d4b](https://github.com/bgord/bgord-node/commit/9a20d4bf473226eb0c1ecadb259775b56f43ff0f))
+
+# Changelog
 - 2024-05-10 19:09 eccc546 **step: restore zod**
 ## 2024-05-10 19:07 v0.58.283
 - 2024-05-10 19:07 be61dca **chore(release): 0.58.283**
