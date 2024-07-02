@@ -83,7 +83,7 @@
     "node-cache": "5.1.2",
     "nodemailer": "6.9.14",
     "on-headers": "1.0.2",
-    "oslo": "1.2.0",
+    "oslo": "1.2.1",
     "pluralize": "8.0.0",
     "sharp": "0.33.4",
     "ssl-checker": "2.0.10",
