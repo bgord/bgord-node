@@ -50,7 +50,7 @@
     "@types/supertest": "6.0.2",
     "cspell": "8.10.4",
     "husky": "^9.0.11",
-    "prisma": "5.16.2",
+    "prisma": "5.17.0",
     "shellcheck": "3.0.0",
     "standard-version": "9.5.0",
     "supertest": "7.0.0",
