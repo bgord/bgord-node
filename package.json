@@ -55,7 +55,7 @@
     "standard-version": "9.5.0",
     "supertest": "7.0.0",
     "tsdx": "0.14.1",
-    "typescript": "5.5.3",
+    "typescript": "5.5.4",
     "vitest": "2.0.4"
   },
   "dependencies": {
