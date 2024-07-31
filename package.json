@@ -48,7 +48,7 @@
     "@types/on-headers": "1.0.3",
     "@types/pluralize": "0.0.33",
     "@types/supertest": "6.0.2",
-    "cspell": "8.12.1",
+    "cspell": "8.13.0",
     "husky": "^9.1.4",
     "prisma": "5.17.0",
     "shellcheck": "3.0.0",
