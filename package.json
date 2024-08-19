@@ -85,7 +85,7 @@
     "on-headers": "1.0.2",
     "oslo": "1.2.1",
     "pluralize": "8.0.0",
-    "sharp": "0.33.4",
+    "sharp": "0.33.5",
     "ssl-checker": "2.0.10",
     "winston": "3.14.2",
     "zod": "3.22.4"
