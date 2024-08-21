@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.58.292](https://github.com/bgord/bgord-node/compare/v0.58.291...v0.58.292) (2024-08-21)
+
+
+### Features
+
+* add startup timer ([7a33d16](https://github.com/bgord/bgord-node/commit/7a33d168cc67e52a04480fe9d99e3a2dc07e48ef))
+
 ### [0.58.291](https://github.com/bgord/bgord-node/compare/v0.58.290...v0.58.291) (2024-08-21)
 
 ### [0.58.290](https://github.com/bgord/bgord-node/compare/v0.58.289...v0.58.290) (2024-08-21)
