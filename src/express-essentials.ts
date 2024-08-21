@@ -18,6 +18,7 @@ import { HCaptchaShield } from './hcaptcha-shield';
 import { Context } from './context';
 import { ETagExtractor, WeakETagExtractor } from './etag-extractor';
 import { Size, SizeUnit } from './size';
+import { Stopwatch } from './stopwatch';
 
 export type ExpressEssentialsConfig = Partial<{
   helmet: Parameters<typeof helmet>[0];
@@ -26,6 +27,14 @@ export type ExpressEssentialsConfig = Partial<{
   cors: cors.CorsOptions;
   staticFiles: StaticFilesConfigType;
 }>;
+
+declare global {
+  namespace Express {
+    interface Locals {
+      startup: Stopwatch;
+    }
+  }
+}
 
 export const DEFAULT_HELMET_CONFIG = {
   contentSecurityPolicy: {
@@ -56,6 +65,7 @@ export function addExpressEssentials(
   app: express.Express,
   config?: ExpressEssentialsConfig
 ) {
+  app.locals.startup = new Stopwatch();
   app.set('etag', false);
   const helmetConfig = config?.helmet ?? DEFAULT_HELMET_CONFIG;
   app.use(helmet(helmetConfig));
