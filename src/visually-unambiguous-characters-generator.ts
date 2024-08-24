@@ -1,6 +1,6 @@
 import { Random } from './random';
 
-export class VisuallyUnambigiousCharactersGenerator {
+export class VisuallyUnambiguousCharactersGenerator {
   // prettier-ignore
   static chars = [
     'a', 'b', 'c', 'd', 'e', 'f',
@@ -13,10 +13,10 @@ export class VisuallyUnambigiousCharactersGenerator {
     return Array.from({ length })
       .map(
         () =>
-          VisuallyUnambigiousCharactersGenerator.chars[
+          VisuallyUnambiguousCharactersGenerator.chars[
             Random.generate({
               min: 0,
-              max: VisuallyUnambigiousCharactersGenerator.chars.length - 1,
+              max: VisuallyUnambiguousCharactersGenerator.chars.length - 1,
             })
           ]
       )

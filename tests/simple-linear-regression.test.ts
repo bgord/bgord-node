@@ -61,7 +61,7 @@ describe('SimpleLinearRegression', () => {
     ).toThrow('Unable to create the model');
   });
 
-  test('uncalculable result', async () => {
+  test('incalculable result', async () => {
     expect(() =>
       SimpleLinearRegression.fromPairs([
         { x: 0, y: 0 },

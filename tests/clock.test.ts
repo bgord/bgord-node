@@ -150,7 +150,7 @@ describe('Minute', () => {
     });
   });
 
-  it('lists all moinutes', () => {
+  it('lists all minutes', () => {
     expect(Minute.list().length).toEqual(60);
     expect(Minute.list()[0]).toEqual(new Minute(0));
     expect(Minute.list()[59]).toEqual(new Minute(59));

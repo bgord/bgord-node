@@ -22,7 +22,6 @@ export class Jobs {
   static SCHEDULES = { EVERY_MINUTE: '* * * * *', EVERY_HOUR: '0 * * * *' };
 
   static stopAll(jobs: MultipleJobsType) {
-    // biome-ignore lint: lint/complexity/noForEach
     Object.values(jobs).forEach(job => job.stop());
   }
 
