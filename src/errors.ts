@@ -3,10 +3,12 @@ import { TimestampType } from './schema';
 
 export enum AccessDeniedErrorReasonType {
   hcaptcha = 'hcaptcha',
+  /** @public */
   csrf = 'csrf',
   'api-key' = 'api-key',
   recaptcha = 'recaptcha',
   auth = 'auth',
+  /** @public */
   'basic-auth' = 'basic-auth',
 }
 

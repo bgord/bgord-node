@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import { NewUUID } from './uuid';
 
+/** @public */
 export enum NodeEnvironmentEnum {
   local = 'local',
   test = 'test',
@@ -279,6 +280,7 @@ export const CorrelationId = UUID.brand<'correlation-id'>();
 export type CorrelationIdType = z.infer<typeof CorrelationId>;
 
 export enum LogLevelEnum {
+  /** @public */
   silent = 'silent',
   error = 'error',
   warn = 'warn',
