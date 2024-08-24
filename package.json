@@ -16,12 +16,7 @@
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepublishOnly": "tsdx build",
-    "prepare": "husky install"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
+    "prepare": "husky"
   },
   "prettier": {
     "printWidth": 80,
