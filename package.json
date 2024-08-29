@@ -48,7 +48,7 @@
     "cspell": "8.14.2",
     "husky": "9.1.5",
     "knip": "5.27.4",
-    "prisma": "5.18.0",
+    "prisma": "5.19.0",
     "shellcheck": "3.0.0",
     "standard-version": "9.5.0",
     "supertest": "7.0.0",
