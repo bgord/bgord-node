@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import NodeCache from 'node-cache';
+import _ from 'lodash';
 
 import { Middleware } from './middleware';
 
@@ -14,10 +15,12 @@ export class CacheResponse {
   constructor(private readonly cache: NodeCache) {}
 
   private _handle(request: Request, response: Response, next: NextFunction) {
-    if (this.cache.has(request.url)) {
+    const url = _.escape(request.url);
+
+    if (this.cache.has(url)) {
       response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.hit);
 
-      return response.status(200).send(this.cache.get(request.url));
+      return response.status(200).send(this.cache.get(url));
     }
 
     response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.miss);
