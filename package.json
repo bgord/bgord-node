@@ -47,7 +47,7 @@
     "@types/supertest": "6.0.2",
     "cspell": "8.14.2",
     "husky": "9.1.5",
-    "knip": "5.27.4",
+    "knip": "5.30.1",
     "prisma": "5.19.1",
     "shellcheck": "3.0.0",
     "standard-version": "9.5.0",
