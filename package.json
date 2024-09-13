@@ -29,7 +29,7 @@
   "module": "dist/bgord-node.esm.js",
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
-    "@commitlint/cli": "19.4.1",
+    "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@prisma/client": "5.19.1",
     "@types/accept-language-parser": "1.5.6",
