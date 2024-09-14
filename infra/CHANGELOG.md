@@ -1,8 +1,10 @@
 # Changelog
+- 2024-09-14 17:13 fdf3b79 **step: update gh workflow**
 - 2024-09-14 17:10 6face1c **step: update gh workflow actions**
 - 2024-09-14 16:37 6238506 **step: infra dir**
 - 2024-09-14 16:37 1b1502a **refactor: remove versionrc**
 - 2024-09-14 16:32 6db86a5 **step: bump bgord/scripts**
+- 2024-09-14 15:11 6995bab **docs: generate CHANGELOG**
 - 2024-09-14 14:13 60da46a **step: bump bgord/scripts**
 - 2024-09-14 14:05 98407d4 **chore(release): 0.58.294**
 - 2024-09-13 11:43 290f5a2 **Merge pull request #251 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.0**
