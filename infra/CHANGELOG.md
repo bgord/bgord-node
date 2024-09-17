@@ -5,6 +5,7 @@
 - 2024-09-17 10:00 340289e **Merge pull request #257 from bgord/dependabot/npm_and_yarn/express-static-gzip-2.1.8**
 - 2024-09-17 10:00 0950609 **Merge pull request #255 from bgord/dependabot/npm_and_yarn/vitest-2.1.1**
 - 2024-09-17 09:59 bbfe34e **Merge pull request #253 from bgord/dependabot/npm_and_yarn/knip-5.30.2**
+- 2024-09-17 08:40 cf40e28 **docs: generate CHANGELOG**
 - 2024-09-17 08:02 51ae94b **chore(deps): bump execa from 9.3.1 to 9.4.0**
 - 2024-09-17 08:00 1cbeb55 **docs: generate CHANGELOG**
 - 2024-09-16 02:34 f24b2b8 **chore(deps-dev): bump @biomejs/biome from 1.9.0 to 1.9.1**
@@ -12,6 +13,7 @@
 - 2024-09-16 02:34 b7dc62b **chore(deps): bump express-static-gzip from 2.1.7 to 2.1.8**
 - 2024-09-16 02:34 7eae67e **chore(deps-dev): bump knip from 5.30.1 to 5.30.2**
 - 2024-09-16 02:34 7bb01a9 **chore(deps-dev): bump vitest from 2.1.0 to 2.1.1**
+- 2024-09-14 17:14 4fad51d **step: bump bgord/scripts**
 - 2024-09-14 17:13 fdf3b79 **step: update gh workflow**
 - 2024-09-14 17:10 6face1c **step: update gh workflow actions**
 - 2024-09-14 16:37 6238506 **step: infra dir**
