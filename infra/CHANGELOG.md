@@ -1,9 +1,12 @@
 # Changelog
+- 2024-09-17 10:40 c118929 **Merge pull request #258 from bgord/dependabot/npm_and_yarn/execa-9.4.0**
 - 2024-09-17 10:00 8f1acde **Merge pull request #254 from bgord/dependabot/npm_and_yarn/date-fns-4.0.0**
 - 2024-09-17 10:00 3ffbcfa **Merge pull request #256 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.1**
 - 2024-09-17 10:00 340289e **Merge pull request #257 from bgord/dependabot/npm_and_yarn/express-static-gzip-2.1.8**
 - 2024-09-17 10:00 0950609 **Merge pull request #255 from bgord/dependabot/npm_and_yarn/vitest-2.1.1**
 - 2024-09-17 09:59 bbfe34e **Merge pull request #253 from bgord/dependabot/npm_and_yarn/knip-5.30.2**
+- 2024-09-17 08:02 51ae94b **chore(deps): bump execa from 9.3.1 to 9.4.0**
+- 2024-09-17 08:00 1cbeb55 **docs: generate CHANGELOG**
 - 2024-09-16 02:34 f24b2b8 **chore(deps-dev): bump @biomejs/biome from 1.9.0 to 1.9.1**
 - 2024-09-16 02:34 bd9b7d7 **chore(deps): bump date-fns from 3.6.0 to 4.0.0**
 - 2024-09-16 02:34 b7dc62b **chore(deps): bump express-static-gzip from 2.1.7 to 2.1.8**
