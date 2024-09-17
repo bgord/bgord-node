@@ -25,12 +25,14 @@ export class Encryption {
   async createEncrypt() {
     const key = (await scrypt(this.config.secret, 'salt', 24)) as Buffer;
 
+    // @ts-ignore
     return crypto.createCipheriv(this.algorithm, key, this.config.iv);
   }
 
   async createDecrypt() {
     const key = (await scrypt(this.config.secret, 'salt', 24)) as Buffer;
 
+    // @ts-ignore
     return crypto.createDecipheriv(this.algorithm, key, this.config.iv);
   }
 
