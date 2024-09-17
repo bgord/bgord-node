@@ -1,4 +1,7 @@
 # Changelog
+## 2024-09-17 13:46 v0.59.0
+- 2024-09-17 13:46 977b549 **v0.59.0**
+- 2024-09-17 11:34 1fea87a **docs: generate CHANGELOG**
 - 2024-09-17 10:40 c118929 **Merge pull request #258 from bgord/dependabot/npm_and_yarn/execa-9.4.0**
 - 2024-09-17 10:00 8f1acde **Merge pull request #254 from bgord/dependabot/npm_and_yarn/date-fns-4.0.0**
 - 2024-09-17 10:00 3ffbcfa **Merge pull request #256 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.1**
@@ -23,6 +26,7 @@
 - 2024-09-14 15:11 6995bab **docs: generate CHANGELOG**
 - 2024-09-14 14:13 60da46a **step: bump bgord/scripts**
 - 2024-09-14 14:05 98407d4 **chore(release): 0.58.294**
+## 2024-09-14 14:03 v0.58.294
 - 2024-09-13 11:43 290f5a2 **Merge pull request #251 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.0**
 - 2024-09-13 11:41 52289d8 **Merge pull request #252 from bgord/dependabot/npm_and_yarn/vitest-2.1.0**
 - 2024-09-13 11:40 9c3724a **Merge pull request #250 from bgord/dependabot/npm_and_yarn/husky-9.1.6**
@@ -378,6 +382,7 @@
 - 2024-03-01 02:40 7292e31 **chore(deps): bump express from 4.18.2 to 4.18.3**
 - 2024-02-26 22:04 fdb81d2 **Merge pull request #109 from bgord/dependabot/npm_and_yarn/oslo-1.1.3**
 - 2024-02-26 21:05 4547d0a **docs: generate CHANGELOG [skip ci]**
+## 2024-02-26 13:08 v0.58.273
 - 2024-02-26 13:08 f0fd214 **fix: missing graceful shutdown process exit**
 - 2024-02-26 12:11 21aacb4 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-26 02:48 29ad999 **chore(deps): bump oslo from 1.1.2 to 1.1.3**
@@ -389,6 +394,7 @@
 - 2024-02-23 07:37 de7bc6c **docs: generate CHANGELOG [skip ci]**
 - 2024-02-23 02:37 6294f6c **chore(deps): bump nodemailer from 6.9.9 to 6.9.10**
 - 2024-02-22 16:10 d6040ab **fix: duration decorator ms duration**
+## 2024-02-22 15:11 v0.58.272
 - 2024-02-22 15:11 77f1baf **docs: generate CHANGELOG [skip ci]**
 - 2024-02-22 02:53 4e55a6e **chore(deps-dev): bump @prisma/client from 5.10.1 to 5.10.2**
 - 2024-02-22 02:53 1c66e4f **chore(deps-dev): bump prisma from 5.10.1 to 5.10.2**
@@ -439,6 +445,7 @@
 - 2024-02-02 13:41 49ac1ef **feature: add prepublishOnly script**
 - 2024-02-02 13:06 934432c **feature: add JobHandler#protect**
 - 2024-02-02 12:42 2c4fa67 **docs: generate CHANGELOG [skip ci]**
+## 2024-02-02 12:07 v0.58.271
 - 2024-02-02 12:07 7dce344 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-02 09:41 648bb36 **Merge pull request #87 from bgord/dependabot/npm_and_yarn/husky-9.0.10**
 - 2024-02-02 09:37 5803428 **Merge pull request #89 from bgord/dependabot/npm_and_yarn/prisma/client-5.9.1**
@@ -448,19 +455,23 @@
 - 2024-02-02 08:37 08ccdbe **docs: generate CHANGELOG [skip ci]**
 - 2024-02-02 02:39 dade80b **chore(deps-dev): bump @prisma/client from 5.9.0 to 5.9.1**
 - 2024-02-02 02:39 3059704 **chore(deps-dev): bump prisma from 5.9.0 to 5.9.1**
+## 2024-02-01 13:34 v0.58.270
 - 2024-02-01 13:34 d7bc997 **feature: add redirector**
 - 2024-02-01 13:34 9ba8e83 **feature: add redirector**
 - 2024-02-01 13:11 ec90fec **refactor: update nodemailer**
 - 2024-02-01 13:06 4f120f3 **refactor: update packages**
 ## 2024-02-01 12:48 v0.58.268
 - 2024-02-01 12:48 0d56805 **chore(release): 0.58.268**
+## 2024-02-01 12:45 v0.58.266
 - 2024-02-01 12:45 2eaabe1 **fix: execa in binary prereq**
 - 2024-02-01 12:36 018a086 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 12:35 17db957 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 12:32 73e1f2f **refactor: ugprade execa**
+## 2024-02-01 12:07 v0.58.269
 - 2024-02-01 12:07 4e98320 **fix: event handler error messages**
 - 2024-02-01 12:07 25060c3 **docs: generate CHANGELOG [skip ci]**
 - 2024-02-01 11:48 6ab9d61 **docs: generate CHANGELOG [skip ci]**
+## 2024-02-01 11:46 v0.58.267
 - 2024-02-01 11:46 3f94a1a **docs: generate CHANGELOG [skip ci]**
 ## 2024-02-01 11:32 v0.58.265
 - 2024-02-01 11:32 90636b4 **docs: generate CHANGELOG [skip ci]**
