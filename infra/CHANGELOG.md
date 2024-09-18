@@ -1,6 +1,8 @@
 # Changelog
+- 2024-09-18 11:22 4fc24de **step: bump bgord/scripts**
 ## 2024-09-17 13:46 v0.59.0
 - 2024-09-17 13:46 977b549 **v0.59.0**
+- 2024-09-17 11:48 cbd6041 **docs: generate CHANGELOG**
 - 2024-09-17 11:34 1fea87a **docs: generate CHANGELOG**
 - 2024-09-17 10:40 c118929 **Merge pull request #258 from bgord/dependabot/npm_and_yarn/execa-9.4.0**
 - 2024-09-17 10:00 8f1acde **Merge pull request #254 from bgord/dependabot/npm_and_yarn/date-fns-4.0.0**
