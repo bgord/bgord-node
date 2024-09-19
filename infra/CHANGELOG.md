@@ -1,5 +1,14 @@
 # Changelog
+- 2024-09-19 11:19 b608ae2 **Merge pull request #262 from bgord/dependabot/npm_and_yarn/date-fns-4.1.0**
+- 2024-09-19 11:19 0288f5c **Merge pull request #263 from bgord/dependabot/npm_and_yarn/cspell-8.14.4**
+- 2024-09-19 11:18 7697174 **Merge pull request #261 from bgord/dependabot/npm_and_yarn/types/nodemailer-6.4.16**
+- 2024-09-19 11:18 48e8a1d **Merge pull request #259 from bgord/dependabot/npm_and_yarn/vite-5.4.6**
+- 2024-09-19 02:51 df9125c **chore(deps-dev): bump cspell from 8.14.2 to 8.14.4**
 - 2024-09-18 11:22 4fc24de **step: bump bgord/scripts**
+- 2024-09-18 09:24 e7dddb3 **docs: generate CHANGELOG**
+- 2024-09-18 02:34 bccb197 **chore(deps-dev): bump @types/nodemailer from 6.4.15 to 6.4.16**
+- 2024-09-18 02:34 3659e52 **chore(deps): bump date-fns from 4.0.0 to 4.1.0**
+- 2024-09-18 00:01 e776568 **chore(deps): bump vite from 5.2.8 to 5.4.6**
 ## 2024-09-17 13:46 v0.59.0
 - 2024-09-17 13:46 977b549 **v0.59.0**
 - 2024-09-17 11:48 cbd6041 **docs: generate CHANGELOG**
