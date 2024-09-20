@@ -28,7 +28,7 @@
   "author": "Bartosz Gordon",
   "module": "dist/bgord-node.esm.js",
   "devDependencies": {
-    "@biomejs/biome": "1.9.1",
+    "@biomejs/biome": "1.9.2",
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@prisma/client": "5.19.1",
