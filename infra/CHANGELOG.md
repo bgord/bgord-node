@@ -1,5 +1,7 @@
 # Changelog
+- 2024-09-21 16:40 559de02 **fix: downgrade execa**
 - 2024-09-21 16:16 9072ca0 **Merge pull request #264 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.2**
+- 2024-09-21 14:17 1357f8f **docs: generate CHANGELOG**
 - 2024-09-20 02:54 7506be1 **chore(deps-dev): bump @biomejs/biome from 1.9.1 to 1.9.2**
 - 2024-09-19 11:19 b608ae2 **Merge pull request #262 from bgord/dependabot/npm_and_yarn/date-fns-4.1.0**
 - 2024-09-19 11:19 0288f5c **Merge pull request #263 from bgord/dependabot/npm_and_yarn/cspell-8.14.4**
