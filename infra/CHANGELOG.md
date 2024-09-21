@@ -1,8 +1,11 @@
 # Changelog
+- 2024-09-21 16:16 9072ca0 **Merge pull request #264 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.2**
+- 2024-09-20 02:54 7506be1 **chore(deps-dev): bump @biomejs/biome from 1.9.1 to 1.9.2**
 - 2024-09-19 11:19 b608ae2 **Merge pull request #262 from bgord/dependabot/npm_and_yarn/date-fns-4.1.0**
 - 2024-09-19 11:19 0288f5c **Merge pull request #263 from bgord/dependabot/npm_and_yarn/cspell-8.14.4**
 - 2024-09-19 11:18 7697174 **Merge pull request #261 from bgord/dependabot/npm_and_yarn/types/nodemailer-6.4.16**
 - 2024-09-19 11:18 48e8a1d **Merge pull request #259 from bgord/dependabot/npm_and_yarn/vite-5.4.6**
+- 2024-09-19 09:19 22dae15 **docs: generate CHANGELOG**
 - 2024-09-19 02:51 df9125c **chore(deps-dev): bump cspell from 8.14.2 to 8.14.4**
 - 2024-09-18 11:22 4fc24de **step: bump bgord/scripts**
 - 2024-09-18 09:24 e7dddb3 **docs: generate CHANGELOG**
