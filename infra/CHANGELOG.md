@@ -1,7 +1,10 @@
 # Changelog
+- 2024-09-21 17:02 a2a450e **refactor: adjust body size limit**
+## 2024-09-21 16:40 v0.59.1
 - 2024-09-21 16:40 559de02 **fix: downgrade execa**
 - 2024-09-21 16:40 238c8d9 **0.59.1**
 - 2024-09-21 16:16 9072ca0 **Merge pull request #264 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.2**
+- 2024-09-21 14:41 be80ad6 **docs: generate CHANGELOG**
 - 2024-09-21 14:40 15898cc **docs: generate CHANGELOG**
 - 2024-09-21 14:17 1357f8f **docs: generate CHANGELOG**
 - 2024-09-20 02:54 7506be1 **chore(deps-dev): bump @biomejs/biome from 1.9.1 to 1.9.2**
