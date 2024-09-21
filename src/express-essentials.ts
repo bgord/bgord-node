@@ -72,7 +72,7 @@ export function addExpressEssentials(
   app.use(ApiVersion.attach);
 
   const bodyParserJsonConfig = config?.json ?? {
-    limit: new Size({ value: 1, unit: SizeUnit.MB }).toString(),
+    limit: new Size({ value: 128, unit: SizeUnit.kB }).toString(),
   };
   app.use(express.json(bodyParserJsonConfig));
   app.use(cookieParser() as express.RequestHandler);
