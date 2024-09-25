@@ -1,7 +1,10 @@
 # Changelog
+- 2024-09-25 09:58 5e40e0e **Merge pull request #269 from bgord/dependabot/npm_and_yarn/prisma/client-5.20.0**
 - 2024-09-25 09:57 c8c8c25 **Merge pull request #268 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.9**
 - 2024-09-25 09:57 af34f63 **Merge pull request #267 from bgord/dependabot/npm_and_yarn/knip-5.30.5**
 - 2024-09-25 07:57 e1bae7a **docs: generate CHANGELOG**
+- 2024-09-25 07:57 574cf13 **docs: generate CHANGELOG**
+- 2024-09-25 02:31 7bbc484 **chore(deps-dev): bump @prisma/client from 5.19.1 to 5.20.0**
 - 2024-09-24 02:11 a028b31 **chore(deps-dev): bump knip from 5.30.4 to 5.30.5**
 - 2024-09-24 02:11 5acdb3a **chore(deps-dev): bump @types/lodash from 4.17.7 to 4.17.9**
 - 2024-09-23 09:22 74fcf88 **Merge pull request #266 from bgord/dependabot/npm_and_yarn/knip-5.30.4**
