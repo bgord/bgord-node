@@ -1,8 +1,15 @@
 # Changelog
+## 2024-09-28 18:37 v0.61.0
+- 2024-09-28 18:37 60ef087 **0.61.0**
+- 2024-09-28 18:33 d444bc0 **refactor: migrate to express 5**
+- 2024-09-28 17:29 1a8c472 **step: express 5 migration**
+- 2024-09-28 17:22 aa2acdc **step: install express 5**
+- 2024-09-28 17:21 4d69269 **step: remove express**
 - 2024-09-25 09:59 0b1bf22 **Merge pull request #270 from bgord/dependabot/npm_and_yarn/prisma-5.20.0**
 - 2024-09-25 09:58 5e40e0e **Merge pull request #269 from bgord/dependabot/npm_and_yarn/prisma/client-5.20.0**
 - 2024-09-25 09:57 c8c8c25 **Merge pull request #268 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.9**
 - 2024-09-25 09:57 af34f63 **Merge pull request #267 from bgord/dependabot/npm_and_yarn/knip-5.30.5**
+- 2024-09-25 08:00 0512ee4 **docs: generate CHANGELOG**
 - 2024-09-25 07:59 6a030c3 **chore(deps-dev): bump prisma from 5.19.1 to 5.20.0**
 - 2024-09-25 07:58 bac6660 **docs: generate CHANGELOG**
 - 2024-09-25 07:57 e1bae7a **docs: generate CHANGELOG**
