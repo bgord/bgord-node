@@ -1,14 +1,14 @@
-import { Request, Response, NextFunction } from 'express';
-import NodeCache from 'node-cache';
-import _ from 'lodash';
+import { Request, Response, NextFunction } from "express";
+import NodeCache from "node-cache";
+import _ from "lodash";
 
 export enum CacheHitEnum {
-  hit = 'hit',
-  miss = 'miss',
+  hit = "hit",
+  miss = "miss",
 }
 
 export class CacheResponse {
-  static readonly CACHE_HIT_HEADER = 'Cache-Hit';
+  static readonly CACHE_HIT_HEADER = "Cache-Hit";
 
   constructor(private readonly cache: NodeCache) {}
 
@@ -17,8 +17,9 @@ export class CacheResponse {
 
     if (this.cache.has(url)) {
       response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.hit);
-
       response.status(200).send(this.cache.get(url));
+
+      return;
     }
 
     response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.miss);
