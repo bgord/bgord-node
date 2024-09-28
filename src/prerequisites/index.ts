@@ -7,7 +7,6 @@ export * from './node';
 export * from './outside-connectivity';
 export * from './path';
 export * from './port';
-export * from './prisma';
 export * from './ram';
 export * from './self';
 export * from './space';

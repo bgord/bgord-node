@@ -68,7 +68,6 @@ export * from './prerequisites/node';
 export * from './prerequisites/outside-connectivity';
 export * from './prerequisites/path';
 export * from './prerequisites/port';
-export * from './prerequisites/prisma';
 export * from './prerequisites/ram';
 export * from './prerequisites/self';
 export * from './prerequisites/space';

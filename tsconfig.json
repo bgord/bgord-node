@@ -1,26 +1,14 @@
 {
-  "include": ["src", "types"],
   "compilerOptions": {
-    "target": "es2016",
-    "module": "ES6",
-    "lib": ["ESNext"],
-    "importHelpers": true,
-    "declaration": true,
-    "sourceMap": true,
-    "rootDir": "./src",
+    "lib": ["esnext", "dom"],
     "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "moduleResolution": "node",
-    "jsx": "react",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
+    "jsx": "react",
+    "jsxFragmentFactory": "React.Fragment",
+    "jsxFactory": "React.createElement",
     "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "incremental": true
   },
   "exclude": ["bgord-scripts", "tests", "vite.config.ts"]
 }
