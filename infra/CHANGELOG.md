@@ -1,4 +1,5 @@
 # Changelog
+- 2024-09-28 20:35 c47e998 **step: set files in package.json**
 ## 2024-09-28 20:28 v0.67.0
 - 2024-09-28 20:28 719b1dd **0.67.0**
 - 2024-09-28 20:26 fcc18a9 **feature: remove include tsconfig**
@@ -18,6 +19,7 @@
 ## 2024-09-28 18:37 v0.61.0
 - 2024-09-28 18:37 60ef087 **0.61.0**
 - 2024-09-28 18:33 d444bc0 **refactor: migrate to express 5**
+- 2024-09-28 18:28 26593f1 **docs: generate CHANGELOG**
 - 2024-09-28 18:27 325c00e **docs: generate CHANGELOG**
 - 2024-09-28 18:20 da09f6c **docs: generate CHANGELOG**
 - 2024-09-28 18:19 7f29dca **docs: generate CHANGELOG**
