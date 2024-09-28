@@ -1,6 +1,5 @@
 import express from 'express';
 
-import { Middleware } from './middleware';
 import {
   AuthorizationHeader,
   BasicAuthUsernameType,
@@ -36,7 +35,7 @@ export class BasicAuthShield {
     return next();
   }
 
-  verify = Middleware(this._verify.bind(this));
+  verify = this._verify.bind(this);
 
   private reject(response: express.Response) {
     response.setHeader(

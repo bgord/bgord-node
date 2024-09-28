@@ -1,6 +1,5 @@
 import * as express from 'express';
 
-import { Middleware } from './middleware';
 import * as Schema from './schema';
 import * as Errors from './errors';
 
@@ -14,7 +13,7 @@ export class RateLimitShield {
   static build(options: RateLimitShieldOptionsType) {
     const rateLimiter = new RateLimiter(options);
 
-    function verify(
+    return function verify(
       _request: express.Request,
       _response: express.Response,
       next: express.NextFunction
@@ -27,8 +26,6 @@ export class RateLimitShield {
       }
 
       return next();
-    }
-
-    return Middleware(verify);
+    };
   }
 }

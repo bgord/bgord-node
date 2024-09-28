@@ -1,6 +1,5 @@
 import * as express from 'express';
 
-import { Middleware } from './middleware';
 import { Time } from './time';
 
 export enum CacheStaticFilesStrategy {
@@ -11,7 +10,7 @@ export enum CacheStaticFilesStrategy {
 
 export class CacheStaticFiles {
   static handle(strategy: CacheStaticFilesStrategy) {
-    function _handle(
+    return function handle(
       _request: express.Request,
       response: express.Response,
       next: express.NextFunction
@@ -35,8 +34,6 @@ export class CacheStaticFiles {
         );
       }
       return next();
-    }
-
-    return Middleware(_handle);
+    };
   }
 }

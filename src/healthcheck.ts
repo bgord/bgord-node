@@ -11,7 +11,6 @@ import { BuildInfoRepository } from './build-info-repository';
 import { Stopwatch, StopwatchResultType } from './stopwatch';
 import { Uptime, UptimeResultType } from './uptime';
 import { MemoryConsumption } from './memory-consumption';
-import { Middleware } from './middleware';
 import { Size, SizeUnit } from './size';
 
 type HealthcheckResultType = {
@@ -27,7 +26,7 @@ type HealthcheckResultType = {
 
 export class Healthcheck {
   static build(prerequisites: AbstractPrerequisite<BasePrerequisiteConfig>[]) {
-    async function handle(
+    return async function handle(
       _request: express.Request,
       response: express.Response,
       _next: express.NextFunction
@@ -64,8 +63,6 @@ export class Healthcheck {
       };
 
       return response.status(code).send(result);
-    }
-
-    return Middleware(handle);
+    };
   }
 }

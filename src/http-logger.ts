@@ -2,7 +2,6 @@ import express from 'express';
 import _ from 'lodash';
 
 import { Logger } from './logger';
-import { Middleware } from './middleware';
 import { CacheHitEnum, CacheResponse } from './cache-response';
 import { ServerTiming } from './server-timing';
 
@@ -38,67 +37,65 @@ export class HttpLogger {
   ];
 
   static applyTo(app: express.Application, logger: Logger): void {
-    app.use(
-      Middleware((request, response, next) => {
-        const client = {
-          ip: request.header('X-Real-IP') ?? request.ip,
-          userAgent: request.header('user-agent'),
+    app.use((request, response, next) => {
+      const client = {
+        ip: request.header('X-Real-IP') ?? request.ip,
+        userAgent: request.header('user-agent'),
+      };
+
+      const httpRequestBeforeMetadata = {
+        params: request.params,
+        headers: _.omit(request.headers, HttpLogger.uninformativeHeaders),
+        body: request.body,
+        query: request.query,
+      };
+
+      logger.http({
+        operation: 'http_request_before',
+        correlationId: request.requestId,
+        message: 'request',
+        method: request.method,
+        url: `${request.header('host')}${request.url}`,
+        client,
+        metadata: _.pickBy(
+          httpRequestBeforeMetadata,
+          value => !_.isEmpty(value)
+        ),
+      });
+
+      response.on('finish', () => {
+        const cacheHitHeader = response.getHeader(
+          CacheResponse.CACHE_HIT_HEADER
+        );
+
+        const cacheHit =
+          cacheHitHeader === CacheHitEnum.hit ? CacheHitEnum.hit : undefined;
+
+        const httpRequestAfterMetadata = {
+          response: response.locals.body,
+          cacheHit,
         };
 
-        const httpRequestBeforeMetadata = {
-          params: request.params,
-          headers: _.omit(request.headers, HttpLogger.uninformativeHeaders),
-          body: request.body,
-          query: request.query,
-        };
+        const serverTimingMs = response.getHeader(ServerTiming.MS_HEADER);
+
+        const durationMs = Number.isInteger(serverTimingMs)
+          ? Number(serverTimingMs)
+          : undefined;
 
         logger.http({
-          operation: 'http_request_before',
+          operation: 'http_request_after',
           correlationId: request.requestId,
-          message: 'request',
+          message: 'response',
           method: request.method,
           url: `${request.header('host')}${request.url}`,
+          responseCode: response.statusCode,
+          durationMs,
           client,
-          metadata: _.pickBy(
-            httpRequestBeforeMetadata,
-            value => !_.isEmpty(value)
-          ),
+          metadata: HttpLogger.simplify(httpRequestAfterMetadata),
         });
+      });
 
-        response.on('finish', () => {
-          const cacheHitHeader = response.getHeader(
-            CacheResponse.CACHE_HIT_HEADER
-          );
-
-          const cacheHit =
-            cacheHitHeader === CacheHitEnum.hit ? CacheHitEnum.hit : undefined;
-
-          const httpRequestAfterMetadata = {
-            response: response.locals.body,
-            cacheHit,
-          };
-
-          const serverTimingMs = response.getHeader(ServerTiming.MS_HEADER);
-
-          const durationMs = Number.isInteger(serverTimingMs)
-            ? Number(serverTimingMs)
-            : undefined;
-
-          logger.http({
-            operation: 'http_request_after',
-            correlationId: request.requestId,
-            message: 'response',
-            method: request.method,
-            url: `${request.header('host')}${request.url}`,
-            responseCode: response.statusCode,
-            durationMs,
-            client,
-            metadata: HttpLogger.simplify(httpRequestAfterMetadata),
-          });
-        });
-
-        next();
-      })
-    );
+      next();
+    });
   }
 }

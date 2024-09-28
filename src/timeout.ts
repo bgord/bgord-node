@@ -1,7 +1,6 @@
 import onHeaders from 'on-headers';
 import express from 'express';
 
-import { Middleware } from './middleware';
 import { TimestampType } from './schema';
 import { RequestTimeoutError } from './errors';
 
@@ -11,7 +10,7 @@ type TimeoutConfigType = {
 
 export class Timeout {
   static build(config: TimeoutConfigType) {
-    function handle(
+    return function handle(
       request: express.Request,
       response: express.Response,
       next: express.NextFunction
@@ -22,8 +21,6 @@ export class Timeout {
       onHeaders(response, () => clearTimeout(timeout));
 
       return next();
-    }
-
-    return Middleware(handle);
+    };
   }
 }

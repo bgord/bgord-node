@@ -2,7 +2,6 @@ import { describe, test, expect, vi } from 'vitest';
 import express from 'express';
 import request from 'supertest';
 
-import { Route } from '../src/route';
 import { Time } from '../src/time';
 import { RateLimitShield } from '../src/rate-limit-shield';
 import * as Errors from '../src/errors';
@@ -14,7 +13,9 @@ describe('RateLimitShield middleware', () => {
     app.get(
       '/ping',
       RateLimitShield.build({ ms: 1000 }),
-      Route((_request, response) => response.status(200).send('pong')),
+      (_request, response) => {
+        response.status(200).send('pong');
+      },
       (error, _request, response, _next) => {
         if (error instanceof Errors.TooManyRequestsError) {
           return response.status(429).send();
@@ -36,7 +37,9 @@ describe('RateLimitShield middleware', () => {
     app.get(
       '/ping',
       RateLimitShield.build({ ms: 1000 }),
-      Route((_request, response) => response.status(200).send('pong')),
+      (_request, response) => {
+        response.status(200).send('pong');
+      },
       (error, _request, response, _next) => {
         if (error instanceof Errors.TooManyRequestsError) {
           return response.status(429).send();
@@ -62,7 +65,9 @@ describe('RateLimitShield middleware', () => {
     app.get(
       '/ping',
       RateLimitShield.build({ ms: 1000 }),
-      Route((_request, response) => response.status(200).send('pong')),
+      (_request, response) => {
+        response.status(200).send('pong');
+      },
       (error, _request, response, _next) => {
         if (error instanceof Errors.TooManyRequestsError) {
           return response.status(429).send();

@@ -2,7 +2,6 @@ import * as express from 'express';
 
 import * as Schema from './schema';
 import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
-import { Middleware } from './middleware';
 
 type ApiKeyShieldConfigType = { API_KEY: Schema.ApiKeyType };
 
@@ -25,5 +24,5 @@ export class ApiKeyShield {
     });
   }
 
-  verify = Middleware(this._verify.bind(this));
+  verify = this._verify.bind(this);
 }

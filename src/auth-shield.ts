@@ -2,7 +2,6 @@ import express from 'express';
 import { Lucia } from 'lucia';
 
 import * as Errors from './errors';
-import { Middleware } from './middleware';
 
 import {
   Password,
@@ -99,7 +98,7 @@ export class AuthShield<T extends { password: PasswordType; id: IdType }> {
   }
 
   applyTo(app: express.Application): void {
-    app.use(Middleware(this._applyTo.bind(this)));
+    app.use(this._applyTo.bind(this));
   }
 
   private async _applyTo(
@@ -171,11 +170,11 @@ export class AuthShield<T extends { password: PasswordType; id: IdType }> {
     }
   }
 
-  verify = Middleware(this._verify.bind(this));
+  verify = this._verify.bind(this);
 
-  reverse = Middleware(this._reverse.bind(this));
+  reverse = this._reverse.bind(this);
 
-  detach = Middleware(this._detach.bind(this));
+  detach = this._detach.bind(this);
 
-  attach = Middleware(this._attach.bind(this));
+  attach = this._attach.bind(this);
 }

@@ -2,8 +2,6 @@ import { Request, Response, NextFunction } from 'express';
 import NodeCache from 'node-cache';
 import _ from 'lodash';
 
-import { Middleware } from './middleware';
-
 export enum CacheHitEnum {
   hit = 'hit',
   miss = 'miss',
@@ -28,7 +26,7 @@ export class CacheResponse {
     return next();
   }
 
-  handle = Middleware(this._handle.bind(this));
+  handle = this._handle.bind(this);
 
   private _clear(_request: Request, _response: Response, next: NextFunction) {
     this.cache.flushAll();
@@ -36,5 +34,5 @@ export class CacheResponse {
     return next();
   }
 
-  clear = Middleware(this._clear.bind(this));
+  clear = this._clear.bind(this);
 }

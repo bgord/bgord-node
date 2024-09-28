@@ -3,7 +3,6 @@ import { describe, test, expect } from 'vitest';
 import request from 'supertest';
 import { ApiKeyShield } from '../src/api-key-shield';
 import { AccessDeniedError } from '../src/errors';
-import { Route } from '../src/route';
 
 const VALID_API_KEY = 'valid-api-key';
 const INVALID_API_KEY = 'invalid-api-key';
@@ -30,7 +29,7 @@ describe('ApiKeyShield middleware', () => {
     app.get(
       '/ping',
       apiKeyShield.verify,
-      Route((_request, _response) => expect.unreachable()),
+      (_request, _response) => expect.unreachable(),
       (error, request, response, next) => {
         if (error instanceof AccessDeniedError) {
           return response.status(403).send('Access denied');

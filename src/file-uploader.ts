@@ -7,7 +7,6 @@ import { UploadedFile } from './schema';
 import { NotAcceptedMimeError } from './errors';
 import { Mime } from './mime';
 import { MIME_TYPES } from './mime-types';
-import { Middleware } from './middleware';
 
 type FileUploaderConfigType = files.FormDataOptions & { mimeTypes: string[] };
 
@@ -38,7 +37,7 @@ export class FileUploader {
       files.format(),
       files.union(),
       FileUploader.validate(config),
-    ].map(handler => Middleware(handler));
+    ];
   }
 
   private static validate(config: FileUploaderConfigType) {

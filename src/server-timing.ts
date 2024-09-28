@@ -1,7 +1,6 @@
 import express from 'express';
 import onHeaders from 'on-headers';
 
-import { Middleware } from './middleware';
 import { Stopwatch } from './stopwatch';
 
 export class ServerTiming {
@@ -13,9 +12,7 @@ export class ServerTiming {
     app.use(ServerTiming.handle);
   }
 
-  static handle = Middleware(ServerTiming._handle);
-
-  private static async _handle(
+  static async handle(
     _request: express.Request,
     response: express.Response,
     next: express.NextFunction

@@ -1,7 +1,8 @@
-import { Middleware } from './middleware';
+import express from 'express';
 
 export class Redirector {
   static build(path: string) {
-    return Middleware((_request, response) => response.redirect(path));
+    return (_request: express.Request, response: express.Response) =>
+      response.redirect(path);
   }
 }

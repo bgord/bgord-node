@@ -3,7 +3,6 @@ import { RecaptchaV3 } from 'express-recaptcha';
 
 import { RecaptchaSiteKeyType, RecaptchaSecretKeyType } from './schema';
 import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
-import { Middleware } from './middleware';
 
 export type RecaptchaVerifierConfigType = {
   siteKey: RecaptchaSiteKeyType;
@@ -24,7 +23,7 @@ export class RecaptchaShield {
       callback: 'cb',
     });
 
-    async function handler(
+    return async function handler(
       request: express.Request,
       _response: express.Response,
       next: express.NextFunction
@@ -40,8 +39,6 @@ export class RecaptchaShield {
           reason: AccessDeniedErrorReasonType.recaptcha,
         });
       }
-    }
-
-    return Middleware(handler);
+    };
   }
 }

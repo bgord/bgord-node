@@ -5,8 +5,6 @@ import { z } from 'zod';
 import { HCaptchaSecretKey } from './schema';
 import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';
 
-import { Middleware } from './middleware';
-
 type HCaptchaSecretKeyType = z.infer<typeof HCaptchaSecretKey>;
 
 type HCaptchaVerifierModeType = 'local' | 'production';
@@ -54,7 +52,7 @@ export class HCaptchaShield {
     }
   }
 
-  verify = Middleware(this._verify.bind(this));
+  verify = this._verify.bind(this);
 
   static helmetCspConfig = {
     'script-src': ['https://hcaptcha.com', 'https://*.hcaptcha.com'],
