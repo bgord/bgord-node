@@ -1,4 +1,6 @@
 # Changelog
+## 2024-09-28 19:51 v0.64.0
+- 2024-09-28 19:51 78c14b0 **0.64.0**
 ## 2024-09-28 19:43 v0.63.0
 - 2024-09-28 19:43 bee4f1a **0.63.0**
 - 2024-09-28 19:37 2bc7ed9 **refactor: fix migration clashes**
@@ -7,6 +9,7 @@
 ## 2024-09-28 18:37 v0.61.0
 - 2024-09-28 18:37 60ef087 **0.61.0**
 - 2024-09-28 18:33 d444bc0 **refactor: migrate to express 5**
+- 2024-09-28 17:43 09e72f0 **docs: generate CHANGELOG**
 - 2024-09-28 17:41 ba0ee9e **docs: generate CHANGELOG**
 - 2024-09-28 17:29 1a8c472 **step: express 5 migration**
 - 2024-09-28 17:22 aa2acdc **step: install express 5**
