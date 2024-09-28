@@ -1,4 +1,6 @@
 # Changelog
+## 2024-09-28 20:19 v0.66.0
+- 2024-09-28 20:19 d2e8552 **0.66.0**
 - 2024-09-28 20:18 5f9a6c1 **refactor: remove noEmit**
 ## 2024-09-28 20:10 v0.65.0
 - 2024-09-28 20:10 987423c **0.65.0**
@@ -13,6 +15,7 @@
 ## 2024-09-28 18:37 v0.61.0
 - 2024-09-28 18:37 60ef087 **0.61.0**
 - 2024-09-28 18:33 d444bc0 **refactor: migrate to express 5**
+- 2024-09-28 18:19 7f29dca **docs: generate CHANGELOG**
 - 2024-09-28 18:11 b6492a8 **docs: generate CHANGELOG**
 - 2024-09-28 18:07 d87871f **docs: generate CHANGELOG**
 - 2024-09-28 18:05 273f76f **docs: generate CHANGELOG**
