@@ -18,6 +18,10 @@
     "test": "vitest run",
     "prepare": "husky"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "devDependencies": {
     "@biomejs/biome": "1.9.2",
     "@commitlint/cli": "19.5.0",
