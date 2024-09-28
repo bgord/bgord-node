@@ -62,7 +62,7 @@ export class Healthcheck {
         ...stopwatch.stop(),
       };
 
-      return response.status(code).send(result);
+      response.status(code).send(result);
     };
   }
 }

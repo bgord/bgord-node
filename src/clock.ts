@@ -1,16 +1,16 @@
-export type HourFormatter = (value: Hour['value']) => string;
+export type HourFormatter = (value: Hour["value"]) => string;
 
 export const HourFormatters: Record<string, HourFormatter> = {
-  TWENTY_FOUR_HOURS: value => value.toString().padStart(2, '0'),
+  TWENTY_FOUR_HOURS: (value) => value.toString().padStart(2, "0"),
 
-  AM_PM: value => {
+  AM_PM: (value) => {
     if (value < 12) return `${value.toString()} a.m.`;
     return `${value.toString()} p.m.`;
   },
 
-  TWELVE_HOURS: value => (value % 12).toString().padStart(2, '0'),
+  TWELVE_HOURS: (value) => (value % 12).toString().padStart(2, "0"),
 
-  TWELVE_HOURS_WO_PADDING: value => (value % 12).toString(),
+  TWELVE_HOURS_WO_PADDING: (value) => (value % 12).toString(),
 } as const;
 
 export class Hour {
@@ -24,17 +24,18 @@ export class Hour {
 
   constructor(candidate: number, formatter?: HourFormatter) {
     if (!Number.isInteger(candidate)) {
-      throw new Error('Invalid hour');
+      throw new Error("Invalid hour");
     }
     if (candidate < 0) {
-      throw new Error('Invalid hour');
+      throw new Error("Invalid hour");
     }
     if (candidate >= 24) {
-      throw new Error('Invalid hour');
+      throw new Error("Invalid hour");
     }
 
     this.value = candidate;
-    this.formatter = formatter ?? HourFormatters.TWENTY_FOUR_HOURS;
+    this.formatter =
+      (formatter as HourFormatter) ?? HourFormatters.TWENTY_FOUR_HOURS;
   }
 
   get(formatter?: HourFormatter) {
@@ -71,15 +72,15 @@ export class Minute {
 
   constructor(candidate: number) {
     if (!Number.isInteger(candidate)) {
-      throw new Error('Invalid minute');
+      throw new Error("Invalid minute");
     }
 
     if (candidate < 0) {
-      throw new Error('Invalid minute');
+      throw new Error("Invalid minute");
     }
 
     if (candidate >= 60) {
-      throw new Error('Invalid minute');
+      throw new Error("Invalid minute");
     }
 
     this.value = candidate;
@@ -88,7 +89,7 @@ export class Minute {
   get() {
     return {
       raw: this.value,
-      formatted: this.value.toString().padStart(2, '0'),
+      formatted: this.value.toString().padStart(2, "0"),
     };
   }
 
@@ -124,7 +125,8 @@ export class Clock {
     private readonly minute: Minute,
     formatter?: ClockFormatter
   ) {
-    this.formatter = formatter ?? ClockFormatters.TWENTY_FOUR_HOURS;
+    this.formatter =
+      (formatter as ClockFormatter) ?? ClockFormatters.TWENTY_FOUR_HOURS;
   }
 
   get(formatter?: ClockFormatter) {

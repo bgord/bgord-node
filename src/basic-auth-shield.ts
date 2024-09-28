@@ -1,10 +1,10 @@
-import express from 'express';
+import express from "express";
 
 import {
   AuthorizationHeader,
   BasicAuthUsernameType,
   BasicAuthPasswordType,
-} from './schema';
+} from "./schema";
 
 type BasicAuthShieldConfigType = {
   username: BasicAuthUsernameType;
@@ -39,10 +39,10 @@ export class BasicAuthShield {
 
   private reject(response: express.Response) {
     response.setHeader(
-      'WWW-Authenticate',
+      "WWW-Authenticate",
       'Basic realm="Authentication Required"'
     );
 
-    return response.sendStatus(401);
+    response.sendStatus(401);
   }
 }

@@ -18,7 +18,7 @@ export class CacheResponse {
     if (this.cache.has(url)) {
       response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.hit);
 
-      return response.status(200).send(this.cache.get(url));
+      response.status(200).send(this.cache.get(url));
     }
 
     response.setHeader(CacheResponse.CACHE_HIT_HEADER, CacheHitEnum.miss);

@@ -1,12 +1,12 @@
-import _ from 'lodash';
-import express from 'express';
-import files from 'express-form-data';
-import os from 'node:os';
+import _ from "lodash";
+import express from "express";
+import files from "express-form-data";
+import os from "node:os";
 
-import { UploadedFile } from './schema';
-import { NotAcceptedMimeError } from './errors';
-import { Mime } from './mime';
-import { MIME_TYPES } from './mime-types';
+import { UploadedFile } from "./schema";
+import { NotAcceptedMimeError } from "./errors";
+import { Mime } from "./mime";
+import { MIME_TYPES } from "./mime-types";
 
 type FileUploaderConfigType = files.FormDataOptions & { mimeTypes: string[] };
 
@@ -14,7 +14,7 @@ export class FileUploader {
   static defaultConfig: FileUploaderConfigType = {
     uploadDir: os.tmpdir(),
     autoClean: true,
-    mimeTypes: MIME_TYPES.wildcard,
+    mimeTypes: MIME_TYPES.wildcard as string[],
   };
 
   static applyTo(
@@ -47,9 +47,9 @@ export class FileUploader {
       next: express.NextFunction
     ) => {
       const file = UploadedFile.parse(request.body?.file);
-      const contentType = new Mime(file.headers['content-type']);
+      const contentType = new Mime(file.headers["content-type"] as string);
 
-      const accepted = config.mimeTypes.some(acceptedMimeType =>
+      const accepted = config.mimeTypes.some((acceptedMimeType) =>
         new Mime(acceptedMimeType).isSatisfiedBy(contentType)
       );
 

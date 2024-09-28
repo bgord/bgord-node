@@ -1,32 +1,23 @@
 {
   "version": "0.60.0",
   "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
+  "name": "@bgord/node",
+  "type": "module",
+  "author": "Bartosz Gordon",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/bgord-node.cjs",
+    "default": "./dist/bgord-node.modern.js"
   },
+  "main": "./dist/bgord-node.cjs",
+  "module": "./dist/bgord-node.module.js",
+  "unpkg": "./dist/bgord-node.umd.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepublishOnly": "tsdx build",
+    "build": "microbundle",
+    "test": "vitest run",
     "prepare": "husky"
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "name": "@bgord/node",
-  "author": "Bartosz Gordon",
-  "module": "dist/bgord-node.esm.js",
   "devDependencies": {
     "@biomejs/biome": "1.9.2",
     "@commitlint/cli": "19.5.0",
@@ -48,11 +39,11 @@
     "cspell": "8.14.4",
     "husky": "9.1.6",
     "knip": "5.30.5",
+    "microbundle": "0.15.1",
     "prisma": "5.20.0",
     "shellcheck": "3.0.0",
     "standard-version": "9.5.0",
     "supertest": "7.0.0",
-    "tsdx": "0.14.1",
     "typescript": "5.6.2",
     "vitest": "2.1.1"
   },
@@ -66,7 +57,6 @@
     "date-fns": "4.1.0",
     "execa": "9.3.1",
     "express": "5.0.0",
-    "express-async-handler": "1.2.0",
     "express-form-data": "2.0.23",
     "express-handlebars": "8.0.1",
     "express-recaptcha": "5.1.0",

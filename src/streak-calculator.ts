@@ -23,7 +23,7 @@ export class StreakCalculator {
     let streakTail = this.cutoff;
 
     for (let i = 0; i < dates.length; i++) {
-      const date = dates[i];
+      const date = dates[i] as string;
 
       if (isAfter(date, streakTail)) continue;
 

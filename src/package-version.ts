@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 type MajorType = number;
 type MinorType = number;
@@ -8,14 +8,14 @@ export const PackageVersionSchema = z
   .string()
   .min(1)
   .refine(
-    value => {
+    (value) => {
       try {
-        if (!value.startsWith('v')) return false;
+        if (!value.startsWith("v")) return false;
 
-        const [, version] = value.split('v');
+        const [, version] = value.split("v");
         if (!version) return false;
 
-        const [major, minor, patch] = version.split('.');
+        const [major, minor, patch] = version.split(".");
         if (!(major && minor && patch)) return false;
 
         if (
@@ -43,12 +43,12 @@ export const PackageVersionSchema = z
         return false;
       }
     },
-    { message: 'package.version.error' }
+    { message: "package.version.error" }
   )
-  .transform(value => {
-    const [, version] = value.split('v');
+  .transform((value) => {
+    const [, version] = value.split("v");
 
-    const [major, minor, patch] = version.split('.');
+    const [major, minor, patch] = (version as string).split(".");
 
     return {
       major: Number(major),
