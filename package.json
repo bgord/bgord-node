@@ -16,7 +16,8 @@
   "scripts": {
     "build": "microbundle",
     "test": "vitest run",
-    "prepare": "husky"
+    "prepare": "husky",
+    "preinstall": "npx only-allow npm"
   },
   "files": [
     "dist",
@@ -43,6 +44,7 @@
     "husky": "9.1.6",
     "knip": "5.30.5",
     "microbundle": "0.15.1",
+    "only-allow": "1.2.1",
     "shellcheck": "3.0.0",
     "standard-version": "9.5.0",
     "supertest": "7.0.0",
