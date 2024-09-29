@@ -1,10 +1,13 @@
 # Changelog
+## 2024-09-29 14:04 v0.70.0
+- 2024-09-29 14:04 7589fe7 **0.70.0**
 - 2024-09-29 14:03 6c370d1 **step: bump bgord/scripts**
 - 2024-09-29 14:00 ade76b8 **fix: types in tests**
 - 2024-09-29 13:46 3389db6 **refactor: remove migrations prereq test**
 - 2024-09-29 13:42 b434bbc **step: switch to npm**
 ## 2024-09-29 12:04 v0.69.0
 - 2024-09-29 12:04 c84a8bc **0.69.0**
+- 2024-09-29 12:04 0fc34e8 **docs: generate CHANGELOG**
 - 2024-09-29 12:01 36b560c **docs: generate CHANGELOG**
 - 2024-09-29 10:04 9043914 **docs: generate CHANGELOG**
 - 2024-09-29 10:01 851b507 **docs: generate CHANGELOG**
