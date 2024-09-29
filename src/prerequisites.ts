@@ -6,7 +6,6 @@ export enum PrerequisiteStrategyEnum {
   self = 'self',
   timezoneUTC = 'timezoneUTC',
   path = 'path',
-  prisma = 'prisma',
   node = 'node',
   RAM = 'RAM',
   space = 'space',

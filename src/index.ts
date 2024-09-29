@@ -63,7 +63,6 @@ export * from './prerequisites/binary';
 export * from './prerequisites/jobs';
 export * from './prerequisites/mailer';
 export * from './prerequisites/memory';
-export * from './prerequisites/migrations';
 export * from './prerequisites/node';
 export * from './prerequisites/outside-connectivity';
 export * from './prerequisites/path';
