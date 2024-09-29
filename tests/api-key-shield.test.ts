@@ -1,90 +1,102 @@
-import express from 'express';
-import { describe, test, expect } from 'vitest';
-import request from 'supertest';
-import { ApiKeyShield } from '../src/api-key-shield';
-import { AccessDeniedError } from '../src/errors';
+import express from "express";
+import { describe, test, expect } from "vitest";
+import request from "supertest";
+import { ApiKeyShield } from "../src/api-key-shield";
+import { AccessDeniedError } from "../src/errors";
 
-const VALID_API_KEY = 'valid-api-key';
-const INVALID_API_KEY = 'invalid-api-key';
+const VALID_API_KEY = "valid-api-key";
+const INVALID_API_KEY = "invalid-api-key";
 
 const apiKeyShield = new ApiKeyShield({ API_KEY: VALID_API_KEY });
 
-describe('ApiKeyShield middleware', () => {
-  test('allows access with valid API key', async () => {
+describe("ApiKeyShield middleware", () => {
+  test("allows access with valid API key", async () => {
     const app = express();
 
-    app.get('/ping', apiKeyShield.verify, (_request, response) => {
-      response.status(200).send('pong');
+    app.get("/ping", apiKeyShield.verify, (_request, response) => {
+      response.status(200).send("pong");
     });
 
     await request(app)
-      .get('/ping')
+      .get("/ping")
       .set(ApiKeyShield.HEADER_NAME, VALID_API_KEY)
       .expect(200);
   });
 
-  test('denies access with missing API key', async () => {
+  test("denies access with missing API key", async () => {
     const app = express();
 
     app.get(
-      '/ping',
+      "/ping",
       apiKeyShield.verify,
-      (_request, _response) => expect.unreachable(),
-      (error, request, response, next) => {
+      (_request: express.Request, _response: express.Response) =>
+        expect.unreachable(),
+      (
+        error: express.Errback,
+        _request: express.Request,
+        response: express.Response,
+        next: express.NextFunction
+      ) => {
         if (error instanceof AccessDeniedError) {
-          return response.status(403).send('Access denied');
+          response.status(403).send("Access denied");
+          return;
         }
         return next();
       }
     );
 
-    const result = await request(app)
-      .get('/ping')
-      .expect(403);
+    const result = await request(app).get("/ping").expect(403);
 
-    expect(result.text).toEqual('Access denied');
+    expect(result.text).toEqual("Access denied");
   });
 
-  test('denies access with invalid API key', async () => {
+  test("denies access with invalid API key", async () => {
     const app = express();
 
     app.get(
-      '/ping',
+      "/ping",
       apiKeyShield.verify,
-      (_request, _response) => expect.unreachable(),
-      (error, request, response, next) => {
+      (_request: express.Request, _response: express.Response) =>
+        expect.unreachable(),
+      (
+        error: express.Errback,
+        _request: express.Request,
+        response: express.Response,
+        next: express.NextFunction
+      ) => {
         if (error instanceof AccessDeniedError) {
-          return response.status(403).send('Access denied');
+          response.status(403).send("Access denied");
+          return;
         }
         return next();
       }
     );
 
     const result = await request(app)
-      .get('/ping')
+      .get("/ping")
       .set(ApiKeyShield.HEADER_NAME, INVALID_API_KEY)
       .expect(403);
 
-    expect(result.text).toContain('Access denied');
+    expect(result.text).toContain("Access denied");
   });
 
-  test('works with multiple middlewares', async () => {
+  test("works with multiple middlewares", async () => {
     const app = express();
 
     app.get(
-      '/ping',
+      "/ping",
       (_request, _response, next) => {
         // Another middleware
         next();
       },
       apiKeyShield.verify,
       (_request, response) => {
-        response.status(200).send('pong');
+        response.status(200).send("pong");
       }
     );
 
     await request(app)
-      .get('/ping')
+      .get("/ping")
       .set(ApiKeyShield.HEADER_NAME, VALID_API_KEY)
       .expect(200);
   });
