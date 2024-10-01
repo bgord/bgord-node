@@ -1,6 +1,9 @@
 # Changelog
+- 2024-10-01 11:08 cbae701 **Merge pull request #275 from bgord/revert-273-dependabot/npm_and_yarn/croner-8.1.2**
+- 2024-10-01 11:07 0aa620e **Revert "chore(deps): bump croner from 8.1.1 to 8.1.2"**
 - 2024-10-01 11:02 d1d77a2 **Merge pull request #274 from bgord/dependabot/npm_and_yarn/knip-5.30.6**
 - 2024-10-01 11:02 24f0b98 **Merge pull request #273 from bgord/dependabot/npm_and_yarn/croner-8.1.2**
+- 2024-10-01 09:03 f16f782 **docs: generate CHANGELOG**
 - 2024-09-30 02:42 8206b02 **chore(deps-dev): bump knip from 5.30.5 to 5.30.6**
 - 2024-09-30 02:42 099a161 **chore(deps): bump croner from 8.1.1 to 8.1.2**
 ## 2024-09-29 14:04 v0.70.0
