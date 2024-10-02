@@ -1,4 +1,5 @@
 # Changelog
+- 2024-10-03 00:18 c0b824e **step: restore croner**
 ## 2024-10-03 00:14 v0.72.0
 - 2024-10-03 00:14 da2ddd3 **0.72.0**
 - 2024-10-03 00:13 e28c081 **step: restore croner**
@@ -6,6 +7,7 @@
 - 2024-10-03 00:09 c4e312d **0.71.0**
 - 2024-10-03 00:06 13efe23 **step: update deps**
 - 2024-10-03 00:02 493509a **Merge pull request #277 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.3**
+- 2024-10-02 22:14 1e12db9 **docs: generate CHANGELOG**
 - 2024-10-02 22:13 9c85017 **docs: generate CHANGELOG**
 - 2024-10-02 22:09 7a188f1 **docs: generate CHANGELOG**
 - 2024-10-02 22:07 59ea3b0 **docs: generate CHANGELOG**
