@@ -1,5 +1,7 @@
 # Changelog
+- 2024-10-03 00:06 13efe23 **step: update deps**
 - 2024-10-03 00:02 493509a **Merge pull request #277 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.3**
+- 2024-10-02 22:02 e600a27 **docs: generate CHANGELOG**
 - 2024-10-02 02:30 460d6d7 **chore(deps-dev): bump @biomejs/biome from 1.9.2 to 1.9.3**
 - 2024-10-01 11:08 cbae701 **Merge pull request #275 from bgord/revert-273-dependabot/npm_and_yarn/croner-8.1.2**
 - 2024-10-01 11:07 0aa620e **Revert "chore(deps): bump croner from 8.1.1 to 8.1.2"**
