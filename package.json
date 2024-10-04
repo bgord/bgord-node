@@ -33,7 +33,7 @@
     "@types/express": "5.0.0",
     "@types/express-form-data": "2.0.5",
     "@types/express-handlebars": "6.0.0",
-    "@types/lodash": "4.17.9",
+    "@types/lodash": "4.17.10",
     "@types/method-override": "0.0.35",
     "@types/mime-types": "2.1.4",
     "@types/nodemailer": "6.4.16",
