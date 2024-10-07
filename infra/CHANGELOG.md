@@ -1,4 +1,12 @@
 # Changelog
+- 2024-10-07 08:54 b190fe7 **Merge pull request #281 from bgord/dependabot/npm_and_yarn/winston-3.15.0**
+- 2024-10-07 08:54 332d1b4 **Merge pull request #280 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.10**
+- 2024-10-07 08:54 2b73feb **Merge pull request #282 from bgord/dependabot/npm_and_yarn/knip-5.32.0**
+- 2024-10-07 08:53 169c32a **Merge pull request #278 from bgord/dependabot/npm_and_yarn/vitest-2.1.2**
+- 2024-10-07 03:00 d918720 **chore(deps-dev): bump knip from 5.30.6 to 5.32.0**
+- 2024-10-07 03:00 aafdcd4 **chore(deps): bump winston from 3.14.2 to 3.15.0**
+- 2024-10-04 02:15 d4a2b49 **chore(deps-dev): bump @types/lodash from 4.17.9 to 4.17.10**
+- 2024-10-03 02:09 c476dfe **chore(deps-dev): bump vitest from 2.1.1 to 2.1.2**
 ## 2024-10-03 00:19 v0.73.0
 - 2024-10-03 00:19 d90a18c **0.73.0**
 - 2024-10-03 00:18 c0b824e **step: restore croner**
@@ -9,6 +17,7 @@
 - 2024-10-03 00:09 c4e312d **0.71.0**
 - 2024-10-03 00:06 13efe23 **step: update deps**
 - 2024-10-03 00:02 493509a **Merge pull request #277 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.3**
+- 2024-10-02 22:19 efeeebc **docs: generate CHANGELOG**
 - 2024-10-02 22:18 4885eb1 **docs: generate CHANGELOG**
 - 2024-10-02 22:14 1e12db9 **docs: generate CHANGELOG**
 - 2024-10-02 22:13 9c85017 **docs: generate CHANGELOG**
