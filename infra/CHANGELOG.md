@@ -1,6 +1,9 @@
 # Changelog
+## 2024-10-08 23:38 v0.73.1
+- 2024-10-08 23:38 6e2b634 **0.73.1**
 - 2024-10-08 23:31 48f6e61 **Merge pull request #284 from bgord/dependabot/npm_and_yarn/lucia-3.2.1**
 - 2024-10-08 23:31 15f6398 **Merge pull request #283 from bgord/dependabot/npm_and_yarn/knip-5.33.1**
+- 2024-10-08 21:31 bc5ca60 **docs: generate CHANGELOG**
 - 2024-10-08 02:40 c194b9d **chore(deps): bump lucia from 3.2.0 to 3.2.1**
 - 2024-10-08 02:40 1c7d6e0 **chore(deps-dev): bump knip from 5.32.0 to 5.33.1**
 - 2024-10-07 08:54 b190fe7 **Merge pull request #281 from bgord/dependabot/npm_and_yarn/winston-3.15.0**
