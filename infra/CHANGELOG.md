@@ -1,8 +1,13 @@
 # Changelog
+- 2024-10-08 23:31 48f6e61 **Merge pull request #284 from bgord/dependabot/npm_and_yarn/lucia-3.2.1**
+- 2024-10-08 23:31 15f6398 **Merge pull request #283 from bgord/dependabot/npm_and_yarn/knip-5.33.1**
+- 2024-10-08 02:40 c194b9d **chore(deps): bump lucia from 3.2.0 to 3.2.1**
+- 2024-10-08 02:40 1c7d6e0 **chore(deps-dev): bump knip from 5.32.0 to 5.33.1**
 - 2024-10-07 08:54 b190fe7 **Merge pull request #281 from bgord/dependabot/npm_and_yarn/winston-3.15.0**
 - 2024-10-07 08:54 332d1b4 **Merge pull request #280 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.10**
 - 2024-10-07 08:54 2b73feb **Merge pull request #282 from bgord/dependabot/npm_and_yarn/knip-5.32.0**
 - 2024-10-07 08:53 169c32a **Merge pull request #278 from bgord/dependabot/npm_and_yarn/vitest-2.1.2**
+- 2024-10-07 06:54 4d54c34 **docs: generate CHANGELOG**
 - 2024-10-07 03:00 d918720 **chore(deps-dev): bump knip from 5.30.6 to 5.32.0**
 - 2024-10-07 03:00 aafdcd4 **chore(deps): bump winston from 3.14.2 to 3.15.0**
 - 2024-10-04 02:15 d4a2b49 **chore(deps-dev): bump @types/lodash from 4.17.9 to 4.17.10**
