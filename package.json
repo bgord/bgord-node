@@ -68,7 +68,7 @@
     "hcaptcha": "0.2.0",
     "helmet": "8.0.0",
     "lodash": "4.17.21",
-    "lucia": "3.2.0",
+    "lucia": "3.2.1",
     "method-override": "3.0.0",
     "mime-types": "2.1.35",
     "node-cache": "5.1.2",
