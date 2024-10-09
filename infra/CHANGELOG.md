@@ -1,9 +1,12 @@
 # Changelog
+- 2024-10-09 12:08 d940132 **Merge pull request #286 from bgord/dependabot/npm_and_yarn/knip-5.33.2**
+- 2024-10-09 02:39 49c3202 **chore(deps-dev): bump knip from 5.33.1 to 5.33.2**
 - 2024-10-08 23:48 f6f6010 **Merge pull request #285 from bgord/dependabot/npm_and_yarn/multi-de5dccdb0e**
 ## 2024-10-08 23:38 v0.73.1
 - 2024-10-08 23:38 6e2b634 **0.73.1**
 - 2024-10-08 23:31 48f6e61 **Merge pull request #284 from bgord/dependabot/npm_and_yarn/lucia-3.2.1**
 - 2024-10-08 23:31 15f6398 **Merge pull request #283 from bgord/dependabot/npm_and_yarn/knip-5.33.1**
+- 2024-10-08 21:48 55b3db9 **docs: generate CHANGELOG**
 - 2024-10-08 21:38 44b6b6d **docs: generate CHANGELOG**
 - 2024-10-08 21:32 0dbc016 **chore(deps): bump cookie, cookie-parser and express**
 - 2024-10-08 21:31 bc5ca60 **docs: generate CHANGELOG**
