@@ -1,5 +1,8 @@
 # Changelog
+- 2024-10-09 12:09 49e21a0 **Merge pull request #287 from bgord/dependabot/npm_and_yarn/typescript-5.6.3**
 - 2024-10-09 12:08 d940132 **Merge pull request #286 from bgord/dependabot/npm_and_yarn/knip-5.33.2**
+- 2024-10-09 10:09 1b5c017 **docs: generate CHANGELOG**
+- 2024-10-09 02:39 7254576 **chore(deps-dev): bump typescript from 5.6.2 to 5.6.3**
 - 2024-10-09 02:39 49c3202 **chore(deps-dev): bump knip from 5.33.1 to 5.33.2**
 - 2024-10-08 23:48 f6f6010 **Merge pull request #285 from bgord/dependabot/npm_and_yarn/multi-de5dccdb0e**
 ## 2024-10-08 23:38 v0.73.1
