@@ -1,8 +1,11 @@
 # Changelog
+## 2024-10-12 18:57 v0.75.0
+- 2024-10-12 18:57 906f241 **0.75.0**
 - 2024-10-12 18:55 428edc0 **feature: setup bun middlewares**
 ## 2024-10-12 17:02 v0.74.0
 - 2024-10-12 17:02 98fa39c **0.74.0**
 - 2024-10-12 17:00 1a19c86 **fix: export stopwatch**
+- 2024-10-12 16:57 fdb1a40 **docs: generate CHANGELOG**
 - 2024-10-12 15:02 120efa1 **docs: generate CHANGELOG**
 - 2024-10-12 15:01 0ba3d81 **docs: generate CHANGELOG**
 - 2024-10-09 12:09 49e21a0 **Merge pull request #287 from bgord/dependabot/npm_and_yarn/typescript-5.6.3**
