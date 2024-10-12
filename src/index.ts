@@ -1,3 +1,4 @@
+export * as Bun from './bun';
 export * as Errors from './errors';
 export * as Schema from './schema';
 export * from "./etag"
