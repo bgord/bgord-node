@@ -1,4 +1,5 @@
 export * from './binary';
+export * from './bun';
 export * from './jobs';
 export * from './mailer';
 export * from './memory';
