@@ -1,4 +1,5 @@
 # Changelog
+- 2024-10-12 19:56 872429a **fix: bun middleware types**
 ## 2024-10-12 19:24 v0.76.1
 - 2024-10-12 19:24 a6ee995 **0.76.1**
 - 2024-10-12 19:23 40c6e36 **fix: rateLimitShield**
@@ -12,6 +13,7 @@
 ## 2024-10-12 18:57 v0.75.0
 - 2024-10-12 18:57 906f241 **0.75.0**
 - 2024-10-12 18:55 428edc0 **feature: setup bun middlewares**
+- 2024-10-12 17:24 9d58fec **docs: generate CHANGELOG**
 - 2024-10-12 17:23 eaa2eb4 **docs: generate CHANGELOG**
 - 2024-10-12 17:17 1c73978 **docs: generate CHANGELOG**
 - 2024-10-12 17:12 c39ed66 **docs: generate CHANGELOG**
