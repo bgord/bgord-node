@@ -1,4 +1,5 @@
 # Changelog
+- 2024-10-12 23:26 88426f0 **fix: missing bun prereq**
 ## 2024-10-12 23:21 v0.78.1
 - 2024-10-12 23:21 7737ba6 **0.78.1**
 - 2024-10-12 23:19 7e27d42 **fix: missing bun prereq**
@@ -8,6 +9,7 @@
 ## 2024-10-12 21:41 v0.77.1
 - 2024-10-12 21:41 306aeea **0.77.1**
 - 2024-10-12 21:39 ce48aa6 **fix: logger envs**
+- 2024-10-12 21:21 f6b861e **docs: generate CHANGELOG**
 - 2024-10-12 21:20 59c34be **docs: generate CHANGELOG**
 - 2024-10-12 21:16 b848075 **docs: generate CHANGELOG**
 - 2024-10-12 21:14 e5cd320 **docs: generate CHANGELOG**
