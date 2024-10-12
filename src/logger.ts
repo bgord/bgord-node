@@ -104,7 +104,7 @@ export class Logger {
     const formats = [
       winston.format.json(),
 
-      this.environment === Schema.NodeEnvironmentEnum.local
+      this.environment !== Schema.NodeEnvironmentEnum.production
         ? winston.format.prettyPrint()
         : undefined,
     ].filter(Boolean);
@@ -120,7 +120,7 @@ export class Logger {
       transports: [new winston.transports.Console()],
     });
 
-    if (this.environment !== Schema.NodeEnvironmentEnum.local) {
+    if (this.environment === Schema.NodeEnvironmentEnum.production) {
       this.instance.add(
         new winston.transports.File({
           filename: `/var/log/${this.app}-${this.environment}.log`,
