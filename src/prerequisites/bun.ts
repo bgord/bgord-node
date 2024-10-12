@@ -1,4 +1,3 @@
-import { $ } from "execa";
 import { PackageVersion } from "../package-version";
 
 import {
@@ -22,26 +21,11 @@ export class PrerequisiteBun extends AbstractPrerequisite<PrerequisiteBunConfigT
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
-    // biome-ignore lint: lint/suspicious/noConsoleLog
-    console.log(this.config);
-    if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
-    // biome-ignore lint: lint/suspicious/noConsoleLog
-    console.log("enabled");
-
-    const { stdout } = await $`bun -v`;
-    // biome-ignore lint: lint/suspicious/noConsoleLog
-    console.log(stdout);
-    const current = PackageVersion.fromString(stdout);
-    // biome-ignore lint: lint/suspicious/noConsoleLog
-    console.log(current);
+    const current = PackageVersion.fromString(Bun.version);
 
     if (current.isGreaterThanOrEqual(this.config.version)) {
-      // biome-ignore lint: lint/suspicious/noConsoleLog
-      console.log("passed");
       return this.pass();
     }
-    // biome-ignore lint: lint/suspicious/noConsoleLog
-    console.log("rejected");
     return this.reject();
   }
 }
