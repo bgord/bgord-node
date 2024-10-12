@@ -1,4 +1,5 @@
 # Changelog
+- 2024-10-13 00:55 391dd4a **fix: use Bun.version**
 ## 2024-10-13 00:37 v0.81.1
 - 2024-10-13 00:37 d7eb607 **0.81.1**
 - 2024-10-13 00:36 c08e261 **step: suppress logs**
@@ -18,6 +19,7 @@
 ## 2024-10-12 23:16 v0.78.0
 - 2024-10-12 23:16 93882bc **0.78.0**
 - 2024-10-12 23:13 2edbe4d **feature: add bun prereq**
+- 2024-10-12 22:38 bc35ae0 **docs: generate CHANGELOG**
 - 2024-10-12 22:37 b641934 **docs: generate CHANGELOG**
 - 2024-10-12 22:32 6f9e285 **docs: generate CHANGELOG**
 - 2024-10-12 22:03 51c1453 **docs: generate CHANGELOG**
