@@ -25,7 +25,7 @@ export class PrerequisiteBun extends AbstractPrerequisite<PrerequisiteBunConfigT
     if (!this.enabled) return PrerequisiteStatusEnum.undetermined;
 
     const { stdout } = await $`bun -v`;
-    const current = PackageVersion.fromStringWithV(stdout);
+    const current = PackageVersion.fromString(stdout);
 
     if (current.isGreaterThanOrEqual(this.config.version)) {
       return this.pass();
