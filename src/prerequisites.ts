@@ -12,7 +12,6 @@ export enum PrerequisiteStrategyEnum {
   space = 'space',
   translations = 'translations',
   port = 'port',
-  migrations = 'migrations',
   jobs = 'jobs',
   memory = 'memory',
   outsideConnectivity = 'outsideConnectivity',
