@@ -83,4 +83,10 @@ export class PackageVersion {
 
     return new PackageVersion(version.major, version.minor, version.patch);
   }
+
+  static fromString(value: string) {
+    const version = PackageVersionSchema.parse(`v${value}`);
+
+    return new PackageVersion(version.major, version.minor, version.patch);
+  }
 }

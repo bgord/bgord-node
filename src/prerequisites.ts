@@ -7,6 +7,7 @@ export enum PrerequisiteStrategyEnum {
   timezoneUTC = 'timezoneUTC',
   path = 'path',
   node = 'node',
+  bun = 'bun',
   RAM = 'RAM',
   space = 'space',
   translations = 'translations',
