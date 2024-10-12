@@ -12,22 +12,21 @@ export type TimeZoneOffsetVariables = {
 };
 
 export class TimeZoneOffset {
-  static attach = <T extends { Variables: TimeZoneOffsetVariables }>() =>
-    createMiddleware<T>(async (c, next) => {
-      const timeZoneOffsetMinutes = Schema.TimeZoneOffsetHeaderValue.parse(
-        c.req.header("time-zone-offset")
-      );
+  static attach = createMiddleware(async (c, next) => {
+    const timeZoneOffsetMinutes = Schema.TimeZoneOffsetHeaderValue.parse(
+      c.req.header("time-zone-offset")
+    );
 
-      const timeZoneOffset = {
-        minutes: timeZoneOffsetMinutes,
-        seconds: Time.Minutes(timeZoneOffsetMinutes).seconds,
-        miliseconds: Time.Minutes(timeZoneOffsetMinutes).ms,
-      };
+    const timeZoneOffset = {
+      minutes: timeZoneOffsetMinutes,
+      seconds: Time.Minutes(timeZoneOffsetMinutes).seconds,
+      miliseconds: Time.Minutes(timeZoneOffsetMinutes).ms,
+    };
 
-      c.set("timeZoneOffset", timeZoneOffset);
+    c.set("timeZoneOffset", timeZoneOffset);
 
-      await next();
-    });
+    await next();
+  });
 
   static adjustTimestamp(
     timestamp: Schema.TimestampType,

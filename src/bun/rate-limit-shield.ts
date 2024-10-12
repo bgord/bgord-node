@@ -1,5 +1,5 @@
-import { MiddlewareHandler } from "hono";
 import { HTTPException } from "hono/http-exception";
+import { createMiddleware } from "hono/factory";
 
 import * as Schema from "../schema";
 import { RateLimiter } from "../rate-limiter";
@@ -10,12 +10,10 @@ export const TooManyRequestsError = new HTTPException(429, {
   message: "app.too_many_requests",
 });
 
-export const rateLimitShield = (
-  options: RateLimitShieldOptionsType
-): MiddlewareHandler => {
+export const rateLimitShield = (options: RateLimitShieldOptionsType) => {
   const rateLimiter = new RateLimiter(options);
 
-  return async function requestId(_c, next) {
+  return createMiddleware(async (_c, next) => {
     const currentTimestampMs = Date.now();
     const check = rateLimiter.verify(currentTimestampMs);
 
@@ -24,5 +22,5 @@ export const rateLimitShield = (
     }
 
     return next();
-  };
+  });
 };

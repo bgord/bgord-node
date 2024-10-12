@@ -10,13 +10,12 @@ export type ContextVariables = {
 } & TimeZoneOffsetVariables;
 
 export class Context {
-  static attach = <T extends { Variables: ContextVariables }>() =>
-    createMiddleware<T>(async (c, next) => {
-      c.set("context", {
-        requestId: c.get("requestId") as Schema.CorrelationIdType,
-        timeZoneOffset: c.get("timeZoneOffset"),
-      });
-
-      await next();
+  static attach = createMiddleware(async (c, next) => {
+    c.set("context", {
+      requestId: c.get("requestId") as Schema.CorrelationIdType,
+      timeZoneOffset: c.get("timeZoneOffset"),
     });
+
+    await next();
+  });
 }

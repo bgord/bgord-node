@@ -1,7 +1,6 @@
 import { createMiddleware } from "hono/factory";
 import _ from "lodash";
 import { getConnInfo } from "hono/bun";
-import type { TimingVariables } from "hono/timing";
 
 import * as Schema from "../schema";
 import { Logger } from "../logger";
@@ -38,12 +37,8 @@ export class HttpLogger {
     "if-none-match",
   ];
 
-  static build = <
-    T extends { Variables: TimingVariables & { requestId: string } }
-  >(
-    logger: Logger
-  ) =>
-    createMiddleware<T>(async (c, next) => {
+  static build = (logger: Logger) =>
+    createMiddleware(async (c, next) => {
       const correlationId = c.get("requestId") as Schema.CorrelationIdType;
       const info = getConnInfo(c);
       const url = c.req.url;
