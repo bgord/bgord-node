@@ -1,3 +1,4 @@
+import { Env } from "hono";
 import { createMiddleware } from "hono/factory";
 import { HTTPException } from "hono/http-exception";
 
@@ -10,19 +11,19 @@ export const TooManyRequestsError = new HTTPException(429, {
   message: "app.too_many_requests",
 });
 
-export class RateLimitShield {
-  static build(options: RateLimitShieldOptionsType) {
-    const rateLimiter = new RateLimiter(options);
+export function rateLimitShield<E extends Env = Env>(
+  options: RateLimitShieldOptionsType
+) {
+  const rateLimiter = new RateLimiter(options);
 
-    return createMiddleware(async (_c, next) => {
-      const currentTimestampMs = Date.now();
-      const check = rateLimiter.verify(currentTimestampMs);
+  return createMiddleware<E>(async (_c, next) => {
+    const currentTimestampMs = Date.now();
+    const check = rateLimiter.verify(currentTimestampMs);
 
-      if (!check.allowed) {
-        throw TooManyRequestsError;
-      }
+    if (!check.allowed) {
+      throw TooManyRequestsError;
+    }
 
-      return next();
-    });
-  }
+    return next();
+  });
 }
