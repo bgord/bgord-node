@@ -91,6 +91,7 @@ export * from './sleep';
 export * from './slower';
 export * from './static-files';
 export * from './stepper';
+export * from './stopwatch';
 export * from './streak-calculator';
 export * from './sum';
 export * from './thousands-separator';

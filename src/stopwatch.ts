@@ -1,9 +1,9 @@
-import { Falsy } from './ts-utils';
-import { TimestampType } from './schema';
+import { Falsy } from "./ts-utils";
+import { TimestampType } from "./schema";
 
-enum StopwatchState {
-  started = 'started',
-  stopped = 'finished',
+export enum StopwatchState {
+  started = "started",
+  stopped = "finished",
 }
 
 export type StopwatchResultType = { durationMs: TimestampType };
@@ -17,7 +17,7 @@ export class Stopwatch {
 
   stop(): StopwatchResultType {
     if (this.state === StopwatchState.stopped) {
-      throw new Error('Stopwatch is already stopped');
+      throw new Error("Stopwatch is already stopped");
     }
 
     this.state = StopwatchState.stopped;
