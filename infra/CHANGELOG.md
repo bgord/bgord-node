@@ -1,5 +1,8 @@
 # Changelog
+## 2024-10-12 17:02 v0.74.0
+- 2024-10-12 17:02 98fa39c **0.74.0**
 - 2024-10-12 17:00 1a19c86 **fix: export stopwatch**
+- 2024-10-12 15:01 0ba3d81 **docs: generate CHANGELOG**
 - 2024-10-09 12:09 49e21a0 **Merge pull request #287 from bgord/dependabot/npm_and_yarn/typescript-5.6.3**
 - 2024-10-09 12:08 d940132 **Merge pull request #286 from bgord/dependabot/npm_and_yarn/knip-5.33.2**
 - 2024-10-09 10:09 7af6168 **docs: generate CHANGELOG**
