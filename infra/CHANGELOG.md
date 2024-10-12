@@ -1,4 +1,5 @@
 # Changelog
+- 2024-10-12 21:39 ce48aa6 **fix: logger envs**
 ## 2024-10-12 19:58 v0.77.0
 - 2024-10-12 19:58 7459229 **0.77.0**
 - 2024-10-12 19:56 872429a **fix: bun middleware types**
@@ -15,6 +16,7 @@
 ## 2024-10-12 18:57 v0.75.0
 - 2024-10-12 18:57 906f241 **0.75.0**
 - 2024-10-12 18:55 428edc0 **feature: setup bun middlewares**
+- 2024-10-12 17:59 6e07909 **docs: generate CHANGELOG**
 - 2024-10-12 17:57 ee4fc3c **docs: generate CHANGELOG**
 - 2024-10-12 17:24 9d58fec **docs: generate CHANGELOG**
 - 2024-10-12 17:23 eaa2eb4 **docs: generate CHANGELOG**
