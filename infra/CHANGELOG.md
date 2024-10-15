@@ -1,9 +1,15 @@
 # Changelog
+- 2024-10-15 17:38 c35f59d **Merge pull request #288 from bgord/dependabot/npm_and_yarn/knip-5.33.3**
+- 2024-10-15 17:38 bda2aba **Merge pull request #290 from bgord/dependabot/npm_and_yarn/vitest-2.1.3**
+- 2024-10-15 17:38 569f165 **Merge pull request #291 from bgord/dependabot/npm_and_yarn/cspell-8.15.2**
 ## 2024-10-15 14:14 v0.82.0
 - 2024-10-15 14:14 0a24534 **0.82.0**
+- 2024-10-15 12:14 5a4adb2 **docs: generate CHANGELOG**
+- 2024-10-15 12:13 b82ff8d **chore(deps-dev): bump vitest from 2.1.2 to 2.1.3**
 - 2024-10-15 12:12 35a7b5b **docs: generate CHANGELOG**
 - 2024-10-15 11:56 3530d56 **refactor: bun prereq**
 - 2024-10-15 11:55 4cf76c8 **step: remove bun code**
+- 2024-10-15 02:07 7af40fb **chore(deps-dev): bump cspell from 8.14.4 to 8.15.2**
 ## 2024-10-13 01:00 v0.81.2
 - 2024-10-13 01:00 7cd2a8e **0.81.2**
 - 2024-10-13 00:55 391dd4a **fix: use Bun.version**
@@ -78,6 +84,7 @@
 - 2024-10-12 16:57 a5ec678 **docs: generate CHANGELOG**
 - 2024-10-12 15:02 120efa1 **docs: generate CHANGELOG**
 - 2024-10-12 15:01 0ba3d81 **docs: generate CHANGELOG**
+- 2024-10-11 02:57 701298b **chore(deps-dev): bump knip from 5.33.2 to 5.33.3**
 - 2024-10-09 12:09 49e21a0 **Merge pull request #287 from bgord/dependabot/npm_and_yarn/typescript-5.6.3**
 - 2024-10-09 12:08 d940132 **Merge pull request #286 from bgord/dependabot/npm_and_yarn/knip-5.33.2**
 - 2024-10-09 10:09 7af6168 **docs: generate CHANGELOG**
