@@ -11,6 +11,7 @@ export type PrerequisiteBunConfigType = {
   version: PackageVersion;
   label: PrerequisiteLabelType;
   enabled?: boolean;
+  current: string;
 };
 
 export class PrerequisiteBun extends AbstractPrerequisite<PrerequisiteBunConfigType> {
@@ -21,7 +22,7 @@ export class PrerequisiteBun extends AbstractPrerequisite<PrerequisiteBunConfigT
   }
 
   async verify(): Promise<PrerequisiteStatusEnum> {
-    const current = PackageVersion.fromString(Bun.version);
+    const current = PackageVersion.fromString(this.config.current);
 
     if (current.isGreaterThanOrEqual(this.config.version)) {
       return this.pass();
