@@ -1,4 +1,7 @@
 # Changelog
+## 2024-10-15 14:14 v0.82.0
+- 2024-10-15 14:14 0a24534 **0.82.0**
+- 2024-10-15 12:12 35a7b5b **docs: generate CHANGELOG**
 - 2024-10-15 11:56 3530d56 **refactor: bun prereq**
 - 2024-10-15 11:55 4cf76c8 **step: remove bun code**
 ## 2024-10-13 01:00 v0.81.2
