@@ -1,7 +1,10 @@
 # Changelog
+- 2024-10-17 08:14 14fabe3 **Merge pull request #293 from bgord/dependabot/npm_and_yarn/cspell-8.15.3**
+- 2024-10-17 02:16 aae628f **chore(deps-dev): bump cspell from 8.15.2 to 8.15.3**
 - 2024-10-15 17:38 c35f59d **Merge pull request #288 from bgord/dependabot/npm_and_yarn/knip-5.33.3**
 - 2024-10-15 17:38 bda2aba **Merge pull request #290 from bgord/dependabot/npm_and_yarn/vitest-2.1.3**
 - 2024-10-15 17:38 569f165 **Merge pull request #291 from bgord/dependabot/npm_and_yarn/cspell-8.15.2**
+- 2024-10-15 15:38 79d152f **docs: generate CHANGELOG**
 ## 2024-10-15 14:14 v0.82.0
 - 2024-10-15 14:14 0a24534 **0.82.0**
 - 2024-10-15 12:14 5a4adb2 **docs: generate CHANGELOG**
