@@ -1,8 +1,11 @@
 # Changelog
+- 2024-10-23 08:26 c71d17c **Merge pull request #296 from bgord/dependabot/npm_and_yarn/cspell-8.15.4**
+- 2024-10-21 02:53 a22d1de **chore(deps-dev): bump cspell from 8.15.3 to 8.15.4**
 ## 2024-10-19 15:52 v0.83.0
 - 2024-10-19 15:52 5854b58 **0.83.0**
 - 2024-10-19 15:49 6095a79 **step: bump croner**
 - 2024-10-19 15:45 e66e0fb **Merge pull request #295 from bgord/dependabot/npm_and_yarn/biomejs/biome-1.9.4**
+- 2024-10-19 13:52 112831e **docs: generate CHANGELOG**
 - 2024-10-19 13:51 5b7551a **docs: generate CHANGELOG**
 - 2024-10-19 13:45 862f29d **docs: generate CHANGELOG**
 - 2024-10-18 02:15 69667aa **chore(deps-dev): bump @biomejs/biome from 1.9.3 to 1.9.4**
