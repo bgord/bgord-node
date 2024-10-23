@@ -1,5 +1,8 @@
 # Changelog
+- 2024-10-23 08:27 63a0002 **Merge pull request #299 from bgord/dependabot/npm_and_yarn/types/express-handlebars-6.0.2**
 - 2024-10-23 08:26 c71d17c **Merge pull request #296 from bgord/dependabot/npm_and_yarn/cspell-8.15.4**
+- 2024-10-23 06:26 f605e4c **docs: generate CHANGELOG**
+- 2024-10-23 02:26 732d1a9 **chore(deps-dev): bump @types/express-handlebars from 6.0.0 to 6.0.2**
 - 2024-10-21 02:53 a22d1de **chore(deps-dev): bump cspell from 8.15.3 to 8.15.4**
 ## 2024-10-19 15:52 v0.83.0
 - 2024-10-19 15:52 5854b58 **0.83.0**
