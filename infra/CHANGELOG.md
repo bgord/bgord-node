@@ -1,7 +1,10 @@
 # Changelog
+## 2024-10-23 08:33 v0.83.1
+- 2024-10-23 08:33 a907ab7 **0.83.1**
 - 2024-10-23 08:28 9bef016 **Merge pull request #297 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.12**
 - 2024-10-23 08:27 63a0002 **Merge pull request #299 from bgord/dependabot/npm_and_yarn/types/express-handlebars-6.0.2**
 - 2024-10-23 08:26 c71d17c **Merge pull request #296 from bgord/dependabot/npm_and_yarn/cspell-8.15.4**
+- 2024-10-23 06:29 ca2e31f **docs: generate CHANGELOG**
 - 2024-10-23 06:28 1576459 **chore(deps-dev): bump @types/lodash from 4.17.10 to 4.17.12**
 - 2024-10-23 06:27 ddd5fc7 **docs: generate CHANGELOG**
 - 2024-10-23 06:26 f605e4c **docs: generate CHANGELOG**
