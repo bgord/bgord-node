@@ -1,20 +1,15 @@
-import * as z from 'zod';
+import * as z from "zod";
 
-const Take = z
-  .number()
-  .int()
-  .positive();
+const Take = z.number().int().positive();
 type TakeType = z.infer<typeof Take>;
 
-const Skip = z
-  .number()
-  .int()
-  .positive();
+const Skip = z.number().int().positive();
 type SkipType = z.infer<typeof Skip>;
 
 const Page = z.coerce
   .number()
   .int()
+  .transform((value) => (value <= 0 ? 1 : value))
   .default(1);
 export type PageType = z.infer<typeof Page>;
 

@@ -11,6 +11,34 @@ describe('Pagination', () => {
     expect(parsed.values.skip).toBe(10);
   });
 
+  it('should parse pagination with 0 page correctly', () => {
+    const take = 10;
+    const parsed = Pagination.parse({ page: 0 }, take);
+
+    expect(parsed.page).toBe(1);
+    expect(parsed.values.take).toBe(take);
+    expect(parsed.values.skip).toBe(0);
+  });
+
+  it('should parse pagination with negative page correctly', () => {
+    const take = 10;
+    const parsed = Pagination.parse({ page: -1 }, take);
+
+    expect(parsed.page).toBe(1);
+    expect(parsed.values.take).toBe(take);
+    expect(parsed.values.skip).toBe(0);
+  });
+
+  it('should parse pagination with 1 page correctly', () => {
+    const take = 10;
+    const page = 1
+    const parsed = Pagination.parse({ page }, take);
+
+    expect(parsed.page).toBe(page);
+    expect(parsed.values.take).toBe(take);
+    expect(parsed.values.skip).toBe(0);
+  });
+
   it('should prepare paged data with correct metadata', () => {
     const config = {
       total: 50,
