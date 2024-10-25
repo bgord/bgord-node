@@ -1,5 +1,8 @@
 # Changelog
+## 2024-10-25 23:46 v0.83.3
 - 2024-10-25 23:46 c46a703 **fix: pagination page 0**
+- 2024-10-25 23:46 33e6a42 **0.83.3**
+- 2024-10-25 21:46 42b3acd **docs: generate CHANGELOG**
 - 2024-10-25 10:00 60fc1f1 **Merge pull request #300 from bgord/dependabot/npm_and_yarn/knip-5.34.0**
 - 2024-10-25 08:00 136868b **docs: generate CHANGELOG**
 - 2024-10-25 02:43 d067ca8 **chore(deps-dev): bump knip from 5.33.3 to 5.34.0**
