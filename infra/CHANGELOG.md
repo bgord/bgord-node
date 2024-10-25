@@ -1,4 +1,6 @@
 # Changelog
+- 2024-10-25 10:00 60fc1f1 **Merge pull request #300 from bgord/dependabot/npm_and_yarn/knip-5.34.0**
+- 2024-10-25 02:43 d067ca8 **chore(deps-dev): bump knip from 5.33.3 to 5.34.0**
 ## 2024-10-23 08:47 v0.83.2
 - 2024-10-23 08:47 81c67db **0.83.2**
 - 2024-10-23 08:45 fbbb4d8 **Merge pull request #298 from bgord/dependabot/npm_and_yarn/lucia-3.2.2**
@@ -7,6 +9,7 @@
 - 2024-10-23 08:28 9bef016 **Merge pull request #297 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.12**
 - 2024-10-23 08:27 63a0002 **Merge pull request #299 from bgord/dependabot/npm_and_yarn/types/express-handlebars-6.0.2**
 - 2024-10-23 08:26 c71d17c **Merge pull request #296 from bgord/dependabot/npm_and_yarn/cspell-8.15.4**
+- 2024-10-23 06:47 2e2d624 **docs: generate CHANGELOG**
 - 2024-10-23 06:46 1d09eda **docs: generate CHANGELOG**
 - 2024-10-23 06:34 d58de20 **docs: generate CHANGELOG**
 - 2024-10-23 06:29 ca2e31f **docs: generate CHANGELOG**
