@@ -1,7 +1,14 @@
 # Changelog
+- 2024-10-29 08:03 030b4e8 **Merge pull request #304 from bgord/dependabot/npm_and_yarn/knip-5.34.2**
+- 2024-10-29 08:02 faf63b7 **Merge pull request #303 from bgord/dependabot/npm_and_yarn/vitest-2.1.4**
+- 2024-10-29 08:02 bddc5bf **Merge pull request #302 from bgord/dependabot/npm_and_yarn/nodemailer-6.9.16**
+- 2024-10-29 02:34 a7d3daf **chore(deps-dev): bump knip from 5.34.0 to 5.34.2**
+- 2024-10-29 02:33 a3f997f **chore(deps): bump nodemailer from 6.9.15 to 6.9.16**
+- 2024-10-29 02:33 06bf360 **chore(deps-dev): bump vitest from 2.1.3 to 2.1.4**
 ## 2024-10-25 23:46 v0.83.3
 - 2024-10-25 23:46 c46a703 **fix: pagination page 0**
 - 2024-10-25 23:46 33e6a42 **0.83.3**
+- 2024-10-25 21:47 2873bde **docs: generate CHANGELOG**
 - 2024-10-25 21:46 42b3acd **docs: generate CHANGELOG**
 - 2024-10-25 10:00 60fc1f1 **Merge pull request #300 from bgord/dependabot/npm_and_yarn/knip-5.34.0**
 - 2024-10-25 08:00 136868b **docs: generate CHANGELOG**
