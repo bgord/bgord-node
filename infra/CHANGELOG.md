@@ -1,7 +1,14 @@
 # Changelog
+- 2024-11-04 08:06 843301d **Merge pull request #313 from bgord/dependabot/npm_and_yarn/winston-3.16.0**
+- 2024-11-04 08:05 b4629ec **Merge pull request #311 from bgord/dependabot/npm_and_yarn/cspell-8.15.7**
+- 2024-11-04 08:05 1963c49 **Merge pull request #312 from bgord/dependabot/npm_and_yarn/knip-5.36.2**
+- 2024-11-04 02:11 8c8d8e3 **chore(deps-dev): bump knip from 5.34.4 to 5.36.2**
+- 2024-11-04 02:11 60f437b **chore(deps-dev): bump cspell from 8.15.4 to 8.15.7**
+- 2024-11-04 02:11 2e1fd6e **chore(deps): bump winston from 3.15.0 to 3.16.0**
 - 2024-10-31 08:56 9caf062 **Merge pull request #305 from bgord/dependabot/npm_and_yarn/types/lodash-4.17.13**
 - 2024-10-31 08:56 85cc8fb **Merge pull request #308 from bgord/dependabot/npm_and_yarn/knip-5.34.4**
 - 2024-10-31 07:56 60df3e4 **docs: generate CHANGELOG**
+- 2024-10-31 07:56 487b757 **docs: generate CHANGELOG**
 - 2024-10-31 02:58 f2c51fb **chore(deps-dev): bump knip from 5.34.2 to 5.34.4**
 - 2024-10-30 02:26 6a778b6 **chore(deps-dev): bump @types/lodash from 4.17.12 to 4.17.13**
 - 2024-10-29 08:03 030b4e8 **Merge pull request #304 from bgord/dependabot/npm_and_yarn/knip-5.34.2**
