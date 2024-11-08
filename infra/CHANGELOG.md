@@ -1,7 +1,12 @@
 # Changelog
+- 2024-11-08 08:23 af651e0 **Merge pull request #315 from bgord/dependabot/npm_and_yarn/cspell-8.16.0**
+- 2024-11-08 08:22 bb8e409 **Merge pull request #314 from bgord/dependabot/npm_and_yarn/knip-5.36.3**
+- 2024-11-08 02:55 7063b8e **chore(deps-dev): bump cspell from 8.15.7 to 8.16.0**
+- 2024-11-07 02:44 287e0d3 **chore(deps-dev): bump knip from 5.36.2 to 5.36.3**
 - 2024-11-04 08:06 843301d **Merge pull request #313 from bgord/dependabot/npm_and_yarn/winston-3.16.0**
 - 2024-11-04 08:05 b4629ec **Merge pull request #311 from bgord/dependabot/npm_and_yarn/cspell-8.15.7**
 - 2024-11-04 08:05 1963c49 **Merge pull request #312 from bgord/dependabot/npm_and_yarn/knip-5.36.2**
+- 2024-11-04 07:06 edfe53d **docs: generate CHANGELOG**
 - 2024-11-04 02:11 8c8d8e3 **chore(deps-dev): bump knip from 5.34.4 to 5.36.2**
 - 2024-11-04 02:11 60f437b **chore(deps-dev): bump cspell from 8.15.4 to 8.15.7**
 - 2024-11-04 02:11 2e1fd6e **chore(deps): bump winston from 3.15.0 to 3.16.0**
