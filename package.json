@@ -42,7 +42,7 @@
     "@types/supertest": "6.0.2",
     "cspell": "8.16.0",
     "husky": "9.1.6",
-    "knip": "5.36.3",
+    "knip": "5.36.5",
     "microbundle": "0.15.1",
     "only-allow": "1.2.1",
     "shellcheck": "3.0.0",
