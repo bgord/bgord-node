@@ -1,8 +1,11 @@
 # Changelog
+- 2024-11-23 15:50 b8624dc **Merge pull request #323 from bgord/dependabot/npm_and_yarn/husky-9.1.7**
 - 2024-11-23 15:47 58479e6 **Merge pull request #322 from bgord/dependabot/npm_and_yarn/knip-5.37.1**
 - 2024-11-23 15:46 43a1da3 **Merge pull request #316 from bgord/dependabot/npm_and_yarn/winston-3.17.0**
 - 2024-11-23 15:46 2a0e862 **Merge pull request #318 from bgord/dependabot/npm_and_yarn/express-static-gzip-2.2.0**
 - 2024-11-23 15:46 02f926d **Merge pull request #320 from bgord/dependabot/npm_and_yarn/vitest-2.1.5**
+- 2024-11-23 14:48 7006e0d **chore(deps-dev): bump husky from 9.1.6 to 9.1.7**
+- 2024-11-23 14:48 45ac13b **docs: generate CHANGELOG**
 - 2024-11-18 02:53 a569de1 **chore(deps-dev): bump knip from 5.36.3 to 5.37.1**
 - 2024-11-14 03:01 316de6a **chore(deps-dev): bump vitest from 2.1.4 to 2.1.5**
 - 2024-11-11 02:21 4bcf169 **chore(deps): bump express-static-gzip from 2.1.8 to 2.2.0**
