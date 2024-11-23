@@ -1,6 +1,15 @@
 # Changelog
+- 2024-11-23 15:47 58479e6 **Merge pull request #322 from bgord/dependabot/npm_and_yarn/knip-5.37.1**
+- 2024-11-23 15:46 43a1da3 **Merge pull request #316 from bgord/dependabot/npm_and_yarn/winston-3.17.0**
+- 2024-11-23 15:46 2a0e862 **Merge pull request #318 from bgord/dependabot/npm_and_yarn/express-static-gzip-2.2.0**
+- 2024-11-23 15:46 02f926d **Merge pull request #320 from bgord/dependabot/npm_and_yarn/vitest-2.1.5**
+- 2024-11-18 02:53 a569de1 **chore(deps-dev): bump knip from 5.36.3 to 5.37.1**
+- 2024-11-14 03:01 316de6a **chore(deps-dev): bump vitest from 2.1.4 to 2.1.5**
+- 2024-11-11 02:21 4bcf169 **chore(deps): bump express-static-gzip from 2.1.8 to 2.2.0**
+- 2024-11-11 02:21 27ac658 **chore(deps): bump winston from 3.16.0 to 3.17.0**
 - 2024-11-08 08:23 af651e0 **Merge pull request #315 from bgord/dependabot/npm_and_yarn/cspell-8.16.0**
 - 2024-11-08 08:22 bb8e409 **Merge pull request #314 from bgord/dependabot/npm_and_yarn/knip-5.36.3**
+- 2024-11-08 07:23 e608034 **docs: generate CHANGELOG**
 - 2024-11-08 02:55 7063b8e **chore(deps-dev): bump cspell from 8.15.7 to 8.16.0**
 - 2024-11-07 02:44 287e0d3 **chore(deps-dev): bump knip from 5.36.2 to 5.36.3**
 - 2024-11-04 08:06 843301d **Merge pull request #313 from bgord/dependabot/npm_and_yarn/winston-3.16.0**
