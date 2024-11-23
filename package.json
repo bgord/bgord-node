@@ -41,7 +41,7 @@
     "@types/pluralize": "0.0.33",
     "@types/supertest": "6.0.2",
     "cspell": "8.16.0",
-    "husky": "9.1.6",
+    "husky": "9.1.7",
     "knip": "5.37.1",
     "microbundle": "0.15.1",
     "only-allow": "1.2.1",
