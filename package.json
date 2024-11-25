@@ -48,7 +48,7 @@
     "shellcheck": "3.0.0",
     "standard-version": "9.5.0",
     "supertest": "7.0.0",
-    "typescript": "5.6.3",
+    "typescript": "5.7.2",
     "vitest": "2.1.5"
   },
   "dependencies": {
