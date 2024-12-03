@@ -34,7 +34,7 @@
     "@types/express-form-data": "2.0.5",
     "@types/express-handlebars": "6.0.2",
     "@types/lodash": "4.17.13",
-    "@types/method-override": "0.0.35",
+    "@types/method-override": "3.0.0",
     "@types/mime-types": "2.1.4",
     "@types/nodemailer": "6.4.16",
     "@types/on-headers": "1.0.3",
