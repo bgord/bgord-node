@@ -1,6 +1,6 @@
-import * as z from 'zod';
+import { z } from "zod/v4";
 
-import { NodeEnvironment } from './schema';
+import { NodeEnvironment } from "./schema";
 
 type NodeEnvironmentEnumType = z.infer<typeof NodeEnvironment>;
 

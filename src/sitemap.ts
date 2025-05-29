@@ -1,43 +1,40 @@
-import { z } from 'zod';
-import fs from 'node:fs/promises';
+import { z } from "zod/v4";
+import fs from "node:fs/promises";
 
-import * as Schema from './schema';
+import * as Schema from "./schema";
 
-export const SitemapLoc = z
-  .string()
-  .min(1)
-  .brand<'sitemap-loc'>();
+export const SitemapLoc = z.string().min(1).brand<"sitemap-loc">();
 export type SitemapLocType = z.infer<typeof SitemapLoc>;
 
 export const SitemapLastmod = z
   .string()
   .refine(
-    value => {
-      const [year, month, day] = value.split('-');
+    (value) => {
+      const [year, month, day] = value.split("-");
       return (
         Number.isInteger(year) &&
         Number.isInteger(month) &&
         Number.isInteger(day)
       );
     },
-    { message: 'sitemap.lastmod.invalid' }
+    { message: "sitemap.lastmod.invalid" },
   )
   .optional()
-  .brand<'sitemap-lastmod'>();
+  .brand<"sitemap-lastmod">();
 export type SitemapLastmodType = z.infer<typeof SitemapLastmod>;
 
 export const SitemapChangefreq = z
   .union([
-    z.literal('always'),
-    z.literal('hourly'),
-    z.literal('daily'),
-    z.literal('weekly'),
-    z.literal('monthly'),
-    z.literal('yearly'),
-    z.literal('never'),
+    z.literal("always"),
+    z.literal("hourly"),
+    z.literal("daily"),
+    z.literal("weekly"),
+    z.literal("monthly"),
+    z.literal("yearly"),
+    z.literal("never"),
   ])
   .optional()
-  .brand<'sitemap-changefreq'>();
+  .brand<"sitemap-changefreq">();
 export type SitemapChangefreqType = z.infer<typeof SitemapChangefreq>;
 
 export const SitemapPriority = z
@@ -45,7 +42,7 @@ export const SitemapPriority = z
   .min(0)
   .max(1)
   .default(0.5)
-  .brand<'sitemap-priority'>();
+  .brand<"sitemap-priority">();
 export type SitemapPriorityType = z.infer<typeof SitemapPriority>;
 
 export const SitemapEntry = z
@@ -55,7 +52,7 @@ export const SitemapEntry = z
     changefreq: SitemapChangefreq,
     priority: SitemapPriority,
   })
-  .brand<'sitemap-entry'>();
+  .brand<"sitemap-entry">();
 export type SitemapEntryType = z.infer<typeof SitemapEntry>;
 
 export type SitemapConfigType = {
@@ -65,7 +62,7 @@ export type SitemapConfigType = {
 };
 
 export class Sitemap {
-  static DEFAULT_PATH = Schema.Path.parse('static/sitemap.xml');
+  static DEFAULT_PATH = Schema.Path.parse("static/sitemap.xml");
 
   private static generate(config: SitemapConfigType) {
     let sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n`;
@@ -73,7 +70,7 @@ export class Sitemap {
 
     for (const entry of config.entries) {
       {
-        let output = '<url>\n';
+        let output = "<url>\n";
         output += `\t<loc>${config.BASE_URL}${entry.loc}</loc>\n`;
 
         if (entry.lastmod) {
@@ -86,13 +83,13 @@ export class Sitemap {
 
         output += `\t<priority>${entry.priority}</priority>\n`;
 
-        output += '</url>\n';
+        output += "</url>\n";
 
         sitemap += output;
       }
     }
 
-    sitemap += '</urlset>';
+    sitemap += "</urlset>";
 
     return sitemap;
   }

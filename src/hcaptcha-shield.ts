@@ -1,6 +1,6 @@
 import express from 'express';
 import hcaptcha from 'hcaptcha';
-import { z } from 'zod';
+import { z } from 'zod/v4';
 
 import { HCaptchaSecretKey } from './schema';
 import { AccessDeniedError, AccessDeniedErrorReasonType } from './errors';

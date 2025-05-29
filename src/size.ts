@@ -1,13 +1,13 @@
-import { z } from 'zod';
+import { z } from "zod/v4";
 
-import * as Schema from './schema';
-import { RoundToDecimal } from './rounding';
+import * as Schema from "./schema";
+import { RoundToDecimal } from "./rounding";
 
 export enum SizeUnit {
-  b = 'b',
-  kB = 'kB',
-  MB = 'MB',
-  GB = 'GB',
+  b = "b",
+  kB = "kB",
+  MB = "MB",
+  GB = "GB",
 }
 
 const SizeValue = z.number().positive();

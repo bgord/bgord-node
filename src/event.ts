@@ -1,7 +1,7 @@
-import { z } from 'zod';
+import { z } from "zod/v4";
 
-import * as Schema from './schema';
-import { Logger } from './logger';
+import * as Schema from "./schema";
+import { Logger } from "./logger";
 
 export const Event = z.object({
   id: Schema.UUID,
@@ -10,13 +10,10 @@ export const Event = z.object({
   stream: z.string().min(1),
 
   name: z.string().min(1),
-  version: z
-    .number()
-    .int()
-    .positive(),
+  version: z.number().int().positive(),
   payload: z
-    .record(z.any())
-    .refine(value => {
+    .record(z.string(), z.any())
+    .refine((value) => {
       try {
         JSON.parse(String(value));
         return true;
@@ -24,11 +21,11 @@ export const Event = z.object({
         return false;
       }
     })
-    .transform(value => JSON.stringify(value)),
+    .transform((value) => JSON.stringify(value)),
 });
 
 export const ParsedEvent = Event.merge(
-  z.object({ payload: z.record(z.any()) })
+  z.object({ payload: z.record(z.string(), z.any()) }),
 );
 
 export type EventType = z.infer<typeof Event>;
@@ -37,14 +34,14 @@ export type ParsedEventType = z.infer<typeof ParsedEvent>;
 export class EventHandler {
   constructor(private readonly logger: Logger) {}
 
-  handle<T extends Pick<EventType, 'name'>>(fn: (event: T) => Promise<void>) {
+  handle<T extends Pick<EventType, "name">>(fn: (event: T) => Promise<void>) {
     return async (event: T) => {
       try {
         await fn(event);
       } catch (error) {
         this.logger.error({
           message: `Unknown ${event.name} event handler error`,
-          operation: 'unknown_event_handler_error',
+          operation: "unknown_event_handler_error",
           metadata: this.logger.formatError(error),
         });
       }
@@ -59,15 +56,15 @@ export class EventLogger {
     type: string,
     _debugName: string,
     eventName: string | undefined,
-    eventData: Record<string, any> | undefined
+    eventData: Record<string, any> | undefined,
   ) {
-    if (type === 'subscribe') return;
+    if (type === "subscribe") return;
 
-    if (typeof eventName === 'symbol') return;
+    if (typeof eventName === "symbol") return;
 
     this.logger.info({
       message: `${eventName} emitted`,
-      operation: 'event_emitted',
+      operation: "event_emitted",
       metadata: eventData,
     });
   }

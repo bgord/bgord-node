@@ -1,8 +1,8 @@
-import { describe, test, expect } from 'vitest';
-import { Filter, FilterSchemaType, FilterValuesType } from '../src/filter';
-import { z } from 'zod';
+import { describe, test, expect } from "vitest";
+import { Filter, FilterSchemaType, FilterValuesType } from "../src/filter";
+import { z } from "zod/v4";
 
-describe('Filter class', () => {
+describe("Filter class", () => {
   // Define a sample schema for testing
   const sampleSchema: FilterSchemaType<{
     name: z.ZodString;
@@ -12,11 +12,11 @@ describe('Filter class', () => {
     age: z.number(),
   });
 
-  test('parses filter values based on the schema', () => {
+  test("parses filter values based on the schema", () => {
     const filter = new Filter(sampleSchema);
 
     const filterValues: FilterValuesType = {
-      name: 'John Doe',
+      name: "John Doe",
       age: 25,
     };
 
@@ -24,14 +24,14 @@ describe('Filter class', () => {
     expect(parsedFilter).toEqual(filterValues);
   });
 
-  test('gets the default filter', () => {
+  test("gets the default filter", () => {
     const filter = new Filter(sampleSchema);
 
     const defaultFilter = filter.default();
     expect(defaultFilter).toEqual(undefined);
   });
 
-  test('parses filter values with default values', () => {
+  test("parses filter values with default values", () => {
     const schemaWithDefaults = sampleSchema.extend({
       age: z.number().default(30),
     });
@@ -40,20 +40,20 @@ describe('Filter class', () => {
 
     // Values without age should default to 30
     const filterValuesWithoutAge: FilterValuesType = {
-      name: 'John Doe',
+      name: "John Doe",
     };
     const parsedFilterWithoutAge = filterWithDefaults.parse(
-      filterValuesWithoutAge
+      filterValuesWithoutAge,
     );
-    expect(parsedFilterWithoutAge).toEqual({ name: 'John Doe', age: 30 });
+    expect(parsedFilterWithoutAge).toEqual({ name: "John Doe", age: 30 });
 
     // Values with age provided should override the default
     const filterValuesWithAge: FilterValuesType = {
-      name: 'John Doe',
+      name: "John Doe",
       age: 25,
     };
     const parsedFilterWithAge = filterWithDefaults.parse(filterValuesWithAge);
-    expect(parsedFilterWithAge).toEqual({ name: 'John Doe', age: 25 });
+    expect(parsedFilterWithAge).toEqual({ name: "John Doe", age: 25 });
   });
 
   // Add more tests as needed based on your specific use cases

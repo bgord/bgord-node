@@ -1,18 +1,18 @@
-import z from 'zod';
-import { $ } from 'execa';
+import { z } from "zod/v4";
+import { $ } from "execa";
 
 import {
   PrerequisiteLabelType,
   PrerequisiteStatusEnum,
   PrerequisiteStrategyEnum,
   AbstractPrerequisite,
-} from '../prerequisites';
+} from "../prerequisites";
 
 const PrerequisiteBinaryValue = z
   .string()
   .min(1)
   .max(64)
-  .refine(value => !value.includes(' '));
+  .refine((value) => !value.includes(" "));
 type PrerequisiteBinaryValueType = z.infer<typeof PrerequisiteBinaryValue>;
 
 type PrerequisiteBinaryConfigType = {
@@ -21,9 +21,7 @@ type PrerequisiteBinaryConfigType = {
   enabled?: boolean;
 };
 
-export class PrerequisiteBinary extends AbstractPrerequisite<
-  PrerequisiteBinaryConfigType
-> {
+export class PrerequisiteBinary extends AbstractPrerequisite<PrerequisiteBinaryConfigType> {
   readonly strategy = PrerequisiteStrategyEnum.binary;
 
   constructor(readonly config: PrerequisiteBinaryConfigType) {
